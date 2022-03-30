@@ -1,0 +1,11 @@
+mixin roll(name, label, modifier)
+    button(type="roll" name=`roll_${label}` title=`%{${label}}` value=`[[1d10+(@{${modifier})}]]`)
+
+mixin score(name)
+    div(class="bigScore")
+        input(type="number" name=`attr_${name}_score`)
+        span 
+        input(type="number" name=`attr_${name}_currentXP`)
+        span
+        input(type="number" name=`attr_${name}_nextXP`)
+        span
