@@ -10,7 +10,7 @@ function with_stem(filepath, suffix) {
     const filename = filepath.substring(filepath.lastIndexOf('/') + 1, filepath.length) || filepath;
     const stem = filename.substring(0, filename.lastIndexOf('.')) || filename;
     // const suffix = filename.substring(filename.lastIndexOf('.'), filename.length) || "";
-    return `${path}${stem}.${suffix}`
+    return `${path}${stem}${suffix}`
 }
 
 const files = fs.readdirSync(".").filter(filename => get_suffix(filename) == ".pug");
