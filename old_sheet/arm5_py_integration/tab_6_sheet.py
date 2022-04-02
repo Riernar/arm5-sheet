@@ -20,7 +20,7 @@ for tag in html.find_all("code"):
     tag.name = "span"
     tag.attrs["class"] = tag.get("class", "") + " codespan"
 
-EXPORTS["documentation"] = html.prettify()
+EXPORTS["documentation"] = str(html)  # .prettify()
 
 
 # Convert the changelog.md file into HTML
@@ -34,4 +34,4 @@ for i in range(1, 10):
     for tag in html.find_all(f"h{i}"):
         tag.attrs["class"] = " ".join(tag.get("class", "").split(" ") + ["heading_label"])
 
-EXPORTS["changelog"] = html.prettify()
+EXPORTS["changelog"] = str(html)  # .prettify()

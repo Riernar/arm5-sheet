@@ -56,18 +56,23 @@ def alert(title: str, text: str, *, level: str = "warning", ID: str = None):
 
     indent = " " * 4 * 4
     text = str(text).replace("\n", "\n" + indent)
-    return textwrap.dedent(
-        f"""\
-        <input type="hidden" class="alert-hidder" name="attr_alert-{alert_id}" value="0"/>
-        <div class="alert alert-{level}">
-            <div>
-                <h3> {level.title()} - {title}</h3>
-                {text}
-            </div>
-            <label class="fakebutton">
-                <input type="checkbox" name="attr_alert-{alert_id}" value="1" /> ×
-            </label>
-        </div>"""
+    return str(
+        soup(
+            textwrap.dedent(
+                f"""\
+                <input type="hidden" class="alert-hidder" name="attr_alert-{alert_id}" value="0"/>
+                <div class="alert alert-{level}">
+                    <div>
+                        <h3> {level.title()} - {title}</h3>
+                        <div>{text}</div>
+                    </div>
+                    <label class="fakebutton">
+                        <input type="checkbox" name="attr_alert-{alert_id}" value="1" /> ×
+                    </label>
+                </div>"""
+            ),
+            "html.parser"
+        )
     )
 
 

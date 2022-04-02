@@ -39,12 +39,12 @@ def process_template(
     for line in in_file:
         lineno += 1
         start, end = 0, 0
-        line_indent = line[:len(line) - len(line.lstrip())]
+        line_indent = line[: len(line) - len(line.lstrip())]
         # Find the start delimiter on the line, if any
         while (start := line.find(start_delimiter, end)) >= 0:
             # We found a start delimiter at start. Yield the part before the delimiter
             # We didn't yield yet
-            #if end == 0 and is_whitespace(line[:start]):
+            # if end == 0 and is_whitespace(line[:start]):
             #    line_indent = line[:start]
             yield line[end:start]
             # Find the corresponding end delimiter, store everything in-between as
@@ -61,7 +61,7 @@ def process_template(
 
             # Compute indentation to inject in the expression
             total_indent = line_indent
-            if not is_whitespace(line[:start-len(start_delimiter)]):
+            if not is_whitespace(line[: start - len(start_delimiter)]):
                 # The expression is somewhere within the line
                 # If there is a newline in the expression, we must indent further
                 total_indent = line_indent + indent
