@@ -7,6 +7,11 @@ import textwrap
 from dataclasses import dataclass
 from typing import ClassVar, Collection, Dict, List, Set, Tuple, Union
 
+import bs4
+
+# from lxml import etree, html
+
+
 # Useful constants
 CHARACTERISTICS = [
     "intelligence",
@@ -59,6 +64,46 @@ def _match_lengths(
     return zip(left_iter, right_iter)
 
 
+def _render_tag(tag: bs4.Tag, indent=" " * 4) -> str:
+    if isinstance(tag, bs4.NavigableString):
+        return str(tag)
+    attributes = " ".join(f'{k}="{v}"' for k, v in tag.attrs.items())
+    if attributes:
+        attributes = f" {attributes} "
+    content_parts = []
+    for child in tag.children:
+        if isinstance(child, bs4.NavigableString):
+            if str(child).strip():
+                content_parts.append("<br>".join(s.strip() for s in str(child).split("\n")))
+        elif isinstance(child, bs4.Tag):
+            inner = indent + _render_tag(child).replace("\n", "\n" + indent)
+            content_parts.append("\n")
+            content_parts.append(inner)
+        else:
+            raise TypeError("Unhandled type " + type(child).__name__)
+    content = "".join(content_parts)
+    if isinstance(tag, bs4.BeautifulSoup):
+        opening = closing = ""
+        content = textwrap.dedent(content).strip()
+    else:
+        closing = ("\n" * ("\n" in content)) + f"</{tag.name}>"
+        opening = f"<{tag.name}{attributes}>"
+
+    return f"{opening}{content}{closing}"
+
+
+def format_html(html: str) -> str:
+    soup = bs4.BeautifulSoup(html, 'html.parser', multi_valued_attributes=None)
+    render = _render_tag(soup)
+    return render
+
+
+def indent(s: str, level: int = 0):
+    """Corrects the indentation of a string to a given level"""
+    indent = " " * 4 * level
+    return indent + s.replace("\n", "\n" + indent)
+
+
 def repeat_format(
     string: str,
     *,
@@ -68,7 +113,7 @@ def repeat_format(
     values: Union[str, Collection[str]] = None,
     keyvalues: Union[Tuple[str, str], Collection[Tuple[str, str]]] = None,
     separator: str = "\n",
-):
+) -> str:
     """
     Repeatedly format a string and concatenate teh results
 

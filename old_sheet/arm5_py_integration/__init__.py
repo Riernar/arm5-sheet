@@ -15,7 +15,7 @@ from . import (
     tab_5_spells,
     tab_6_sheet,
 )
-from .helpers import xp
+from .helpers import format_html, xp
 from .translations import translation_attrs, translation_attrs_setup
 
 # Alert system to display update notes and warnings on top of the sheet
@@ -39,7 +39,7 @@ def alert(title: str, text: str, *, level: str = "warning", ID: str = None):
         ID: optional string ID of this banner, if you need to check if it is
             open/closed somewhere. Do NOT use numbers
     """
-    if not level in ("info", "warning"):
+    if level not in ("info", "warning"):
         raise ValueError("Level must be among 'info', 'warning'")
     if alert.has_disable_been_called:
         raise RuntimeError(
@@ -55,24 +55,19 @@ def alert(title: str, text: str, *, level: str = "warning", ID: str = None):
         alert.strid.append(alert_id)
 
     indent = " " * 4 * 4
-    text = str(text).replace("\n", "\n" + indent)
-    return str(
-        soup(
-            textwrap.dedent(
-                f"""\
-                <input type="hidden" class="alert-hidder" name="attr_alert-{alert_id}" value="0"/>
-                <div class="alert alert-{level}">
-                    <div>
-                        <h3> {level.title()} - {title}</h3>
-                        <div>{text}</div>
-                    </div>
-                    <label class="fakebutton">
-                        <input type="checkbox" name="attr_alert-{alert_id}" value="1" /> ×
-                    </label>
-                </div>"""
-            ),
-            "html.parser"
-        )
+    msg = format_html(f"<div>{text!s}</div>").replace("\n", "\n" + indent)
+    return textwrap.dedent(
+        f"""\
+        <input type="hidden" class="alert-hidder" name="attr_alert-{alert_id}" value="0"/>
+        <div class="alert alert-{level}">
+            <div>
+                <h3> {level.title()} - {title}</h3>
+                {msg}
+            </div>
+            <label class="fakebutton">
+                <input type="checkbox" name="attr_alert-{alert_id}" value="1" /> ×
+            </label>
+        </div>"""
     )
 
 
@@ -210,7 +205,7 @@ for child in html.ul.children:
 EXPORTS["update_alerts"] = "\n".join(
     alert(
         str(item.strong),
-        item.ul.prettify(),
+        str(item.ul),
         level="info",
         ID=f"alert-update-{version.replace('.', '-')}",
     )

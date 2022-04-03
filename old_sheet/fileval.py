@@ -8,8 +8,7 @@ import re
 import sys
 import traceback as tb
 from pathlib import Path
-from types import ModuleType
-from typing import Any, Dict, Generator, List, NoReturn, Optional, TextIO, Tuple, Union
+from typing import Any, Dict, Generator, List, Optional, TextIO, Tuple, Union
 
 if sys.version_info < (3, 8):
     raise RuntimeError("This script requires python 3.8 or higher")
@@ -70,7 +69,10 @@ def process_template(
                 value = eval(expr, globalns, localns)
             except Exception as err:
                 print(
-                    f"Expression at line {lineno}{'-' + str(lineno + offset) if offset else ''} raised: {err.__class__.__name__}: {err}",
+                    (
+                        f"Expression at line {lineno}{'-' + str(lineno + offset) if offset else ''} "
+                        "raised: {err.__class__.__name__}: {err}"
+                    ),
                     end="",
                 )
                 if verbose < 1:
@@ -91,11 +93,12 @@ def process_template(
 
             if not isinstance(value, str):
                 print(
-                    f"Expression at line {lineno}{'-' + str(lineno + offset) if offset else ''} does not evaluate to a string"
+                    f"Expression at line {lineno}{'-' + str(lineno + offset) if offset else ''} "
+                    "does not evaluate to a string"
                 )
                 if verbose > 0:
                     print(
-                        f"Offending expression: ",
+                        "Offending expression: ",
                         start_delimiter + expr + end_delimiter,
                     )
                 raise HandledException from ValueError(
