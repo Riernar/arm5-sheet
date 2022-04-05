@@ -49,21 +49,107 @@
     border-image-width: 20px;
     filter: drop-shadow(2px 4px 6px var(--col-indigo));
 }
-.ui-dialog .tab-content .charsheet{
-    input {
-        background: none;
-        border: none;
-        appearance: none;
-        &focus, &:focus-visible {
-            outline: none;
+.ui-dialog .tab-content .charsheet {
+    // Isolate Element Styline
+    .tabpage {
+        input {
+            background: none;
             border: none;
+            appearance: none;
+            &focus, &:focus-visible {
+                outline: none;
+                border: none;
+            }
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        input[type="text"] {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--col-umber);
+            position: relative;
+            appearance: none;
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
+            background-position: right;
+            background-repeat: no-repeat;
+            transition: background-position 800ms ease;
+            &:not([list]):focus, &:not([list]):hover {
+                background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
+                background-position: left;
+                transition: background-position 800ms ease;
+                outline: none;
+            }
+        }
+        h1 {
+            font-family: var(--font-header);
+            font-size: 2.5rem;
+            font-weight: normal;
+            color: var(--col-indigo);
+            margin: 0;
+            padding: 0 5px;
+            background: var(--img-header);
+            background-repeat: no-repeat;
+            background-position: top right;
+        }
+        h1::first-letter {
+            color: var(--col-madderlake);
+            font-size: 4rem;
+        }
+        :where(.repitem) {
+            display: flex;
+            margin: 6px 0;
+        }
+        button[type=roll] {
+            background: none;
+            background: var(--img-diceStatic);
+            background-repeat: no-repeat;
+            background-position: 0;
+            background-color: none;
+            width: 25px;
+            height: 25px;
+            content: '';
+            
+            border: none;
+            &::before {
+                content: '' !important;
+                background: none;
+                background-color: none;
+            }
+            &:hover, &:active {
+                background-position: 0;
+                background-color: none !important;
+                box-shadow: none;
+            }
+        }
+        select, input[list] {
+            --col-border: var(--col-leadWhite);
+            --math-border: 1px;
+            position: relative;
+            appearance: none;
+            border: 0;
+            background: var(--col-greenearth);
+            font-family: var(--font-button);
+            font-size: 1.25rem;
+            font-weight: bold;
+            font-variant: small-caps;
+            color: var(--col-orpiment);
+            width: auto;
+            height: 24px;
+            padding: 0 10px;
+            margin: 2px;
+            text-align: center;
+            clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
+            filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
         }
     }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    }
+    
     .c_check {
         position: relative;
         height: 15px;
@@ -110,11 +196,6 @@
         transform: translateX(-50%);
         white-space: nowrap;
         opacity: 0;
-        transition: all 200ms ease;
-    }
-    *:hover > span[data-tip] {
-        opacity: 1;
-        bottom: calc(100% + 15px);
         transition: all 200ms ease;
     }
     .tabpage {
@@ -188,22 +269,7 @@
             z-index: -5;
         }
     }
-    h1 {
-        font-family: var(--font-header);
-        font-size: 2.5rem;
-        font-weight: normal;
-        color: var(--col-indigo);
-        margin: 0;
-        padding: 0 5px;
-        background: var(--img-header);
-        background-repeat: no-repeat;
-        background-position: top right;
-    }
-
-    h1::first-letter {
-        color: var(--col-madderlake);
-        font-size: 4rem;
-    }
+    
     .flexrow {
         display: flex;
         flex-direction: row;
@@ -211,27 +277,6 @@
         justify-content: space-between;
         margin: 0;
         padding: 0;
-    }
-    input[type="text"] {
-        font-family: var(--font-body);
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--col-umber);
-        position: relative;
-        appearance: none;
-        flex: 1;
-        width: 100%;
-        border: none;
-        background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
-        background-position: right;
-        background-repeat: no-repeat;
-        transition: background-position 800ms ease;
-        &:not([list]):focus, &:not([list]):hover {
-            background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
-            background-position: left;
-            transition: background-position 800ms ease;
-            outline: none;
-        }
     }
     @keyframes inked {
         0% {
@@ -241,10 +286,7 @@
             mask-position: center bottom;
         }
     }
-    :where(.repitem) {
-        display: flex;
-        margin: 6px 0;
-    }
+    
     .itemcontrol {
         z-index: 1;
     }
@@ -258,26 +300,7 @@
         color: var(--col-orpiment);
         clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
     }
-    select, input[list] {
-        --col-border: var(--col-leadWhite);
-        --math-border: 1px;
-        position: relative;
-        appearance: none;
-        border: 0;
-        background: var(--col-greenearth);
-        font-family: var(--font-button);
-        font-size: 1.25rem;
-        font-weight: bold;
-        font-variant: small-caps;
-        color: var(--col-orpiment);
-        width: 80px;
-        height: 24px;
-        padding: 0;
-        margin: 2px;
-        text-align: center;
-        clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
-        filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
-    }
+    
     input::-webkit-calendar-picker-indicator {
         display: none;
         appearance: none;
@@ -671,28 +694,7 @@
             }
         }
     }
-    button[type=roll] {
-        background: none;
-        background: var(--img-diceStatic);
-        background-repeat: no-repeat;
-        background-position: 0;
-        background-color: none;
-        width: 25px;
-        height: 25px;
-        content: '';
-        
-        border: none;
-        &::before {
-            content: '' !important;
-            background: none;
-            background-color: none;
-        }
-        &:hover, &:active {
-            background-position: 0;
-            background-color: none !important;
-            box-shadow: none;
-        }
-    }
+    
     .bigScore {
         height: 30px;
         aspect-ratio: 1;

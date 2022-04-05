@@ -43,7 +43,11 @@ input[readonly] {
     grid-auto-rows: auto;
     grid-template-columns: 50% 50%;
 }
-
+.artcontainer {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 33% 33% 33%;
+}
 div.artgrid {
     display: grid;
     grid-auto-rows: auto;

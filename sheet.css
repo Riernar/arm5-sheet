@@ -51,21 +51,115 @@
           filter: drop-shadow(2px 4px 6px var(--col-indigo));
 }
 
-.ui-dialog .tab-content .charsheet input {
+.ui-dialog .tab-content .charsheet .tabpage input {
   background: none;
   border: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 }
-.ui-dialog .tab-content .charsheet inputfocus, .ui-dialog .tab-content .charsheet input:focus-visible {
+.ui-dialog .tab-content .charsheet .tabpage inputfocus, .ui-dialog .tab-content .charsheet .tabpage input:focus-visible {
   outline: none;
   border: none;
 }
-.ui-dialog .tab-content .charsheet input::-webkit-outer-spin-button,
-.ui-dialog .tab-content .charsheet input::-webkit-inner-spin-button {
+.ui-dialog .tab-content .charsheet .tabpage input::-webkit-outer-spin-button,
+.ui-dialog .tab-content .charsheet .tabpage input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.ui-dialog .tab-content .charsheet .tabpage input[type=text] {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--col-umber);
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  border: none;
+  background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
+  background-position: right;
+  background-repeat: no-repeat;
+  -webkit-transition: background-position 800ms ease;
+  transition: background-position 800ms ease;
+}
+.ui-dialog .tab-content .charsheet .tabpage input[type=text]:not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage input[type=text]:not([list]):hover {
+  background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
+  background-position: left;
+  -webkit-transition: background-position 800ms ease;
+  transition: background-position 800ms ease;
+  outline: none;
+}
+.ui-dialog .tab-content .charsheet .tabpage h1 {
+  font-family: var(--font-header);
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: var(--col-indigo);
+  margin: 0;
+  padding: 0 5px;
+  background: var(--img-header);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.ui-dialog .tab-content .charsheet .tabpage h1::first-letter {
+  color: var(--col-madderlake);
+  font-size: 4rem;
+}
+.ui-dialog .tab-content .charsheet .tabpage :where(.repitem) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 6px 0;
+}
+.ui-dialog .tab-content .charsheet .tabpage button[type=roll] {
+  background: none;
+  background: var(--img-diceStatic);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-color: none;
+  width: 25px;
+  height: 25px;
+  content: "";
+  border: none;
+}
+.ui-dialog .tab-content .charsheet .tabpage button[type=roll]::before {
+  content: "" !important;
+  background: none;
+  background-color: none;
+}
+.ui-dialog .tab-content .charsheet .tabpage button[type=roll]:hover, .ui-dialog .tab-content .charsheet .tabpage button[type=roll]:active {
+  background-position: 0;
+  background-color: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.ui-dialog .tab-content .charsheet .tabpage select, .ui-dialog .tab-content .charsheet .tabpage input[list] {
+  --col-border: var(--col-leadWhite);
+  --math-border: 1px;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: var(--col-greenearth);
+  font-family: var(--font-button);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: var(--col-orpiment);
+  width: auto;
+  height: 24px;
+  padding: 0 10px;
+  margin: 2px;
+  text-align: center;
+  -webkit-clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
+          clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
+  -webkit-filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
+          filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
 }
 .ui-dialog .tab-content .charsheet .c_check {
   position: relative;
@@ -124,12 +218,6 @@
           transform: translateX(-50%);
   white-space: nowrap;
   opacity: 0;
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-.ui-dialog .tab-content .charsheet *:hover > span[data-tip] {
-  opacity: 1;
-  bottom: calc(100% + 15px);
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
 }
@@ -213,21 +301,6 @@
           filter: opacity(0.8);
   z-index: -5;
 }
-.ui-dialog .tab-content .charsheet h1 {
-  font-family: var(--font-header);
-  font-size: 2.5rem;
-  font-weight: normal;
-  color: var(--col-indigo);
-  margin: 0;
-  padding: 0 5px;
-  background: var(--img-header);
-  background-repeat: no-repeat;
-  background-position: top right;
-}
-.ui-dialog .tab-content .charsheet h1::first-letter {
-  color: var(--col-madderlake);
-  font-size: 4rem;
-}
 .ui-dialog .tab-content .charsheet .flexrow {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -244,33 +317,6 @@
           justify-content: space-between;
   margin: 0;
   padding: 0;
-}
-.ui-dialog .tab-content .charsheet input[type=text] {
-  font-family: var(--font-body);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--col-umber);
-  position: relative;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 100%;
-  border: none;
-  background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
-  background-position: right;
-  background-repeat: no-repeat;
-  -webkit-transition: background-position 800ms ease;
-  transition: background-position 800ms ease;
-}
-.ui-dialog .tab-content .charsheet input[type=text]:not([list]):focus, .ui-dialog .tab-content .charsheet input[type=text]:not([list]):hover {
-  background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
-  background-position: left;
-  -webkit-transition: background-position 800ms ease;
-  transition: background-position 800ms ease;
-  outline: none;
 }
 @-webkit-keyframes inked {
   0% {
@@ -292,12 +338,6 @@
             mask-position: center bottom;
   }
 }
-.ui-dialog .tab-content .charsheet :where(.repitem) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 6px 0;
-}
 .ui-dialog .tab-content .charsheet .itemcontrol {
   z-index: 1;
 }
@@ -311,30 +351,6 @@
   color: var(--col-orpiment);
   -webkit-clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
           clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
-}
-.ui-dialog .tab-content .charsheet select, .ui-dialog .tab-content .charsheet input[list] {
-  --col-border: var(--col-leadWhite);
-  --math-border: 1px;
-  position: relative;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: 0;
-  background: var(--col-greenearth);
-  font-family: var(--font-button);
-  font-size: 1.25rem;
-  font-weight: bold;
-  font-variant: small-caps;
-  color: var(--col-orpiment);
-  width: 80px;
-  height: 24px;
-  padding: 0;
-  margin: 2px;
-  text-align: center;
-  -webkit-clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
-          clip-path: polygon(calc(100% - var(--math-button)) 0%, 100% 50%, calc(100% - var(--math-button)) 100%, var(--math-button) 100%, 0 50%, var(--math-button) 0);
-  -webkit-filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
-          filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
 }
 .ui-dialog .tab-content .charsheet input::-webkit-calendar-picker-indicator {
   display: none;
@@ -821,28 +837,6 @@
   height: 25px;
   padding: 0;
   z-index: 1;
-}
-.ui-dialog .tab-content .charsheet button[type=roll] {
-  background: none;
-  background: var(--img-diceStatic);
-  background-repeat: no-repeat;
-  background-position: 0;
-  background-color: none;
-  width: 25px;
-  height: 25px;
-  content: "";
-  border: none;
-}
-.ui-dialog .tab-content .charsheet button[type=roll]::before {
-  content: "" !important;
-  background: none;
-  background-color: none;
-}
-.ui-dialog .tab-content .charsheet button[type=roll]:hover, .ui-dialog .tab-content .charsheet button[type=roll]:active {
-  background-position: 0;
-  background-color: none !important;
-  -webkit-box-shadow: none;
-          box-shadow: none;
 }
 .ui-dialog .tab-content .charsheet .bigScore {
   height: 30px;
