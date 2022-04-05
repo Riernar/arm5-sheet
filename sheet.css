@@ -34,6 +34,7 @@
   --img-parchment: url(https://i.imgur.com/CiMIYOC.png);
   --img-wipeout: url(https://i.imgur.com/BmGBJuH.png);
   --img-tile: url(https://i.imgur.com/dlqwuz7.png);
+  --img-inkin: url(https://i.imgur.com/egwOVK0.png);
   --math-button: 12px;
   --math-bounce: cubic-bezier(.3,-1,.6,2);
   --vfx-border: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
@@ -269,7 +270,35 @@
   background-position: left;
   -webkit-transition: background-position 800ms ease;
   transition: background-position 800ms ease;
+  -webkit-mask-image: var(--img-inkin);
+          mask-image: var(--img-inkin);
+  -webkit-mask-mode: luminance;
+  mask-mode: luminance;
+  -webkit-animation: inked 800ms ease-in-out;
+          animation: inked 800ms ease-in-out;
+  -webkit-animation-timing-function: steps(23, end);
+          animation-timing-function: steps(23, end);
   outline: none;
+}
+@-webkit-keyframes inked {
+  0% {
+    -webkit-mask-position: left top;
+            mask-position: left top;
+  }
+  100% {
+    -webkit-mask-position: left bottom;
+            mask-position: left bottom;
+  }
+}
+@keyframes inked {
+  0% {
+    -webkit-mask-position: left top;
+            mask-position: left top;
+  }
+  100% {
+    -webkit-mask-position: left bottom;
+            mask-position: left bottom;
+  }
 }
 .ui-dialog .tab-content .charsheet :where(.repitem) {
   display: -webkit-box;

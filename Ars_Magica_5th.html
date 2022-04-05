@@ -1,4 +1,98 @@
-<input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0"/>
+
+<div class="tabpage">
+  <div class="pageHalf">
+    <h1>Virtues</h1>
+    <fieldset class="repeating_virtue">
+      <input type="text" name="attr_Virtue"/>
+      <select name="attr_VirtueType">
+        <option value="Vfree" data-i18n="free" selected="selected">Free</option>
+        <option value="Vminor" data-i18n="minor">Minor</option>
+        <option value="Vmajor" data-i18n="major">Major</option>
+      </select>
+    </fieldset>
+    <h1>Flaws</h1>
+    <fieldset class="repeating_flaw">
+      <input type="text" name="attr_Flaw"/>
+      <select name="attr_FlawType">
+        <option value="Vfree" data-i18n="free" selected="selected">Free</option>
+        <option value="Vminor" data-i18n="minor">Minor</option>
+        <option value="Vmajor" data-i18n="major">Major</option>
+      </select>
+    </fieldset>
+  </div>
+  <div class="pageHalf __wide">
+    <h1>
+       Biography</h1>
+    <div class="biography">
+      <div class="sublabel __extended">
+        <input type="text" name="attr_birth_name"/><span data-i18n="birth-name">Birth Name</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_year_born"/><span data-i18n="year-born">Birth Name</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_gender"/><span data-i18n="gender">Gender</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_race_nationality"/><span data-i18n="race-nationality">Nationality</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_place-of-origin"/><span data-i18n="place-of-origin">Place of Origin</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_religion"/><span data-i18n="religion">Religion</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_Title_Profession"/><span data-i18n="title-profession">Title/Profession</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_height"/><span data-i18n="height">= val</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_weight"/><span data-i18n="weight">= val</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_size"/><span data-i18n="size">= val</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_handedness"/><span data-i18n="handedness">= val</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_hair"/><span data-i18n="hair">= val</span>
+      </div>
+      <div class="sublabel">
+        <input type="text" name="attr_eyes"/><span data-i18n="eyes">= val</span>
+      </div>
+    </div>
+    <h1>
+       Reputations </h1>
+    <datalist id="dlist_reputation">
+      <option value="Local"></option>
+      <option value="Ecclesiastical"></option>
+      <option value="Hermetic"></option>
+    </datalist>
+    <fieldset class="repeating_reputation">
+      <input type="text" name="attr_Reputation"/>
+      <input type="text" list="dlist_reputation" name="attr_ReputationType"/>
+      <div class="bigScore">
+        <input type="number" name="attr_Reputation_score"/><span> </span>
+        <input type="number" name="attr_Reputation_currentXP"/><span></span>
+        <input type="number" name="attr_Reputation_nextXP"/><span></span>
+      </div>
+    </fieldset>
+    <h1>
+       Personality</h1>
+    <fieldset class="repeating_personality">
+      <input type="text" name="attr_Personality"/>
+      <div class="bigScore">
+        <input type="number" name="attr_Personality_score"/><span> </span>
+        <input type="number" name="attr_Personality_currentXP"/><span></span>
+        <input type="number" name="attr_Personality_nextXP"/><span></span>
+      </div>
+      <button type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
+    </fieldset>
+  </div>
+</div><input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0"/>
 <div class="alert alert-warning">
 <div>
 <h3> Warning - February 2021 v1.6.1 update - ERROR: Spell's arts conversion</h3>
