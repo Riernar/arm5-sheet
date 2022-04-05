@@ -274,22 +274,22 @@
 }
 @-webkit-keyframes inked {
   0% {
-    -webkit-mask-position: left top;
-            mask-position: left top;
+    -webkit-mask-position: center top;
+            mask-position: center top;
   }
   100% {
-    -webkit-mask-position: left bottom;
-            mask-position: left bottom;
+    -webkit-mask-position: center bottom;
+            mask-position: center bottom;
   }
 }
 @keyframes inked {
   0% {
-    -webkit-mask-position: left top;
-            mask-position: left top;
+    -webkit-mask-position: center top;
+            mask-position: center top;
   }
   100% {
-    -webkit-mask-position: left bottom;
-            mask-position: left bottom;
+    -webkit-mask-position: center bottom;
+            mask-position: center bottom;
   }
 }
 .ui-dialog .tab-content .charsheet :where(.repitem) {
@@ -626,10 +626,10 @@
   height: 115px;
   -webkit-mask-image: var(--img-inkin);
           mask-image: var(--img-inkin);
-  -webkit-mask-position: left bottom;
-          mask-position: left bottom;
-  -webkit-animation: inked 500ms ease-in-out;
-          animation: inked 500ms ease-in-out;
+  -webkit-mask-position: center bottom;
+          mask-position: center bottom;
+  -webkit-animation: inked 1000ms ease-in-out;
+          animation: inked 1000ms ease-in-out;
   -webkit-animation-timing-function: steps(23, end);
           animation-timing-function: steps(23, end);
 }

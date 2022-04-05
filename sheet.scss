@@ -235,10 +235,10 @@
     }
     @keyframes inked {
         0% {
-            mask-position: left top;
+            mask-position: center top;
         }
         100% {
-            mask-position: left bottom;
+            mask-position: center bottom;
         }
     }
     :where(.repitem) {
@@ -510,8 +510,8 @@
         height: 115px;
         // animation: rollout .25s ease-in-out;
         mask-image: var(--img-inkin);
-        mask-position: left bottom;
-        animation: inked 500ms ease-in-out;
+        mask-position: center bottom;
+        animation: inked 1000ms ease-in-out;
         animation-timing-function: steps(23, end);
         
     }
