@@ -92,6 +92,55 @@
       <button type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
     </fieldset>
   </div>
+</div>
+<div class="tabpage __abilityTab">
+  <div class="pageHalf">
+    <div class="characteristics">
+      <h1>
+         Characteristics</h1>
+    </div>
+  </div>
+  <div class="pageHalf abilities">
+    <h1>
+       Abilities </h1>
+    <fieldset class="repeating_ability">
+      <div>
+        <button type="roll"></button>
+        <input type="text" name="attr_Ability_name"/><span class="display_score">3</span>
+        <input type="checkbox" name="attr_Ability_show"/>
+      </div>
+      <input class="expand_toggle" type="hidden" name="attr_Ability_show"/>
+      <div class="expanded_ability">
+        <div class="xp_ribbon">
+          <div class="specialization">
+            <input type="text" name="attr_Ability_specialization"/>
+          </div>
+          <div class="ribbonScore" data-tip="Base Score">
+            <input type="number" name="Ability_score" value="0"/>
+          </div><span class="tip" data-tip="Base Score"></span>
+          <div class="ribbonCurrent" data-tip="Current Experience">
+            <input type="number" name="Ability_current" value="0"/>
+          </div><span class="tip" data-tip="Current Experience"></span>
+          <div class="ribbonPair">
+            <div class="ribbonProgress" data-tip="Experience to next level">
+              <input type="number" name="Ability_progress" value="0"/>
+            </div><span class="tip" data-tip="Experience to next level"></span>
+            <div class="ribbonMax" data-tip="Experience to buy">
+              <input type="number" name="Ability_max" value="0"/>
+            </div><span class="tip" data-tip="Experience to buy"></span>
+          </div>
+          <div class="ribbonBonus" data-tip="Bonus to base score">
+            <input type="number" name="Ability_bonus" value="0"/>
+          </div><span class="tip" data-tip="Bonus to base score"></span>
+        </div>
+        <label class="option_accelerated" data-tip="Accelerated Experience"><span class="icon_accelerated"></span>
+          <div class="c_check">
+            <input type="checkbox" name="attr_Ability_accelerated"/><span></span>
+          </div><span class="tip" data-tip="Accelerated Experience"></span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
 </div><input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0"/>
 <div class="alert alert-warning">
 <div>

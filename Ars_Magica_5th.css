@@ -36,7 +36,7 @@
   --img-parchment: url(https://i.imgur.com/CiMIYOC.png);
   --img-wipeout: url(https://i.imgur.com/BmGBJuH.png);
   --img-tile: url(https://i.imgur.com/dlqwuz7.png);
-  --img-inkin: url(https://i.imgur.com/egwOVK0.png);
+  --img-inkin: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/bleed_mask_alpha.png);
   --math-button: 12px;
   --math-bounce: cubic-bezier(.3,-1,.6,2);
   --vfx-border: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
@@ -272,14 +272,6 @@
   background-position: left;
   -webkit-transition: background-position 800ms ease;
   transition: background-position 800ms ease;
-  -webkit-mask-image: var(--img-inkin);
-          mask-image: var(--img-inkin);
-  -webkit-mask-mode: luminance;
-  mask-mode: luminance;
-  -webkit-animation: inked 800ms ease-in-out;
-          animation: inked 800ms ease-in-out;
-  -webkit-animation-timing-function: steps(23, end);
-          animation-timing-function: steps(23, end);
   outline: none;
 }
 @-webkit-keyframes inked {
@@ -616,20 +608,32 @@
 }
 .ui-dialog .tab-content .charsheet .expanded_ability {
   position: relative;
-  padding-top: 20px;
+  padding-top: 0px;
   border: 3px solid var(--col-greenearth);
   border-radius: 0 0 0 50px;
   background: var(--img-scroll);
   background-size: 100%;
   background-position: bottom;
-  display: none;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  height: 0;
+  overflow: hidden;
 }
 .ui-dialog .tab-content .charsheet .expand_toggle[value=on] + .expanded_ability {
+  padding-top: 20px;
   -webkit-transform-origin: top;
           transform-origin: top;
-  display: block;
-  -webkit-animation: rollout 0.25s ease-in-out;
-          animation: rollout 0.25s ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  height: 115px;
+  -webkit-mask-image: var(--img-inkin);
+          mask-image: var(--img-inkin);
+  -webkit-mask-position: left bottom;
+          mask-position: left bottom;
+  -webkit-animation: inked 500ms ease-in-out;
+          animation: inked 500ms ease-in-out;
+  -webkit-animation-timing-function: steps(23, end);
+          animation-timing-function: steps(23, end);
 }
 @-webkit-keyframes rollout {
   0% {
