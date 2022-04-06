@@ -343,10 +343,10 @@ button.stress-roll {
     display: none;
 }
 
-input.dtype-selector[value="both"] ~ div.tab-content button.simple-roll,
-input.dtype-selector[value="both"] ~ div.tab-content button.stress-roll,
-input.dtype-selector[value="toggle"] ~ input.selected-die[value="simple"] ~ div.tab-content button.simple-roll,
-input.dtype-selector[value="toggle"] ~ input.selected-die[value="stress"] ~ div.tab-content button.stress-roll,
+input.dtype-selector[value="both"] ~ div.sheet-tab-content button.simple-roll,
+input.dtype-selector[value="both"] ~ div.sheet-tab-content button.stress-roll,
+input.dtype-selector[value="toggle"] ~ input.selected-die[value="simple"] ~ div.sheet-tab-content button.simple-roll,
+input.dtype-selector[value="toggle"] ~ input.selected-die[value="stress"] ~ div.sheet-tab-content button.stress-roll,
 /* special class for rolls that always have the same type and should always be displayed */
 button.single-roll {
     display: block;
