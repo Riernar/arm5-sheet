@@ -31,6 +31,7 @@
   --img-quill: url(https://i.imgur.com/Vvs8GAu.png);
   --img-scroll: url(https://i.imgur.com/harw5YK.jpg);
   --img-diceStatic: url(https://i.imgur.com/96aRDdi.png);
+  --img-goldleaf: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/goldleaf.jpg);
   --img-texture: url(https://i.imgur.com/88hUiPe.png);
   --img-accelerated: url(https://i.imgur.com/yMFnzwU.png);
   --img-parchment: url(https://i.imgur.com/CiMIYOC.png);
@@ -719,7 +720,7 @@
     }
     // Virtues and Flaws
     .traits {
-        background: var(--col-orpiment);
+        background: var(--img-goldleaf);
         border: 5px solid var(--col-greenearth);
         padding: 1rem;
     }
