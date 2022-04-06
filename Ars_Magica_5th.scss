@@ -71,12 +71,12 @@ div.artgrid {
     border-bottom: 1px dotted #331f1a;
 }
 
-.has-tooltip :not(.tooltip) {
+.has-tooltip :not(.sheet-tooltip) {
     cursor: help;
 }
 
 /* Tooltip itself */
-.has-tooltip .tooltip {
+.has-tooltip .sheet-tooltip {
     visibility: hidden;
     background-color: #331f1a;
     color: #fff;
@@ -98,7 +98,7 @@ div.artgrid {
 }
 
 /* Small arrows pointing to the tooltiped text */
-.has-tooltip .tooltip::after {
+.has-tooltip .sheet-tooltip::after {
     content: " ";
     position: absolute;
     top: 100%;
@@ -110,10 +110,10 @@ div.artgrid {
   }
 
 /* Make the tooltip visible only if the tooltiped element is hovered */
-.has-tooltip:hover .tooltip {
+.has-tooltip:hover .sheet-tooltip {
     visibility: visible;
 }
-.has-tooltip .tooltip:hover {
+.has-tooltip .sheet-tooltip:hover {
     visibility: hidden;
 }
 /*---------- Hide number scrollers-----------*/
@@ -1385,53 +1385,53 @@ div.welcome {
 
 /*----------- Roll Template --------------*/
 /* Common display elements */
-.rolltemplate-all  .display-simple .inlinerollresult,
-.rolltemplate-all .display-simple .inlinerollresult.fullcrit,
-.rolltemplate-all .display-simple .inlinerollresult.fullfail,
-.rolltemplate-all .display-simple .inlinerollresult.importantroll {
+.sheet-rolltemplate-all  .sheet-display-simple .inlinerollresult,
+.sheet-rolltemplate-all .sheet-display-simple .inlinerollresult.fullcrit,
+.sheet-rolltemplate-all .sheet-display-simple .inlinerollresult.fullfail,
+.sheet-rolltemplate-all .sheet-display-simple .inlinerollresult.importantroll {
     color: #5e5e5e ! important;
     border: none;
     background:none;
 }
 
-.rolltemplate-all .display-simple-light .inlinerollresult,
-.rolltemplate-all .display-simple-light .inlinerollresult.fullcrit,
-.rolltemplate-all .display-simple-light .inlinerollresult.fullfail,
-.rolltemplate-all .display-simple-light .inlinerollresult.importantroll {
+.sheet-rolltemplate-all .sheet-display-simple-light .inlinerollresult,
+.sheet-rolltemplate-all .sheet-display-simple-light .inlinerollresult.fullcrit,
+.sheet-rolltemplate-all .sheet-display-simple-light .inlinerollresult.fullfail,
+.sheet-rolltemplate-all .sheet-display-simple-light .inlinerollresult.importantroll {
     color: white ! important;
     border: none;
     background:none;
 }
 
-.rolltemplate-all .display-stress .inlinerollresult {
+.sheet-rolltemplate-all .sheet-display-stress .inlinerollresult {
     color: #8d4f23! important;
     border: none;
     background:none;
 }
-.rolltemplate-all .display-stress-light .inlinerollresult {
+.sheet-rolltemplate-all .sheet-display-stress-light .inlinerollresult {
     color: #c2a973 ! important;
     border: none;
     background:none;
 }
-.rolltemplate-all .display-stress .inlinerollresult.fullfail,
-.rolltemplate-all .display-stress-light .inlinerollresult.fullfail {
+.sheet-rolltemplate-all .sheet-display-stress .inlinerollresult.fullfail,
+.sheet-rolltemplate-all .sheet-display-stress-light .inlinerollresult.fullfail {
     color: #ee3f2f ! important;
     border: none;
     background:none;
 }
-.rolltemplate-all .display-stress .inlinerollresult.fullcrit,
-.rolltemplate-all .display-stress-light .inlinerollresult.fullcrit {
+.sheet-rolltemplate-all .sheet-display-stress .inlinerollresult.fullcrit,
+.sheet-rolltemplate-all .sheet-display-stress-light .inlinerollresult.fullcrit {
     color: #daa520 ! important;
     border: none;
     background:none;
 }
-.rolltemplate-all .display-default {
+.sheet-rolltemplate-all .sheet-display-default {
     color: white ! important;
     border: none;
     background: none;
 }
 
-.rolltemplate-botchbt a[href^="~"] {
+.sheet-rolltemplate-botchbt a[href^="~"] {
     color: white;
     font-size: 14px;
     font-family: 'Uncial Antiqua', cursive;
@@ -1446,7 +1446,7 @@ div.welcome {
     background: -o-linear-gradient(to top, #651f1f, #651f1f, #ee3f2f);
     background: linear-gradient(to top, #651f1f, #651f1f, #ee3f2f);
 }
-.rolltemplate-botchbt a[href^="~"]:hover, .rolltemplate-botchbt a[href^="~"]:active {
+.sheet-rolltemplate-botchbt a[href^="~"]:hover, .sheet-rolltemplate-botchbt a[href^="~"]:active {
     background: #fff;
     background: -moz-linear-gradient(to top, #a00e0e, #bb1a11, #ec2513);
     background: -webkit-linear-gradient(to top, #a00e0e, #bb1a11, #ec2513);
@@ -1455,7 +1455,7 @@ div.welcome {
     background: linear-gradient(to top, #a00e0e, #bb1a11, #ec2513);
 }
 
-.rolltemplate-critbt a[href^="~"] {
+.sheet-rolltemplate-critbt a[href^="~"] {
     color: white;
     font-size: 14px;
     font-family: 'Uncial Antiqua', cursive;
@@ -1470,7 +1470,7 @@ div.welcome {
     background: -o-linear-gradient(to top, #916a08, #785807, #DAA520);
     background: linear-gradient(to top, #916a08, #785807, #DAA520);
 }
-.rolltemplate-critbt a[href^="~"]:hover, .rolltemplate-critbt a[href^="~"]:active {
+.sheet-rolltemplate-critbt a[href^="~"]:hover, .sheet-rolltemplate-critbt a[href^="~"]:active {
     background: #fff;
     background: -moz-linear-gradient(to top, #daa520, #B8860B, #FFD700);
     background: -webkit-linear-gradient(to top, #daa520, #B8860B, #FFD700);
@@ -1480,7 +1480,7 @@ div.welcome {
 }
 
 /*=== spell ===*/
-.rolltemplate-spell table {
+.sheet-rolltemplate-spell table {
     width: 235px;
     border-spacing: 5px;
     background: white;
@@ -1493,12 +1493,12 @@ div.welcome {
     border-top-right-radius:3px;
     box-shadow: 0px 25px 4px black;
 }
-.rolltemplate-spell::after {
+.sheet-rolltemplate-spell::after {
     content:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/spellroller_footer.png);
     position:relative;
     left:-4px;
 }
-.rolltemplate-spell table tr td.spellsubheader {
+.sheet-rolltemplate-spell table tr td.spellsubheader {
     background:#D3E5F5;
     background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/horizontalbanner.png);
     background-position:bottom left;
@@ -1512,17 +1512,17 @@ div.welcome {
     text-shadow: 2px 2px 2px black;
 }
 
-.rolltemplate-spell table tr .spelldescription {
+.sheet-rolltemplate-spell table tr .spelldescription {
 	font-family: 'Kavivanar', cursive;
 	font-size: 14px;
 }
 
-.rolltemplate-spell table tr .spelllabel {
+.sheet-rolltemplate-spell table tr .spelllabel {
 	font-family: 'Macondo', cursive;
 	font-size: 14px;
 }
 
-.rolltemplate-botch table {
+.sheet-rolltemplate-botch table {
     width: 100%;
     background: white;
     color: white;
@@ -1536,7 +1536,7 @@ div.welcome {
     text-align: center;
     border-radius: 30px 2px 30px 30px;
 }
-.rolltemplate-botch th {
+.sheet-rolltemplate-botch th {
     color: #bc4f3a;
     line-height: .5em;
     font-size: 1em;
@@ -1548,7 +1548,7 @@ div.welcome {
     padding-left: 5px;
 }
 
-.rolltemplate-reroll table {
+.sheet-rolltemplate-reroll table {
     width: 100%;
     background: white;
     color: white;
@@ -1562,7 +1562,7 @@ div.welcome {
     text-align: center;
     border-radius: 30px 2px 30px 30px;
 }
-.rolltemplate-reroll th {
+.sheet-rolltemplate-reroll th {
     color: #3a9cbc;
     line-height: .5em;
     font-size: 1em;
@@ -1574,7 +1574,7 @@ div.welcome {
     padding-left: 5px;
 }
 
-.rolltemplate-critical table {
+.sheet-rolltemplate-critical table {
     width: 100%;
     background: white;
     color: gold;
@@ -1588,7 +1588,7 @@ div.welcome {
     text-align: center;
     border-radius: 30px 2px 30px 30px;
 }
-.rolltemplate-critical th {
+.sheet-rolltemplate-critical th {
     color: #ffd700;
     line-height: .5em;
     font-size: 1em;
@@ -1600,7 +1600,7 @@ div.welcome {
     padding-left: 5px;
 }
 
-.rolltemplate-spell th {
+.sheet-rolltemplate-spell th {
     background:#B35439;
     background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/spellroller_header.jpg');
     background-size: 240px;
@@ -1614,21 +1614,21 @@ div.welcome {
     border-top-left-radius:3px;
     border-top-right-radius:3px;
 }
-.rolltemplate-spell .tcat {
+.sheet-rolltemplate-spell .tcat {
     font-weight: bold;
 }
 
-.rolltemplate-generic .inlinerollresult,
-.rolltemplate-attack .inlinerollresult,
-.rolltemplate-defend .inlinerollresult,
-.rolltemplate-initiative .inlinerollresult,
-.rolltemplate-soak .inlinerollresult,
-.rolltemplate-arcane .inlinerollresult,
-.rolltemplate-botch .inlinerollresult,
-.rolltemplate-reroll .inlinerollresult,
-.rolltemplate-critical .inlinerollresult,
-.rolltemplate-ability .inlinerollresult,
-.rolltemplate-spell .inlinerollresult  {
+.sheet-rolltemplate-generic .inlinerollresult,
+.sheet-rolltemplate-attack .inlinerollresult,
+.sheet-rolltemplate-defend .inlinerollresult,
+.sheet-rolltemplate-initiative .inlinerollresult,
+.sheet-rolltemplate-soak .inlinerollresult,
+.sheet-rolltemplate-arcane .inlinerollresult,
+.sheet-rolltemplate-botch .inlinerollresult,
+.sheet-rolltemplate-reroll .inlinerollresult,
+.sheet-rolltemplate-critical .inlinerollresult,
+.sheet-rolltemplate-ability .inlinerollresult,
+.sheet-rolltemplate-spell .inlinerollresult  {
 
 	display: inline-block;
     min-width: 1.5em;
@@ -1638,20 +1638,20 @@ div.welcome {
     background:none;
 }
 
-.rolltemplate-botch .inlinerollresult.fullfail {
+.sheet-rolltemplate-botch .inlinerollresult.fullfail {
     color:red;
 }
 
- .rolltemplate-spell td.top_bottom {
+ .sheet-rolltemplate-spell td.top_bottom {
     border-top: 1px solid #8B0000;
     border-bottom: 1px solid #8B0000;
      
  }
 /*=== attack & initiative ===*/
-.rolltemplate-attack table,
-.rolltemplate-defend table,
-.rolltemplate-initiative table,
-.rolltemplate-soak table {
+.sheet-rolltemplate-attack table,
+.sheet-rolltemplate-defend table,
+.sheet-rolltemplate-initiative table,
+.sheet-rolltemplate-soak table {
     width: 235px;
     background: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/combatroller_bg2.jpg), white;
     color: #cccc99;
@@ -1663,35 +1663,35 @@ div.welcome {
     border-top-right-radius:10px;
     box-shadow: 0px 0px 4px black;
 }
-.rolltemplate-attack td,
-.rolltemplate-defend td,
-.rolltemplate-initiative td,
-.rolltemplate-soak td {
+.sheet-rolltemplate-attack td,
+.sheet-rolltemplate-defend td,
+.sheet-rolltemplate-initiative td,
+.sheet-rolltemplate-soak td {
 	padding: 2px;
 }
 
-.rolltemplate-defend .combatroller {
+.sheet-rolltemplate-defend .combatroller {
     margin-top:-4px;
 }
-.rolltemplate-defend table,
-.rolltemplate-initiative table,
-.rolltemplate-soak table {
+.sheet-rolltemplate-defend table,
+.sheet-rolltemplate-initiative table,
+.sheet-rolltemplate-soak table {
 	border-radius: 10px;
 	border-bottom: 10px solid #333333;
 }
-.rolltemplate-attack::after {
+.sheet-rolltemplate-attack::after {
     content:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/downspikes.png);
 }
 
-.rolltemplate-defend::before {
+.sheet-rolltemplate-defend::before {
 	content:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/upwardshield.png);
 	margin-bottom:-3px;
 }
 
-.rolltemplate-attack th,
-.rolltemplate-defend th,
-.rolltemplate-initiative th,
-.rolltemplate-soak th {
+.sheet-rolltemplate-attack th,
+.sheet-rolltemplate-defend th,
+.sheet-rolltemplate-initiative th,
+.sheet-rolltemplate-soak th {
 	font-family: 'Uncial Antiqua', cursive;
     background:#B35439;
     background: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/combatroller_header.jpg");
@@ -1706,18 +1706,18 @@ div.welcome {
 	text-align:center;
 }
 
-.rolltemplate-attack .tcat,
-.rolltemplate-defend .tcat,
-.rolltemplate-initiative .tcat,
-.rolltemplate-soak .tcat {
+.sheet-rolltemplate-attack .tcat,
+.sheet-rolltemplate-defend .tcat,
+.sheet-rolltemplate-initiative .tcat,
+.sheet-rolltemplate-soak .tcat {
     font-weight: bold;
     color:white;
 }
 
-.rolltemplate-attack .inlinerollresult,
-.rolltemplate-defend .inlinerollresult,
-.rolltemplate-initiative .inlinerollresult,
-.rolltemplate-soak .inlinerollresult {
+.sheet-rolltemplate-attack .inlinerollresult,
+.sheet-rolltemplate-defend .inlinerollresult,
+.sheet-rolltemplate-initiative .inlinerollresult,
+.sheet-rolltemplate-soak .inlinerollresult {
     display: inline-block;
     font-family:'Macondo',  cursive;
     min-width: 1.5em;
@@ -1728,7 +1728,7 @@ div.welcome {
     background:none;
 }
 
-.rolltemplate-ability table {
+.sheet-rolltemplate-ability table {
     background:white;
     background:url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/subtlepaper.jpg');
     font-family: 'Macondo', cursive;
@@ -1740,7 +1740,7 @@ div.welcome {
     table-layout: fixed;
 }
 
-.rolltemplate-ability th {
+.sheet-rolltemplate-ability th {
     width: 210px;
     background:#D3E5F5;
     background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/horizontalbanner.png);
@@ -1759,7 +1759,7 @@ div.welcome {
     text-shadow: 2px 2px 2px black;
     font-style: italic;
 }
-.rolltemplate-ability td.banner {
+.sheet-rolltemplate-ability td.banner {
     background:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/splitbanner.jpg);
     text-shadow: 2px 2px 2px black;
     color:white;
@@ -1767,29 +1767,29 @@ div.welcome {
     
 }
 
-/*----.rolltemplate-ability .flex_container {
+/*----.sheet-rolltemplate-ability .flex_container {
     display:flex;
     justify-content:space-around;
     vertical-align:middle;
 }----*/
-.rolltemplate-ability div.define {
+.sheet-rolltemplate-ability div.define {
     font-family: "Uncial Antiqua", fantasy;
     font-size: 1.5em;
     margin-left:15px;
     padding-bottom:17px;
     
 }
-.rolltemplate-ability div.define::first-letter {
+.sheet-rolltemplate-ability div.define::first-letter {
     color:#337999;
     font-size: 200%;
     line-height: 100%;
 }
-.rolltemplate-ability div.flex_item {
+.sheet-rolltemplate-ability div.flex_item {
     display:i block;
     margin:-14px;
     margin-left:30px;
 }
-.rolltemplate-ability div.bigresult {
+.sheet-rolltemplate-ability div.sheet-bigresult {
     font-size: 2em;
     font-family: "Uncial Antiqua", fantasy;
     text-align:right;
@@ -1797,24 +1797,24 @@ div.welcome {
     margin-right:25px;
 	font-variant: bold;
 }
-.rolltemplate-ability td.label {
+.sheet-rolltemplate-ability td.label {
     width:50%;
     padding-left:20px;
     font-weight:bold;
 }
-.rolltemplate-ability::after {
+.sheet-rolltemplate-ability::after {
     content:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/basicroller_footer.png);
     position:relative;
     left:-4px;
 }
-.rolltemplate-ability td.result {
+.sheet-rolltemplate-ability td.result {
 	font-family: 'Macondo', cursive;
     text-align:right;
     padding-right:50px;
     font-weight:bold;
 }
 /*---------Roll Template Generic------------*/
-.rolltemplate-generic table {
+.sheet-rolltemplate-generic table {
   background-image:url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/subtlepaper.jpg');
   font-family: 'Uncial Antiqua', cursive;
   width:235px;
@@ -1823,7 +1823,7 @@ div.welcome {
   color: #53332a;
   box-shadow: 0px 26px 4px black;
 }
-.rolltemplate-generic th {
+.sheet-rolltemplate-generic th {
   background-image:url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/genericheader.jpg');
   background-repeat: no-repeat;
   font-family: 'Uncial Antiqua', cursive;
@@ -1836,18 +1836,18 @@ div.welcome {
   height: 125px;
   border-top: none;
 }
-.rolltemplate-generic .Label {
+.sheet-rolltemplate-generic .Label {
   font-weight: bold;
   padding-left: 10px;
 }
 
-.rolltemplate-generic::after {
+.sheet-rolltemplate-generic::after {
     content:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/basicroller_footer.png);
     position:relative;
     left:-4px;
 }
 /*--------Roll Template Arcane--------*/
-.rolltemplate-arcane {
+.sheet-rolltemplate-arcane {
 	background:none;
     font-family:"Book Antiqua";
     width:235px;
@@ -1855,14 +1855,14 @@ div.welcome {
     line-height: 1em;
     color: #53332a;
 }
-.rolltemplate-arcane table {
+.sheet-rolltemplate-arcane table {
 	position:relative;
 	top:-50px;
 	width:210px;
 	margin:auto;
 	border-collapse:separate;
 }
-.rolltemplate-arcane th {
+.sheet-rolltemplate-arcane th {
 	background:#e6dbc6;
 	font-size:1.4em;
 	line-height:.8em;
@@ -1878,19 +1878,19 @@ div.welcome {
 	padding:0px;
 		
 }
-.rolltemplate-arcane td {
+.sheet-rolltemplate-arcane td {
 /*	background-image:url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/subtlepaper.jpg");    */
 	padding-left:10px;
 	padding-right:10px;
 }
-.rolltemplate-arcane td.label {
+.sheet-rolltemplate-arcane td.label {
     width:50%;
     font-size:12px;
     line-height:1em;
 	text-align:center;
 	font-weight:bold;
 }
-.rolltemplate-arcane td.result {
+.sheet-rolltemplate-arcane td.result {
 	font-family: 'Macondo', cursive;
     width:50%;
     font-size:12px;
@@ -1903,11 +1903,11 @@ div.welcome {
     min-width:0px;
 }
 
-.rolltemplate-arcane td.textfield {
+.sheet-rolltemplate-arcane td.textfield {
 	font-style:italic;
 	font-size: .8em;
 }
-.rolltemplate-arcane td.bigresult {
+.sheet-rolltemplate-arcane td.sheet-bigresult {
     background-color:transparent;
     padding: 0px;
     font-weight: bold;
@@ -1926,7 +1926,7 @@ div.welcome {
         1px 1px 0 #000,
         1px -2px 1px #000;
 }
-.rolltemplate-arcane .bigresult .inlinerollresult {
+.sheet-rolltemplate-arcane .sheet-bigresult .inlinerollresult {
     vertical-align:-5px;
 }
 
@@ -1935,63 +1935,63 @@ div.welcome {
 /* CSS class name have been renamed to isolate them from the rest of the sheet */
 
 /* Smaller margins - remove these if you want the huge default left margin */
-.rolltemplate-custom {
+.sheet-rolltemplate-custom {
     margin-left: -37px;
 }
-.withoutavatars .rolltemplate-custom {
+.withoutavatars .sheet-rolltemplate-custom {
     margin-left: -7px;
 }
 
-.rolltemplate-custom .crt-container {
+.sheet-rolltemplate-custom .crt-container {
     border: 1px solid;
     /* by default, the border is the same color as the header. You can change  here, e.g. to black */
     border-color: var(--header-bg-color);
 }
 
 /* Header formatting - title and subtitle */
-.rolltemplate-custom .crt-header {
+.sheet-rolltemplate-custom .crt-header {
     background-color: var(--header-bg-color) ! important;
     /* change text-align to center to center the header text */
     text-align: center;
     color: var(--header-text-color) ! important;
     padding: 5px;
 }
-.rolltemplate-custom .crt-title {
+.sheet-rolltemplate-custom .crt-title {
     font-size:1.1em;
 }
-.rolltemplate-custom .crt-subtitle {
+.sheet-rolltemplate-custom .crt-subtitle {
     font-size:.9em;
 }
-.rolltemplate-custom .crt-container .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container .inlinerollresult {
     background-color: var(--roll-bg-color) ! important;
     border-color: var(--roll-bg-color) ! important;
     color: var(--roll-text-color) ! important;
 }
-.rolltemplate-custom .crt-container a {
+.sheet-rolltemplate-custom .crt-container a {
     background-color: var(--button-bg-color) ! important;
     color: var(--button-text-color) ! important;
 }
 
 /* example colors */
-.rolltemplate-custom .crt-container {
+.sheet-rolltemplate-custom .crt-container {
     /*  is the default color */
     --header-bg-color: rgba(112,32,130,1);
     --header-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container .inlinerollresult {
     --roll-bg-color: #FEF68E;
     --roll-text-color: #000;
 }
-.rolltemplate-custom .crt-container a {
+.sheet-rolltemplate-custom .crt-container a {
     --button-bg-color: #ce0f69;
     --button-text-color: #FFF;
 }
 
 /*
-.rolltemplate-custom .crt-container.crt-color-red {
+.sheet-rolltemplate-custom .crt-container.crt-color-red {
     --header-bg-color: #F00;
 }
-.rolltemplate-custom .container.color-green {
+.sheet-rolltemplate-custom .container.color-green {
     --header-bg-color: #0F0;
     --header-text-color: #000;
 }
@@ -2002,1571 +2002,1571 @@ Use python integration to support all CSS v3 colors
 The replacement is in a comment and will de-comment itself
 
 */
-.rolltemplate-custom .crt-container.crt-color-aliceblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-aliceblue {
     --header-bg-color: #f0f8ff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-aliceblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-aliceblue .inlinerollresult {
     --roll-bg-color: #f0f8ff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-aliceblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-aliceblue a {
     --button-bg-color: #f0f8ff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-antiquewhite {
+.sheet-rolltemplate-custom .crt-container.crt-color-antiquewhite {
     --header-bg-color: #faebd7;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-antiquewhite .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-antiquewhite .inlinerollresult {
     --roll-bg-color: #faebd7;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-antiquewhite a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-antiquewhite a {
     --button-bg-color: #faebd7;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-aqua {
+.sheet-rolltemplate-custom .crt-container.crt-color-aqua {
     --header-bg-color: #00ffff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-aqua .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-aqua .inlinerollresult {
     --roll-bg-color: #00ffff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-aqua a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-aqua a {
     --button-bg-color: #00ffff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-aquamarine {
+.sheet-rolltemplate-custom .crt-container.crt-color-aquamarine {
     --header-bg-color: #7fffd4;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-aquamarine .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-aquamarine .inlinerollresult {
     --roll-bg-color: #7fffd4;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-aquamarine a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-aquamarine a {
     --button-bg-color: #7fffd4;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-azure {
+.sheet-rolltemplate-custom .crt-container.crt-color-azure {
     --header-bg-color: #f0ffff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-azure .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-azure .inlinerollresult {
     --roll-bg-color: #f0ffff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-azure a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-azure a {
     --button-bg-color: #f0ffff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-beige {
+.sheet-rolltemplate-custom .crt-container.crt-color-beige {
     --header-bg-color: #f5f5dc;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-beige .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-beige .inlinerollresult {
     --roll-bg-color: #f5f5dc;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-beige a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-beige a {
     --button-bg-color: #f5f5dc;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-bisque {
+.sheet-rolltemplate-custom .crt-container.crt-color-bisque {
     --header-bg-color: #ffe4c4;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-bisque .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-bisque .inlinerollresult {
     --roll-bg-color: #ffe4c4;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-bisque a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-bisque a {
     --button-bg-color: #ffe4c4;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-black {
+.sheet-rolltemplate-custom .crt-container.crt-color-black {
     --header-bg-color: #000000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-black .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-black .inlinerollresult {
     --roll-bg-color: #000000;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-black a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-black a {
     --button-bg-color: #000000;
 }
-.rolltemplate-custom .crt-container.crt-color-blanchedalmond {
+.sheet-rolltemplate-custom .crt-container.crt-color-blanchedalmond {
     --header-bg-color: #ffebcd;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-blanchedalmond .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-blanchedalmond .inlinerollresult {
     --roll-bg-color: #ffebcd;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-blanchedalmond a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-blanchedalmond a {
     --button-bg-color: #ffebcd;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-blue {
+.sheet-rolltemplate-custom .crt-container.crt-color-blue {
     --header-bg-color: #0000ff;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-blue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-blue .inlinerollresult {
     --roll-bg-color: #0000ff;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-blue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-blue a {
     --button-bg-color: #0000ff;
 }
-.rolltemplate-custom .crt-container.crt-color-blueviolet {
+.sheet-rolltemplate-custom .crt-container.crt-color-blueviolet {
     --header-bg-color: #8a2be2;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-blueviolet .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-blueviolet .inlinerollresult {
     --roll-bg-color: #8a2be2;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-blueviolet a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-blueviolet a {
     --button-bg-color: #8a2be2;
 }
-.rolltemplate-custom .crt-container.crt-color-brown {
+.sheet-rolltemplate-custom .crt-container.crt-color-brown {
     --header-bg-color: #a52a2a;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-brown .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-brown .inlinerollresult {
     --roll-bg-color: #a52a2a;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-brown a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-brown a {
     --button-bg-color: #a52a2a;
 }
-.rolltemplate-custom .crt-container.crt-color-burlywood {
+.sheet-rolltemplate-custom .crt-container.crt-color-burlywood {
     --header-bg-color: #deb887;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-burlywood .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-burlywood .inlinerollresult {
     --roll-bg-color: #deb887;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-burlywood a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-burlywood a {
     --button-bg-color: #deb887;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-cadetblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-cadetblue {
     --header-bg-color: #5f9ea0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-cadetblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-cadetblue .inlinerollresult {
     --roll-bg-color: #5f9ea0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-cadetblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-cadetblue a {
     --button-bg-color: #5f9ea0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-chartreuse {
+.sheet-rolltemplate-custom .crt-container.crt-color-chartreuse {
     --header-bg-color: #7fff00;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-chartreuse .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-chartreuse .inlinerollresult {
     --roll-bg-color: #7fff00;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-chartreuse a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-chartreuse a {
     --button-bg-color: #7fff00;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-chocolate {
+.sheet-rolltemplate-custom .crt-container.crt-color-chocolate {
     --header-bg-color: #d2691e;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-chocolate .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-chocolate .inlinerollresult {
     --roll-bg-color: #d2691e;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-chocolate a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-chocolate a {
     --button-bg-color: #d2691e;
 }
-.rolltemplate-custom .crt-container.crt-color-coral {
+.sheet-rolltemplate-custom .crt-container.crt-color-coral {
     --header-bg-color: #ff7f50;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-coral .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-coral .inlinerollresult {
     --roll-bg-color: #ff7f50;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-coral a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-coral a {
     --button-bg-color: #ff7f50;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-cornflowerblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-cornflowerblue {
     --header-bg-color: #6495ed;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-cornflowerblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-cornflowerblue .inlinerollresult {
     --roll-bg-color: #6495ed;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-cornflowerblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-cornflowerblue a {
     --button-bg-color: #6495ed;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-cornsilk {
+.sheet-rolltemplate-custom .crt-container.crt-color-cornsilk {
     --header-bg-color: #fff8dc;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-cornsilk .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-cornsilk .inlinerollresult {
     --roll-bg-color: #fff8dc;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-cornsilk a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-cornsilk a {
     --button-bg-color: #fff8dc;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-crimson {
+.sheet-rolltemplate-custom .crt-container.crt-color-crimson {
     --header-bg-color: #dc143c;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-crimson .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-crimson .inlinerollresult {
     --roll-bg-color: #dc143c;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-crimson a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-crimson a {
     --button-bg-color: #dc143c;
 }
-.rolltemplate-custom .crt-container.crt-color-cyan {
+.sheet-rolltemplate-custom .crt-container.crt-color-cyan {
     --header-bg-color: #00ffff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-cyan .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-cyan .inlinerollresult {
     --roll-bg-color: #00ffff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-cyan a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-cyan a {
     --button-bg-color: #00ffff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkblue {
     --header-bg-color: #00008b;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkblue .inlinerollresult {
     --roll-bg-color: #00008b;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkblue a {
     --button-bg-color: #00008b;
 }
-.rolltemplate-custom .crt-container.crt-color-darkcyan {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkcyan {
     --header-bg-color: #008b8b;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkcyan .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkcyan .inlinerollresult {
     --roll-bg-color: #008b8b;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkcyan a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkcyan a {
     --button-bg-color: #008b8b;
 }
-.rolltemplate-custom .crt-container.crt-color-darkgoldenrod {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkgoldenrod {
     --header-bg-color: #b8860b;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkgoldenrod .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkgoldenrod .inlinerollresult {
     --roll-bg-color: #b8860b;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkgoldenrod a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkgoldenrod a {
     --button-bg-color: #b8860b;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkgray {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkgray {
     --header-bg-color: #a9a9a9;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkgray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkgray .inlinerollresult {
     --roll-bg-color: #a9a9a9;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkgray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkgray a {
     --button-bg-color: #a9a9a9;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkgreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkgreen {
     --header-bg-color: #006400;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkgreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkgreen .inlinerollresult {
     --roll-bg-color: #006400;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkgreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkgreen a {
     --button-bg-color: #006400;
 }
-.rolltemplate-custom .crt-container.crt-color-darkgrey {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkgrey {
     --header-bg-color: #a9a9a9;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkgrey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkgrey .inlinerollresult {
     --roll-bg-color: #a9a9a9;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkgrey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkgrey a {
     --button-bg-color: #a9a9a9;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkkhaki {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkkhaki {
     --header-bg-color: #bdb76b;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkkhaki .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkkhaki .inlinerollresult {
     --roll-bg-color: #bdb76b;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkkhaki a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkkhaki a {
     --button-bg-color: #bdb76b;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkmagenta {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkmagenta {
     --header-bg-color: #8b008b;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkmagenta .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkmagenta .inlinerollresult {
     --roll-bg-color: #8b008b;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkmagenta a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkmagenta a {
     --button-bg-color: #8b008b;
 }
-.rolltemplate-custom .crt-container.crt-color-darkolivegreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkolivegreen {
     --header-bg-color: #556b2f;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkolivegreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkolivegreen .inlinerollresult {
     --roll-bg-color: #556b2f;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkolivegreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkolivegreen a {
     --button-bg-color: #556b2f;
 }
-.rolltemplate-custom .crt-container.crt-color-darkorange {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkorange {
     --header-bg-color: #ff8c00;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkorange .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkorange .inlinerollresult {
     --roll-bg-color: #ff8c00;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkorange a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkorange a {
     --button-bg-color: #ff8c00;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkorchid {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkorchid {
     --header-bg-color: #9932cc;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkorchid .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkorchid .inlinerollresult {
     --roll-bg-color: #9932cc;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkorchid a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkorchid a {
     --button-bg-color: #9932cc;
 }
-.rolltemplate-custom .crt-container.crt-color-darkred {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkred {
     --header-bg-color: #8b0000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkred .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkred .inlinerollresult {
     --roll-bg-color: #8b0000;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkred a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkred a {
     --button-bg-color: #8b0000;
 }
-.rolltemplate-custom .crt-container.crt-color-darksalmon {
+.sheet-rolltemplate-custom .crt-container.crt-color-darksalmon {
     --header-bg-color: #e9967a;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darksalmon .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darksalmon .inlinerollresult {
     --roll-bg-color: #e9967a;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darksalmon a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darksalmon a {
     --button-bg-color: #e9967a;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkseagreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkseagreen {
     --header-bg-color: #8fbc8f;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkseagreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkseagreen .inlinerollresult {
     --roll-bg-color: #8fbc8f;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkseagreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkseagreen a {
     --button-bg-color: #8fbc8f;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkslateblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkslateblue {
     --header-bg-color: #483d8b;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkslateblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkslateblue .inlinerollresult {
     --roll-bg-color: #483d8b;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkslateblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkslateblue a {
     --button-bg-color: #483d8b;
 }
-.rolltemplate-custom .crt-container.crt-color-darkslategray {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkslategray {
     --header-bg-color: #2f4f4f;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkslategray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkslategray .inlinerollresult {
     --roll-bg-color: #2f4f4f;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkslategray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkslategray a {
     --button-bg-color: #2f4f4f;
 }
-.rolltemplate-custom .crt-container.crt-color-darkslategrey {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkslategrey {
     --header-bg-color: #2f4f4f;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkslategrey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkslategrey .inlinerollresult {
     --roll-bg-color: #2f4f4f;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkslategrey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkslategrey a {
     --button-bg-color: #2f4f4f;
 }
-.rolltemplate-custom .crt-container.crt-color-darkturquoise {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkturquoise {
     --header-bg-color: #00ced1;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkturquoise .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkturquoise .inlinerollresult {
     --roll-bg-color: #00ced1;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkturquoise a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkturquoise a {
     --button-bg-color: #00ced1;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-darkviolet {
+.sheet-rolltemplate-custom .crt-container.crt-color-darkviolet {
     --header-bg-color: #9400d3;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-darkviolet .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-darkviolet .inlinerollresult {
     --roll-bg-color: #9400d3;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-darkviolet a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-darkviolet a {
     --button-bg-color: #9400d3;
 }
-.rolltemplate-custom .crt-container.crt-color-deeppink {
+.sheet-rolltemplate-custom .crt-container.crt-color-deeppink {
     --header-bg-color: #ff1493;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-deeppink .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-deeppink .inlinerollresult {
     --roll-bg-color: #ff1493;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-deeppink a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-deeppink a {
     --button-bg-color: #ff1493;
 }
-.rolltemplate-custom .crt-container.crt-color-deepskyblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-deepskyblue {
     --header-bg-color: #00bfff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-deepskyblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-deepskyblue .inlinerollresult {
     --roll-bg-color: #00bfff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-deepskyblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-deepskyblue a {
     --button-bg-color: #00bfff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-dimgray {
+.sheet-rolltemplate-custom .crt-container.crt-color-dimgray {
     --header-bg-color: #696969;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-dimgray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-dimgray .inlinerollresult {
     --roll-bg-color: #696969;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-dimgray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-dimgray a {
     --button-bg-color: #696969;
 }
-.rolltemplate-custom .crt-container.crt-color-dimgrey {
+.sheet-rolltemplate-custom .crt-container.crt-color-dimgrey {
     --header-bg-color: #696969;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-dimgrey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-dimgrey .inlinerollresult {
     --roll-bg-color: #696969;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-dimgrey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-dimgrey a {
     --button-bg-color: #696969;
 }
-.rolltemplate-custom .crt-container.crt-color-dodgerblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-dodgerblue {
     --header-bg-color: #1e90ff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-dodgerblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-dodgerblue .inlinerollresult {
     --roll-bg-color: #1e90ff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-dodgerblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-dodgerblue a {
     --button-bg-color: #1e90ff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-firebrick {
+.sheet-rolltemplate-custom .crt-container.crt-color-firebrick {
     --header-bg-color: #b22222;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-firebrick .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-firebrick .inlinerollresult {
     --roll-bg-color: #b22222;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-firebrick a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-firebrick a {
     --button-bg-color: #b22222;
 }
-.rolltemplate-custom .crt-container.crt-color-floralwhite {
+.sheet-rolltemplate-custom .crt-container.crt-color-floralwhite {
     --header-bg-color: #fffaf0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-floralwhite .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-floralwhite .inlinerollresult {
     --roll-bg-color: #fffaf0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-floralwhite a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-floralwhite a {
     --button-bg-color: #fffaf0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-forestgreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-forestgreen {
     --header-bg-color: #228b22;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-forestgreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-forestgreen .inlinerollresult {
     --roll-bg-color: #228b22;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-forestgreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-forestgreen a {
     --button-bg-color: #228b22;
 }
-.rolltemplate-custom .crt-container.crt-color-fuchsia {
+.sheet-rolltemplate-custom .crt-container.crt-color-fuchsia {
     --header-bg-color: #ff00ff;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-fuchsia .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-fuchsia .inlinerollresult {
     --roll-bg-color: #ff00ff;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-fuchsia a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-fuchsia a {
     --button-bg-color: #ff00ff;
 }
-.rolltemplate-custom .crt-container.crt-color-gainsboro {
+.sheet-rolltemplate-custom .crt-container.crt-color-gainsboro {
     --header-bg-color: #dcdcdc;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-gainsboro .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-gainsboro .inlinerollresult {
     --roll-bg-color: #dcdcdc;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-gainsboro a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-gainsboro a {
     --button-bg-color: #dcdcdc;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-ghostwhite {
+.sheet-rolltemplate-custom .crt-container.crt-color-ghostwhite {
     --header-bg-color: #f8f8ff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-ghostwhite .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-ghostwhite .inlinerollresult {
     --roll-bg-color: #f8f8ff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-ghostwhite a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-ghostwhite a {
     --button-bg-color: #f8f8ff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-gold {
+.sheet-rolltemplate-custom .crt-container.crt-color-gold {
     --header-bg-color: #ffd700;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-gold .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-gold .inlinerollresult {
     --roll-bg-color: #ffd700;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-gold a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-gold a {
     --button-bg-color: #ffd700;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-goldenrod {
+.sheet-rolltemplate-custom .crt-container.crt-color-goldenrod {
     --header-bg-color: #daa520;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-goldenrod .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-goldenrod .inlinerollresult {
     --roll-bg-color: #daa520;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-goldenrod a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-goldenrod a {
     --button-bg-color: #daa520;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-gray {
+.sheet-rolltemplate-custom .crt-container.crt-color-gray {
     --header-bg-color: #808080;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-gray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-gray .inlinerollresult {
     --roll-bg-color: #808080;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-gray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-gray a {
     --button-bg-color: #808080;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-green {
+.sheet-rolltemplate-custom .crt-container.crt-color-green {
     --header-bg-color: #008000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-green .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-green .inlinerollresult {
     --roll-bg-color: #008000;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-green a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-green a {
     --button-bg-color: #008000;
 }
-.rolltemplate-custom .crt-container.crt-color-greenyellow {
+.sheet-rolltemplate-custom .crt-container.crt-color-greenyellow {
     --header-bg-color: #adff2f;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-greenyellow .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-greenyellow .inlinerollresult {
     --roll-bg-color: #adff2f;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-greenyellow a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-greenyellow a {
     --button-bg-color: #adff2f;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-grey {
+.sheet-rolltemplate-custom .crt-container.crt-color-grey {
     --header-bg-color: #808080;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-grey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-grey .inlinerollresult {
     --roll-bg-color: #808080;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-grey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-grey a {
     --button-bg-color: #808080;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-honeydew {
+.sheet-rolltemplate-custom .crt-container.crt-color-honeydew {
     --header-bg-color: #f0fff0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-honeydew .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-honeydew .inlinerollresult {
     --roll-bg-color: #f0fff0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-honeydew a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-honeydew a {
     --button-bg-color: #f0fff0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-hotpink {
+.sheet-rolltemplate-custom .crt-container.crt-color-hotpink {
     --header-bg-color: #ff69b4;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-hotpink .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-hotpink .inlinerollresult {
     --roll-bg-color: #ff69b4;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-hotpink a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-hotpink a {
     --button-bg-color: #ff69b4;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-indianred {
+.sheet-rolltemplate-custom .crt-container.crt-color-indianred {
     --header-bg-color: #cd5c5c;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-indianred .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-indianred .inlinerollresult {
     --roll-bg-color: #cd5c5c;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-indianred a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-indianred a {
     --button-bg-color: #cd5c5c;
 }
-.rolltemplate-custom .crt-container.crt-color-indigo {
+.sheet-rolltemplate-custom .crt-container.crt-color-indigo {
     --header-bg-color: #4b0082;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-indigo .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-indigo .inlinerollresult {
     --roll-bg-color: #4b0082;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-indigo a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-indigo a {
     --button-bg-color: #4b0082;
 }
-.rolltemplate-custom .crt-container.crt-color-ivory {
+.sheet-rolltemplate-custom .crt-container.crt-color-ivory {
     --header-bg-color: #fffff0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-ivory .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-ivory .inlinerollresult {
     --roll-bg-color: #fffff0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-ivory a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-ivory a {
     --button-bg-color: #fffff0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-khaki {
+.sheet-rolltemplate-custom .crt-container.crt-color-khaki {
     --header-bg-color: #f0e68c;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-khaki .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-khaki .inlinerollresult {
     --roll-bg-color: #f0e68c;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-khaki a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-khaki a {
     --button-bg-color: #f0e68c;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lavender {
+.sheet-rolltemplate-custom .crt-container.crt-color-lavender {
     --header-bg-color: #e6e6fa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lavender .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lavender .inlinerollresult {
     --roll-bg-color: #e6e6fa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lavender a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lavender a {
     --button-bg-color: #e6e6fa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lavenderblush {
+.sheet-rolltemplate-custom .crt-container.crt-color-lavenderblush {
     --header-bg-color: #fff0f5;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lavenderblush .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lavenderblush .inlinerollresult {
     --roll-bg-color: #fff0f5;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lavenderblush a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lavenderblush a {
     --button-bg-color: #fff0f5;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lawngreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-lawngreen {
     --header-bg-color: #7cfc00;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lawngreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lawngreen .inlinerollresult {
     --roll-bg-color: #7cfc00;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lawngreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lawngreen a {
     --button-bg-color: #7cfc00;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lemonchiffon {
+.sheet-rolltemplate-custom .crt-container.crt-color-lemonchiffon {
     --header-bg-color: #fffacd;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lemonchiffon .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lemonchiffon .inlinerollresult {
     --roll-bg-color: #fffacd;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lemonchiffon a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lemonchiffon a {
     --button-bg-color: #fffacd;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightblue {
     --header-bg-color: #add8e6;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightblue .inlinerollresult {
     --roll-bg-color: #add8e6;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightblue a {
     --button-bg-color: #add8e6;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightcoral {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightcoral {
     --header-bg-color: #f08080;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightcoral .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightcoral .inlinerollresult {
     --roll-bg-color: #f08080;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightcoral a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightcoral a {
     --button-bg-color: #f08080;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightcyan {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightcyan {
     --header-bg-color: #e0ffff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightcyan .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightcyan .inlinerollresult {
     --roll-bg-color: #e0ffff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightcyan a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightcyan a {
     --button-bg-color: #e0ffff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightgoldenrodyellow {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightgoldenrodyellow {
     --header-bg-color: #fafad2;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightgoldenrodyellow .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightgoldenrodyellow .inlinerollresult {
     --roll-bg-color: #fafad2;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightgoldenrodyellow a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightgoldenrodyellow a {
     --button-bg-color: #fafad2;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightgray {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightgray {
     --header-bg-color: #d3d3d3;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightgray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightgray .inlinerollresult {
     --roll-bg-color: #d3d3d3;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightgray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightgray a {
     --button-bg-color: #d3d3d3;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightgreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightgreen {
     --header-bg-color: #90ee90;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightgreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightgreen .inlinerollresult {
     --roll-bg-color: #90ee90;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightgreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightgreen a {
     --button-bg-color: #90ee90;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightgrey {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightgrey {
     --header-bg-color: #d3d3d3;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightgrey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightgrey .inlinerollresult {
     --roll-bg-color: #d3d3d3;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightgrey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightgrey a {
     --button-bg-color: #d3d3d3;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightpink {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightpink {
     --header-bg-color: #ffb6c1;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightpink .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightpink .inlinerollresult {
     --roll-bg-color: #ffb6c1;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightpink a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightpink a {
     --button-bg-color: #ffb6c1;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightsalmon {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightsalmon {
     --header-bg-color: #ffa07a;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightsalmon .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightsalmon .inlinerollresult {
     --roll-bg-color: #ffa07a;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightsalmon a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightsalmon a {
     --button-bg-color: #ffa07a;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightseagreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightseagreen {
     --header-bg-color: #20b2aa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightseagreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightseagreen .inlinerollresult {
     --roll-bg-color: #20b2aa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightseagreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightseagreen a {
     --button-bg-color: #20b2aa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightskyblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightskyblue {
     --header-bg-color: #87cefa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightskyblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightskyblue .inlinerollresult {
     --roll-bg-color: #87cefa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightskyblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightskyblue a {
     --button-bg-color: #87cefa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightslategray {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightslategray {
     --header-bg-color: #778899;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightslategray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightslategray .inlinerollresult {
     --roll-bg-color: #778899;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightslategray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightslategray a {
     --button-bg-color: #778899;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightslategrey {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightslategrey {
     --header-bg-color: #778899;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightslategrey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightslategrey .inlinerollresult {
     --roll-bg-color: #778899;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightslategrey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightslategrey a {
     --button-bg-color: #778899;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightsteelblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightsteelblue {
     --header-bg-color: #b0c4de;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightsteelblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightsteelblue .inlinerollresult {
     --roll-bg-color: #b0c4de;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightsteelblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightsteelblue a {
     --button-bg-color: #b0c4de;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lightyellow {
+.sheet-rolltemplate-custom .crt-container.crt-color-lightyellow {
     --header-bg-color: #ffffe0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lightyellow .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lightyellow .inlinerollresult {
     --roll-bg-color: #ffffe0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lightyellow a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lightyellow a {
     --button-bg-color: #ffffe0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-lime {
+.sheet-rolltemplate-custom .crt-container.crt-color-lime {
     --header-bg-color: #00ff00;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-lime .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-lime .inlinerollresult {
     --roll-bg-color: #00ff00;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-lime a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-lime a {
     --button-bg-color: #00ff00;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-limegreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-limegreen {
     --header-bg-color: #32cd32;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-limegreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-limegreen .inlinerollresult {
     --roll-bg-color: #32cd32;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-limegreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-limegreen a {
     --button-bg-color: #32cd32;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-linen {
+.sheet-rolltemplate-custom .crt-container.crt-color-linen {
     --header-bg-color: #faf0e6;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-linen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-linen .inlinerollresult {
     --roll-bg-color: #faf0e6;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-linen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-linen a {
     --button-bg-color: #faf0e6;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-magenta {
+.sheet-rolltemplate-custom .crt-container.crt-color-magenta {
     --header-bg-color: #ff00ff;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-magenta .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-magenta .inlinerollresult {
     --roll-bg-color: #ff00ff;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-magenta a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-magenta a {
     --button-bg-color: #ff00ff;
 }
-.rolltemplate-custom .crt-container.crt-color-maroon {
+.sheet-rolltemplate-custom .crt-container.crt-color-maroon {
     --header-bg-color: #800000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-maroon .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-maroon .inlinerollresult {
     --roll-bg-color: #800000;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-maroon a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-maroon a {
     --button-bg-color: #800000;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumaquamarine {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumaquamarine {
     --header-bg-color: #66cdaa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumaquamarine .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumaquamarine .inlinerollresult {
     --roll-bg-color: #66cdaa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumaquamarine a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumaquamarine a {
     --button-bg-color: #66cdaa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumblue {
     --header-bg-color: #0000cd;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumblue .inlinerollresult {
     --roll-bg-color: #0000cd;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumblue a {
     --button-bg-color: #0000cd;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumorchid {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumorchid {
     --header-bg-color: #ba55d3;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumorchid .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumorchid .inlinerollresult {
     --roll-bg-color: #ba55d3;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumorchid a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumorchid a {
     --button-bg-color: #ba55d3;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumpurple {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumpurple {
     --header-bg-color: #9370db;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumpurple .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumpurple .inlinerollresult {
     --roll-bg-color: #9370db;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumpurple a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumpurple a {
     --button-bg-color: #9370db;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumseagreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumseagreen {
     --header-bg-color: #3cb371;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumseagreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumseagreen .inlinerollresult {
     --roll-bg-color: #3cb371;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumseagreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumseagreen a {
     --button-bg-color: #3cb371;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumslateblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumslateblue {
     --header-bg-color: #7b68ee;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumslateblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumslateblue .inlinerollresult {
     --roll-bg-color: #7b68ee;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumslateblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumslateblue a {
     --button-bg-color: #7b68ee;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumspringgreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumspringgreen {
     --header-bg-color: #00fa9a;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumspringgreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumspringgreen .inlinerollresult {
     --roll-bg-color: #00fa9a;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumspringgreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumspringgreen a {
     --button-bg-color: #00fa9a;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumturquoise {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumturquoise {
     --header-bg-color: #48d1cc;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumturquoise .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumturquoise .inlinerollresult {
     --roll-bg-color: #48d1cc;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumturquoise a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumturquoise a {
     --button-bg-color: #48d1cc;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-mediumvioletred {
+.sheet-rolltemplate-custom .crt-container.crt-color-mediumvioletred {
     --header-bg-color: #c71585;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mediumvioletred .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mediumvioletred .inlinerollresult {
     --roll-bg-color: #c71585;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mediumvioletred a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mediumvioletred a {
     --button-bg-color: #c71585;
 }
-.rolltemplate-custom .crt-container.crt-color-midnightblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-midnightblue {
     --header-bg-color: #191970;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-midnightblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-midnightblue .inlinerollresult {
     --roll-bg-color: #191970;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-midnightblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-midnightblue a {
     --button-bg-color: #191970;
 }
-.rolltemplate-custom .crt-container.crt-color-mintcream {
+.sheet-rolltemplate-custom .crt-container.crt-color-mintcream {
     --header-bg-color: #f5fffa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mintcream .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mintcream .inlinerollresult {
     --roll-bg-color: #f5fffa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mintcream a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mintcream a {
     --button-bg-color: #f5fffa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-mistyrose {
+.sheet-rolltemplate-custom .crt-container.crt-color-mistyrose {
     --header-bg-color: #ffe4e1;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-mistyrose .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-mistyrose .inlinerollresult {
     --roll-bg-color: #ffe4e1;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-mistyrose a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-mistyrose a {
     --button-bg-color: #ffe4e1;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-moccasin {
+.sheet-rolltemplate-custom .crt-container.crt-color-moccasin {
     --header-bg-color: #ffe4b5;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-moccasin .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-moccasin .inlinerollresult {
     --roll-bg-color: #ffe4b5;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-moccasin a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-moccasin a {
     --button-bg-color: #ffe4b5;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-navajowhite {
+.sheet-rolltemplate-custom .crt-container.crt-color-navajowhite {
     --header-bg-color: #ffdead;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-navajowhite .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-navajowhite .inlinerollresult {
     --roll-bg-color: #ffdead;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-navajowhite a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-navajowhite a {
     --button-bg-color: #ffdead;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-navy {
+.sheet-rolltemplate-custom .crt-container.crt-color-navy {
     --header-bg-color: #000080;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-navy .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-navy .inlinerollresult {
     --roll-bg-color: #000080;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-navy a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-navy a {
     --button-bg-color: #000080;
 }
-.rolltemplate-custom .crt-container.crt-color-oldlace {
+.sheet-rolltemplate-custom .crt-container.crt-color-oldlace {
     --header-bg-color: #fdf5e6;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-oldlace .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-oldlace .inlinerollresult {
     --roll-bg-color: #fdf5e6;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-oldlace a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-oldlace a {
     --button-bg-color: #fdf5e6;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-olive {
+.sheet-rolltemplate-custom .crt-container.crt-color-olive {
     --header-bg-color: #808000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-olive .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-olive .inlinerollresult {
     --roll-bg-color: #808000;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-olive a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-olive a {
     --button-bg-color: #808000;
 }
-.rolltemplate-custom .crt-container.crt-color-olivedrab {
+.sheet-rolltemplate-custom .crt-container.crt-color-olivedrab {
     --header-bg-color: #6b8e23;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-olivedrab .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-olivedrab .inlinerollresult {
     --roll-bg-color: #6b8e23;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-olivedrab a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-olivedrab a {
     --button-bg-color: #6b8e23;
 }
-.rolltemplate-custom .crt-container.crt-color-orange {
+.sheet-rolltemplate-custom .crt-container.crt-color-orange {
     --header-bg-color: #ffa500;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-orange .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-orange .inlinerollresult {
     --roll-bg-color: #ffa500;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-orange a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-orange a {
     --button-bg-color: #ffa500;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-orangered {
+.sheet-rolltemplate-custom .crt-container.crt-color-orangered {
     --header-bg-color: #ff4500;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-orangered .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-orangered .inlinerollresult {
     --roll-bg-color: #ff4500;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-orangered a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-orangered a {
     --button-bg-color: #ff4500;
 }
-.rolltemplate-custom .crt-container.crt-color-orchid {
+.sheet-rolltemplate-custom .crt-container.crt-color-orchid {
     --header-bg-color: #da70d6;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-orchid .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-orchid .inlinerollresult {
     --roll-bg-color: #da70d6;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-orchid a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-orchid a {
     --button-bg-color: #da70d6;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-palegoldenrod {
+.sheet-rolltemplate-custom .crt-container.crt-color-palegoldenrod {
     --header-bg-color: #eee8aa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-palegoldenrod .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-palegoldenrod .inlinerollresult {
     --roll-bg-color: #eee8aa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-palegoldenrod a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-palegoldenrod a {
     --button-bg-color: #eee8aa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-palegreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-palegreen {
     --header-bg-color: #98fb98;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-palegreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-palegreen .inlinerollresult {
     --roll-bg-color: #98fb98;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-palegreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-palegreen a {
     --button-bg-color: #98fb98;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-paleturquoise {
+.sheet-rolltemplate-custom .crt-container.crt-color-paleturquoise {
     --header-bg-color: #afeeee;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-paleturquoise .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-paleturquoise .inlinerollresult {
     --roll-bg-color: #afeeee;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-paleturquoise a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-paleturquoise a {
     --button-bg-color: #afeeee;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-palevioletred {
+.sheet-rolltemplate-custom .crt-container.crt-color-palevioletred {
     --header-bg-color: #db7093;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-palevioletred .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-palevioletred .inlinerollresult {
     --roll-bg-color: #db7093;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-palevioletred a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-palevioletred a {
     --button-bg-color: #db7093;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-papayawhip {
+.sheet-rolltemplate-custom .crt-container.crt-color-papayawhip {
     --header-bg-color: #ffefd5;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-papayawhip .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-papayawhip .inlinerollresult {
     --roll-bg-color: #ffefd5;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-papayawhip a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-papayawhip a {
     --button-bg-color: #ffefd5;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-peachpuff {
+.sheet-rolltemplate-custom .crt-container.crt-color-peachpuff {
     --header-bg-color: #ffdab9;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-peachpuff .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-peachpuff .inlinerollresult {
     --roll-bg-color: #ffdab9;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-peachpuff a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-peachpuff a {
     --button-bg-color: #ffdab9;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-peru {
+.sheet-rolltemplate-custom .crt-container.crt-color-peru {
     --header-bg-color: #cd853f;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-peru .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-peru .inlinerollresult {
     --roll-bg-color: #cd853f;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-peru a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-peru a {
     --button-bg-color: #cd853f;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-pink {
+.sheet-rolltemplate-custom .crt-container.crt-color-pink {
     --header-bg-color: #ffc0cb;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-pink .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-pink .inlinerollresult {
     --roll-bg-color: #ffc0cb;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-pink a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-pink a {
     --button-bg-color: #ffc0cb;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-plum {
+.sheet-rolltemplate-custom .crt-container.crt-color-plum {
     --header-bg-color: #dda0dd;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-plum .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-plum .inlinerollresult {
     --roll-bg-color: #dda0dd;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-plum a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-plum a {
     --button-bg-color: #dda0dd;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-powderblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-powderblue {
     --header-bg-color: #b0e0e6;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-powderblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-powderblue .inlinerollresult {
     --roll-bg-color: #b0e0e6;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-powderblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-powderblue a {
     --button-bg-color: #b0e0e6;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-purple {
+.sheet-rolltemplate-custom .crt-container.crt-color-purple {
     --header-bg-color: #800080;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-purple .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-purple .inlinerollresult {
     --roll-bg-color: #800080;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-purple a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-purple a {
     --button-bg-color: #800080;
 }
-.rolltemplate-custom .crt-container.crt-color-red {
+.sheet-rolltemplate-custom .crt-container.crt-color-red {
     --header-bg-color: #ff0000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-red .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-red .inlinerollresult {
     --roll-bg-color: #ff0000;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-red a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-red a {
     --button-bg-color: #ff0000;
 }
-.rolltemplate-custom .crt-container.crt-color-rosybrown {
+.sheet-rolltemplate-custom .crt-container.crt-color-rosybrown {
     --header-bg-color: #bc8f8f;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-rosybrown .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-rosybrown .inlinerollresult {
     --roll-bg-color: #bc8f8f;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-rosybrown a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-rosybrown a {
     --button-bg-color: #bc8f8f;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-royalblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-royalblue {
     --header-bg-color: #4169e1;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-royalblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-royalblue .inlinerollresult {
     --roll-bg-color: #4169e1;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-royalblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-royalblue a {
     --button-bg-color: #4169e1;
 }
-.rolltemplate-custom .crt-container.crt-color-saddlebrown {
+.sheet-rolltemplate-custom .crt-container.crt-color-saddlebrown {
     --header-bg-color: #8b4513;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-saddlebrown .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-saddlebrown .inlinerollresult {
     --roll-bg-color: #8b4513;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-saddlebrown a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-saddlebrown a {
     --button-bg-color: #8b4513;
 }
-.rolltemplate-custom .crt-container.crt-color-salmon {
+.sheet-rolltemplate-custom .crt-container.crt-color-salmon {
     --header-bg-color: #fa8072;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-salmon .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-salmon .inlinerollresult {
     --roll-bg-color: #fa8072;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-salmon a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-salmon a {
     --button-bg-color: #fa8072;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-sandybrown {
+.sheet-rolltemplate-custom .crt-container.crt-color-sandybrown {
     --header-bg-color: #f4a460;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-sandybrown .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-sandybrown .inlinerollresult {
     --roll-bg-color: #f4a460;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-sandybrown a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-sandybrown a {
     --button-bg-color: #f4a460;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-seagreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-seagreen {
     --header-bg-color: #2e8b57;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-seagreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-seagreen .inlinerollresult {
     --roll-bg-color: #2e8b57;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-seagreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-seagreen a {
     --button-bg-color: #2e8b57;
 }
-.rolltemplate-custom .crt-container.crt-color-seashell {
+.sheet-rolltemplate-custom .crt-container.crt-color-seashell {
     --header-bg-color: #fff5ee;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-seashell .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-seashell .inlinerollresult {
     --roll-bg-color: #fff5ee;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-seashell a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-seashell a {
     --button-bg-color: #fff5ee;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-sienna {
+.sheet-rolltemplate-custom .crt-container.crt-color-sienna {
     --header-bg-color: #a0522d;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-sienna .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-sienna .inlinerollresult {
     --roll-bg-color: #a0522d;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-sienna a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-sienna a {
     --button-bg-color: #a0522d;
 }
-.rolltemplate-custom .crt-container.crt-color-silver {
+.sheet-rolltemplate-custom .crt-container.crt-color-silver {
     --header-bg-color: #c0c0c0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-silver .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-silver .inlinerollresult {
     --roll-bg-color: #c0c0c0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-silver a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-silver a {
     --button-bg-color: #c0c0c0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-skyblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-skyblue {
     --header-bg-color: #87ceeb;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-skyblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-skyblue .inlinerollresult {
     --roll-bg-color: #87ceeb;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-skyblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-skyblue a {
     --button-bg-color: #87ceeb;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-slateblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-slateblue {
     --header-bg-color: #6a5acd;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-slateblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-slateblue .inlinerollresult {
     --roll-bg-color: #6a5acd;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-slateblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-slateblue a {
     --button-bg-color: #6a5acd;
 }
-.rolltemplate-custom .crt-container.crt-color-slategray {
+.sheet-rolltemplate-custom .crt-container.crt-color-slategray {
     --header-bg-color: #708090;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-slategray .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-slategray .inlinerollresult {
     --roll-bg-color: #708090;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-slategray a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-slategray a {
     --button-bg-color: #708090;
 }
-.rolltemplate-custom .crt-container.crt-color-slategrey {
+.sheet-rolltemplate-custom .crt-container.crt-color-slategrey {
     --header-bg-color: #708090;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-slategrey .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-slategrey .inlinerollresult {
     --roll-bg-color: #708090;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-slategrey a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-slategrey a {
     --button-bg-color: #708090;
 }
-.rolltemplate-custom .crt-container.crt-color-snow {
+.sheet-rolltemplate-custom .crt-container.crt-color-snow {
     --header-bg-color: #fffafa;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-snow .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-snow .inlinerollresult {
     --roll-bg-color: #fffafa;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-snow a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-snow a {
     --button-bg-color: #fffafa;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-springgreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-springgreen {
     --header-bg-color: #00ff7f;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-springgreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-springgreen .inlinerollresult {
     --roll-bg-color: #00ff7f;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-springgreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-springgreen a {
     --button-bg-color: #00ff7f;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-steelblue {
+.sheet-rolltemplate-custom .crt-container.crt-color-steelblue {
     --header-bg-color: #4682b4;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-steelblue .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-steelblue .inlinerollresult {
     --roll-bg-color: #4682b4;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-steelblue a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-steelblue a {
     --button-bg-color: #4682b4;
 }
-.rolltemplate-custom .crt-container.crt-color-tan {
+.sheet-rolltemplate-custom .crt-container.crt-color-tan {
     --header-bg-color: #d2b48c;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-tan .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-tan .inlinerollresult {
     --roll-bg-color: #d2b48c;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-tan a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-tan a {
     --button-bg-color: #d2b48c;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-teal {
+.sheet-rolltemplate-custom .crt-container.crt-color-teal {
     --header-bg-color: #008080;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-teal .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-teal .inlinerollresult {
     --roll-bg-color: #008080;
     --roll-text-color: #FFF;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-teal a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-teal a {
     --button-bg-color: #008080;
 }
-.rolltemplate-custom .crt-container.crt-color-thustle {
+.sheet-rolltemplate-custom .crt-container.crt-color-thustle {
     --header-bg-color: #d8bfd8;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-thustle .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-thustle .inlinerollresult {
     --roll-bg-color: #d8bfd8;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-thustle a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-thustle a {
     --button-bg-color: #d8bfd8;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-tomato {
+.sheet-rolltemplate-custom .crt-container.crt-color-tomato {
     --header-bg-color: #ff6347;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-tomato .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-tomato .inlinerollresult {
     --roll-bg-color: #ff6347;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-tomato a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-tomato a {
     --button-bg-color: #ff6347;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-turquoise {
+.sheet-rolltemplate-custom .crt-container.crt-color-turquoise {
     --header-bg-color: #40e0d0;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-turquoise .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-turquoise .inlinerollresult {
     --roll-bg-color: #40e0d0;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-turquoise a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-turquoise a {
     --button-bg-color: #40e0d0;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-violet {
+.sheet-rolltemplate-custom .crt-container.crt-color-violet {
     --header-bg-color: #ee82ee;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-violet .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-violet .inlinerollresult {
     --roll-bg-color: #ee82ee;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-violet a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-violet a {
     --button-bg-color: #ee82ee;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-wheat {
+.sheet-rolltemplate-custom .crt-container.crt-color-wheat {
     --header-bg-color: #f5deb3;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-wheat .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-wheat .inlinerollresult {
     --roll-bg-color: #f5deb3;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-wheat a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-wheat a {
     --button-bg-color: #f5deb3;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-white {
+.sheet-rolltemplate-custom .crt-container.crt-color-white {
     --header-bg-color: #ffffff;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-white .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-white .inlinerollresult {
     --roll-bg-color: #ffffff;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-white a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-white a {
     --button-bg-color: #ffffff;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-whitesmoke {
+.sheet-rolltemplate-custom .crt-container.crt-color-whitesmoke {
     --header-bg-color: #f5f5f5;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-whitesmoke .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-whitesmoke .inlinerollresult {
     --roll-bg-color: #f5f5f5;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-whitesmoke a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-whitesmoke a {
     --button-bg-color: #f5f5f5;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-yellow {
+.sheet-rolltemplate-custom .crt-container.crt-color-yellow {
     --header-bg-color: #ffff00;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-yellow .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-yellow .inlinerollresult {
     --roll-bg-color: #ffff00;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-yellow a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-yellow a {
     --button-bg-color: #ffff00;
     --button-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-color-yellowgreen {
+.sheet-rolltemplate-custom .crt-container.crt-color-yellowgreen {
     --header-bg-color: #9acd32;
     --header-text-color: #000;
 }
-.rolltemplate-custom .crt-container.crt-rlcolor-yellowgreen .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-yellowgreen .inlinerollresult {
     --roll-bg-color: #9acd32;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-yellowgreen a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-yellowgreen a {
     --button-bg-color: #9acd32;
     --button-text-color: #000;
 }
@@ -3576,16 +3576,16 @@ End of the python integration block
 */
 
 /* transparent for inline roll and ability button */
-.rolltemplate-custom .crt-container.crt-rlcolor-transparent .inlinerollresult {
+.sheet-rolltemplate-custom .crt-container.crt-rlcolor-transparent .inlinerollresult {
     --roll-bg-color: transparent;
 }
-.rolltemplate-custom .crt-container.crt-btcolor-transparent a {
+.sheet-rolltemplate-custom .crt-container.crt-btcolor-transparent a {
     --button-bg-color: transparent;
     --button-text-color: #000;
 }
 
 /* Allprops part */
-.rolltemplate-custom .crt-content {
+.sheet-rolltemplate-custom .crt-content {
     display: grid;
     background: #FFF;
     /* Header formatting - modify the column layout below */
@@ -3593,49 +3593,49 @@ End of the python integration block
     /* Line height to match default roll template */
     line-height:1.4em;
 }
-.rolltemplate-custom .crt-content > div {
+.sheet-rolltemplate-custom .crt-content > div {
     padding: 5px;
 }
 
 /* Left column */
-.rolltemplate-custom .crt-content .crt-key {
+.sheet-rolltemplate-custom .crt-content .crt-key {
     font-weight: bold;
     padding-right: 10px;
     text-align: right;
 }
 /* custom alignements */
-.rolltemplate-custom .crt-content .crt-key.crt-lalign-left {
+.sheet-rolltemplate-custom .crt-content .crt-key.crt-lalign-left {
     text-align: left;
 }
-.rolltemplate-custom .crt-content .crt-key.crt-lalign-center {
+.sheet-rolltemplate-custom .crt-content .crt-key.crt-lalign-center {
     text-align: center;
 }
-.rolltemplate-custom .crt-content .crt-key.crt-lalign-right {
+.sheet-rolltemplate-custom .crt-content .crt-key.crt-lalign-right {
     text-align: right;
 }
-.rolltemplate-custom .crt-content .crt-value.crt-ralign-left {
+.sheet-rolltemplate-custom .crt-content .crt-value.crt-ralign-left {
     text-align: left;
 }
-.rolltemplate-custom .crt-content .crt-value.crt-ralign-center {
+.sheet-rolltemplate-custom .crt-content .crt-value.crt-ralign-center {
     text-align: center;
 }
-.rolltemplate-custom .crt-content .crt-value.crt-ralign-right {
+.sheet-rolltemplate-custom .crt-content .crt-value.crt-ralign-right {
     text-align: right;
 }
 
 /* Empty rule, use  if you want to change the right column 
-.rolltemplate-custom .value {
+.sheet-rolltemplate-custom .value {
 }
 */
 
 /* Make even-numbered rows grey */
-.rolltemplate-custom .crt-content div:nth-of-type(4n+3),
-.rolltemplate-custom .crt-content div:nth-of-type(4n) {
+.sheet-rolltemplate-custom .crt-content div:nth-of-type(4n+3),
+.sheet-rolltemplate-custom .crt-content div:nth-of-type(4n) {
     background:#EEE;
 }
 
 /* Description field */
-.rolltemplate-custom .crt-desc {
+.sheet-rolltemplate-custom .crt-desc {
     grid-column: span 2;
     padding: 5px;
     text-align: center;
