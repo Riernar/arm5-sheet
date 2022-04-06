@@ -163,6 +163,131 @@
   -webkit-filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
           filter: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
 }
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem {
+  display: block;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-filter: drop-shadow(2px 4px 6px var(--col-indigo));
+          filter: drop-shadow(2px 4px 6px var(--col-indigo));
+  z-index: 1;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2)::before {
+  content: "";
+  border: 2px solid var(--col-malachite);
+  -webkit-clip-path: polygon(30px 0%, calc(100% - 50px) 0%, calc(100% - 50px) 100%, 30px 100%, 40px 50%);
+          clip-path: polygon(30px 0%, calc(100% - 50px) 0%, calc(100% - 50px) 100%, 30px 100%, 40px 50%);
+  position: absolute;
+  background: var(--img-azure);
+  background-position: top right;
+  background-repeat: no-repeat;
+  inset: 0;
+  width: 100%;
+  z-index: -1;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2)::after {
+  content: "";
+  border: 2px solid var(--col-malachite);
+  border-radius: 50px;
+  position: absolute;
+  background: var(--col-redOchre);
+  background: linear-gradient(-15deg, var(--col-leadWhite), transparent 40%), linear-gradient(180deg, var(--col-redOchre), transparent 40%), linear-gradient(to right, var(--col-leadWhite) 50%, transparent 100%);
+  background: linear-gradient(45deg, var(--col-greenearth) 50%, rgba(250, 250, 250, 0.2) 100%);
+  inset: 0;
+  left: -2px;
+  z-index: -2;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) button {
+  margin: 0px 3px 0 5px;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=text] {
+  background: none;
+  margin-left: 1rem;
+  font-family: var(--font-header);
+  color: var(--col-orpiment);
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=text]::first-letter {
+  color: var(--col-madderlake);
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  margin: 4px;
+  background: var(--img-quill);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox]:checked {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-filter: brightness(0.7) hue-rotate(160deg) saturate(1);
+          filter: brightness(0.7) hue-rotate(160deg) saturate(1);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-animation: wiggle 1s 1;
+          animation: wiggle 1s 1;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox]:focus {
+  outline: none;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) span.display_score {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-family: var(--font-body);
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+  color: var(--col-leadWhite);
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) span.display_score::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 35px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--col-azurite);
+  border: 3px solid var(--col-madderlake);
+  z-index: -1;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem:nth-of-type(even) > div:nth-of-type(2)::before {
+  background: var(--img-azure-lite);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem:nth-of-type(even) span.display_score {
+  left: -16px;
+  position: relative;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem:nth-of-type(even) span.display_score::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: calc(50% + 32px);
+  width: 35px;
+  height: 35px;
+  background: var(--img-tile);
+  background-size: cover;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -2;
+}
 .ui-dialog .tab-content .charsheet .c_check {
   position: relative;
   height: 15px;
@@ -383,131 +508,6 @@
   margin: 0;
   padding: 0;
   border: none;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem {
-  display: block;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-filter: drop-shadow(2px 4px 6px var(--col-indigo));
-          filter: drop-shadow(2px 4px 6px var(--col-indigo));
-  z-index: 1;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2)::before {
-  content: "";
-  border: 2px solid var(--col-malachite);
-  -webkit-clip-path: polygon(30px 0%, calc(100% - 50px) 0%, calc(100% - 50px) 100%, 30px 100%, 40px 50%);
-          clip-path: polygon(30px 0%, calc(100% - 50px) 0%, calc(100% - 50px) 100%, 30px 100%, 40px 50%);
-  position: absolute;
-  background: var(--img-azure);
-  background-position: top right;
-  background-repeat: no-repeat;
-  inset: 0;
-  width: 100%;
-  z-index: -1;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2)::after {
-  content: "";
-  border: 2px solid var(--col-malachite);
-  border-radius: 50px;
-  position: absolute;
-  background: var(--col-redOchre);
-  background: linear-gradient(-15deg, var(--col-leadWhite), transparent 40%), linear-gradient(180deg, var(--col-redOchre), transparent 40%), linear-gradient(to right, var(--col-leadWhite) 50%, transparent 100%);
-  background: linear-gradient(45deg, var(--col-greenearth) 50%, rgba(250, 250, 250, 0.2) 100%);
-  inset: 0;
-  left: -2px;
-  z-index: -2;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) button {
-  margin: 0px 3px 0 5px;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) input[type=text] {
-  background: none;
-  margin-left: 1rem;
-  font-family: var(--font-header);
-  color: var(--col-orpiment);
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) input[type=text]::first-letter {
-  color: var(--col-madderlake);
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 20px;
-  margin: 4px;
-  background: var(--img-quill);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox]:checked {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-filter: brightness(0.7) hue-rotate(160deg) saturate(1);
-          filter: brightness(0.7) hue-rotate(160deg) saturate(1);
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  -webkit-animation: wiggle 1s 1;
-          animation: wiggle 1s 1;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox]:focus {
-  outline: none;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) span.display_score {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  font-family: var(--font-body);
-  font-size: 3rem;
-  font-weight: normal;
-  text-align: center;
-  color: var(--col-leadWhite);
-  margin: 0;
-  padding: 0;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem > div:nth-of-type(2) span.display_score::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 35px;
-  height: 35px;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
-  background: var(--col-azurite);
-  border: 3px solid var(--col-madderlake);
-  z-index: -1;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem:nth-of-type(even) > div:nth-of-type(2)::before {
-  background: var(--img-azure-lite);
-  background-position: top right;
-  background-repeat: no-repeat;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem:nth-of-type(even) span.display_score {
-  left: -16px;
-  position: relative;
-}
-.ui-dialog .tab-content .charsheet .repeating_ability + div .repitem:nth-of-type(even) span.display_score::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: calc(50% + 32px);
-  width: 35px;
-  height: 35px;
-  background: var(--img-tile);
-  background-size: cover;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
-  z-index: -2;
 }
 @-webkit-keyframes wiggle {
   0% {
@@ -1830,11 +1830,11 @@ select *.italic {
   display: none;
 }
 
-div.hide {
+div.sheet-hide {
   display: none;
 }
 
-input.hider:checked ~ div.hide {
+input.hider:checked ~ div.sheet-hide {
   display: block;
 }
 

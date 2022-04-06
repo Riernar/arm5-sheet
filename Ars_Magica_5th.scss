@@ -810,11 +810,11 @@ select *.italic {
 .hidden {
     display: none;
 }
-div.hide {
+div.sheet-hide {
     display: none;
 }
 
-input.hider:checked ~ div.hide {
+input.hider:checked ~ div.sheet-hide {
     display: block;
 }
 /*----------- End of Hide Things -------------*/
