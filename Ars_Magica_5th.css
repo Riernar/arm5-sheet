@@ -112,7 +112,7 @@
 .ui-dialog .tab-content .charsheet .tabpage h1::first-letter {
   color: var(--col-madderlake);
   font-size: 4rem;
-  margin-right: 4px;
+  margin-right: 6px;
 }
 .ui-dialog .tab-content .charsheet .tabpage :where(.repitem) {
   display: -webkit-box;
@@ -382,7 +382,7 @@
 .ui-dialog .tab-content .charsheet .pageHalf {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 1rem 5rem;
+  margin: 3rem 5rem;
   -webkit-mask-image: var(--img-texture);
           mask-image: var(--img-texture);
 }
@@ -396,6 +396,7 @@
 }
 .ui-dialog .tab-content .charsheet .__wide {
   padding: 1rem 3rem;
+  margin: 0;
 }
 .ui-dialog .tab-content .charsheet .__wide::before {
   padding: 1rem 3rem;
@@ -845,8 +846,14 @@
      border-image: var(--border-lined) 50 fill round;
   border-image-width: 50px;
   padding: 1rem 3rem;
+  margin: 0;
   -webkit-filter: drop-shadow(2px 2px 2px var(--col-indigo));
           filter: drop-shadow(2px 2px 2px var(--col-indigo));
+}
+.ui-dialog .tab-content .charsheet .traits {
+  background: var(--col-orpiment);
+  border: 5px solid var(--col-greenearth);
+  padding: 1rem;
 }
 
 .ui-dialog .tab-content .charsheet button[type=roll].baseRoll {

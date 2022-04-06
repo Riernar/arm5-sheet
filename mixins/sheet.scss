@@ -104,7 +104,7 @@
         h1::first-letter {
             color: var(--col-madderlake);
             font-size: 4rem;
-            margin-right: 4px;
+            margin-right: 6px;
         }
         :where(.repitem) {
             display: flex;
@@ -345,7 +345,7 @@
     }
     .pageHalf {
         box-sizing: border-box;
-        padding: 1rem 5rem;
+        margin: 3rem 5rem;
         mask-image: var(--img-texture);
         &:nth-of-type(even) {
             right:0;
@@ -357,6 +357,7 @@
     }
     .__wide {
         padding: 1rem 3rem;
+        margin: 0;
         &::before {
             padding: 1rem 3rem;
             content: '';
@@ -713,7 +714,13 @@
         border-image: var(--border-lined) 50 fill round;
         border-image-width: 50px;
         padding: 1rem 3rem;
+        margin: 0;
         filter: drop-shadow(2px 2px 2px var(--col-indigo));
     }
-
+    // Virtues and Flaws
+    .traits {
+        background: var(--col-orpiment);
+        border: 5px solid var(--col-greenearth);
+        padding: 1rem;
+    }
 }
