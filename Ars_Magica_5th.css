@@ -37,6 +37,7 @@
   --img-wipeout: url(https://i.imgur.com/BmGBJuH.png);
   --img-tile: url(https://i.imgur.com/dlqwuz7.png);
   --img-inkin: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/bleed_mask_alpha.png);
+  --img-cap: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/decotile_green.png);
   --math-button: 12px;
   --math-bounce: cubic-bezier(.3,-1,.6,2);
   --vfx-border: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
@@ -103,13 +104,15 @@
   color: var(--col-indigo);
   margin: 0;
   padding: 0 5px;
-  background: var(--img-header);
+  background: var(--img-cap), var(--img-header);
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: top left, top right;
+  background-size: 40px, cover;
 }
 .ui-dialog .tab-content .charsheet .tabpage h1::first-letter {
   color: var(--col-madderlake);
   font-size: 4rem;
+  margin-right: 4px;
 }
 .ui-dialog .tab-content .charsheet .tabpage :where(.repitem) {
   display: -webkit-box;
