@@ -130,7 +130,6 @@
         }
         .repeating_ability + div .repitem {
             display: block;
-            filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px rgb(20, 20, 25)) drop-shadow(0px 0px 2px rgb(100, 180, 225));
         }
         .repeating_ability + div .repitem > div:nth-of-type(2) {
             display: flex;
@@ -375,14 +374,6 @@
         margin: 0;
         padding: 0;
     }
-    @keyframes inked {
-        0% {
-            mask-position: center top;
-        }
-        100% {
-            mask-position: center bottom;
-        }
-    }
     
     .itemcontrol {
         z-index: 1;
@@ -495,18 +486,6 @@
         transition: all 300ms ease-in-out;
         height: 0;
         overflow: hidden;
-        // &::before {
-        //     content: '';
-        //     position: absolute;
-        //     top: -30px;
-        //     left: -2px;
-        //     width: 100%;
-        //     height: 100%;
-        //     background: var(--col-indigo);
-        //     border: 2px solid var(--col-indigo);
-        //     border-radius: 15px 15px 0px 50px;
-        //     z-index: -1;
-        // }
     }
     .expand_toggle[value=on] + .expanded_ability {
         border-width: 3px;
@@ -519,16 +498,8 @@
         mask-position: center bottom;
         animation: inked 1000ms ease-in-out;
         animation-timing-function: steps(23, end);
-        
     }
-    @keyframes rollout {
-        0% {
-            transform: scaleY(0);
-        }
-        100% {
-            transform: scaleY(1);
-        }
-    }
+    
     .xp_ribbon {
         display: flex;
         gap: 2px;

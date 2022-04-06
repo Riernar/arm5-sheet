@@ -1,5 +1,5 @@
-
 .ui-dialog .tab-content .charsheet {
+    //Generic Roll Button
     button[type=roll].baseRoll {
         background: none;
         background: var(--img-diceStatic);
@@ -21,5 +21,60 @@
             background-color: none !important;
             box-shadow: none;
         }
+    }
+    //Expanding sections
+    .expanding {
+        position: relative;
+        padding-top: 0px;
+        border: 0px solid var(--col-greenearth);
+        border-radius: 0 0 0 50px;
+        background: var(--img-scroll);
+        background-size: 100%;
+        background-position: bottom;
+        transition: all 120ms ease-in-out;
+        height: 0;
+        overflow: hidden;
+    }
+    .expand_toggle[value=on] + .expanding {
+        border-width: 3px;
+        padding-top: 20px;
+        transform-origin: top;
+        transition: all 120ms ease-in-out;
+        height: 115px;
+        mask-image: var(--img-inkin);
+        mask-position: center top;
+        animation: inked 1000ms ease-in-out 60ms;
+        animation-timing-function: steps(23, end);
+        animation-fill-mode: forwards;
+    }
+    .expanding_contrast {
+        clip-path: inset(0 0 0 0);
+        &.__golden {
+            filter: drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(90, 27, 27)) drop-shadow(0px 0px 2px rgb(204, 155, 50)) drop-shadow(0px 0px 2px rgb(182, 129, 16)) drop-shadow(0px 0px 3px rgb(219, 204, 69)) drop-shadow(0px 0px 4px rgb(252, 253, 194)) drop-shadow(0px 0px 6px rgb(255, 255, 255));
+        }
+        &.__magic {
+            filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(44, 27, 90)) drop-shadow(0px 0px 2px rgb(70, 70, 238)) drop-shadow(0px 0px 3px rgb(100, 180, 225)) drop-shadow(0px 0px 4px rgb(100, 180, 225));
+        }
+        &.__emerald {
+            filter: drop-shadow(0px 0px 1px rgb(4, 14, 36)) drop-shadow(0px 0px 2px rgb(27, 49, 90)) drop-shadow(0px 0px 2px rgb(14, 75, 90)) drop-shadow(0px 0px 2px rgb(67, 126, 104)) drop-shadow(0px 0px 3px rgb(92, 219, 88)) drop-shadow(0px 0px 6px rgb(233, 255, 174));
+        }
+    }
+}
+//Animations
+@keyframes rollout {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes inked {
+    0% {
+        mask-position: center top;
+    }
+    100% {
+        mask-position: center bottom;
     }
 }

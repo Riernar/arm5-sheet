@@ -109,35 +109,37 @@
         <input type="text" name="attr_Ability_name"/><span class="display_score">3</span>
         <input type="checkbox" name="attr_Ability_show"/>
       </div>
-      <input class="expand_toggle" type="hidden" name="attr_Ability_show"/>
-      <div class="expanded_ability">
-        <div class="xp_ribbon">
-          <div class="specialization">
-            <input type="text" name="attr_Ability_speciality"/>
+      <div class="expanding_contrast __emerald">
+        <input class="expand_toggle" type="hidden" name="attr_Ability_show"/>
+        <div class="expanding">
+          <div class="xp_ribbon">
+            <div class="specialization">
+              <input type="text" name="attr_Ability_speciality"/>
+            </div>
+            <div class="ribbonScore" data-tip="Base Score">
+              <input type="number" name="Ability_score" value="0"/>
+            </div><span class="tip" data-tip="Base Score"></span>
+            <div class="ribbonCurrent" data-tip="Current Experience">
+              <input type="number" name="Ability_current" value="0"/>
+            </div><span class="tip" data-tip="Current Experience"></span>
+            <div class="ribbonPair">
+              <div class="ribbonProgress" data-tip="Experience to next level">
+                <input type="number" name="Ability_progress" value="0"/>
+              </div><span class="tip" data-tip="Experience to next level"></span>
+              <div class="ribbonMax" data-tip="Experience to buy">
+                <input type="number" name="Ability_max" value="0"/>
+              </div><span class="tip" data-tip="Experience to buy"></span>
+            </div>
+            <div class="ribbonBonus" data-tip="Bonus to base score">
+              <input type="number" name="Ability_bonus" value="0"/>
+            </div><span class="tip" data-tip="Bonus to base score"></span>
           </div>
-          <div class="ribbonScore" data-tip="Base Score">
-            <input type="number" name="Ability_score" value="0"/>
-          </div><span class="tip" data-tip="Base Score"></span>
-          <div class="ribbonCurrent" data-tip="Current Experience">
-            <input type="number" name="Ability_current" value="0"/>
-          </div><span class="tip" data-tip="Current Experience"></span>
-          <div class="ribbonPair">
-            <div class="ribbonProgress" data-tip="Experience to next level">
-              <input type="number" name="Ability_progress" value="0"/>
-            </div><span class="tip" data-tip="Experience to next level"></span>
-            <div class="ribbonMax" data-tip="Experience to buy">
-              <input type="number" name="Ability_max" value="0"/>
-            </div><span class="tip" data-tip="Experience to buy"></span>
-          </div>
-          <div class="ribbonBonus" data-tip="Bonus to base score">
-            <input type="number" name="Ability_bonus" value="0"/>
-          </div><span class="tip" data-tip="Bonus to base score"></span>
+          <label class="option_accelerated" data-tip="Accelerated Experience"><span class="icon_accelerated"></span>
+            <div class="c_check">
+              <input type="checkbox" name="attr_Ability_accelerated"/><span></span>
+            </div><span class="tip" data-tip="Accelerated Experience"></span>
+          </label>
         </div>
-        <label class="option_accelerated" data-tip="Accelerated Experience"><span class="icon_accelerated"></span>
-          <div class="c_check">
-            <input type="checkbox" name="attr_Ability_accelerated"/><span></span>
-          </div><span class="tip" data-tip="Accelerated Experience"></span>
-        </label>
       </div>
     </fieldset>
   </div>
