@@ -165,6 +165,8 @@
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem {
   display: block;
+  -webkit-filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px #141419) drop-shadow(0px 0px 2px #64b4e1);
+          filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px #141419) drop-shadow(0px 0px 2px #64b4e1);
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) {
   display: -webkit-box;
@@ -625,7 +627,7 @@
 .ui-dialog .tab-content .charsheet .expanded_ability {
   position: relative;
   padding-top: 0px;
-  border: 3px solid var(--col-greenearth);
+  border: 0px solid var(--col-greenearth);
   border-radius: 0 0 0 50px;
   background: var(--img-scroll);
   background-size: 100%;
@@ -636,6 +638,7 @@
   overflow: hidden;
 }
 .ui-dialog .tab-content .charsheet .expand_toggle[value=on] + .expanded_ability {
+  border-width: 3px;
   padding-top: 20px;
   -webkit-transform-origin: top;
           transform-origin: top;
