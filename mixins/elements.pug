@@ -1,5 +1,5 @@
 mixin roll(name, label, modifier)
-    button(type="roll" name=`roll_${label}` title=`%{${label}}` value=`[[1d10+(@{${modifier})}]]`)
+    button(type="roll" class="baseRoll" name=`roll_${label}` title=`%{${label}}` value=`[[1d10+(@{${modifier})}]]`)
 
 mixin score(name)
     div(class="bigScore")

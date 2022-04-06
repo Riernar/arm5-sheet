@@ -117,28 +117,6 @@
   display: flex;
   margin: 6px 0;
 }
-.ui-dialog .tab-content .charsheet .tabpage button[type=roll] {
-  background: none;
-  background: var(--img-diceStatic);
-  background-repeat: no-repeat;
-  background-position: 0;
-  background-color: none;
-  width: 25px;
-  height: 25px;
-  content: "";
-  border: none;
-}
-.ui-dialog .tab-content .charsheet .tabpage button[type=roll]::before {
-  content: "" !important;
-  background: none;
-  background-color: none;
-}
-.ui-dialog .tab-content .charsheet .tabpage button[type=roll]:hover, .ui-dialog .tab-content .charsheet .tabpage button[type=roll]:active {
-  background-position: 0;
-  background-color: none !important;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
 .ui-dialog .tab-content .charsheet .tabpage select, .ui-dialog .tab-content .charsheet .tabpage input[list] {
   --col-border: var(--col-leadWhite);
   --math-border: 1px;
@@ -908,6 +886,29 @@
   padding: 1rem 3rem;
   -webkit-filter: drop-shadow(2px 2px 2px var(--col-indigo));
           filter: drop-shadow(2px 2px 2px var(--col-indigo));
+}
+
+.ui-dialog .tab-content .charsheet button[type=roll].baseRoll {
+  background: none;
+  background: var(--img-diceStatic);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-color: none;
+  width: 25px;
+  height: 25px;
+  content: "";
+  border: none;
+}
+.ui-dialog .tab-content .charsheet button[type=roll].baseRoll::before {
+  content: "" !important;
+  background: none;
+  background-color: none;
+}
+.ui-dialog .tab-content .charsheet button[type=roll].baseRoll:hover, .ui-dialog .tab-content .charsheet button[type=roll].baseRoll:active {
+  background-position: 0;
+  background-color: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* Font Import Reference

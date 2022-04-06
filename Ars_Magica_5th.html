@@ -89,7 +89,7 @@
         <input type="number" name="attr_Personality_currentXP"/><span></span>
         <input type="number" name="attr_Personality_nextXP"/><span></span>
       </div>
-      <button type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
+      <button class="baseRoll" type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
     </fieldset>
   </div>
 </div>
@@ -105,7 +105,7 @@
        Abilities </h1>
     <fieldset class="repeating_ability">
       <div>
-        <button type="roll"></button>
+        <button class="baseRoll" type="roll" name="roll_attr_Ability_name" title="%{attr_Ability_name}" value="[[1d10+(@{Ability_name)}]]"></button>
         <input type="text" name="attr_Ability_name"/><span class="display_score">3</span>
         <input type="checkbox" name="attr_Ability_show"/>
       </div>

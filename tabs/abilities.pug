@@ -8,7 +8,7 @@ div(class='tabpage __abilityTab')
             | Abilities 
         fieldset(class="repeating_ability")
             div
-                button(type="roll")
+                +roll("Ability Roll", "attr_Ability_name", `Ability_name`)
                 input(type="text" name="attr_Ability_name")
                 span(class="display_score")
                     | 3

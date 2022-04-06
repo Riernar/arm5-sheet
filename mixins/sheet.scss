@@ -107,28 +107,7 @@
             display: flex;
             margin: 6px 0;
         }
-        button[type=roll] {
-            background: none;
-            background: var(--img-diceStatic);
-            background-repeat: no-repeat;
-            background-position: 0;
-            background-color: none;
-            width: 25px;
-            height: 25px;
-            content: '';
-            
-            border: none;
-            &::before {
-                content: '' !important;
-                background: none;
-                background-color: none;
-            }
-            &:hover, &:active {
-                background-position: 0;
-                background-color: none !important;
-                box-shadow: none;
-            }
-        }
+        
         select, input[list] {
             --col-border: var(--col-leadWhite);
             --math-border: 1px;
