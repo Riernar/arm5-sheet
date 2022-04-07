@@ -346,7 +346,7 @@
     }
     .pageHalf {
         box-sizing: border-box;
-        margin: 3rem 5rem;
+        margin: 2rem 4rem;
         mask-image: var(--img-texture);
         &:nth-of-type(even) {
             right:0;
@@ -720,8 +720,10 @@
     }
     // Virtues and Flaws
     .traits {
-        background: var(--img-goldleaf);
-        border: 5px solid var(--col-greenearth);
+        background: var(--img-goldleaf), var(--col-greenearth);
+        background-blend-mode: luminosity;
+        background-size: cover;
+        border: 6px double #66856d;
         padding: 1rem;
     }
 }

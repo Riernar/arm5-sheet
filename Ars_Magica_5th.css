@@ -383,7 +383,7 @@
 .ui-dialog .tab-content .charsheet .pageHalf {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 3rem 5rem;
+  margin: 2rem 4rem;
   -webkit-mask-image: var(--img-texture);
           mask-image: var(--img-texture);
 }
@@ -852,8 +852,10 @@
           filter: drop-shadow(2px 2px 2px var(--col-indigo));
 }
 .ui-dialog .tab-content .charsheet .traits {
-  background: var(--img-goldleaf);
-  border: 5px solid var(--col-greenearth);
+  background: var(--img-goldleaf), var(--col-greenearth);
+  background-blend-mode: luminosity;
+  background-size: cover;
+  border: 6px double #66856d;
   padding: 1rem;
 }
 
@@ -1458,7 +1460,6 @@ button.single-roll {
 /*----------- background -------------*/
 .charsheet {
   background-image: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ars_Magica_5th/images/velvet.jpg");
-  width: 850px;
   margin: 0 auto;
 }
 
