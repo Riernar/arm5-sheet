@@ -852,7 +852,7 @@
           filter: drop-shadow(2px 2px 2px var(--col-indigo));
 }
 .ui-dialog .tab-content .charsheet .traits {
-  background: var(--img-goldleaf), var(--col-greenearth);
+  background: var(--img-goldleaf), #79815d;
   background-blend-mode: luminosity;
   background-size: cover;
   border: 6px double #66856d;
