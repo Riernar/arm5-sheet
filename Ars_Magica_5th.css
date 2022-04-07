@@ -72,7 +72,7 @@
   -webkit-appearance: none;
   margin: 0;
 }
-.ui-dialog .tab-content .charsheet .tabpage input[type=text] {
+.ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]) {
   font-family: var(--font-body);
   font-size: 1.5rem;
   font-weight: bold;
@@ -92,7 +92,7 @@
   -webkit-transition: background-position 800ms ease;
   transition: background-position 800ms ease;
 }
-.ui-dialog .tab-content .charsheet .tabpage input[type=text]:not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage input[type=text]:not([list]):hover {
+.ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]):not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]):not([list]):hover {
   background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
   background-position: left;
   -webkit-transition: background-position 800ms ease;
@@ -103,10 +103,10 @@
   font-family: var(--font-header);
   font-size: 2.5rem;
   font-weight: normal;
-  color: var(--col-yellowOchre);
+  color: var(--col-indigo);
   margin: 0;
   padding: 0 5px;
-  background: var(--img-cap), var(--img-header-deco);
+  background: var(--img-cap), var(--img-header);
   background-repeat: no-repeat;
   background-position: top left, top right;
   background-size: 40px, cover;
@@ -148,6 +148,10 @@
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem {
   display: block;
+}
+.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem .expanding {
+  display: -ms-grid;
+  display: grid;
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) {
   display: -webkit-box;
@@ -194,32 +198,6 @@
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=text]::first-letter {
   color: var(--col-madderlake);
-}
-.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 20px;
-  margin: 4px;
-  background: var(--img-quill);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}
-.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox]:checked {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-filter: brightness(0.7) hue-rotate(160deg) saturate(1);
-          filter: brightness(0.7) hue-rotate(160deg) saturate(1);
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  -webkit-animation: wiggle 1s 1;
-          animation: wiggle 1s 1;
-}
-.ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) input[type=checkbox]:focus {
-  outline: none;
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) span.display_score {
   position: relative;
@@ -548,10 +526,21 @@
   background-size: 100%;
   padding: 1rem 2rem;
 }
-.ui-dialog .tab-content .charsheet .reputations input:first-of-type {
+.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem input:first-of-type {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+}
+.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem input[list] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 120px;
 }
 .ui-dialog .tab-content .charsheet .repeating_personality + div .repitem {
   display: -webkit-box;
@@ -620,6 +609,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 30px;
   gap: 2px;
   margin: 10px 5px;
   padding-right: 4px;
@@ -859,6 +849,34 @@
   border: 6px double #66856d;
   padding: 1rem;
 }
+.ui-dialog .tab-content .charsheet .traits h1 {
+  color: var(--col-realgar);
+  background: var(--img-cap), var(--img-header-deco);
+  background-repeat: no-repeat;
+  background-position: top left, top right;
+  background-size: 40px, cover;
+}
+.ui-dialog .tab-content .charsheet .traits input {
+  background: var(--img-wipeout);
+}
+.ui-dialog .tab-content .charsheet .traits .repitem {
+  display: -ms-grid;
+  display: grid;
+  border: 2px solid;
+  border-radius: 0 20px 0 0;
+  -ms-grid-columns: 1fr 60px 30px;
+  grid-template-columns: 1fr 60px 30px;
+}
+.ui-dialog .tab-content .charsheet .traits .repitem :nth-child(5n) {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .traits .repitem textarea {
+  width: auto;
+  height: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 
 .ui-dialog .tab-content .charsheet button[type=roll].baseRoll {
   background: none;
@@ -883,10 +901,12 @@
           box-shadow: none;
 }
 .ui-dialog .tab-content .charsheet .expanding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   padding-top: 0px;
   border: 0px solid var(--col-greenearth);
-  border-radius: 0 0 0 50px;
   background: var(--img-scroll);
   background-size: 100%;
   background-position: bottom;
@@ -929,6 +949,32 @@
 .ui-dialog .tab-content .charsheet .expanding_contrast.__emerald {
   -webkit-filter: drop-shadow(0px 0px 1px #040e24) drop-shadow(0px 0px 2px #1b315a) drop-shadow(0px 0px 2px #0e4b5a) drop-shadow(0px 0px 2px #437e68) drop-shadow(0px 0px 3px #5cdb58) drop-shadow(0px 0px 6px #e9ffae);
           filter: drop-shadow(0px 0px 1px #040e24) drop-shadow(0px 0px 2px #1b315a) drop-shadow(0px 0px 2px #0e4b5a) drop-shadow(0px 0px 2px #437e68) drop-shadow(0px 0px 3px #5cdb58) drop-shadow(0px 0px 6px #e9ffae);
+}
+.ui-dialog .tab-content .charsheet input.button__quill {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  margin: 4px;
+  background: var(--img-quill);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.ui-dialog .tab-content .charsheet input.button__quill:checked {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-filter: brightness(0.7) hue-rotate(160deg) saturate(1);
+          filter: brightness(0.7) hue-rotate(160deg) saturate(1);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-animation: wiggle 1s 1;
+          animation: wiggle 1s 1;
+}
+.ui-dialog .tab-content .charsheet input.button__quill:focus {
+  outline: none;
 }
 
 @-webkit-keyframes rollout {

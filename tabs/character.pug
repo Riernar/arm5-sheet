@@ -13,6 +13,11 @@ div(class='tabpage')
                     | Minor
                 option(value="Vmajor" data-i18n="major")
                     | Major
+                input(type="checkbox" class="button__quill" name="attr_show_expand")
+            div(class="expanding_contrast __golden")
+                input(type="hidden" class="expand_toggle" name="attr_show_expand")
+                div(class="expanding" )
+                    textarea(name="attr_VirtueDescription")
         h1
             | Flaws
         fieldset(class="repeating_flaw")
@@ -24,6 +29,11 @@ div(class='tabpage')
                     | Minor
                 option(value="Vmajor" data-i18n="major")
                     | Major
+            input(type="checkbox" class="button__quill" name="attr_show_expand")
+            div(class="expanding_contrast __golden")
+                input(type="hidden" class="expand_toggle" name="attr_show_expand")
+                div(class="expanding" )
+                    textarea(name="attr_VirtueDescription")
     div(class='pageHalf __wide')
         h1 
             | Biography

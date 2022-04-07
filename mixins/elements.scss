@@ -24,10 +24,10 @@
     }
     //Expanding sections
     .expanding {
+        display: flex;
         position: relative;
         padding-top: 0px;
         border: 0px solid var(--col-greenearth);
-        border-radius: 0 0 0 50px;
         background: var(--img-scroll);
         background-size: 100%;
         background-position: bottom;
@@ -57,6 +57,25 @@
         }
         &.__emerald {
             filter: drop-shadow(0px 0px 1px rgb(4, 14, 36)) drop-shadow(0px 0px 2px rgb(27, 49, 90)) drop-shadow(0px 0px 2px rgb(14, 75, 90)) drop-shadow(0px 0px 2px rgb(67, 126, 104)) drop-shadow(0px 0px 3px rgb(92, 219, 88)) drop-shadow(0px 0px 6px rgb(233, 255, 174));
+        }
+    }
+    input.button__quill {
+        appearance: none;
+        width: 20px;
+        margin: 4px;
+        background: var(--img-quill);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border: none;
+        transition: all 0.25s ease-in-out;
+        &:checked {
+            transform: rotate(-45deg);
+            filter: brightness(0.7) hue-rotate(160deg) saturate(1);
+            transition: all 0.25s ease-in-out;
+            animation: wiggle 1s 1;
+        }
+        &:focus {
+            outline: none;
         }
     }
 }

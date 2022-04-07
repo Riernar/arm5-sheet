@@ -8,7 +8,14 @@
         <option value="Vfree" data-i18n="free" selected="selected">Free</option>
         <option value="Vminor" data-i18n="minor">Minor</option>
         <option value="Vmajor" data-i18n="major">Major</option>
+        <input class="button__quill" type="checkbox" name="attr_show_expand"/>
       </select>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
     </fieldset>
     <h1>Flaws</h1>
     <fieldset class="repeating_flaw">
@@ -18,6 +25,13 @@
         <option value="Vminor" data-i18n="minor">Minor</option>
         <option value="Vmajor" data-i18n="major">Major</option>
       </select>
+      <input class="button__quill" type="checkbox" name="attr_show_expand"/>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
     </fieldset>
   </div>
   <div class="pageHalf __wide">
@@ -107,10 +121,10 @@
       <div>
         <button class="baseRoll" type="roll" name="roll_attr_Ability_name" title="%{attr_Ability_name}" value="[[1d10+(@{Ability_name)}]]"></button>
         <input type="text" name="attr_Ability_name"/><span class="display_score">3</span>
-        <input type="checkbox" name="attr_Ability_show"/>
+        <input class="button__quill" type="checkbox" name="attr_show_expand"/>
       </div>
       <div class="expanding_contrast __golden">
-        <input class="expand_toggle" type="hidden" name="attr_Ability_show"/>
+        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
         <div class="expanding">
           <div class="xp_ribbon">
             <div class="specialization">
