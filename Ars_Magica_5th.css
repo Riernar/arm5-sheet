@@ -103,10 +103,10 @@
   font-family: var(--font-header);
   font-size: 2.5rem;
   font-weight: normal;
-  color: var(--col-indigo);
+  color: var(--col-yellowOchre);
   margin: 0;
   padding: 0 5px;
-  background: var(--img-cap), var(--img-header);
+  background: var(--img-cap), var(--img-header-deco);
   background-repeat: no-repeat;
   background-position: top left, top right;
   background-size: 40px, cover;
