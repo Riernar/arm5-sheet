@@ -1,8 +1,28 @@
+- const characteristics = ['Intelligence', 'Perception', 'Presence', 'Communication','Strength', 'Stamina', 'Dexterity', 'Quickness'];
+
 div(class='tabpage __abilityTab')
-    div(class="pageHalf")
-        div(class="characteristics")
+    div(class="pageHalf characteristics")
+        div(class="")
+            .shiftContainer
+                each val in ['Human', 'Peasant', 'Tiger', 'Bird']
+                    button
+                        h3= val
             h1 
                 | Characteristics
+            each char in characteristics
+                div(class="charRow")
+                    input(type="hidden" name="attr_char_selected")
+                    label(class=`charLabel label__${char}`)
+                        input(type="radio" class="name" name="attr_char_selected" value=`${char}`)
+                        span= char
+                    input(type="number" class="value" name=`attr_${char}_Score` value="0")
+                    +roll(`${char}`, `${char}`, `${char}`)
+                    input(type="checkbox" class="button__quill" name=`attr_show_${char}`)
+                div(class="expanding_contrast __golden")
+                    input(type="hidden" class="expand_toggle" name=`attr_show_${char}`)
+                    div(class="expanding" )
+                        textarea(name="attr_VirtueDescription")
+
     div(class="pageHalf abilities")
         h1 
             | Abilities 

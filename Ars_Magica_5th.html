@@ -108,10 +108,144 @@
   </div>
 </div>
 <div class="tabpage __abilityTab">
-  <div class="pageHalf">
-    <div class="characteristics">
+  <div class="pageHalf characteristics">
+    <div>
+      <div class="shiftContainer">
+        <button>
+          <h3>Human</h3>
+        </button>
+        <button>
+          <h3>Peasant</h3>
+        </button>
+        <button>
+          <h3>Tiger</h3>
+        </button>
+        <button>
+          <h3>Bird</h3>
+        </button>
+      </div>
       <h1>
          Characteristics</h1>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Intelligence">
+          <input class="name" type="radio" name="attr_char_selected" value="Intelligence"/><span>Intelligence</span>
+        </label>
+        <input class="value" type="number" name="attr_Intelligence_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Intelligence"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Intelligence"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Perception">
+          <input class="name" type="radio" name="attr_char_selected" value="Perception"/><span>Perception</span>
+        </label>
+        <input class="value" type="number" name="attr_Perception_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Perception"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Perception"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Presence">
+          <input class="name" type="radio" name="attr_char_selected" value="Presence"/><span>Presence</span>
+        </label>
+        <input class="value" type="number" name="attr_Presence_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Presence"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Presence"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Communication">
+          <input class="name" type="radio" name="attr_char_selected" value="Communication"/><span>Communication</span>
+        </label>
+        <input class="value" type="number" name="attr_Communication_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Communication"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Communication"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Strength">
+          <input class="name" type="radio" name="attr_char_selected" value="Strength"/><span>Strength</span>
+        </label>
+        <input class="value" type="number" name="attr_Strength_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Strength"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Strength"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Stamina">
+          <input class="name" type="radio" name="attr_char_selected" value="Stamina"/><span>Stamina</span>
+        </label>
+        <input class="value" type="number" name="attr_Stamina_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Stamina"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Stamina"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Dexterity">
+          <input class="name" type="radio" name="attr_char_selected" value="Dexterity"/><span>Dexterity</span>
+        </label>
+        <input class="value" type="number" name="attr_Dexterity_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Dexterity"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Dexterity"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
+      <div class="charRow">
+        <input type="hidden" name="attr_char_selected"/>
+        <label class="charLabel label__Quickness">
+          <input class="name" type="radio" name="attr_char_selected" value="Quickness"/><span>Quickness</span>
+        </label>
+        <input class="value" type="number" name="attr_Quickness_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
+        <input class="button__quill" type="checkbox" name="attr_show_Quickness"/>
+      </div>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_Quickness"/>
+        <div class="expanding">
+          <textarea name="attr_VirtueDescription"></textarea>
+        </div>
+      </div>
     </div>
   </div>
   <div class="pageHalf abilities">

@@ -62,6 +62,7 @@
     input.button__quill {
         appearance: none;
         width: 20px;
+        aspect-ratio: 1;
         margin: 4px;
         background: var(--img-quill);
         background-size: 100%;

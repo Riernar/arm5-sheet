@@ -847,22 +847,26 @@
   background-blend-mode: luminosity;
   background-size: cover;
   border: 6px double #66856d;
-  padding: 1rem;
+  padding: 5px;
 }
 .ui-dialog .tab-content .charsheet .traits h1 {
   color: var(--col-realgar);
-  background: var(--img-cap), var(--img-header-deco);
+  background: var(--img-cap), var(--img-header-deco), var(--col-greenearth);
   background-repeat: no-repeat;
   background-position: top left, top right;
   background-size: 40px, cover;
 }
+.ui-dialog .tab-content .charsheet .traits h1::first-letter {
+  margin-right: 0;
+}
 .ui-dialog .tab-content .charsheet .traits input {
   background: var(--img-wipeout);
+  background-position: 25% center;
 }
 .ui-dialog .tab-content .charsheet .traits .repitem {
   display: -ms-grid;
   display: grid;
-  border: 2px solid;
+  border: 2px dashed var(--col-malachite);
   border-radius: 0 20px 0 0;
   -ms-grid-columns: 1fr 60px 30px;
   grid-template-columns: 1fr 60px 30px;
@@ -955,6 +959,7 @@
      -moz-appearance: none;
           appearance: none;
   width: 20px;
+  aspect-ratio: 1;
   margin: 4px;
   background: var(--img-quill);
   background-size: 100%;
@@ -1018,6 +1023,90 @@
             mask-position: center bottom;
   }
 }
+.ui-dialog .tab-content .charsheet .characteristics {
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .tab-content .charsheet .characteristics > div {
+  position: sticky;
+  padding: 1rem;
+  background: var(--col-madderlake);
+  -webkit-box-shadow: 2px 2px 6px var(--col-indigo);
+          box-shadow: 2px 2px 6px var(--col-indigo);
+  top: 20px;
+}
+.ui-dialog .tab-content .charsheet .__abilityTab {
+  -ms-grid-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+}
+.ui-dialog .tab-content .charsheet .abilities {
+  -o-border-image: var(--border-lined) 50 round;
+     border-image: var(--border-lined) 50 fill round;
+  border-image-width: 50px;
+  padding: 1rem 3rem;
+  margin: 0;
+  -webkit-filter: drop-shadow(2px 2px 2px var(--col-indigo));
+          filter: drop-shadow(2px 2px 2px var(--col-indigo));
+}
+.ui-dialog .tab-content .charsheet .shiftContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ui-dialog .tab-content .charsheet .charRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px;
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=number] {
+  width: 50px;
+  text-align: center;
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Intelligence] + label.label__Intelligence {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Perception] + label.label__Perception {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Presence] + label.label__Presence {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Communication] + label.label__Communication {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Strength] + label.label__Strength {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Stamina] + label.label__Stamina {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Dexterity] + label.label__Dexterity {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Quickness] + label.label__Quickness {
+  background: var(--col-leadWhite);
+}
+.ui-dialog .tab-content .charsheet .charRow label {
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .charRow label:first-of-type {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 /* Font Import Reference
 //Signatures --- font-family: 'Bilbo Swash Caps', cursive;
 //Headers --- font-family: 'Uncial Antiqua', cursive;

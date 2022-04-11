@@ -1,0 +1,51 @@
+$characteristics: Intelligence, Perception, Presence, Communication,Strength, Stamina, Dexterity, Quickness;
+
+.ui-dialog .tab-content .charsheet {
+    .characteristics {
+        margin: 0;
+        padding: 0;
+        > div {
+            position: sticky;
+            padding: 1rem;
+            background: var(--col-madderlake);
+            box-shadow: 2px 2px 6px var(--col-indigo);
+            top: 20px;
+        }
+    }
+    .__abilityTab {
+        grid-template-columns: 1fr 2fr;
+    }
+    .abilities {
+        border-image: var(--border-lined) 50 fill round;
+        border-image-width: 50px;
+        padding: 1rem 3rem;
+        margin: 0;
+        filter: drop-shadow(2px 2px 2px var(--col-indigo));
+    }
+    .shiftContainer {
+        display: flex;
+    }
+    .charRow {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px;
+        input[type="number"] {
+            width: 50px;
+            text-align: center;
+        }
+        @each $char in $characteristics {
+            input[type="hidden"][value=#{$char}] + label.label__#{$char} {
+                background: var(--col-leadWhite);
+            }
+        }
+        label {
+            cursor: pointer;
+            &:first-of-type {
+                flex: 1;
+            }
+        }
+    }
+}
