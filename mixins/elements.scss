@@ -1,25 +1,28 @@
 .ui-dialog .tab-content .charsheet {
     //Generic Roll Button
-    button[type=roll].baseRoll {
-        background: none;
-        background: var(--img-diceStatic);
-        background-repeat: no-repeat;
-        background-position: 0;
-        background-color: none;
-        width: 25px;
-        height: 25px;
-        content: '';
-        
-        border: none;
-        &::before {
-            content: '' !important;
+    button[type=roll] {
+        margin: 0;
+        &.baseRoll {
             background: none;
-            background-color: none;
-        }
-        &:hover, &:active {
+            background: var(--img-diceStatic);
+            background-repeat: no-repeat;
             background-position: 0;
-            background-color: none !important;
-            box-shadow: none;
+            background-color: none;
+            width: 25px;
+            height: 25px;
+            content: '';
+            
+            border: none;
+            &::before {
+                content: '' !important;
+                background: none;
+                background-color: none;
+            }
+            &:hover, &:active {
+                background-position: 0;
+                background-color: none !important;
+                box-shadow: none;
+            }
         }
     }
     //Expanding sections

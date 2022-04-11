@@ -1,5 +1,3 @@
-
-
 div(class='tabpage')
     div(class='pageHalf traits')
         h1
@@ -38,6 +36,13 @@ div(class='tabpage')
         h1 
             | Biography
         div(class="biography")
+            .bioTabs 
+                button(type="action" name="act_bio-origins" title="%{bio-origins}" value="2")
+                    | Origins
+                button(type="action" name="act_bio-backgrounds" title="%{bio-backgrounds}" value="3")
+                    | Backgrounds
+                button(type="action" name="act_bio-magi" title="%{bio-magi}" value="4")
+                    | Magi
             div(class="sublabel __extended")
                 input(type="text" name="attr_birth_name")
                 span(data-i18n="birth-name")
@@ -78,6 +83,7 @@ div(class='tabpage')
                 option(value="Hermetic")
 
         fieldset(class="repeating_reputation")
+            +roll("Reputation", "Reputation", "Reputation_Score")
             input(type="text" name="attr_Reputation")
             input(type="text" list="dlist_reputation" name="attr_ReputationType")
             +score("Reputation")
@@ -85,6 +91,18 @@ div(class='tabpage')
         h1 
             | Personality
         fieldset(class="repeating_personality")
+            +roll("Personality", "Personality", "Personality_Score")
             input(type="text" name="attr_Personality")
             +score("Personality")
-            +roll("Personality", "Personality", "Personality_Score")
+    .pageFull 
+        h1(style="padding-left: 12px;")
+            | Inventory
+        fieldset(class="repeating_item")
+            input(type="text" name="attr_item_name" placeholder="[item name]")
+            input(type="number" name="attr_item_number" value="0")
+            
+            input(type="checkbox" class="button__quill" name="attr_show_expand")
+            div(class="expanding_contrast __golden")
+                input(type="hidden" class="expand_toggle" name="attr_show_expand")
+                div(class="expanding" )
+                    textarea(name="attr_item_description")

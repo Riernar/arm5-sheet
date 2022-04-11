@@ -65,6 +65,7 @@
                 border: none;
             }
         }
+        
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -423,32 +424,7 @@
             filter: saturate(1) hue-rotate(160deg) brightness(0.7);
         }
     }
-    .biography {
-        display: flex;
-        flex-wrap: wrap;
-        background: var(--img-parchment);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        padding: 1rem 2rem;
-    }
-    .repeating_reputation + div {
-        .repitem {
-            display: flex;
-            input:first-of-type {
-                flex: 2;
-            }
-            input[list] {
-                flex: 1;
-                width: 120px;
-            }
-        }
-    }
-    .repeating_personality + div {
-        .repitem {
-            display: flex;
-            margin: 8px 0px;
-        }
-    }
+    
     .sublabel {
         position: relative;
         margin-bottom: 10px;
@@ -698,20 +674,7 @@
             }
         }
     }
-    .characteristics {
-        position: sticky;
-        top: 20px;
-    }
-    .__abilityTab {
-        grid-template-columns: 1fr 2fr;
-    }
-    .abilities {
-        border-image: var(--border-lined) 50 fill round;
-        border-image-width: 50px;
-        padding: 1rem 3rem;
-        margin: 0;
-        filter: drop-shadow(2px 2px 2px var(--col-indigo));
-    }
+    
     // Virtues and Flaws
     .traits {
         background: var(--img-goldleaf), #79815d;
@@ -737,6 +700,26 @@
             display: grid;
             border: 2px dashed var(--col-malachite);
             border-radius: 0 20px 0 0;
+            grid-template-columns: 1fr 60px 30px;
+            :nth-child(5n) {
+                grid-column: 1 / -1;
+            }
+            textarea {
+                width: auto;
+                height: auto;
+                flex: 1;
+            }
+        }
+    }
+    .repeating_item + div {
+        background: var(--border-leatherR);
+        background-size: cover;
+        border: 2px solid;
+        border-image: var(--border-leatherR) 20 round;
+        border-image-width: 20px;
+        padding: 1rem;
+        .repitem {
+            display: grid;
             grid-template-columns: 1fr 60px 30px;
             :nth-child(5n) {
                 grid-column: 1 / -1;

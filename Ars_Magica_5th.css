@@ -515,39 +515,6 @@
             filter: saturate(1) hue-rotate(160deg) brightness(0.7);
   }
 }
-.ui-dialog .tab-content .charsheet .biography {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background: var(--img-parchment);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding: 1rem 2rem;
-}
-.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem input:first-of-type {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-}
-.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem input[list] {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 120px;
-}
-.ui-dialog .tab-content .charsheet .repeating_personality + div .repitem {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 8px 0px;
-}
 .ui-dialog .tab-content .charsheet .sublabel {
   position: relative;
   margin-bottom: 10px;
@@ -825,23 +792,6 @@
           transform: translate(-50%, -50%) rotate(45deg);
   z-index: -2;
 }
-.ui-dialog .tab-content .charsheet .characteristics {
-  position: sticky;
-  top: 20px;
-}
-.ui-dialog .tab-content .charsheet .__abilityTab {
-  -ms-grid-columns: 1fr 2fr;
-  grid-template-columns: 1fr 2fr;
-}
-.ui-dialog .tab-content .charsheet .abilities {
-  -o-border-image: var(--border-lined) 50 round;
-     border-image: var(--border-lined) 50 fill round;
-  border-image-width: 50px;
-  padding: 1rem 3rem;
-  margin: 0;
-  -webkit-filter: drop-shadow(2px 2px 2px var(--col-indigo));
-          filter: drop-shadow(2px 2px 2px var(--col-indigo));
-}
 .ui-dialog .tab-content .charsheet .traits {
   background: var(--img-goldleaf), #79815d;
   background-blend-mode: luminosity;
@@ -881,7 +831,35 @@
       -ms-flex: 1;
           flex: 1;
 }
+.ui-dialog .tab-content .charsheet .repeating_item + div {
+  background: var(--border-leatherR);
+  background-size: cover;
+  border: 2px solid;
+  -o-border-image: var(--border-leatherR) 20 round;
+     border-image: var(--border-leatherR) 20 round;
+  border-image-width: 20px;
+  padding: 1rem;
+}
+.ui-dialog .tab-content .charsheet .repeating_item + div .repitem {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 60px 30px;
+  grid-template-columns: 1fr 60px 30px;
+}
+.ui-dialog .tab-content .charsheet .repeating_item + div .repitem :nth-child(5n) {
+  grid-column: 1/-1;
+}
+.ui-dialog .tab-content .charsheet .repeating_item + div .repitem textarea {
+  width: auto;
+  height: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 
+.ui-dialog .tab-content .charsheet button[type=roll] {
+  margin: 0;
+}
 .ui-dialog .tab-content .charsheet button[type=roll].baseRoll {
   background: none;
   background: var(--img-diceStatic);
@@ -1061,6 +1039,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 30px;
   margin: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1072,6 +1051,7 @@
 }
 .ui-dialog .tab-content .charsheet .charRow input[type=number] {
   width: 50px;
+  height: 100%;
   text-align: center;
 }
 .ui-dialog .tab-content .charsheet .charRow input[type=hidden][value=Intelligence] + label.label__Intelligence {
@@ -1099,12 +1079,71 @@
   background: var(--col-leadWhite);
 }
 .ui-dialog .tab-content .charsheet .charRow label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.ui-dialog .tab-content .charsheet .charRow label span {
+  margin: auto 5px;
 }
 .ui-dialog .tab-content .charsheet .charRow label:first-of-type {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.ui-dialog .tab-content .charsheet .biography {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: var(--img-parchment);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 1rem 2rem;
+}
+.ui-dialog .tab-content .charsheet .bioTabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  place-items: flex-end;
+  position: absolute;
+  top: -12px;
+  right: 0;
+}
+.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem input:first-of-type {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+.ui-dialog .tab-content .charsheet .repeating_reputation + div .repitem input[list] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 120px;
+}
+.ui-dialog .tab-content .charsheet .repeating_personality + div .repitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0px;
 }
 
 /* Font Import Reference

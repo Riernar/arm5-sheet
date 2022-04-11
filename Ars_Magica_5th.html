@@ -38,6 +38,11 @@
     <h1>
        Biography</h1>
     <div class="biography">
+      <div class="bioTabs"> 
+        <button type="action" name="act_bio-origins" title="%{bio-origins}" value="2">Origins</button>
+        <button type="action" name="act_bio-backgrounds" title="%{bio-backgrounds}" value="3">Backgrounds</button>
+        <button type="action" name="act_bio-magi" title="%{bio-magi}" value="4">Magi</button>
+      </div>
       <div class="sublabel __extended">
         <input type="text" name="attr_birth_name"/><span data-i18n="birth-name">Birth Name</span>
       </div>
@@ -86,6 +91,8 @@
       <option value="Hermetic"></option>
     </datalist>
     <fieldset class="repeating_reputation">
+      <button class="baseRoll" type="roll" name="roll_Reputation" title="%{Reputation}" value="[[1d10+(@{Reputation_Score)}]]"></button>
+      <button class="baseRoll" type="roll" name="roll_Reputation" title="%{Reputation}" value="[[1d10+(@{Reputation_Score)}]]"></button>
       <input type="text" name="attr_Reputation"/>
       <input type="text" list="dlist_reputation" name="attr_ReputationType"/>
       <div class="bigScore">
@@ -97,13 +104,28 @@
     <h1>
        Personality</h1>
     <fieldset class="repeating_personality">
+      <button class="baseRoll" type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
+      <button class="baseRoll" type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
       <input type="text" name="attr_Personality"/>
       <div class="bigScore">
         <input type="number" name="attr_Personality_score"/><span> </span>
         <input type="number" name="attr_Personality_currentXP"/><span></span>
         <input type="number" name="attr_Personality_nextXP"/><span></span>
       </div>
-      <button class="baseRoll" type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
+    </fieldset>
+  </div>
+  <div class="pageFull"> 
+    <h1 style="padding-left: 12px;">Inventory</h1>
+    <fieldset class="repeating_item">
+      <input type="text" name="attr_item_name" placeholder="[item name]"/>
+      <input type="number" name="attr_item_number" value="0"/>
+      <input class="button__quill" type="checkbox" name="attr_show_expand"/>
+      <div class="expanding_contrast __golden">
+        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
+        <div class="expanding">
+          <textarea name="attr_item_description"></textarea>
+        </div>
+      </div>
     </fieldset>
   </div>
 </div>
@@ -133,6 +155,7 @@
         </label>
         <input class="value" type="number" name="attr_Intelligence_Score" value="0"/>
         <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
+        <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Intelligence"/>
       </div>
       <div class="expanding_contrast __golden">
@@ -147,6 +170,7 @@
           <input class="name" type="radio" name="attr_char_selected" value="Perception"/><span>Perception</span>
         </label>
         <input class="value" type="number" name="attr_Perception_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
         <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Perception"/>
       </div>
@@ -163,6 +187,7 @@
         </label>
         <input class="value" type="number" name="attr_Presence_Score" value="0"/>
         <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
+        <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Presence"/>
       </div>
       <div class="expanding_contrast __golden">
@@ -177,6 +202,7 @@
           <input class="name" type="radio" name="attr_char_selected" value="Communication"/><span>Communication</span>
         </label>
         <input class="value" type="number" name="attr_Communication_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
         <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Communication"/>
       </div>
@@ -193,6 +219,7 @@
         </label>
         <input class="value" type="number" name="attr_Strength_Score" value="0"/>
         <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
+        <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Strength"/>
       </div>
       <div class="expanding_contrast __golden">
@@ -207,6 +234,7 @@
           <input class="name" type="radio" name="attr_char_selected" value="Stamina"/><span>Stamina</span>
         </label>
         <input class="value" type="number" name="attr_Stamina_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
         <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Stamina"/>
       </div>
@@ -223,6 +251,7 @@
         </label>
         <input class="value" type="number" name="attr_Dexterity_Score" value="0"/>
         <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
+        <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Dexterity"/>
       </div>
       <div class="expanding_contrast __golden">
@@ -237,6 +266,7 @@
           <input class="name" type="radio" name="attr_char_selected" value="Quickness"/><span>Quickness</span>
         </label>
         <input class="value" type="number" name="attr_Quickness_Score" value="0"/>
+        <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
         <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
         <input class="button__quill" type="checkbox" name="attr_show_Quickness"/>
       </div>
@@ -253,6 +283,7 @@
        Abilities </h1>
     <fieldset class="repeating_ability">
       <div>
+        <button class="baseRoll" type="roll" name="roll_attr_Ability_name" title="%{attr_Ability_name}" value="[[1d10+(@{Ability_name)}]]"></button>
         <button class="baseRoll" type="roll" name="roll_attr_Ability_name" title="%{attr_Ability_name}" value="[[1d10+(@{Ability_name)}]]"></button>
         <input type="text" name="attr_Ability_name"/><span class="display_score">3</span>
         <input class="button__quill" type="checkbox" name="attr_show_expand"/>
