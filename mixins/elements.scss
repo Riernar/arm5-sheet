@@ -39,16 +39,22 @@
         overflow: hidden;
     }
     .expand_toggle[value=on] + .expanding {
+        --mask: var(--img-inkin);
+        --steps: 23;
         border-width: 3px;
         padding-top: 20px;
         transform-origin: top;
         transition: all 120ms ease-in-out;
         height: 115px;
-        mask-image: var(--img-inkin);
+        mask-image: var(--mask);
         mask-position: center top;
         animation: inked 1000ms ease-in-out 60ms;
-        animation-timing-function: steps(23, end);
+        animation-timing-function: steps(var(--steps), end);
         animation-fill-mode: forwards;
+        &.large {
+            --mask: var(--img-inkin-big);
+            --steps: 22;
+        }
     }
     .expanding_contrast {
         clip-path: inset(0 0 0 0);

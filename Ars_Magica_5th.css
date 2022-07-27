@@ -37,9 +37,11 @@
   --img-accelerated: url(https://i.imgur.com/yMFnzwU.png);
   --img-parchment: url(https://i.imgur.com/CiMIYOC.png);
   --img-wipeout: url(https://i.imgur.com/BmGBJuH.png);
+  --img-inkin-big: url(https://i.imgur.com/l1jqrzn.png);
   --img-tile: url(https://i.imgur.com/dlqwuz7.png);
   --img-inkin: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/bleed_mask_alpha.png);
   --img-cap: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/decotile_green.png);
+  --img-leather: url(https://i.imgur.com/xnAfgkt.jpg);
   --math-button: 12px;
   --math-bounce: cubic-bezier(.3,-1,.6,2);
   --vfx-border: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
@@ -72,7 +74,7 @@
   -webkit-appearance: none;
   margin: 0;
 }
-.ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]) {
+.ui-dialog .tab-content .charsheet .tabpage :where(input[type=text]) {
   font-family: var(--font-body);
   font-size: 1.5rem;
   font-weight: bold;
@@ -92,7 +94,7 @@
   -webkit-transition: background-position 800ms ease;
   transition: background-position 800ms ease;
 }
-.ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]):not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]):not([list]):hover {
+.ui-dialog .tab-content .charsheet .tabpage :where(input[type=text]):not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage :where(input[type=text]):not([list]):hover {
   background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
   background-position: left;
   -webkit-transition: background-position 800ms ease;
@@ -211,6 +213,7 @@
   color: var(--col-leadWhite);
   margin: 0;
   padding: 0;
+  cursor: default;
 }
 .ui-dialog .tab-content .charsheet .tabpage .repeating_ability + div .repitem > div:nth-of-type(2) span.display_score::before {
   -webkit-box-sizing: border-box;
@@ -438,6 +441,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: flex-end;
 }
 .ui-dialog .tab-content .charsheet .icon_accelerated {
   display: block;
@@ -556,6 +563,8 @@
   overflow: hidden;
 }
 .ui-dialog .tab-content .charsheet .expand_toggle[value=on] + .expanded_ability {
+  --mask: var(--img-inkin);
+  --steps: 23;
   border-width: 3px;
   padding-top: 20px;
   -webkit-transform-origin: top;
@@ -563,14 +572,14 @@
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   height: 115px;
-  -webkit-mask-image: var(--img-inkin);
-          mask-image: var(--img-inkin);
+  -webkit-mask-image: var(--mask);
+          mask-image: var(--mask);
   -webkit-mask-position: center bottom;
           mask-position: center bottom;
   -webkit-animation: inked 1000ms ease-in-out;
           animation: inked 1000ms ease-in-out;
-  -webkit-animation-timing-function: steps(23, end);
-          animation-timing-function: steps(23, end);
+  -webkit-animation-timing-function: steps(var(--steps), end);
+          animation-timing-function: steps(var(--steps), end);
 }
 .ui-dialog .tab-content .charsheet .xp_ribbon {
   display: -webkit-box;
@@ -832,8 +841,7 @@
           flex: 1;
 }
 .ui-dialog .tab-content .charsheet .repeating_item + div {
-  background: var(--border-leatherR);
-  background-size: cover;
+  background: var(--img-leather);
   border: 2px solid;
   -o-border-image: var(--border-leatherR) 20 round;
      border-image: var(--border-leatherR) 20 round;
@@ -845,6 +853,8 @@
   display: grid;
   -ms-grid-columns: 1fr 60px 30px;
   grid-template-columns: 1fr 60px 30px;
+  -o-border-image: var(--border-lined) 50 round;
+     border-image: var(--border-lined) 50 fill round;
 }
 .ui-dialog .tab-content .charsheet .repeating_item + div .repitem :nth-child(5n) {
   grid-column: 1/-1;
@@ -898,6 +908,8 @@
   overflow: hidden;
 }
 .ui-dialog .tab-content .charsheet .expand_toggle[value=on] + .expanding {
+  --mask: var(--img-inkin);
+  --steps: 23;
   border-width: 3px;
   padding-top: 20px;
   -webkit-transform-origin: top;
@@ -905,32 +917,36 @@
   -webkit-transition: all 120ms ease-in-out;
   transition: all 120ms ease-in-out;
   height: 115px;
-  -webkit-mask-image: var(--img-inkin);
-          mask-image: var(--img-inkin);
+  -webkit-mask-image: var(--mask);
+          mask-image: var(--mask);
   -webkit-mask-position: center top;
           mask-position: center top;
   -webkit-animation: inked 1000ms ease-in-out 60ms;
           animation: inked 1000ms ease-in-out 60ms;
-  -webkit-animation-timing-function: steps(23, end);
-          animation-timing-function: steps(23, end);
+  -webkit-animation-timing-function: steps(var(--steps), end);
+          animation-timing-function: steps(var(--steps), end);
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+.ui-dialog .tab-content .charsheet .expand_toggle[value=on] + .expanding.large {
+  --mask: var(--img-inkin-big);
+  --steps: 22;
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast {
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast.__golden {
-  -webkit-filter: drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #5a1b1b) drop-shadow(0px 0px 2px #cc9b32) drop-shadow(0px 0px 2px #b68110) drop-shadow(0px 0px 3px #dbcc45) drop-shadow(0px 0px 4px #fcfdc2) drop-shadow(0px 0px 6px white);
-          filter: drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #5a1b1b) drop-shadow(0px 0px 2px #cc9b32) drop-shadow(0px 0px 2px #b68110) drop-shadow(0px 0px 3px #dbcc45) drop-shadow(0px 0px 4px #fcfdc2) drop-shadow(0px 0px 6px white);
+  -webkit-filter: drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(90, 27, 27)) drop-shadow(0px 0px 2px rgb(204, 155, 50)) drop-shadow(0px 0px 2px rgb(182, 129, 16)) drop-shadow(0px 0px 3px rgb(219, 204, 69)) drop-shadow(0px 0px 4px rgb(252, 253, 194)) drop-shadow(0px 0px 6px rgb(255, 255, 255));
+          filter: drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(90, 27, 27)) drop-shadow(0px 0px 2px rgb(204, 155, 50)) drop-shadow(0px 0px 2px rgb(182, 129, 16)) drop-shadow(0px 0px 3px rgb(219, 204, 69)) drop-shadow(0px 0px 4px rgb(252, 253, 194)) drop-shadow(0px 0px 6px rgb(255, 255, 255));
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast.__magic {
-  -webkit-filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #2c1b5a) drop-shadow(0px 0px 2px #4646ee) drop-shadow(0px 0px 3px #64b4e1) drop-shadow(0px 0px 4px #64b4e1);
-          filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #2c1b5a) drop-shadow(0px 0px 2px #4646ee) drop-shadow(0px 0px 3px #64b4e1) drop-shadow(0px 0px 4px #64b4e1);
+  -webkit-filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(44, 27, 90)) drop-shadow(0px 0px 2px rgb(70, 70, 238)) drop-shadow(0px 0px 3px rgb(100, 180, 225)) drop-shadow(0px 0px 4px rgb(100, 180, 225));
+          filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(44, 27, 90)) drop-shadow(0px 0px 2px rgb(70, 70, 238)) drop-shadow(0px 0px 3px rgb(100, 180, 225)) drop-shadow(0px 0px 4px rgb(100, 180, 225));
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast.__emerald {
-  -webkit-filter: drop-shadow(0px 0px 1px #040e24) drop-shadow(0px 0px 2px #1b315a) drop-shadow(0px 0px 2px #0e4b5a) drop-shadow(0px 0px 2px #437e68) drop-shadow(0px 0px 3px #5cdb58) drop-shadow(0px 0px 6px #e9ffae);
-          filter: drop-shadow(0px 0px 1px #040e24) drop-shadow(0px 0px 2px #1b315a) drop-shadow(0px 0px 2px #0e4b5a) drop-shadow(0px 0px 2px #437e68) drop-shadow(0px 0px 3px #5cdb58) drop-shadow(0px 0px 6px #e9ffae);
+  -webkit-filter: drop-shadow(0px 0px 1px rgb(4, 14, 36)) drop-shadow(0px 0px 2px rgb(27, 49, 90)) drop-shadow(0px 0px 2px rgb(14, 75, 90)) drop-shadow(0px 0px 2px rgb(67, 126, 104)) drop-shadow(0px 0px 3px rgb(92, 219, 88)) drop-shadow(0px 0px 6px rgb(233, 255, 174));
+          filter: drop-shadow(0px 0px 1px rgb(4, 14, 36)) drop-shadow(0px 0px 2px rgb(27, 49, 90)) drop-shadow(0px 0px 2px rgb(14, 75, 90)) drop-shadow(0px 0px 2px rgb(67, 126, 104)) drop-shadow(0px 0px 3px rgb(92, 219, 88)) drop-shadow(0px 0px 6px rgb(233, 255, 174));
 }
 .ui-dialog .tab-content .charsheet input.button__quill {
   -webkit-appearance: none;
@@ -1014,8 +1030,10 @@
   top: 20px;
 }
 .ui-dialog .tab-content .charsheet .__abilityTab {
-  -ms-grid-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 1rem 2fr;
   grid-template-columns: 1fr 2fr;
+  padding: 2rem 3rem;
+  gap: 1rem;
 }
 .ui-dialog .tab-content .charsheet .abilities {
   -o-border-image: var(--border-lined) 50 round;

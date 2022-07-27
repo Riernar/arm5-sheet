@@ -37,9 +37,11 @@
   --img-accelerated: url(https://i.imgur.com/yMFnzwU.png);
   --img-parchment: url(https://i.imgur.com/CiMIYOC.png);
   --img-wipeout: url(https://i.imgur.com/BmGBJuH.png);
+  --img-inkin-big: url(https://i.imgur.com/l1jqrzn.png);
   --img-tile: url(https://i.imgur.com/dlqwuz7.png);
   --img-inkin: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/bleed_mask_alpha.png);
   --img-cap: url(https://raw.githubusercontent.com/Riernar/arm5-sheet/master/assets/decotile_green.png);
+  --img-leather: url(https://i.imgur.com/xnAfgkt.jpg);
   --math-button: 12px;
   --math-bounce: cubic-bezier(.3,-1,.6,2);
   --vfx-border: drop-shadow(var(--math-border) var(--math-border) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) calc(var(--math-border) * -1) 0px var(--col-border)) drop-shadow(calc(var(--math-border) * -1) var(--math-border) 0px var(--col-border)) drop-shadow(var(--math-border) calc(var(--math-border) * -1) 0px var(--col-border));
@@ -136,7 +138,7 @@
         }
         .repeating_ability + div .repitem {
             display: block;
-                        .expanding {
+            .expanding {
                 display: grid;
             }
         }
@@ -194,6 +196,7 @@
                 color: var(--col-leadWhite);
                 margin: 0;
                 padding: 0;
+                cursor: default;
     
                 &::before {
                     box-sizing: border-box;
@@ -393,6 +396,8 @@
         display: flex;
         place-content: flex-end;
         align-items: center;
+        width: fit-content;
+        justify-self: flex-end;
     }
     .icon_accelerated {
         display: block;
@@ -462,16 +467,18 @@
         overflow: hidden;
     }
     .expand_toggle[value=on] + .expanded_ability {
+        --mask: var(--img-inkin);
+        --steps: 23;
         border-width: 3px;
         padding-top: 20px;
         transform-origin: top;
         transition: all 200ms ease-in-out;
         height: 115px;
         // animation: rollout .25s ease-in-out;
-        mask-image: var(--img-inkin);
+        mask-image: var(--mask);
         mask-position: center bottom;
         animation: inked 1000ms ease-in-out;
-        animation-timing-function: steps(23, end);
+        animation-timing-function: steps(var(--steps), end);
     }
     
     .xp_ribbon {
@@ -712,8 +719,7 @@
         }
     }
     .repeating_item + div {
-        background: var(--border-leatherR);
-        background-size: cover;
+        background: var(--img-leather);
         border: 2px solid;
         border-image: var(--border-leatherR) 20 round;
         border-image-width: 20px;
@@ -721,6 +727,7 @@
         .repitem {
             display: grid;
             grid-template-columns: 1fr 60px 30px;
+            border-image: var(--border-lined) 50 fill round;
             :nth-child(5n) {
                 grid-column: 1 / -1;
             }

@@ -14,6 +14,8 @@ $characteristics: Intelligence, Perception, Presence, Communication,Strength, St
     }
     .__abilityTab {
         grid-template-columns: 1fr 2fr;
+        padding: 2rem 3rem;
+        gap: 1rem;
     }
     .abilities {
         border-image: var(--border-lined) 50 fill round;
