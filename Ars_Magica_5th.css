@@ -74,7 +74,7 @@
   -webkit-appearance: none;
   margin: 0;
 }
-.ui-dialog .tab-content .charsheet .tabpage :where(input[type=text]) {
+.ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]) {
   font-family: var(--font-body);
   font-size: 1.5rem;
   font-weight: bold;
@@ -94,7 +94,7 @@
   -webkit-transition: background-position 800ms ease;
   transition: background-position 800ms ease;
 }
-.ui-dialog .tab-content .charsheet .tabpage :where(input[type=text]):not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage :where(input[type=text]):not([list]):hover {
+.ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]):not([list]):focus, .ui-dialog .tab-content .charsheet .tabpage :where(input[type="text"]):not([list]):hover {
   background: linear-gradient(0deg, transparent 49%, var(--col-leadWhite) 4px, transparent 18px), var(--img-wipeout);
   background-position: left;
   -webkit-transition: background-position 800ms ease;
@@ -937,16 +937,16 @@
           clip-path: inset(0 0 0 0);
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast.__golden {
-  -webkit-filter: drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(90, 27, 27)) drop-shadow(0px 0px 2px rgb(204, 155, 50)) drop-shadow(0px 0px 2px rgb(182, 129, 16)) drop-shadow(0px 0px 3px rgb(219, 204, 69)) drop-shadow(0px 0px 4px rgb(252, 253, 194)) drop-shadow(0px 0px 6px rgb(255, 255, 255));
-          filter: drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(90, 27, 27)) drop-shadow(0px 0px 2px rgb(204, 155, 50)) drop-shadow(0px 0px 2px rgb(182, 129, 16)) drop-shadow(0px 0px 3px rgb(219, 204, 69)) drop-shadow(0px 0px 4px rgb(252, 253, 194)) drop-shadow(0px 0px 6px rgb(255, 255, 255));
+  -webkit-filter: drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #5a1b1b) drop-shadow(0px 0px 2px #cc9b32) drop-shadow(0px 0px 2px #b68110) drop-shadow(0px 0px 3px #dbcc45) drop-shadow(0px 0px 4px #fcfdc2) drop-shadow(0px 0px 6px white);
+          filter: drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #5a1b1b) drop-shadow(0px 0px 2px #cc9b32) drop-shadow(0px 0px 2px #b68110) drop-shadow(0px 0px 3px #dbcc45) drop-shadow(0px 0px 4px #fcfdc2) drop-shadow(0px 0px 6px white);
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast.__magic {
-  -webkit-filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(44, 27, 90)) drop-shadow(0px 0px 2px rgb(70, 70, 238)) drop-shadow(0px 0px 3px rgb(100, 180, 225)) drop-shadow(0px 0px 4px rgb(100, 180, 225));
-          filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px rgb(36, 4, 4)) drop-shadow(0px 0px 2px rgb(44, 27, 90)) drop-shadow(0px 0px 2px rgb(70, 70, 238)) drop-shadow(0px 0px 3px rgb(100, 180, 225)) drop-shadow(0px 0px 4px rgb(100, 180, 225));
+  -webkit-filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #2c1b5a) drop-shadow(0px 0px 2px #4646ee) drop-shadow(0px 0px 3px #64b4e1) drop-shadow(0px 0px 4px #64b4e1);
+          filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px #240404) drop-shadow(0px 0px 2px #2c1b5a) drop-shadow(0px 0px 2px #4646ee) drop-shadow(0px 0px 3px #64b4e1) drop-shadow(0px 0px 4px #64b4e1);
 }
 .ui-dialog .tab-content .charsheet .expanding_contrast.__emerald {
-  -webkit-filter: drop-shadow(0px 0px 1px rgb(4, 14, 36)) drop-shadow(0px 0px 2px rgb(27, 49, 90)) drop-shadow(0px 0px 2px rgb(14, 75, 90)) drop-shadow(0px 0px 2px rgb(67, 126, 104)) drop-shadow(0px 0px 3px rgb(92, 219, 88)) drop-shadow(0px 0px 6px rgb(233, 255, 174));
-          filter: drop-shadow(0px 0px 1px rgb(4, 14, 36)) drop-shadow(0px 0px 2px rgb(27, 49, 90)) drop-shadow(0px 0px 2px rgb(14, 75, 90)) drop-shadow(0px 0px 2px rgb(67, 126, 104)) drop-shadow(0px 0px 3px rgb(92, 219, 88)) drop-shadow(0px 0px 6px rgb(233, 255, 174));
+  -webkit-filter: drop-shadow(0px 0px 1px #040e24) drop-shadow(0px 0px 2px #1b315a) drop-shadow(0px 0px 2px #0e4b5a) drop-shadow(0px 0px 2px #437e68) drop-shadow(0px 0px 3px #5cdb58) drop-shadow(0px 0px 6px #e9ffae);
+          filter: drop-shadow(0px 0px 1px #040e24) drop-shadow(0px 0px 2px #1b315a) drop-shadow(0px 0px 2px #0e4b5a) drop-shadow(0px 0px 2px #437e68) drop-shadow(0px 0px 3px #5cdb58) drop-shadow(0px 0px 6px #e9ffae);
 }
 .ui-dialog .tab-content .charsheet input.button__quill {
   -webkit-appearance: none;

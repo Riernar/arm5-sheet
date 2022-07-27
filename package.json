@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@anduh/pug-cli": "^1.0.0-alpha8",
     "pug": "^3.0.2"
   }
 }
