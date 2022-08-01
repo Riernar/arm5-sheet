@@ -1,17 +1,6 @@
 include k-scaffold/_kpug.pug
 include mixins/elements.pug
-include tabs/character.pug
-include tabs/abilities.pug
-
-+nestedFieldset({name:"yes"})
-    p test
-    +level({})
-        h3 this is a title
-    +level({})
-        .weapon
-            +input({name:"weapon name",type:"text",class:"--name"})
-            +input({name:"weapon damage",type:"number",class:"--damage"})
-
+include tabs/tabs.pug
 
 <input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
     <div class="alert alert-warning">
@@ -3732,6 +3721,8 @@ include tabs/abilities.pug
 +kscript
 
     // +arm5_rolltemplate_store
-
     include javascript/sheetworker.js
     include javascript/custom_roll_parsing.js
+    include tabs/character/character.js
+    include tabs/abilities/abilities.js
+    

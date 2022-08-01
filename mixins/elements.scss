@@ -1,3 +1,5 @@
+@use 'nested_fieldset/nested_fieldset.scss';
+
 .ui-dialog .tab-content .charsheet {
     //Generic Roll Button
     button[type=roll] {
