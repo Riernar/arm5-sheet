@@ -131,140 +131,144 @@
 </div>
 <div class="tabpage __abilityTab">
   <div class="pageHalf characteristics">
+    <h1>Characteristics</h1>
     <div>
-      <h1>
-         Characteristics</h1>
       <fieldset class="repeating_shapeshifts">
         <div class="shapeshiftBlock">
-          <h2>
-            <input name="attr_shapeshift_name" type="text" title="@{repeating_shapeshifts_$X_shapeshift_name}"/>
+          <input class="collapse shapeshiftSelector" name="attr_selected" value="1" type="checkbox" title="@{repeating_shapeshifts_$X_selected}" hidden="hidden"/>
+          <h2 class="shapeshiftTitle">
+            <button class="shapeshiftNameAction" name="act_shapeshift-name-action" type="action" title="%{repeating_shapeshifts_$X_shapeshift-name-action}"><span class="shapeshiftNameSpan" name="attr_shapeshift_name" title="@{repeating_shapeshifts_$X_shapeshift_name}"></span>
+            </button>
+            <input class="shapeshiftNameText" name="attr_shapeshift_name" type="text" title="@{repeating_shapeshifts_$X_shapeshift_name}"/>
           </h2>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Intelligence">
-              <input class="name" type="radio" name="attr_char_selected" value="Intelligence"/><span>Intelligence</span>
-            </label>
-            <input class="value" type="number" name="attr_Intelligence_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Intelligence"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Intelligence"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+          <div class="characteristicsBlock">
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Intelligence">
+                <input class="name" type="radio" name="attr_char_selected" value="Intelligence"/><span>Intelligence</span>
+              </label>
+              <input class="value" type="number" name="attr_Intelligence_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Intelligence"/>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Perception">
-              <input class="name" type="radio" name="attr_char_selected" value="Perception"/><span>Perception</span>
-            </label>
-            <input class="value" type="number" name="attr_Perception_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Perception"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Perception"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Intelligence"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Presence">
-              <input class="name" type="radio" name="attr_char_selected" value="Presence"/><span>Presence</span>
-            </label>
-            <input class="value" type="number" name="attr_Presence_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Presence"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Presence"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Perception">
+                <input class="name" type="radio" name="attr_char_selected" value="Perception"/><span>Perception</span>
+              </label>
+              <input class="value" type="number" name="attr_Perception_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Perception"/>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Communication">
-              <input class="name" type="radio" name="attr_char_selected" value="Communication"/><span>Communication</span>
-            </label>
-            <input class="value" type="number" name="attr_Communication_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Communication"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Communication"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Perception"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Strength">
-              <input class="name" type="radio" name="attr_char_selected" value="Strength"/><span>Strength</span>
-            </label>
-            <input class="value" type="number" name="attr_Strength_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Strength"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Strength"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Presence">
+                <input class="name" type="radio" name="attr_char_selected" value="Presence"/><span>Presence</span>
+              </label>
+              <input class="value" type="number" name="attr_Presence_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Presence"/>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Stamina">
-              <input class="name" type="radio" name="attr_char_selected" value="Stamina"/><span>Stamina</span>
-            </label>
-            <input class="value" type="number" name="attr_Stamina_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Stamina"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Stamina"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Presence"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Dexterity">
-              <input class="name" type="radio" name="attr_char_selected" value="Dexterity"/><span>Dexterity</span>
-            </label>
-            <input class="value" type="number" name="attr_Dexterity_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Dexterity"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Dexterity"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Communication">
+                <input class="name" type="radio" name="attr_char_selected" value="Communication"/><span>Communication</span>
+              </label>
+              <input class="value" type="number" name="attr_Communication_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Communication"/>
             </div>
-          </div>
-          <div class="charRow">
-            <input type="hidden" name="attr_char_selected"/>
-            <label class="charLabel label__Quickness">
-              <input class="name" type="radio" name="attr_char_selected" value="Quickness"/><span>Quickness</span>
-            </label>
-            <input class="value" type="number" name="attr_Quickness_Score" value="0"/>
-            <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
-            <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
-            <input class="button__quill" type="checkbox" name="attr_show_Quickness"/>
-          </div>
-          <div class="expanding_contrast __golden">
-            <input class="expand_toggle" type="hidden" name="attr_show_Quickness"/>
-            <div class="expanding">
-              <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Communication"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
+            </div>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Strength">
+                <input class="name" type="radio" name="attr_char_selected" value="Strength"/><span>Strength</span>
+              </label>
+              <input class="value" type="number" name="attr_Strength_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Strength"/>
+            </div>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Strength"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
+            </div>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Stamina">
+                <input class="name" type="radio" name="attr_char_selected" value="Stamina"/><span>Stamina</span>
+              </label>
+              <input class="value" type="number" name="attr_Stamina_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Stamina"/>
+            </div>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Stamina"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
+            </div>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Dexterity">
+                <input class="name" type="radio" name="attr_char_selected" value="Dexterity"/><span>Dexterity</span>
+              </label>
+              <input class="value" type="number" name="attr_Dexterity_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Dexterity"/>
+            </div>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Dexterity"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
+            </div>
+            <div class="charRow">
+              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
+              <label class="charLabel label__Quickness">
+                <input class="name" type="radio" name="attr_char_selected" value="Quickness"/><span>Quickness</span>
+              </label>
+              <input class="value" type="number" name="attr_Quickness_Score" value="0"/>
+              <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
+              <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
+              <input class="button__quill" type="checkbox" name="attr_show_Quickness"/>
+            </div>
+            <div class="expanding_contrast __golden">
+              <input class="expand_toggle" type="hidden" name="attr_show_Quickness"/>
+              <div class="expanding">
+                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
+              </div>
             </div>
           </div>
         </div>
@@ -3776,11 +3780,11 @@
   const k = (function(){
   const kFuncs = {};
   
-  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"fieldset_repeating_shapeshifts":{"triggeredFuncs":["removeShapeshift"],"name":"repeating_shapeshifts","listener":"remove:repeating_shapeshifts","listenerFunc":"accessSheet","type":"fieldset"},"attr_repeating_shapeshifts_$X_shapeshift_name":{"name":"repeating_shapeshifts_$X_shapeshift_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_attr_VirtueDescription":{"name":"repeating_shapeshifts_$X_attr_VirtueDescription","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_shapeshift-add":{"triggeredFuncs":["addShapeshift"],"name":"shapeshift-add","listener":"clicked:shapeshift-add","listenerFunc":"accessSheet","type":"action"},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_name":{"name":"repeating_Shape-specific-abilities_$X_ability_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_damage":{"name":"repeating_Shape-specific-abilities_$X_ability_damage","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-ability-entry":{"listenerFunc":"addItem","name":"add-ability-entry","listener":"clicked:add-ability-entry","type":"action"},"act_edit-Shape-specific-abilities":{"listenerFunc":"editSection","name":"edit-Shape-specific-abilities","listener":"clicked:edit-Shape-specific-abilities","type":"action"},"act_example-action":{"listenerFunc":"arm5Roll","name":"example-action","listener":"clicked:example-action","type":"action"},"attr_example_action":{"name":"example_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]}};
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"fieldset_repeating_shapeshifts":{"triggeredFuncs":["removeShapeshift"],"name":"repeating_shapeshifts","listener":"remove:repeating_shapeshifts","listenerFunc":"accessSheet","type":"fieldset"},"attr_repeating_shapeshifts_$X_selected":{"name":"repeating_shapeshifts_$X_selected","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_shapeshifts_$X_shapeshift-name-action":{"triggeredFuncs":["selectShapeshift"],"name":"repeating_shapeshifts_$X_shapeshift-name-action","listener":"clicked:repeating_shapeshifts:shapeshift-name-action","listenerFunc":"accessSheet","type":"action"},"attr_repeating_shapeshifts_$X_shapeshift_name":{"name":"repeating_shapeshifts_$X_shapeshift_name","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_char_selected":{"name":"repeating_shapeshifts_$X_char_selected","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_attr_VirtueDescription":{"name":"repeating_shapeshifts_$X_attr_VirtueDescription","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_shapeshift-add":{"triggeredFuncs":["addShapeshift"],"name":"shapeshift-add","listener":"clicked:shapeshift-add","listenerFunc":"accessSheet","type":"action"},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_name":{"name":"repeating_Shape-specific-abilities_$X_ability_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_damage":{"name":"repeating_Shape-specific-abilities_$X_ability_damage","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-ability-entry":{"listenerFunc":"addItem","name":"add-ability-entry","listener":"clicked:add-ability-entry","type":"action"},"act_edit-Shape-specific-abilities":{"listenerFunc":"editSection","name":"edit-Shape-specific-abilities","listener":"clicked:edit-Shape-specific-abilities","type":"action"},"act_example-action":{"listenerFunc":"arm5Roll","name":"example-action","listener":"clicked:example-action","type":"action"},"attr_example_action":{"name":"example_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [{"section":"repeating_shapeshifts","fields":["shapeshift_name","attr_VirtueDescription"]},{"section":"repeating_Shape-specific-abilities","fields":["nestedFieldsetLevel0","nestedFieldsetLevel1","ability_name","ability_damage"]}];
+  const repeatingSectionDetails = [{"section":"repeating_shapeshifts","fields":["selected","shapeshift_name","char_selected","attr_VirtueDescription"]},{"section":"repeating_Shape-specific-abilities","fields":["nestedFieldsetLevel0","nestedFieldsetLevel1","ability_name","ability_damage"]}];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   /**
@@ -5025,18 +5029,37 @@ function arm5Roll(event) {
     k.log(roller_to_rolltemplate);
     
 }
-k.registerFuncs({arm5Roll});function addShapeshift({ attributes, trigger }) {
+k.registerFuncs({arm5Roll});function setSelectedShapeshift(rowID) {
+    getSectionIDs("shapeshifts", (IDs) => {
+        const attributeUpdates = {};
+        for(var i=0; i < IDs.length; i++) {
+            attributeUpdates["repeating_shapeshifts_" + IDs[i] + "_selected"] = "0";
+        }
+        attributeUpdates["repeating_shapeshifts_" + rowID + "_selected"] = "1";
+        console.log("Setting active shapeshift to rowID=" + rowID);
+        console.log("Setting attributes: \n" + JSON.stringify(attributeUpdates));
+        k.setAttrs(attributeUpdates);
+    });
+}
+
+function addShapeshift({ attributes, trigger }) {
     k.getAllAttrs({
         callback: (attributes, sections, casc) => {
-            const newRowID = k.generateRowID("repeating_shapeshifts", sections);
-            console.log("Added repeating_shapeshifts rowId: " + newRowID);
-            const newAttributeName = newRowID + "_shapeshift_name";
-            const newAttributes = {};
-            newAttributes[newAttributeName] = "New shapeshift"
-            k.setAttrs(newAttributes);
-
+            const newRow = k.generateRowID("repeating_shapeshifts", sections);
+            console.log("Added repeating_shapeshifts row: " + newRow);
+            const attributeUpdates = {};
+            attributeUpdates[newRow + "_shapeshift_name"] = "New shapeshift";
+            k.setAttrs(attributeUpdates, null, () => {
+                const [section, rowID, attrName] = k.parseTriggerName(newRow + "_shapeshift_name");
+                setSelectedShapeshift(rowID);
+            });
         }
     });
+}
+
+function selectShapeshift({ attributes, trigger }) {
+    const [section, rowID, attrName] = k.parseTriggerName(trigger.name);
+    setSelectedShapeshift(rowID);
     
 }
 
@@ -5044,7 +5067,6 @@ function removeShapeshift({ attributes, trigger }) {
     console.log("Removed repeating_shapeshifts rowId: <unknown>");
 }
 
-k.registerFuncs({ addShapeshift });
-k.registerFuncs({ removeShapeshift });
+k.registerFuncs({ addShapeshift, selectShapeshift, removeShapeshift });
 
 </script>

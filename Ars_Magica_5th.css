@@ -1067,8 +1067,6 @@
 .ui-dialog .tab-content .charsheet .characteristics {
   margin: 0;
   padding: 0;
-}
-.ui-dialog .tab-content .charsheet .characteristics > div {
   position: sticky;
   padding: 1rem;
   background: var(--col-madderlake);
@@ -1076,8 +1074,20 @@
           box-shadow: 2px 2px 6px var(--col-indigo);
   top: 20px;
 }
-.ui-dialog .tab-content .charsheet .characteristics > div > div.repcontrol[data-groupname=repeating_shapeshifts] > button.repcontrol_add {
-  visibility: hidden;
+.ui-dialog .tab-content .charsheet .characteristics > div > div.repcontainer > div.repitem > div.shapeshiftBlock > div.repcontrol[data-groupname=repeating_shapeshifts] > button.repcontrol_add {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .characteristics > div > div.repcontainer > div.repitem > div.shapeshiftBlock input.shapeshiftSelector[value="0"] {
+  background: var(--col-indigo);
+}
+.ui-dialog .tab-content .charsheet .characteristics > div > div.repcontainer > div.repitem > div.shapeshiftBlock input.shapeshiftSelector[value="0"] ~ h2.shapeshiftTitle > input.shapeshiftNameText {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .characteristics > div > div.repcontainer > div.repitem > div.shapeshiftBlock input.shapeshiftSelector[value="0"] ~ div.characteristicsBlock {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .characteristics > div > div.repcontainer > div.repitem > div.shapeshiftBlock input.shapeshiftSelector[value="1"] ~ h2.shapeshiftTitle > button.shapeshiftNameAction {
+  display: none;
 }
 .ui-dialog .tab-content .charsheet .__abilityTab {
   -ms-grid-columns: 1fr 1rem 2fr;

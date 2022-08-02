@@ -2,30 +2,36 @@
 
 div(class='tabpage __abilityTab')
     div(class="pageHalf characteristics")
-        div(class="")
-            //- .shiftContainer
-            //-     each val in ['Human', 'Peasant', 'Tiger', 'Bird']
-            //-         button
-            //-             h3= val
-            h1 
-                | Characteristics
+        h1
+            | Characteristics
+        div
             +fieldset({name:"shapeshifts", trigger:{triggeredFuncs:["removeShapeshift"]}})
                 .shapeshiftBlock
-                    h2
-                        +text({name:"shapeshift_name"})
-                    each char in characteristics
-                        div(class="charRow")
-                            input(type="hidden" name="attr_char_selected")
-                            label(class=`charLabel label__${char}`)
-                                input(type="radio" class="name" name="attr_char_selected" value=`${char}`)
-                                span= char
-                            input(type="number" class="value" name=`attr_${char}_Score` value="0")
-                            +roll(`${char}`, `${char}`, `${char}`)
-                            input(type="checkbox" class="button__quill" name=`attr_show_${char}`)
-                        div(class="expanding_contrast __golden")
-                            input(type="hidden" class="expand_toggle" name=`attr_show_${char}`)
-                            div(class="expanding" )
-                                +textarea({name:"attr_VirtueDescription"})
+                    +collapse("selected")(class="shapeshiftSelector", hidden)
+                    h2.shapeshiftTitle
+                        +action({
+                            name:"shapeshift-name-action",
+                            class:"shapeshiftNameAction",
+                            trigger:{triggeredFuncs:["selectShapeshift"]}
+                        })
+                            +span({name:"shapeshift_name",class:"shapeshiftNameSpan"})
+                        +text({name:"shapeshift_name",class:"shapeshiftNameText"})
+                            
+                    .characteristicsBlock
+                        
+                        each char in characteristics
+                            .charRow
+                                +hidden({name:"char_selected"})
+                                label(class=`charLabel label__${char}`)
+                                    input(type="radio" class="name" name="attr_char_selected" value=`${char}`)
+                                    span= char
+                                input(type="number" class="value" name=`attr_${char}_Score` value="0")
+                                +roll(`${char}`, `${char}`, `${char}`)
+                                input(type="checkbox" class="button__quill" name=`attr_show_${char}`)
+                            div(class="expanding_contrast __golden")
+                                input(type="hidden" class="expand_toggle" name=`attr_show_${char}`)
+                                div(class="expanding" )
+                                    +textarea({name:"attr_VirtueDescription"})
             div(class="repcontrol shapeshiftsControls")
                 +action({
                     name:"shapeshift-add",

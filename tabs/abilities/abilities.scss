@@ -4,17 +4,34 @@ $characteristics: Intelligence, Perception, Presence, Communication,Strength, St
     .characteristics {
         margin: 0;
         padding: 0;
+        position: sticky;
+        padding: 1rem;
+        background: var(--col-madderlake);
+        box-shadow: 2px 2px 6px var(--col-indigo);
+        top: 20px;
         > div {
-            position: sticky;
-            padding: 1rem;
-            background: var(--col-madderlake);
-            box-shadow: 2px 2px 6px var(--col-indigo);
-            top: 20px;
-            > div.repcontrol[data-groupname="repeating_shapeshifts"] > button.repcontrol_add {
-                visibility: hidden;
+            > div.repcontainer > div.repitem > div.shapeshiftBlock {
+                > div.repcontrol[data-groupname="repeating_shapeshifts"] > button.repcontrol_add {
+                    display: none;
+                }
+                // Hide the block and the modifiable title when the block is not selected
+                input.shapeshiftSelector[value="0"] {
+                    background: var(--col-indigo);
+                    ~ h2.shapeshiftTitle > input.shapeshiftNameText {
+                        display: none;
+                    }
+                    ~ div.characteristicsBlock {
+                        display: none;
+                    }
+                }
+                // Hide the clickable action when he block is selected
+                input.shapeshiftSelector[value="1"] {
+                    ~ h2.shapeshiftTitle > button.shapeshiftNameAction {
+                        display: none;
+                    }
+                }
             }
         }
-        
     }
     .__abilityTab {
         grid-template-columns: 1fr 2fr;
