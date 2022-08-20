@@ -1,0 +1,50 @@
+- const tabsStorage = {};
+
+mixin tabs({name, orientation})
+    - const orient = orientation ? orientation : "horizontal";
+    - const storage = [];
+    mixin tab({name})
+        - storage.push({block, name});
+    
+    - block ? block() : undefined
+
+    div(class=`tab ${orient}-tab tab-${name}`)
+        div(class=`tab-header ${orient}-tab-header tab-header-${name}`)
+            each tab, index in storage
+                div(
+                    class=`tab-button tab-button-${name}` + (index === 0 ? " active" : "")
+                    container-tab=name
+                    data-tab=tab.name
+                )
+                    span(data-i18n=`tab-${tab.name}`)
+                        != tab.name
+        div(class=`tab-body ${orient}-tab-body tab-body-${name}`)
+            each tab, index in storage
+                div(
+                    class=`tab-container ${orient}-tab-container tab-container-${name}` + (index === 0 ? " active" : "")
+                    container-tab=name
+                    data-tab=tab.name
+                )
+                    - tab.block()
+    
+    -
+        tabsStorage[name] = {
+            "name":name,
+            orient:orient,
+            tabs:storage.map(data => {
+                const {block, ...rest} = data;
+                return rest;
+            })
+        };
+
+mixin tabsMixinJavascript()
+    | // Initialize the tabs() mixin
+    | // Constant is exported by PUG into the Javascript to transfer data
+    |
+    | const tabsStorage = JSON.parse(
+    != JSON.stringify(JSON.stringify(tabsStorage))
+    | );
+    |
+    | // Code to handle tabs with Roll20's jQuery implementation
+    |
+    include tabs.js

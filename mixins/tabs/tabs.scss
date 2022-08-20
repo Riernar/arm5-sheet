@@ -1,0 +1,34 @@
+.tab {
+    .tab-header {
+        .tab-button {
+            display: inline-block;
+            width: 20%;
+            padding: .5em .5em .25em .85em;
+            background-color: gray;
+            border-radius: 1em 1em 0 0;
+            font-size: 1.5em;
+            border: 1px solid black;
+            margin-right: -4px;
+        }
+
+        .tab-button.active {
+            background-color: white;
+            font-weight: bold;
+            border-bottom: none;
+        }
+    }
+    .tab-body {
+        .tab-container {
+            display: none;
+            padding: 2em;
+            box-sizing: border-box;
+            width: 100%;
+            height: 300px;
+            font-size: 1.2em;
+        }
+        .tab-container.active {
+            display: block;
+        }
+    }
+}
+

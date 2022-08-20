@@ -1,4 +1,23 @@
 
+<button class="roller" name="roll_testroll" value="@{testaction}" title="%{testroll}" type="roll">
+</button>
+<button name="act_testaction" hidden="" type="action" title="%{testaction}">
+</button>
+<input name="attr_testaction" type="hidden" title="@{testaction}"/>
+
+
+<div class="tab horizontal-tab tab-test-tab">
+  <div class="tab-header horizontal-tab-header tab-header-test-tab">
+    <div class="tab-button tab-button-test-tab active" container-tab="test-tab" data-tab="tab1"><span data-i18n="tab-tab1">tab1</span></div>
+    <div class="tab-button tab-button-test-tab" container-tab="test-tab" data-tab="tab2"><span data-i18n="tab-tab2">tab2</span></div>
+  </div>
+  <div class="tab-body horizontal-tab-body tab-body-test-tab">
+    <div class="tab-container horizontal-tab-container tab-container-test-tab active" container-tab="test-tab" data-tab="tab1"><span>Tab1 content</span>
+    </div>
+    <div class="tab-container horizontal-tab-container tab-container-test-tab" container-tab="test-tab" data-tab="tab2"><span>Tab2 content</span>
+    </div>
+  </div>
+</div>
 <div class="tabpage">
   <div class="pageHalf traits">
     <h1>Virtues</h1>
@@ -640,11 +659,7 @@
 </div>
 </div>
 </div>
-<button class="roller" name="roll_example" rolltemplate="&{template:default} {{roll=[[1d10]]}}" value="@{example_action}" title="%{example}" type="roll">
-</button>
-<button name="act_example-action" hidden="" type="action" title="%{example-action}">
-</button>
-<input name="attr_example_action" type="hidden" title="@{example_action}"/><div class="tab-br"></div>
+<div class="tab-br"></div>
 <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="sheet">
 <input type="hidden" name="attr_simple-die" value="(1d10cs0cf0) [@{simple-die_i18n}]">
 <input type="hidden" name="attr_stress-die" value="ceil(((((1d10cs1cf10 %9) -1)+9) %9) *1.1) [@{stress-die_i18n}]">
@@ -3780,7 +3795,7 @@
   const k = (function(){
   const kFuncs = {};
   
-  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"fieldset_repeating_shapeshifts":{"triggeredFuncs":["removeShapeshift"],"name":"repeating_shapeshifts","listener":"remove:repeating_shapeshifts","listenerFunc":"accessSheet","type":"fieldset"},"attr_repeating_shapeshifts_$X_selected":{"name":"repeating_shapeshifts_$X_selected","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_shapeshifts_$X_shapeshift-name-action":{"triggeredFuncs":["selectShapeshift"],"name":"repeating_shapeshifts_$X_shapeshift-name-action","listener":"clicked:repeating_shapeshifts:shapeshift-name-action","listenerFunc":"accessSheet","type":"action"},"attr_repeating_shapeshifts_$X_shapeshift_name":{"name":"repeating_shapeshifts_$X_shapeshift_name","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_char_selected":{"name":"repeating_shapeshifts_$X_char_selected","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_attr_VirtueDescription":{"name":"repeating_shapeshifts_$X_attr_VirtueDescription","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_shapeshift-add":{"triggeredFuncs":["addShapeshift"],"name":"shapeshift-add","listener":"clicked:shapeshift-add","listenerFunc":"accessSheet","type":"action"},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_name":{"name":"repeating_Shape-specific-abilities_$X_ability_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_damage":{"name":"repeating_Shape-specific-abilities_$X_ability_damage","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-ability-entry":{"listenerFunc":"addItem","name":"add-ability-entry","listener":"clicked:add-ability-entry","type":"action"},"act_edit-Shape-specific-abilities":{"listenerFunc":"editSection","name":"edit-Shape-specific-abilities","listener":"clicked:edit-Shape-specific-abilities","type":"action"},"act_example-action":{"listenerFunc":"arm5Roll","name":"example-action","listener":"clicked:example-action","type":"action"},"attr_example_action":{"name":"example_action","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]}};
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"act_testaction":{"triggeredFuncs":["arm5roll"],"name":"testaction","listener":"clicked:testaction","listenerFunc":"accessSheet","type":"action"},"attr_testaction":{"name":"testaction","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"fieldset_repeating_shapeshifts":{"triggeredFuncs":["removeShapeshift"],"name":"repeating_shapeshifts","listener":"remove:repeating_shapeshifts","listenerFunc":"accessSheet","type":"fieldset"},"attr_repeating_shapeshifts_$X_selected":{"name":"repeating_shapeshifts_$X_selected","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_shapeshifts_$X_shapeshift-name-action":{"triggeredFuncs":["selectShapeshift"],"name":"repeating_shapeshifts_$X_shapeshift-name-action","listener":"clicked:repeating_shapeshifts:shapeshift-name-action","listenerFunc":"accessSheet","type":"action"},"attr_repeating_shapeshifts_$X_shapeshift_name":{"name":"repeating_shapeshifts_$X_shapeshift_name","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_char_selected":{"name":"repeating_shapeshifts_$X_char_selected","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_attr_VirtueDescription":{"name":"repeating_shapeshifts_$X_attr_VirtueDescription","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_shapeshift-add":{"triggeredFuncs":["addShapeshift"],"name":"shapeshift-add","listener":"clicked:shapeshift-add","listenerFunc":"accessSheet","type":"action"},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_name":{"name":"repeating_Shape-specific-abilities_$X_ability_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_damage":{"name":"repeating_Shape-specific-abilities_$X_ability_damage","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-ability-entry":{"listenerFunc":"addItem","name":"add-ability-entry","listener":"clicked:add-ability-entry","type":"action"},"act_edit-Shape-specific-abilities":{"listenerFunc":"editSection","name":"edit-Shape-specific-abilities","listener":"clicked:edit-Shape-specific-abilities","type":"action"}};
   
   kFuncs.cascades = cascades;
   
@@ -4683,8 +4698,8 @@ const editSection = function(event){
 };
 registerFuncs({editSection});return kFuncs;
   }());
-  const actionAttributes = ["example_action"];
-  <!-- +arm5_rolltemplate_store-->
+  const actionAttributes = ["testaction"];
+  // Legacy sheetworkers
 const tabs = ["character","abilities","magic","combat","spells","sheet"].forEach(function (button) {
     on("clicked:" + button, function() {
         setAttrs({
@@ -5023,13 +5038,95 @@ on("sheet:opened", function(eventInfo){
     });
     
 });
+
   
-function arm5Roll(event) {
-    k.log(event);
-    k.log(roller_to_rolltemplate);
-    
+  // Initialize the sheet basic elements
+  
+  
+  // This constants is exported from PUG, and stores the rolls for each roll button
+  // The sheetworker for custom roll parsing fetches from this constant to find the rolls
+  const arm5rolls = {
+    "testaction": "&{template:default} {{stress_roll=[[1d10cs1cf10 + 3]]}}",
+  };// Sheetworkers for Custom Roll Parsing
+  async function arm5roll({ trigger }) {
+    // the arm5rolls value is created by the pug in arm5roller
+    // and contains the rolls for the action button
+    const roll = arm5rolls[trigger.name];
+    const { rollId, results } = await startRoll("" + roll);
+    finishRoll(rollId);
+    const stress_names = [];
+    const stress_dice = [];
+    const stress_bonuses = [];
+    for (const [key, rollObj] of Object.entries(results)) {
+        if (key.startsWith("stress_")) {
+            d10s = rollObj.rolls.filter(dice => dice.sides == 10 && dice.dice == 1);
+            if (d10s.length == 1) {
+                stress_names.push(key);
+                stress_dice.push(d10s[0].results[0]);
+                stress_bonuses.push(rollObj.result - d10s[0].results[0]);
+            }
+        }
+    }
+    // Handle botches
+    const potential_botches = Array.from(_.zip(stress_names, stress_dice).entries())
+        .filter(([index, [name, dice]]) => (dice == 10) && (!name.endsWith("_nobotch")))
+        .map(([index, rest]) => index)
+        ;
+    // For each potential botch, query the number of botch die from the user
+    // Use a single roll with many queries, and translation attributes on the sheet for display
+    const botch_queries = potential_botches.map(index => "?{" + stress_names[index] + "|1}");
+    const botch_query = botch_queries.join(" ");
+    if (!(botch_query === "")) {
+        const { rollId, results } = await startRoll("!" + botch_query);
+    }
+
+
+    console.log({
+        trigger: trigger,
+        arm5rolls: arm5rolls,
+        roll: roll,
+        rollId: rollId,
+        results: results,
+        stress_names: stress_names,
+        stress_bonuses: stress_bonuses,
+        stress_dice: stress_dice,
+        potential_botches: potential_botches,
+        botch_queries: botch_queries,
+        botch_query: botch_query
+    });
 }
-k.registerFuncs({arm5Roll});function setSelectedShapeshift(rowID) {
+
+k.registerFuncs({ arm5roll })
+  // Initialize the tabs() mixin
+  // Constant is exported by PUG into the Javascript to transfer data
+  
+  const tabsStorage = JSON.parse("{\"test-tab\":{\"name\":\"test-tab\",\"orient\":\"horizontal\",\"tabs\":[{\"name\":\"tab1\"},{\"name\":\"tab2\"}]}}");
+  
+  // Code to handle tabs with Roll20's jQuery implementation
+  
+(
+    function registerTabHandlers(storage) {
+        Object.entries(storage).forEach(
+            ([name, data]) => {
+                console.log(`Registering handler for tab ${name}`);
+                $20(`.tab.tab-${name} .tab-header.tab-header-${name} .tab-button.tab-button-${name}`).on("click", (event) => {
+                    console.log("clicked:");
+                    console.log(event.htmlAttributes);
+                    const tab = event.htmlAttributes["data-tab"];
+                    console.log(`$20(.tab.tab-${name} div[data-tab]).removeClass("active");`);
+                    $20(`.tab.tab-${name} div[data-tab]`).removeClass("active");
+                    console.log(`$20(.tab.tab-${name} div[data-tab=${tab}]).addClass("active");`);
+                    $20(`.tab.tab-${name} div[data-tab=${tab}]`).addClass("active");
+                });
+            }
+        );
+    }
+)(tabsStorage);
+  
+  // Sheetworkers for each tab
+  // Sheetworkers for the "character" tab
+  // Sheetworkers for the "abilities" tab
+  function setSelectedShapeshift(rowID) {
     getSectionIDs("shapeshifts", (IDs) => {
         const attributeUpdates = {};
         for(var i=0; i < IDs.length; i++) {

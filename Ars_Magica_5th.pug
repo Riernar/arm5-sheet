@@ -1,6 +1,18 @@
-include k-scaffold/_kpug.pug
 include mixins/elements.pug
+
++arm5roller({name:'testroll',roll:'&{template:default} {{stress_roll=[[1d10cs1cf10 + 3]]}}'})
+|
+|
+|
+
++tabs({name:"test-tab"})
+    +tab({name:"tab1"})
+        span Tab1 content
+    +tab({name:"tab2"})
+        span Tab2 content
+
 include tabs/tabs.pug
+
 
 <input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
     <div class="alert alert-warning">
@@ -296,8 +308,6 @@ include tabs/tabs.pug
         </div>
     </div>
 </div>
-
-+arm5_roll({name:'example',rolltemplate:'&{template:default} {{roll=[[1d10]]}}'})
 
 <div class="tab-br"></div>
 <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="sheet">
@@ -3719,10 +3729,9 @@ include tabs/tabs.pug
 
 <!-- Sheet Worker Scripts -->
 +kscript
-
-    // +arm5_rolltemplate_store
+    //- Legacy sheetworkers
+    | // Legacy sheetworkers
     include javascript/sheetworker.js
-    include javascript/custom_roll_parsing.js
-    include tabs/character/character.js
-    include tabs/abilities/abilities.js
+    +elementsJavascript
+    +tabsJavascript
     
