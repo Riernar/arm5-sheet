@@ -8,8 +8,16 @@
   of the repeating section hides all levels except the one it actually uses
 - const nestedFieldSetStorage = {}
 mixin nestedFieldset({name,trigger,addClass,addActionObj,modifyActionObj})
+
+    //- Parse arguments
+    -
+        obj.name = replaceSpaces(obj.name);
+        
+
     //- Prepare storage and inner mixin to accept multiple blocks
     - const levels = [];
+    
+
     mixin level(obj)
         - obj.name = replaceSpaces(obj.name)
         - obj.locked = obj.locked ? obj.locked : false

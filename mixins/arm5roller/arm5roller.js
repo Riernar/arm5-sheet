@@ -46,4 +46,4 @@ async function arm5roll({ trigger }) {
     });
 }
 
-k.registerFuncs({ arm5roll })
+k.registerFuncs({ arm5roll });

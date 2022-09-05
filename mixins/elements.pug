@@ -1,7 +1,7 @@
 include ../k-scaffold/_kpug.pug
-include nested_fieldset/nested_fieldset.pug
+//- include nested_fieldset/nested_fieldset.pug
 include arm5roller/arm5roller.pug
-include tabs/tabs.pug
+//- include tabs/tabs.pug
 
 mixin roll(name, label, modifier)
     button(type="roll" class="baseRoll" name=`roll_${label}` title=`%{${label}}` value=`[[1d10+(@{${modifier})}]]`)
@@ -25,4 +25,4 @@ mixin elementsJavascript()
     | // Sheetworkers for Custom Roll Parsing
     |
     include arm5roller/arm5roller.js
-    +tabsMixinJavascript
+    //- +tabsMixinJavascript

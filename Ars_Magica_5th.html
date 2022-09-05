@@ -1,372 +1,5 @@
 
-<button class="roller" name="roll_testroll" value="@{testaction}" title="%{testroll}" type="roll">
-</button>
-<button name="act_testaction" hidden="" type="action" title="%{testaction}">
-</button>
-<input name="attr_testaction" type="hidden" title="@{testaction}"/>
-
-
-<div class="tab horizontal-tab tab-test-tab">
-  <div class="tab-header horizontal-tab-header tab-header-test-tab">
-    <div class="tab-button tab-button-test-tab active" container-tab="test-tab" data-tab="tab1"><span data-i18n="tab-tab1">tab1</span></div>
-    <div class="tab-button tab-button-test-tab" container-tab="test-tab" data-tab="tab2"><span data-i18n="tab-tab2">tab2</span></div>
-  </div>
-  <div class="tab-body horizontal-tab-body tab-body-test-tab">
-    <div class="tab-container horizontal-tab-container tab-container-test-tab active" container-tab="test-tab" data-tab="tab1"><span>Tab1 content</span>
-    </div>
-    <div class="tab-container horizontal-tab-container tab-container-test-tab" container-tab="test-tab" data-tab="tab2"><span>Tab2 content</span>
-    </div>
-  </div>
-</div>
-<div class="tabpage">
-  <div class="pageHalf traits">
-    <h1>Virtues</h1>
-    <fieldset class="repeating_virtue">
-      <input type="text" name="attr_Virtue"/>
-      <select name="attr_VirtueType">
-        <option value="Vfree" data-i18n="free" selected="selected">Free</option>
-        <option value="Vminor" data-i18n="minor">Minor</option>
-        <option value="Vmajor" data-i18n="major">Major</option>
-        <input class="button__quill" type="checkbox" name="attr_show_expand"/>
-      </select>
-      <div class="expanding_contrast __golden">
-        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
-        <div class="expanding">
-          <textarea name="attr_VirtueDescription"></textarea>
-        </div>
-      </div>
-    </fieldset>
-    <h1>Flaws</h1>
-    <fieldset class="repeating_flaw">
-      <input type="text" name="attr_Flaw"/>
-      <select name="attr_FlawType">
-        <option value="Vfree" data-i18n="free" selected="selected">Free</option>
-        <option value="Vminor" data-i18n="minor">Minor</option>
-        <option value="Vmajor" data-i18n="major">Major</option>
-      </select>
-      <input class="button__quill" type="checkbox" name="attr_show_expand"/>
-      <div class="expanding_contrast __golden">
-        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
-        <div class="expanding">
-          <textarea name="attr_VirtueDescription"></textarea>
-        </div>
-      </div>
-    </fieldset>
-  </div>
-  <div class="pageHalf __wide">
-    <h1>
-       Biography</h1>
-    <div class="biography">
-      <div class="bioTabs"> 
-        <button type="action" name="act_bio-origins" title="%{bio-origins}" value="2">Origins</button>
-        <button type="action" name="act_bio-backgrounds" title="%{bio-backgrounds}" value="3">Backgrounds</button>
-        <button type="action" name="act_bio-magi" title="%{bio-magi}" value="4">Magi</button>
-      </div>
-      <div class="sublabel __extended">
-        <input type="text" name="attr_birth_name"/><span data-i18n="birth-name">Birth Name</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_year_born"/><span data-i18n="year-born">Birth Name</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_gender"/><span data-i18n="gender">Gender</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_race_nationality"/><span data-i18n="race-nationality">Nationality</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_place-of-origin"/><span data-i18n="place-of-origin">Place of Origin</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_religion"/><span data-i18n="religion">Religion</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_Title_Profession"/><span data-i18n="title-profession">Title/Profession</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_height"/><span data-i18n="height">= val</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_weight"/><span data-i18n="weight">= val</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_size"/><span data-i18n="size">= val</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_handedness"/><span data-i18n="handedness">= val</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_hair"/><span data-i18n="hair">= val</span>
-      </div>
-      <div class="sublabel">
-        <input type="text" name="attr_eyes"/><span data-i18n="eyes">= val</span>
-      </div>
-    </div>
-    <h1>
-       Reputations </h1>
-    <datalist id="dlist_reputation">
-      <option value="Local"></option>
-      <option value="Ecclesiastical"></option>
-      <option value="Hermetic"></option>
-    </datalist>
-    <fieldset class="repeating_reputation">
-      <button class="baseRoll" type="roll" name="roll_Reputation" title="%{Reputation}" value="[[1d10+(@{Reputation_Score)}]]"></button>
-      <button class="baseRoll" type="roll" name="roll_Reputation" title="%{Reputation}" value="[[1d10+(@{Reputation_Score)}]]"></button>
-      <input type="text" name="attr_Reputation"/>
-      <input type="text" list="dlist_reputation" name="attr_ReputationType"/>
-      <div class="bigScore">
-        <input type="number" name="attr_Reputation_score"/><span></span>
-        <input type="number" name="attr_Reputation_currentXP"/><span></span>
-        <input type="number" name="attr_Reputation_nextXP"/><span></span>
-      </div>
-    </fieldset>
-    <h1>
-       Personality</h1>
-    <fieldset class="repeating_personality">
-      <button class="baseRoll" type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
-      <button class="baseRoll" type="roll" name="roll_Personality" title="%{Personality}" value="[[1d10+(@{Personality_Score)}]]"></button>
-      <input type="text" name="attr_Personality"/>
-      <div class="bigScore">
-        <input type="number" name="attr_Personality_score"/><span></span>
-        <input type="number" name="attr_Personality_currentXP"/><span></span>
-        <input type="number" name="attr_Personality_nextXP"/><span></span>
-      </div>
-    </fieldset>
-  </div>
-  <div class="pageFull"> 
-    <h1 style="padding-left: 12px;">Inventory</h1>
-    <fieldset class="repeating_item">
-      <input type="text" name="attr_item_name" placeholder="[item name]"/>
-      <input type="number" name="attr_item_number" value="0"/>
-      <input class="button__quill" type="checkbox" name="attr_show_expand"/>
-      <div class="expanding_contrast __golden">
-        <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
-        <div class="expanding large">
-          <textarea name="attr_item_description"></textarea>
-        </div>
-      </div>
-    </fieldset>
-  </div>
-</div>
-<div class="tabpage __abilityTab">
-  <div class="pageHalf characteristics">
-    <h1>Characteristics</h1>
-    <div>
-      <fieldset class="repeating_shapeshifts">
-        <div class="shapeshiftBlock">
-          <input class="collapse shapeshiftSelector" name="attr_selected" value="1" type="checkbox" title="@{repeating_shapeshifts_$X_selected}" hidden="hidden"/>
-          <h2 class="shapeshiftTitle">
-            <button class="shapeshiftNameAction" name="act_shapeshift-name-action" type="action" title="%{repeating_shapeshifts_$X_shapeshift-name-action}"><span class="shapeshiftNameSpan" name="attr_shapeshift_name" title="@{repeating_shapeshifts_$X_shapeshift_name}"></span>
-            </button>
-            <input class="shapeshiftNameText" name="attr_shapeshift_name" type="text" title="@{repeating_shapeshifts_$X_shapeshift_name}"/>
-          </h2>
-          <div class="characteristicsBlock">
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Intelligence">
-                <input class="name" type="radio" name="attr_char_selected" value="Intelligence"/><span>Intelligence</span>
-              </label>
-              <input class="value" type="number" name="attr_Intelligence_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Intelligence" title="%{Intelligence}" value="[[1d10+(@{Intelligence)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Intelligence"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Intelligence"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Perception">
-                <input class="name" type="radio" name="attr_char_selected" value="Perception"/><span>Perception</span>
-              </label>
-              <input class="value" type="number" name="attr_Perception_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Perception" title="%{Perception}" value="[[1d10+(@{Perception)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Perception"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Perception"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Presence">
-                <input class="name" type="radio" name="attr_char_selected" value="Presence"/><span>Presence</span>
-              </label>
-              <input class="value" type="number" name="attr_Presence_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Presence" title="%{Presence}" value="[[1d10+(@{Presence)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Presence"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Presence"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Communication">
-                <input class="name" type="radio" name="attr_char_selected" value="Communication"/><span>Communication</span>
-              </label>
-              <input class="value" type="number" name="attr_Communication_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Communication" title="%{Communication}" value="[[1d10+(@{Communication)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Communication"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Communication"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Strength">
-                <input class="name" type="radio" name="attr_char_selected" value="Strength"/><span>Strength</span>
-              </label>
-              <input class="value" type="number" name="attr_Strength_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Strength" title="%{Strength}" value="[[1d10+(@{Strength)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Strength"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Strength"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Stamina">
-                <input class="name" type="radio" name="attr_char_selected" value="Stamina"/><span>Stamina</span>
-              </label>
-              <input class="value" type="number" name="attr_Stamina_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Stamina" title="%{Stamina}" value="[[1d10+(@{Stamina)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Stamina"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Stamina"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Dexterity">
-                <input class="name" type="radio" name="attr_char_selected" value="Dexterity"/><span>Dexterity</span>
-              </label>
-              <input class="value" type="number" name="attr_Dexterity_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Dexterity" title="%{Dexterity}" value="[[1d10+(@{Dexterity)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Dexterity"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Dexterity"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-            <div class="charRow">
-              <input name="attr_char_selected" type="hidden" title="@{repeating_shapeshifts_$X_char_selected}"/>
-              <label class="charLabel label__Quickness">
-                <input class="name" type="radio" name="attr_char_selected" value="Quickness"/><span>Quickness</span>
-              </label>
-              <input class="value" type="number" name="attr_Quickness_Score" value="0"/>
-              <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
-              <button class="baseRoll" type="roll" name="roll_Quickness" title="%{Quickness}" value="[[1d10+(@{Quickness)}]]"></button>
-              <input class="button__quill" type="checkbox" name="attr_show_Quickness"/>
-            </div>
-            <div class="expanding_contrast __golden">
-              <input class="expand_toggle" type="hidden" name="attr_show_Quickness"/>
-              <div class="expanding">
-                <textarea name="attr_attr_VirtueDescription" title="@{repeating_shapeshifts_$X_attr_VirtueDescription}"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-      <div class="repcontrol shapeshiftsControls">
-        <button class="btn repcontrol_add shapeshift_add" name="act_shapeshift-add" data-i18n="shapeshift_add" type="action" title="%{shapeshift-add}">+Add
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="pageHalf abilities">
-    <h1>Abilities</h1>
-    <div>
-      <h2>Shape-specific abilities</h2>
-      <div class="nestedFieldset">
-        <fieldset class="repeating_Shape-specific-abilities">
-          <input name="attr_nestedFieldsetLevel0" type="hidden" title="@{repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0}"/>
-          <div class="nestedFieldsetLevel0">
-          <h3>this is a title that is better</h3>
-          </div>
-          <input name="attr_nestedFieldsetLevel1" type="hidden" title="@{repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1}"/>
-          <div class="nestedFieldsetLevel1">
-          <div class="ability-entry">
-            <input class="--name" name="attr_ability_name" type="text" title="@{repeating_Shape-specific-abilities_$X_ability_name}"/>
-            <input class="--damage" name="attr_ability_damage" type="number" title="@{repeating_Shape-specific-abilities_$X_ability_damage}"/>
-          </div>
-          </div>
-        </fieldset>
-        <button class="btn repcontrol_edit repcontrol-button repcontrol-button--add" name="act_add-ability-entry" type="action" title="%{add-ability-entry}">+Add
-        </button>
-        <button class="btn repcontrol_edit repcontrol-button repcontrol-button--edit" name="act_edit-Shape-specific-abilities" type="action" title="%{edit-Shape-specific-abilities}">Modify
-        </button>
-      </div>
-    </div>
-    <div>
-      <h2>Non-shape-specific abilities</h2>
-      <fieldset class="repeating_ability">
-        <div>
-          <button class="baseRoll" type="roll" name="roll_attr_Ability_name" title="%{attr_Ability_name}" value="[[1d10+(@{Ability_name)}]]"></button>
-          <button class="baseRoll" type="roll" name="roll_attr_Ability_name" title="%{attr_Ability_name}" value="[[1d10+(@{Ability_name)}]]"></button>
-          <input type="text" name="attr_Ability_name"/><span class="display_score">3</span>
-          <input class="button__quill" type="checkbox" name="attr_show_expand"/>
-        </div>
-        <div class="expanding_contrast __golden">
-          <input class="expand_toggle" type="hidden" name="attr_show_expand"/>
-          <div class="expanding">
-            <div class="xp_ribbon">
-              <div class="specialization">
-                <input type="text" name="attr_Ability_speciality"/>
-              </div>
-              <div class="ribbonScore" data-tip="Base Score">
-                <input type="number" name="Ability_score" value="0"/>
-              </div><span class="tip" data-tip="Base Score"></span>
-              <div class="ribbonCurrent" data-tip="Current Experience">
-                <input type="number" name="Ability_current" value="0"/>
-              </div><span class="tip" data-tip="Current Experience"></span>
-              <div class="ribbonPair">
-                <div class="ribbonProgress" data-tip="Experience to next level">
-                  <input type="number" name="Ability_progress" value="0"/>
-                </div><span class="tip" data-tip="Experience to next level"></span>
-                <div class="ribbonMax" data-tip="Experience to buy">
-                  <input type="number" name="Ability_max" value="0"/>
-                </div><span class="tip" data-tip="Experience to buy"></span>
-              </div>
-              <div class="ribbonBonus" data-tip="Bonus to base score">
-                <input type="number" name="Ability_bonus" value="0"/>
-              </div><span class="tip" data-tip="Bonus to base score"></span>
-            </div>
-            <label class="option_accelerated" data-tip="Accelerated Experience"><span>Accelerated Ability</span><span class="icon_accelerated"></span>
-              <div class="c_check">
-                <input type="checkbox" name="attr_Ability_accelerated"/><span></span>
-              </div><span class="tip" data-tip="Accelerated Experience"></span>
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-  </div>
-</div><input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
+<input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
 <div class="alert alert-warning">
 <div>
 <h3> Warning - February 2021 v1.6.1 update - ERROR: Spell's arts conversion</h3>
@@ -1206,7 +839,10 @@
 <button type="roll" class="button simple-roll" name="roll_ability_simple" value="&{template:ability} {{name=@{character_name}}} {{label0=@{Ability_name}}} {{result0=[[ @{simple-die} + (@{Ability_Score} + @{Ability_Puissant}) [@{Ability_name}] + (@{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_Score@{sys_rbk}) [@{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_i18n@{sys_rbk}] + (@{wound_total}) [@{wounds_i18n}] + ([[floor(@{Fatigue})]]) [@{fatigue_i18n}] + (?{@{circumstantial_i18n}|0}) [@{circumstances_i18n}] ]]}} {{banner=@{Ability_Speciality}}} {{label1=^{rank}}} {{result1=[[ @{Ability_Score} + @{Ability_Puissant} ]]}} {{label2=@{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_i18n@{sys_rbk}}} {{result2=[[ @{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_Score@{sys_rbk} ]]}} {{label3=^{weakness-m}}} {{result3=[[ ([[floor(@{Fatigue})]]) [@{fatigue_i18n}] + (@{wound_total}) [@{wounds_i18n}] ]]}} {{label4=^{circumstances-m}}} {{result4=[[ (?{@{circumstantial_i18n}|0}) ]]}} {{botch-button=[@{botch_i18n}!](~@{character_name}|botch)}} {{crit-button=[@{critical_i18n}!](~@{character_name}|critical)}} {{stress=}}"></button>
 <button type="roll" class="button stress-roll" name="roll_ability_stress" value="&{template:ability} {{name=@{character_name}}} {{label0=@{Ability_name}}} {{result0=[[ @{stress-die} + (@{Ability_Score} + @{Ability_Puissant}) [@{Ability_name}] + (@{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_Score@{sys_rbk}) [@{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_i18n@{sys_rbk}] + (@{wound_total}) [@{wounds_i18n}] + ([[floor(@{Fatigue})]]) [@{fatigue_i18n}] + (?{@{circumstantial_i18n}|0}) [@{circumstances_i18n}] ]]}} {{banner=@{Ability_Speciality}}} {{label1=^{rank}}} {{result1=[[ @{Ability_Score} + @{Ability_Puissant} ]]}} {{label2=@{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_i18n@{sys_rbk}}} {{result2=[[ @{sys_at}@{character_name}@{sys_pipe}@{Ability_CharacName}_Score@{sys_rbk} ]]}} {{label3=^{weakness-m}}} {{result3=[[ ([[floor(@{Fatigue})]]) [@{fatigue_i18n}] + (@{wound_total}) [@{wounds_i18n}] ]]}} {{label4=^{circumstances-m}}} {{result4=[[ (?{@{circumstantial_i18n}|0}) ]]}} {{botch-button=[@{botch_i18n}!](~@{character_name}|botch)}} {{crit-button=[@{critical_i18n}!](~@{character_name}|critical)}} {{stress=1}}"></button>
 </div></td>
-<td width="240px"><input type="text" style="width:220px;" class="heading_4" name="attr_Ability_name"></td>
+<td width="240px">
+<input type="text" style="width:25px; background: transparent; border: none; text-align: center; color: #53332a; font-variant: small-caps; font-family: Macondo, cursive; font-weight: bold; font-size: 14px; padding: 4px 0px;" name="attr_Ability_CharachShort" value="@{sys_at}@{Ability_CharacName}_short_i18n@{sys_rbk}" disabled >
+<input type="text" style="width:210px; padding-left: 0px" class="heading_4" name="attr_Ability_name">
+</td>
 <td><input type="number" class="number_2" name="attr_Ability_TotalScore" value="[[(@{Ability_Score}) + (@{Ability_Puissant})]]" disabled="true" ></td>
 <th><div style="width:40px;"><input type="checkbox" class="hider checkbox_1" name="attr_Ability_show" value="1" checked><span></span></div></th>
 </tr>
@@ -1228,7 +864,7 @@
 <tr>
 <td>
 <select class="select_1" name="attr_Ability_CharacName">
-<option class="italic" value="global_char" data-i18n="characteristic-choice" >-Characteristic-</option>
+<option class="italic" value="global_char" data-i18n="characteristic-choice" >-Global-</option>
 <option class="italic" value="ask" data-i18n="ask" >-Ask-</option>
 <option value="Intelligence" data-i18n="intelligence" >Intelligence</option>
 <option value="Perception" data-i18n="perception" >Perception</option>
@@ -3459,12 +3095,12 @@
 <rolltemplate class="sheet-rolltemplate-spell">
 <table class="sheet-rolltemplate-all">
 <tr>
-<td class="spellsubheader" colspan="3"><i><b>{{character}}</b> <div data-i18n="casts-rt" style="padding-left: 112px;">casts</div></i></td>
+<td class="sheet-spellsubheader" colspan="3"><i><b>{{character}}</b> <div data-i18n="casts-rt" style="padding-left: 112px;">casts</div></i></td>
 </tr>
 <tr>
 <th colspan="3">{{spell}}</th>
 </tr>{{#sigil}}<tr>
-<td colspan="3"><i class="spelldescription" style="margin-left:5px;">{{sigil}}</i></td>
+<td colspan="3"><i class="sheet-spelldescription" style="margin-left:5px;">{{sigil}}</i></td>
 </tr>{{/sigil}}<tr>
 <td class="top_bottom" style="padding-left:5px;padding-right:5px;"><i>{{Technique}}</i></td>
 <td class="top_bottom" style="padding-left:5px;padding-right:5px;"><i>{{Form}}</i></td>
@@ -3476,27 +3112,27 @@
 <td><div style="padding-left:5px;padding-right:5px;">T</div></td>
 </tr>
 <tr>
-<td><div style="padding-left:5px;padding-right:5px;" class="spelllabel">{{range}}</div></td>
-<td><div style="padding-left:5px;padding-right:5px;" class="spelllabel">{{duration}}</div></td>
-<td><div style="padding-left:5px;padding-right:5px;" class="spelllabel">{{target}}</div></td>
+<td><div style="padding-left:5px;padding-right:5px;" class="sheet-spelllabel">{{range}}</div></td>
+<td><div style="padding-left:5px;padding-right:5px;" class="sheet-spelllabel">{{duration}}</div></td>
+<td><div style="padding-left:5px;padding-right:5px;" class="sheet-spelllabel">{{target}}</div></td>
 </tr>
 <tr>
-<td><div style="padding-left:5px;padding-right:5px;"><b data-i18n="roll">Roll:</b></div></td>{{^stress}}<td class="sheet-display-simple"><span class="tcat"></span>{{roll}}</td>{{/stress}}
+<td><div style="padding-left:5px;padding-right:5px;"><b data-i18n="roll">Roll:</b></div></td>{{^stress}}<td class="sheet-display-simple"><span class="sheet-tcat"></span>{{roll}}</td>{{/stress}}
 {{#stress}}<td class="sheet-display-stress">
-<span class="tcat"></span>{{roll}}
+<span class="sheet-tcat"></span>{{roll}}
 {{#rollWasFumble() roll}}<span class="sheet-rolltemplate-botchbt">{{botch-button}}</span>{{/rollWasFumble() roll}}
 {{#rollWasCrit() roll}}<span class="sheet-rolltemplate-critbt">{{crit-button}}</span>{{/rollWasCrit() roll}}</td>{{/stress}}<td></td>
 </tr>{{#effect}}<tr>
 <td colspan="3"><div style="padding-left:5px;padding-right:5px;"><b data-i18n="effect" >Effect</b></div></td>
 </tr>
 <tr>
-<td colspan="3"><div style="padding-left:5px;padding-right:5px;" class="spelldescription">{{effect}}</div></td>
+<td colspan="3"><div style="padding-left:5px;padding-right:5px;" class="sheet-spelldescription">{{effect}}</div></td>
 </tr>{{/effect}}
 {{#mastery}}<tr>
 <td colspan="3"><div style="padding-left:5px;padding-right:5px;"><b data-i18n="mastery">Mastery</b></div> </td>
 </tr>
 <tr>
-<td colspan="3"><div style="padding-left:5px;padding-right:5px;" class="spelldescription">{{mastery}}</div></td>
+<td colspan="3"><div style="padding-left:5px;padding-right:5px;" class="sheet-spelldescription">{{mastery}}</div></td>
 </tr>{{/mastery}}</table>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-botch">
@@ -3532,7 +3168,7 @@
 </table>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-attack">
-<table class="combatroller sheet-rolltemplate-all">
+<table class="sheet-combatroller sheet-rolltemplate-all">
 <tr>
 <th colspan="2">{{name}}</th>
 </tr>{{#weapon}}<tr>
@@ -3544,12 +3180,12 @@
 {{#rollWasCrit() attack}}<span class="sheet-rolltemplate-critbt">{{crit-button}}</span>{{/rollWasCrit() attack}}</td>{{/stress}}</tr>
 <tr>
 <td><div style="text-align:center;" data-i18n="damage">Damage</div></td>
-<td class="display-default"><div style="text-align:center;">{{#^rollLess() damage 0}}<span class="inlinerollresult" style="min-width:0; margin-right: -15px">+</span>{{/^rollLess() damage 0}}{{damage}}</div></td>
+<td class="sheet-display-default"><div style="text-align:center;">{{#^rollLess() damage 0}}<span class="inlinerollresult" style="min-width:0; margin-right: -15px">+</span>{{/^rollLess() damage 0}}{{damage}}</div></td>
 </tr>
 </table>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-defend">
-<div class="combatroller sheet-rolltemplate-all">
+<div class="sheet-combatroller sheet-rolltemplate-all">
 <table>
 <tr>
 <th colspan="2">{{name}}</th>
@@ -3564,7 +3200,7 @@
 </div>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-soak">
-<table class="combatroller sheet-rolltemplate-all">
+<table class="sheet-combatroller sheet-rolltemplate-all">
 <tr>
 <th colspan="2">{{name}}</th>
 </tr>
@@ -3575,18 +3211,18 @@
 {{#rollWasCrit() rollsoak}}<span class="sheet-rolltemplate-critbt">{{crit-button}}</span>{{/rollWasCrit() rollsoak}}</td>{{/stress}}</tr>
 <tr>
 <td><div style="text-align:center;" data-i18n="armor-protection">Armor Protection</div></td>
-<td class="display-default"><div style="text-align:center;">{{armorsoak}}</div></td>
+<td class="sheet-display-default"><div style="text-align:center;">{{armorsoak}}</div></td>
 </tr>{{#soakbonus}}<tr>
 <td><div style="text-align:center;" data-i18n="bonus">Bonus</div></td>
-<td class="display-default"><div style="text-align:center;">{{soakbonus}}</div></td>
+<td class="sheet-display-default"><div style="text-align:center;">{{soakbonus}}</div></td>
 </tr>{{/soakbonus}}
 {{#formlabel}}<tr>
 <td><div style="text-align:center;">{{formlabel}}</div></td>
-<td class="display-default"><div style="text-align:center;">{{formbonus}}</div></td>
+<td class="sheet-display-default"><div style="text-align:center;">{{formbonus}}</div></td>
 </tr>{{/formlabel}}</table>
 </rolltemplate>
 <rolltemplate class="sheet-rolltemplate-initiative">
-<table class="combatroller sheet-rolltemplate-all">
+<table class="sheet-combatroller sheet-rolltemplate-all">
 <tr>
 <th>{{name}}</th>
 </tr>
@@ -3609,35 +3245,35 @@
 <tr>
 <th colspan="2"><b>{{name}}</b> <div data-i18n="leverages-rt" style="font-size:24px; padding-left:95px;">leverages</div></th>
 </tr>
-<tr class="subheader">
-<td class="label" colspan="2" style="width:100%">
-<div class="define">{{label0}}</div>
-<div class="flex_item" data-i18n="attaining-rt">Attaining</div>
+<tr class="sheet-subheader">
+<td class="sheet-label" colspan="2" style="width:100%">
+<div class="sheet-define">{{label0}}</div>
+<div class="sheet-flex_item" data-i18n="attaining-rt">Attaining</div>
 </td>
 </tr>
-<tr class="subheader">
-<td class="label" colspan="2">{{^stress}}<div class="sheet-display-simple sheet-bigresult">{{result0}}</div>{{/stress}}
+<tr class="sheet-subheader">
+<td class="sheet-label" colspan="2">{{^stress}}<div class="sheet-display-simple sheet-bigresult">{{result0}}</div>{{/stress}}
 {{#stress}}<div class="sheet-display-stress sheet-bigresult">{{result0}}{{#rollWasFumble() result0}}<span class="sheet-rolltemplate-botchbt">{{botch-button}}</span>{{/rollWasFumble() result0}}
 {{#rollWasCrit() result0}}<span class="sheet-rolltemplate-critbt">{{crit-button}}</span>{{/rollWasCrit() result0}}</div>{{/stress}}</td>
 </tr>
 <tr>
-<td class="banner" colspan="2">{{banner}}</td>
+<td class="sheet-banner" colspan="2">{{banner}}</td>
 </tr>
 <tr>
-<td class="label">{{label1}}</td>
-<td class="result">{{result1}}</td>
+<td class="sheet-label">{{label1}}</td>
+<td class="sheet-result">{{result1}}</td>
 </tr>
 <tr>
-<td class="label">{{label2}}</td>
-<td class="result">{{result2}}</td>
+<td class="sheet-label">{{label2}}</td>
+<td class="sheet-result">{{result2}}</td>
 </tr>
 <tr>
-<td class="label">{{label3}}</td>
-<td class="result">{{result3}}</td>
+<td class="sheet-label">{{label3}}</td>
+<td class="sheet-result">{{result3}}</td>
 </tr>
 <tr>
-<td class="label">{{label4}}</td>
-<td class="result">{{result4}}</td>
+<td class="sheet-label">{{label4}}</td>
+<td class="sheet-result">{{result4}}</td>
 </tr>
 </table>
 </rolltemplate>
@@ -3647,8 +3283,8 @@
 <th colspan=2><span style="position:relative;bottom:5px;">{{Banner}}</span></th>
 </tr>
 <tr>
-<td class="Label">{{Label}}</td>{{^stress}}<td class="Result sheet-display-simple">{{Result}}</td>{{/stress}}
-{{#stress}}<td class="Result sheet-display-stress">{{Result}}
+<td class="sheet-Label">{{Label}}</td>{{^stress}}<td class="sheet-Result sheet-display-simple">{{Result}}</td>{{/stress}}
+{{#stress}}<td class="sheet-Result sheet-display-stress">{{Result}}
 {{#rollWasFumble() Result}}<span class="sheet-rolltemplate-botchbt">{{botch-button}}</span>{{/rollWasFumble() Result}}
 {{#rollWasCrit() Result}}<span class="sheet-rolltemplate-critbt">{{crit-button}}</span>{{/rollWasCrit() Result}}</td>{{/stress}}</tr>
 </table>
@@ -3665,40 +3301,40 @@
 <tr>
 <td>&nbsp;</td>
 </tr>{{#label1}}<tr>
-<td class="label">{{label1}}</td>
-<td class="result">{{result1}}</td>
+<td class="sheet-label">{{label1}}</td>
+<td class="sheet-result">{{result1}}</td>
 </tr>{{/label1}}
 {{#label2}}<tr>
-<td class="label">{{label2}}</td>
-<td class="result">{{result2}}</td>
+<td class="sheet-label">{{label2}}</td>
+<td class="sheet-result">{{result2}}</td>
 </tr>{{/label2}}
 {{#label3}}<tr>
-<td class="label">{{label3}}</td>
-<td class="result">{{result3}}</td>
+<td class="sheet-label">{{label3}}</td>
+<td class="sheet-result">{{result3}}</td>
 </tr>{{/label3}}
 {{#label4}}<tr>
-<td class="label">{{label4}}</td>
-<td class="result">{{result4}}</td>
+<td class="sheet-label">{{label4}}</td>
+<td class="sheet-result">{{result4}}</td>
 </tr>{{/label4}}
 {{#label5}}<tr>
-<td class="label">{{label5}}</td>
-<td class="result">{{result5}}</td>
+<td class="sheet-label">{{label5}}</td>
+<td class="sheet-result">{{result5}}</td>
 </tr>{{/label5}}
 {{#label6}}<tr>
-<td class="label">{{label6}}</td>
-<td class="result">{{result6}}</td>
+<td class="sheet-label">{{label6}}</td>
+<td class="sheet-result">{{result6}}</td>
 </tr>{{/label6}}
 {{#textlabel}}<!--<tr name="divider">
 <td colspan="2"><hr style="margin-bottom:0px;"></td>
 </tr>-->
 <tr>
-<td class="label" colspan="2" style="padding-top: 20px;">{{textlabel}}</td>
+<td class="sheet-label" colspan="2" style="padding-top: 20px;">{{textlabel}}</td>
 </tr>{{/textlabel}}
 {{#textsublabel}}<tr>
-<td class="textfield" colspan="2" style="text-align: center;">{{textsublabel}}</td>
+<td class="sheet-textfield" colspan="2" style="text-align: center;">{{textsublabel}}</td>
 </tr>{{/textsublabel}}
 {{#textfield}}<tr>
-<td class="textfield" colspan="2">{{textfield}}</td>
+<td class="sheet-textfield" colspan="2">{{textfield}}</td>
 </tr>{{/textfield}}</table>
 </div>
 <div style="background-image:url(https://i.imgur.com/DdTHJT1.jpg); width:235px; height:125px; position:relative; top:-50px;"></div>
@@ -3762,6 +3398,16 @@
 <input name ="attr_stamina_i18n" type="hidden" value="Stamina" >
 <input name ="attr_dexterity_i18n" type="hidden" value="Dexterity" >
 <input name ="attr_quickness_i18n" type="hidden" value="Quickness" >
+<input name ="attr_ask_short_i18n" type="hidden" value="Ask" >
+<input name ="attr_global_char_short_i18n" type="hidden" value="Gbl" >
+<input name ="attr_intelligence_short_i18n" type="hidden" value="Int" >
+<input name ="attr_perception_short_i18n" type="hidden" value="Per" >
+<input name ="attr_presence_short_i18n" type="hidden" value="Prs" >
+<input name ="attr_communication_short_i18n" type="hidden" value="Com" >
+<input name ="attr_strength_short_i18n" type="hidden" value="Str" >
+<input name ="attr_stamina_short_i18n" type="hidden" value="Sta" >
+<input name ="attr_dexterity_short_i18n" type="hidden" value="Dex" >
+<input name ="attr_quickness_short_i18n" type="hidden" value="Qik" >
 <input name ="attr_creo_i18n" type="hidden" value="Creo" >
 <input name ="attr_intellego_i18n" type="hidden" value="Intellego" >
 <input name ="attr_muto_i18n" type="hidden" value="Muto" >
@@ -3789,17 +3435,16 @@
 <input name ="attr_sys_pipe" type="hidden" value="|" >
 <input name ="attr_sys_rbk" type="hidden" value="}" >
 <!-- Used by the alert system to hide old alerts on new sheets -->
-<input name="attr_notNew" type="hidden" value="0" >
-<!-- Sheet Worker Scripts -->
+<input name="attr_notNew" type="hidden" value="0" ><!-- Sheet Worker Scripts -->
 <script type="text/worker">
   const k = (function(){
   const kFuncs = {};
   
-  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"act_testaction":{"triggeredFuncs":["arm5roll"],"name":"testaction","listener":"clicked:testaction","listenerFunc":"accessSheet","type":"action"},"attr_testaction":{"name":"testaction","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"fieldset_repeating_shapeshifts":{"triggeredFuncs":["removeShapeshift"],"name":"repeating_shapeshifts","listener":"remove:repeating_shapeshifts","listenerFunc":"accessSheet","type":"fieldset"},"attr_repeating_shapeshifts_$X_selected":{"name":"repeating_shapeshifts_$X_selected","type":"checkbox","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_repeating_shapeshifts_$X_shapeshift-name-action":{"triggeredFuncs":["selectShapeshift"],"name":"repeating_shapeshifts_$X_shapeshift-name-action","listener":"clicked:repeating_shapeshifts:shapeshift-name-action","listenerFunc":"accessSheet","type":"action"},"attr_repeating_shapeshifts_$X_shapeshift_name":{"name":"repeating_shapeshifts_$X_shapeshift_name","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_char_selected":{"name":"repeating_shapeshifts_$X_char_selected","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_shapeshifts_$X_attr_VirtueDescription":{"name":"repeating_shapeshifts_$X_attr_VirtueDescription","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_shapeshift-add":{"triggeredFuncs":["addShapeshift"],"name":"shapeshift-add","listener":"clicked:shapeshift-add","listenerFunc":"accessSheet","type":"action"},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel0","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1":{"name":"repeating_Shape-specific-abilities_$X_nestedFieldsetLevel1","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_name":{"name":"repeating_Shape-specific-abilities_$X_ability_name","type":"text","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_Shape-specific-abilities_$X_ability_damage":{"name":"repeating_Shape-specific-abilities_$X_ability_damage","type":"number","defaultValue":0,"triggeredFuncs":[],"affects":[]},"act_add-ability-entry":{"listenerFunc":"addItem","name":"add-ability-entry","listener":"clicked:add-ability-entry","type":"action"},"act_edit-Shape-specific-abilities":{"listenerFunc":"editSection","name":"edit-Shape-specific-abilities","listener":"clicked:edit-Shape-specific-abilities","type":"action"}};
+  const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"}};
   
   kFuncs.cascades = cascades;
   
-  const repeatingSectionDetails = [{"section":"repeating_shapeshifts","fields":["selected","shapeshift_name","char_selected","attr_VirtueDescription"]},{"section":"repeating_Shape-specific-abilities","fields":["nestedFieldsetLevel0","nestedFieldsetLevel1","ability_name","ability_damage"]}];
+  const repeatingSectionDetails = [];
   
   kFuncs.repeatingSectionDetails = repeatingSectionDetails;
   /**
@@ -3831,8 +3476,8 @@ const initialSetups = {};
 const allHandlers = {};
 const addFuncs = {};
 
-const kscaffoldJSVersion = 0.30;
-const kscaffoldPUGVersion = 0.30;
+const kscaffoldJSVersion = '0.0.4';
+const kscaffoldPUGVersion = '0.0.4';
   /*jshint esversion: 11, laxcomma:true, eqeqeq:true*/
 /*jshint -W014,-W084,-W030,-W033*/
 /**
@@ -4081,8 +3726,11 @@ const createAttrProxy = function(attrs){
       event.removedInfo ?
       'fieldset_' :
       'attr_';
-    let cascName = `${typePrefix}${eventName.replace(/clicked:/,'')}`;
+    let cascName = `${typePrefix}${eventName.replace(/(?:removed|clicked):/,'')}`;
     let cascObj = casc[cascName];
+    if(typePrefix === 'attr_'){
+      cascObj.previousValue = event.previousValue;
+    }
     return cascObj;
   };
   
@@ -4119,7 +3767,7 @@ const createAttrProxy = function(attrs){
     }
     debug({trigger});
     if(event){
-      debug('checking for initial functions');
+      debug('checking for initial & always functions');
       alwaysFunctions(trigger,attributes,sections,casc);//Functions that should be run for all events.
       initialFunction(trigger,attributes,sections,casc);//functions that should only be run if the attribute was the thing changed by the user
     }
@@ -4331,7 +3979,7 @@ const updateSheet = function(){
       });
     }else{
       Object.entries(updateHandlers).forEach(([ver,handler])=>{
-        if(attributes.version < +ver){
+        if(attributes.sheet_version < +ver){
           handler({attributes,sections,casc});
         }
       });
@@ -4367,7 +4015,7 @@ const initialSetup = function(attributes,sections){
 const accessSheet = function(event){
   debug({funcs:Object.keys(funcs)});
   debug({event});
-  getAllAttrs({event,callback:(attributes,sections,casc)=>{
+  getAllAttrs({callback:(attributes,sections,casc)=>{
     let trigger = attributes.getCascObj(event,casc);
     attributes.processChange({event,trigger,attributes,sections,casc});
   }});
@@ -4696,9 +4344,44 @@ const editSection = function(event){
   $20(target).toggleClass('ui-sortable');
   $20(target).toggleClass('editmode');
 };
-registerFuncs({editSection});return kFuncs;
+registerFuncs({editSection});/**
+ * The default tab navigation function of the K-scaffold. Courtesy of Riernar. It will add `k-active-tab` to the active tab-container and `k-active-button` to the active button. You can either write your own CSS to control display of these, or use the default CSS included in `scaffold/_k.scss`. Note that `k-active-button` has no default CSS as it is assumed that you will want to style the active button to match your system.
+ * @param {Object} trigger - The trigger object
+ */
+const kSwitchTab = function ({ trigger, attributes }) {
+  const [container, tab] = (
+    trigger.name.match(/nav-tabs-(.+)--(.+)/) ||
+    []
+  ).slice(1);
+  $20(`[data-container-tab="${container}"]`).removeClass('k-active-tab');
+  $20(`[data-container-tab="${container}"][data-tab="${tab}"]`).addClass('k-active-tab');
+  $20(`[data-container-button="${container}"]`).removeClass('k-active-button');
+  $20(`[data-container-button="${container}"][data-button="${tab}"]`).addClass('k-active-button');
+  const tabInputName = `${container.replace(/\-/g,'_')}_tab`;
+  if(persistentTabs.indexOf(tabInputName) > -1){
+    attributes[tabInputName] = trigger.name;
+  }
+}
+
+registerFuncs({ kSwitchTab });
+
+/**
+ * Sets persistent tabs to their last active state
+ * @param {object} trigger - The trigger that caused the function to be called
+ * @param {object} attributes - The attribute values of the character
+ * @param {object[]} sections - All the repeating section IDs
+ * @param {object} casc - Expanded cascade object
+ */
+const kTabOnOpen = function({trigger,attributes,sections,casc}){
+  persistentTabs.forEach((tabInput) => {
+    const pseudoTrigger = {name:attributes[tabInput]};
+    kSwitchTab({trigger:pseudoTrigger, attributes});
+  });
+};
+registerFuncs({ kTabOnOpen },{type:['opener']});
+  return kFuncs;
   }());
-  const actionAttributes = ["testaction"];
+  const actionAttributes = [];
   // Legacy sheetworkers
 const tabs = ["character","abilities","magic","combat","spells","sheet"].forEach(function (button) {
     on("clicked:" + button, function() {
@@ -4906,6 +4589,7 @@ on("sheet:opened", function(eventInfo){
         "bonus_i18n": getTranslationByKey("bonus"),
         "botch_i18n": getTranslationByKey("botch"),
         "characteristic_i18n": getTranslationByKey("characteristic"),
+        "communication_i18n": getTranslationByKey("communication-short"),
         "botch_num_i18n": getTranslationByKey("botch-num"),
         "circumstances_i18n": getTranslationByKey("circumstances-m"),
         "circumstantial_i18n": getTranslationByKey("circumstantial"),
@@ -4945,6 +4629,16 @@ on("sheet:opened", function(eventInfo){
         "stamina_i18n": getTranslationByKey("stamina"),
         "dexterity_i18n": getTranslationByKey("dexterity"),
         "quickness_i18n": getTranslationByKey("quickness"),
+        "ask_short_i18n": getTranslationByKey("ask-short"),
+        "global_char_short_i18n": getTranslationByKey("global-short"),
+        "intelligence_short_i18n": getTranslationByKey("intelligence-short"),
+        "perception_short_i18n": getTranslationByKey("perception-short"),
+        "presence_short_i18n": getTranslationByKey("presence-short"),
+        "communication_short_i18n": getTranslationByKey("communication-short"),
+        "strength_short_i18n": getTranslationByKey("strength-short"),
+        "stamina_short_i18n": getTranslationByKey("stamina-short"),
+        "dexterity_short_i18n": getTranslationByKey("dexterity-short"),
+        "quickness_short_i18n": getTranslationByKey("quickness-short"),
         "creo_i18n": getTranslationByKey("creo"),
         "intellego_i18n": getTranslationByKey("intellego"),
         "muto_i18n": getTranslationByKey("muto"),
@@ -5038,132 +4732,5 @@ on("sheet:opened", function(eventInfo){
     });
     
 });
-
-  
-  // Initialize the sheet basic elements
-  
-  
-  // This constants is exported from PUG, and stores the rolls for each roll button
-  // The sheetworker for custom roll parsing fetches from this constant to find the rolls
-  const arm5rolls = {
-    "testaction": "&{template:default} {{stress_roll=[[1d10cs1cf10 + 3]]}}",
-  };// Sheetworkers for Custom Roll Parsing
-  async function arm5roll({ trigger }) {
-    // the arm5rolls value is created by the pug in arm5roller
-    // and contains the rolls for the action button
-    const roll = arm5rolls[trigger.name];
-    const { rollId, results } = await startRoll("" + roll);
-    finishRoll(rollId);
-    const stress_names = [];
-    const stress_dice = [];
-    const stress_bonuses = [];
-    for (const [key, rollObj] of Object.entries(results)) {
-        if (key.startsWith("stress_")) {
-            d10s = rollObj.rolls.filter(dice => dice.sides == 10 && dice.dice == 1);
-            if (d10s.length == 1) {
-                stress_names.push(key);
-                stress_dice.push(d10s[0].results[0]);
-                stress_bonuses.push(rollObj.result - d10s[0].results[0]);
-            }
-        }
-    }
-    // Handle botches
-    const potential_botches = Array.from(_.zip(stress_names, stress_dice).entries())
-        .filter(([index, [name, dice]]) => (dice == 10) && (!name.endsWith("_nobotch")))
-        .map(([index, rest]) => index)
-        ;
-    // For each potential botch, query the number of botch die from the user
-    // Use a single roll with many queries, and translation attributes on the sheet for display
-    const botch_queries = potential_botches.map(index => "?{" + stress_names[index] + "|1}");
-    const botch_query = botch_queries.join(" ");
-    if (!(botch_query === "")) {
-        const { rollId, results } = await startRoll("!" + botch_query);
-    }
-
-
-    console.log({
-        trigger: trigger,
-        arm5rolls: arm5rolls,
-        roll: roll,
-        rollId: rollId,
-        results: results,
-        stress_names: stress_names,
-        stress_bonuses: stress_bonuses,
-        stress_dice: stress_dice,
-        potential_botches: potential_botches,
-        botch_queries: botch_queries,
-        botch_query: botch_query
-    });
-}
-
-k.registerFuncs({ arm5roll })
-  // Initialize the tabs() mixin
-  // Constant is exported by PUG into the Javascript to transfer data
-  
-  const tabsStorage = JSON.parse("{\"test-tab\":{\"name\":\"test-tab\",\"orient\":\"horizontal\",\"tabs\":[{\"name\":\"tab1\"},{\"name\":\"tab2\"}]}}");
-  
-  // Code to handle tabs with Roll20's jQuery implementation
-  
-(
-    function registerTabHandlers(storage) {
-        Object.entries(storage).forEach(
-            ([name, data]) => {
-                console.log(`Registering handler for tab ${name}`);
-                $20(`.tab.tab-${name} .tab-header.tab-header-${name} .tab-button.tab-button-${name}`).on("click", (event) => {
-                    console.log("clicked:");
-                    console.log(event.htmlAttributes);
-                    const tab = event.htmlAttributes["data-tab"];
-                    console.log(`$20(.tab.tab-${name} div[data-tab]).removeClass("active");`);
-                    $20(`.tab.tab-${name} div[data-tab]`).removeClass("active");
-                    console.log(`$20(.tab.tab-${name} div[data-tab=${tab}]).addClass("active");`);
-                    $20(`.tab.tab-${name} div[data-tab=${tab}]`).addClass("active");
-                });
-            }
-        );
-    }
-)(tabsStorage);
-  
-  // Sheetworkers for each tab
-  // Sheetworkers for the "character" tab
-  // Sheetworkers for the "abilities" tab
-  function setSelectedShapeshift(rowID) {
-    getSectionIDs("shapeshifts", (IDs) => {
-        const attributeUpdates = {};
-        for(var i=0; i < IDs.length; i++) {
-            attributeUpdates["repeating_shapeshifts_" + IDs[i] + "_selected"] = "0";
-        }
-        attributeUpdates["repeating_shapeshifts_" + rowID + "_selected"] = "1";
-        console.log("Setting active shapeshift to rowID=" + rowID);
-        console.log("Setting attributes: \n" + JSON.stringify(attributeUpdates));
-        k.setAttrs(attributeUpdates);
-    });
-}
-
-function addShapeshift({ attributes, trigger }) {
-    k.getAllAttrs({
-        callback: (attributes, sections, casc) => {
-            const newRow = k.generateRowID("repeating_shapeshifts", sections);
-            console.log("Added repeating_shapeshifts row: " + newRow);
-            const attributeUpdates = {};
-            attributeUpdates[newRow + "_shapeshift_name"] = "New shapeshift";
-            k.setAttrs(attributeUpdates, null, () => {
-                const [section, rowID, attrName] = k.parseTriggerName(newRow + "_shapeshift_name");
-                setSelectedShapeshift(rowID);
-            });
-        }
-    });
-}
-
-function selectShapeshift({ attributes, trigger }) {
-    const [section, rowID, attrName] = k.parseTriggerName(trigger.name);
-    setSelectedShapeshift(rowID);
-    
-}
-
-function removeShapeshift({ attributes, trigger }) {
-    console.log("Removed repeating_shapeshifts rowId: <unknown>");
-}
-
-k.registerFuncs({ addShapeshift, selectShapeshift, removeShapeshift });
 
 </script>
