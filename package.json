@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@anduh/pug-cli": "^1.0.0-alpha8",
-    "@kurohyou/k-init": "^1.0.2",
-    "pug": "^3.0.2"
+    "markdown-it": "^13.0.1",
+    "pug": "^3.0.2",
+    "sass": "^1.56.1"
   }
 }
