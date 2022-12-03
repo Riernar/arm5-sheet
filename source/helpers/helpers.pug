@@ -1,1 +1,12 @@
-include render_markdown/render_markdown.pug
+//- All other helpers may load their javascript from file, this should be first
+include load_js.pug
+include data_persistance.pug
+include updater/updater.pug
+include markdown/markdown.pug
+
+mixin sheetworker_helpers()
+    +sheetworker_helpers_data_persistance
+    +sheetworker_helpers_updater
+
+mixin post_sheetworker_helpers()
+    +post_sheetworker_helpers_updater

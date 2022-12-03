@@ -1,3 +1,9 @@
+//- Object used to store the whole system, must be defined first
+//- To clarify difference between sheet code and pug code, we use the
+//- arm5.pug namespace for code that runs during sheet generation, and
+//- arm5.sheet namespace for code that runs during sheet loading in the VTT
+- const arm5 = {pug: {}};
+
 include helpers/helpers.pug
 include mixins/elements.pug
 
@@ -8,7 +14,21 @@ include legacy/_legacy.pug
 
 <!-- Sheet Worker Scripts -->
 +kscript
+    //- object used to store the whole system, must be defined first
+    //- To clarify difference between sheet code and pug code, we use the
+    //- arm5.pug namespace for code that runs during sheet generation, and
+    //- arm5.sheet namespace for code that runs during sheet loading in the VTT
+    |
+    | // Top-level object for the sheetworkers
+    | const arm5 = {sheet: {}};
+    |
+    //- Load all the sheet workers from helpers
+    +sheetworker_helpers
     //- Legacy sheetworkers
     | // Legacy sheetworkers
+    | 
     include legacy/legacy.js
-    
+    |
+    | // Post of sheetworker imports, finalizes the sheetworkers
+    +post_sheetworker_helpers
+    |

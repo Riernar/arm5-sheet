@@ -1,0 +1,17 @@
+
+- arm5.pug.js_loader.load_js("helpers/updater/updater.pug.js");
+
+mixin sheetworker_helpers_updater()
+    |
+    |
+    include updater.sheetworker.js
+
+mixin post_sheetworker_helpers_updater()
+    //- Execute in PUG the code that generates the registrations
+    |
+    != arm5.pug.updater.generateSheetworkerRegistrations()
+    //- Output sheetworker code that calls the implementations
+    |
+    | arm5.sheet.updater.addAllUpdateRef();
+    | arm5.sheet.updater.registerAllUpdates();
+    |
