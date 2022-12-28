@@ -19,9 +19,10 @@ $(BUILD)/%.css: $(SOURCE)/%.scss $(SOURCE)/k-scaffold/_k.scss
 # Declare that the root pug and SCSS depends on all other files, to recompile
 # on update
 # We do this because Makefile doesn't see the "include" of PUG
-$(SOURCE)/Ars_Magica_5th.pug: $(SOURCE)/**/*.pug $(SOURCE)/**/*.js
+$(BUILD)/Ars_Magica_5th.html: $(shell find $(SOURCE) -type f -name '*.pug') $(shell find $(SOURCE) -type f -name '*.js')
 
-$(SOURCE)/Ars_Magica_5th.scss: $(SOURCE)/**/*.scss
+$(BUILD)/Ars_Magica_5th.css: $(shell find $(SOURCE) -type f -name '*.scss')
+
 
 # Rule to download k-scaffold where needed
 # Specify intermediates so that k-scaffold is not deleted each time

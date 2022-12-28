@@ -1,3 +1,4 @@
+include k-scaffold/_kpug.pug
 //- Object used to store the whole system, must be defined first
 //- To clarify difference between sheet code and pug code, we use the
 //- arm5.pug namespace for code that runs during sheet generation, and
@@ -7,6 +8,17 @@
 include helpers/helpers.pug
 include mixins/elements.pug
 
+- arm5.pug.updater.version = "2.0";
+
+//- We are now ready to create the sheet
+include updates/updates.pug
+
++alert({name: "test-info"})
+    | This is a test alert with level info
+
++alert({name: "test-warning", level: "warning"})
+    | This is a test alert with level warning
+
 
 //- include tabs/tabs.pug
 
@@ -14,6 +26,9 @@ include legacy/_legacy.pug
 
 <!-- Sheet Worker Scripts -->
 +kscript
+    | 
+    | // k-scaffold fix ?
+    | const persistentTabs = [];
     //- object used to store the whole system, must be defined first
     //- To clarify difference between sheet code and pug code, we use the
     //- arm5.pug namespace for code that runs during sheet generation, and
@@ -28,7 +43,11 @@ include legacy/_legacy.pug
     | // Legacy sheetworkers
     | 
     include legacy/legacy.js
+    | 
+    | 
+    +sheetworker_updates
     |
-    | // Post of sheetworker imports, finalizes the sheetworkers
+    | // Finalize our sheetworker setup
+    | 
     +post_sheetworker_helpers
     |

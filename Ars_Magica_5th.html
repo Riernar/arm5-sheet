@@ -1,4 +1,4 @@
-<input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
+<!-- Attribute used to store the display state of alerts--><!-- Stored as a JSON string--><input name="attr_arm5_sheet_alerts_states" value="{}" type="hidden" title="@{arm5_sheet_alerts_states}"/><div class="alert alert-level__info alert--test-info hidden"><button class="alert--test-info alert__close alert--test-info__close" name="act_alert-close-test-info" type="action" title="%{alert-close-test-info}" data-alert-name="test-info"></button><div class="alert__content alert--test-info__content ">This is a test alert with level info</div></div><div class="alert alert-level__warning alert--test-warning hidden"><button class="alert--test-warning alert__close alert--test-warning__close" name="act_alert-close-test-warning" type="action" title="%{alert-close-test-warning}" data-alert-name="test-warning"></button><div class="alert__content alert--test-warning__content ">This is a test alert with level warning</div></div><input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
 <div class="alert alert-warning">
 <div>
 <h3> Warning - February 2021 v1.6.1 update - ERROR: Spell's arts conversion</h3>
@@ -246,8 +246,7 @@
 <input type="checkbox" name="attr_alert-alert-update-v1-4" value="1" > ×
 </label>
 </div>
-<!-- Used by the alert system to hide old alerts on new sheets -->
-<input name="attr_notNew" type="hidden" value="0" ><div class="top_bar">
+<!-- Used by the alert system to hide old alerts on new sheets --><div class="top_bar">
 <div>
 <div class='artcontainer'>
 <div class='sheet-col'>
@@ -2840,10 +2839,10 @@
 <input name ="attr_sys_pipe" type="hidden" value="|" >
 <input name ="attr_sys_rbk" type="hidden" value="}" ><!-- Sheet Worker Scripts --><script type="text/worker">const k = (function(){
 const kFuncs = {};
-const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"}};
+const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_arm5_sheet_alerts_states":{"name":"arm5_sheet_alerts_states","type":"hidden","defaultValue":"{}","triggeredFuncs":[],"affects":[]},"attr_notNew":{"name":"notNew","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Load":{"name":"repeating_weapons_$X_Wounds_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Range":{"name":"repeating_weapons_$X_Wounds_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Load":{"name":"repeating_weapons_$X_Weapon_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Range":{"name":"repeating_weapons_$X_Weapon_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Technique_select":{"name":"repeating_spell_$X_Technique_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Form_select":{"name":"repeating_spell_$X_Form_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_tech_name":{"name":"repeating_spell_$X_spell_tech_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_form_name":{"name":"repeating_spell_$X_spell_form_name","type":"string","affects":[],"triggeredFuncs":[]},"act_alert-close-test-info":{"triggeredFuncs":["arm5.sheet.alerts.close"],"name":"alert-close-test-info","listener":"clicked:alert-close-test-info","listenerFunc":"accessSheet","type":"action"},"act_alert-close-test-warning":{"triggeredFuncs":["arm5.sheet.alerts.close"],"name":"alert-close-test-warning","listener":"clicked:alert-close-test-warning","listenerFunc":"accessSheet","type":"action"}};
 
 kFuncs.cascades = cascades;
-const repeatingSectionDetails = [];
+const repeatingSectionDetails = [{"section":"repeating_weapons","fields":["Wounds_Load","Wounds_Range","Weapon_Load","Weapon_Range"]},{"section":"repeating_spell","fields":["Technique_select","Form_select","spell_tech_name","spell_form_name"]}];
 
 kFuncs.repeatingSectionDetails = repeatingSectionDetails;
 /**
@@ -3780,7 +3779,10 @@ const kTabOnOpen = function({trigger,attributes,sections,casc}){
 registerFuncs({ kTabOnOpen },{type:['opener']});
 return kFuncs;
 }());
-const actionAttributes = [];
+const actionAttributes = []; 
+// k-scaffold fix ?
+const persistentTabs = [];
+
 // Top-level object for the sheetworkers
 const arm5 = {sheet: {}};
  
@@ -3789,25 +3791,29 @@ const arm5 = {sheet: {}};
 arm5.sheet.data = {
   "updater": {
     "references": {}
-  }
-};
-// Sheet update system built on top of k-scaffold
+  },
+  "alerts": [
+    "test-info",
+    "test-warning"
+  ]
+}; 
+ // Sheet update system built on top of k-scaffold
 // This supports having multiple update functions per version
 arm5.sheet.updater = {
     updates: {},
     did_register_updates: false,
 
-    addUpdate(version, callback) {
+    addUpdate({version, callback}) {
         if (arm5.sheet.updater.did_register_updates) {
             k.log(`Updates where already registered in k-scaffold, cannot register ${callback} for version ${version}.`);
             return;
         }
         const updates = arm5.sheet.updater.updates[version] || [];
         updates.push(callback);
-        arm5.sheet.updater.updates = updates;
+        arm5.sheet.updater.updates[version] = updates;
     },
 
-    addUpdateFromRef(version, reference, args) {
+    addUpdateFromRef({version, reference, args=null}) {
         let obj = arm5;
         for (const attrib of reference.split(".")) {
             obj = obj[attrib];
@@ -3822,13 +3828,13 @@ arm5.sheet.updater = {
         } else {
             callback = obj;
         }
-        arm5.sheet.updater.addUpdate(version, callback);
+        arm5.sheet.updater.addUpdate({version, callback});
     },
 
     addAllUpdateRef() {
         for (const [version, data] of Object.entries(arm5.sheet.data.updater.references)) {
             for (const { reference, args } of data) {
-                arm5.sheet.updater.addUpdateFromRef(version, reference, args);
+                arm5.sheet.updater.addUpdateFromRef({version, reference, args});
             }
         }
     },
@@ -3848,7 +3854,62 @@ arm5.sheet.updater = {
         k.registerFuncs(updates, { types: ["updater"] });
         arm5.sheet.updater.did_register_updates = true;
     }
-}// Legacy sheetworkers
+}
+ 
+ 
+
+arm5.sheet = arm5.sheet || {};
+arm5.sheet.alerts = {
+
+    attributeName: "arm5_sheet_alerts_states",
+
+    showAlert({ name, attributes }) {
+        if (arm5.sheet.data.alerts.indexOf(name) === -1) {
+            k.log(`Cannot show alert '${name}': undefined alert`);
+        } else {
+            k.log(`Showing alert '${name}'...`);
+            $20(`.alert--${name}`).removeClass("hidden");
+            const state = JSON.parse(attributes[arm5.sheet.alerts.attributeName]);
+            state[name] = true;
+            attributes[arm5.sheet.alerts.attributeName] = JSON.stringify(state);
+            k.log(`Showing alert '${name}': done`);
+        }
+    },
+
+    hideAlert({ name, attributes }) {
+        if (arm5.sheet.data.alerts.indexOf(name) === -1) {
+            k.log(`Cannot show alert '${name}': undefined alert`);
+        } else {
+            k.log(`Hidding alert '${name}'...`);
+            $20(`.alert--${name}`).addClass("hidden");
+            const state = JSON.parse(attributes[arm5.sheet.alerts.attributeName]);
+            state[name] = false;
+            attributes[arm5.sheet.alerts.attributeName] = JSON.stringify(state);
+            k.log(`Hidding alert '${name}': done`);
+        }
+    },
+
+    close({ trigger, attributes }) {
+        const name = trigger.name.match(/alert-close-(.+)/)[1];
+        arm5.sheet.alerts.hideAlert({ name, attributes });
+    },
+
+    onOpen({ attributes }) {
+        const state = JSON.parse(attributes[arm5.sheet.alerts.attributeName]);
+        arm5.sheet.data.alerts.forEach(name => {
+            if (name in state && state[name]) {
+                arm5.sheet.alerts.showAlert({ name, attributes });
+            } else {
+                state[name] = false;
+            }
+        });
+        attributes[arm5.sheet.alerts.attributeName] = JSON.stringify(state);
+    }
+};
+
+k.registerFuncs({ "arm5.sheet.alerts.close": arm5.sheet.alerts.close });
+k.registerFuncs({ "arm5.sheet.alerts.onOpen": arm5.sheet.alerts.onOpen }, { type: ["opener"] });
+// Legacy sheetworkers
  
 const tabs = ["character","abilities","magic","combat","spells","sheet"].forEach(function (button) {
     on("clicked:" + button, function() {
@@ -4199,8 +4260,33 @@ on("sheet:opened", function(eventInfo){
     });
     
 });
+ 
+  const preKScaffoldUpdates = {
+    updateWeaponAttributeNames: function ({ attributes, sections }) {
+        console.log("sections:");
+        console.log(sections);
+    },
 
-// Post of sheetworker imports, finalizes the sheetworkers
+    updateSpellTechniquesAndForms: function ({ attributes, sections }) {
+
+    },
+
+
+    handler: function (obj) {
+        console.log(`attributes.notNew = ${obj.attributes.notNew}`);
+        if (typeof obj.attributes.notNew !== "undefined") {
+            updateWeaponAttributeNames(obj);
+            updateSpellTechniquesAndForms(obj);
+        }
+
+    }
+
+};
+
+k.registerFuncs({ "preKScaffoldUpdates.handler": preKScaffoldUpdates.handler }, { type: ["new"] });
+ 
+// Finalize our sheetworker setup
+ k.version = "2.0";
 arm5.sheet.updater.addAllUpdateRef();
 arm5.sheet.updater.registerAllUpdates();
 </script>

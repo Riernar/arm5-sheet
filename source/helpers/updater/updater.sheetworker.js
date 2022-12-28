@@ -4,17 +4,17 @@ arm5.sheet.updater = {
     updates: {},
     did_register_updates: false,
 
-    addUpdate(version, callback) {
+    addUpdate({version, callback}) {
         if (arm5.sheet.updater.did_register_updates) {
             k.log(`Updates where already registered in k-scaffold, cannot register ${callback} for version ${version}.`);
             return;
         }
         const updates = arm5.sheet.updater.updates[version] || [];
         updates.push(callback);
-        arm5.sheet.updater.updates = updates;
+        arm5.sheet.updater.updates[version] = updates;
     },
 
-    addUpdateFromRef(version, reference, args) {
+    addUpdateFromRef({version, reference, args=null}) {
         let obj = arm5;
         for (const attrib of reference.split(".")) {
             obj = obj[attrib];
@@ -29,13 +29,13 @@ arm5.sheet.updater = {
         } else {
             callback = obj;
         }
-        arm5.sheet.updater.addUpdate(version, callback);
+        arm5.sheet.updater.addUpdate({version, callback});
     },
 
     addAllUpdateRef() {
         for (const [version, data] of Object.entries(arm5.sheet.data.updater.references)) {
             for (const { reference, args } of data) {
-                arm5.sheet.updater.addUpdateFromRef(version, reference, args);
+                arm5.sheet.updater.addUpdateFromRef({version, reference, args});
             }
         }
     },
