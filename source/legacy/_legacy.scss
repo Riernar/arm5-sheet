@@ -498,9 +498,10 @@
     /*----------- Banner -------------*/
     .banner {
         background: url('http://www.atlas-games.com/images/ArM5LogoColor.jpg');
-        background-size: 100%;
+        background-size: auto 100%;
         background-repeat: no-repeat;
-        background-position: right bottom;
+        background-position: center center;
+        background-origin: border-box;
     }
 
     .banner-content {

@@ -1,4 +1,4 @@
-<!-- Attribute used to store the display state of alerts--><!-- Stored as a JSON string--><input name="attr_arm5_sheet_alerts_states" value="{}" type="hidden" title="@{arm5_sheet_alerts_states}"/><div class="alert alert-level__info alert--test-info hidden"><button class="alert--test-info alert__close alert--test-info__close" name="act_alert-close-test-info" type="action" title="%{alert-close-test-info}" data-alert-name="test-info"></button><div class="alert__content alert--test-info__content ">This is a test alert with level info</div></div><div class="alert alert-level__warning alert--test-warning hidden"><button class="alert--test-warning alert__close alert--test-warning__close" name="act_alert-close-test-warning" type="action" title="%{alert-close-test-warning}" data-alert-name="test-warning"></button><div class="alert__content alert--test-warning__content ">This is a test alert with level warning</div></div><input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
+<!-- Attribute used to store the display state of alerts--><!-- Stored as a JSON string--><input name="attr_arm5_sheet_alerts_states" value="{}" type="hidden" title="@{arm5_sheet_alerts_states}"/><input type="hidden" class="alert-hidder" name="attr_alert-161-spell-update" value="0">
 <div class="alert alert-warning">
 <div>
 <h3> Warning - February 2021 v1.6.1 update - ERROR: Spell's arts conversion</h3>
@@ -246,10 +246,7 @@
 <input type="checkbox" name="attr_alert-alert-update-v1-4" value="1" > ×
 </label>
 </div>
-<!-- Used by the alert system to hide old alerts on new sheets --><div class="top_bar">
-<div>
-<div class='artcontainer'>
-<div class='sheet-col'>
+<!-- Used by the alert system to hide old alerts on new sheets --><div class="alert alert-level__info alert--test-info hidden"><button class="alert--test-info alert__close alert--test-info__close" name="act_alert-close-test-info" type="action" title="%{alert-close-test-info}" data-alert-name="test-info"></button><div class="alert__content alert--test-info__content ">This is a test alert with level info</div></div><div class="alert alert-level__warning alert--test-warning hidden"><button class="alert--test-warning alert__close alert--test-warning__close" name="act_alert-close-test-warning" type="action" title="%{alert-close-test-warning}" data-alert-name="test-warning"></button><div class="alert__content alert--test-warning__content ">This is a test alert with level warning</div></div><div class="flexrow top_bar header"><div class="artcontainer flexrow header__main"><div class='sheet-col'>
 <table class="table_1">
 <tr>
 <th data-i18n="character" >Character</th>
@@ -287,10 +284,7 @@
 <td style="text-align:right;"><input data-i18n-placeholder="points" placeholder="Points" type="text" class="heading_2" style="width:50px;" name="attr_ConfidencePoints"></td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-</div><div class="tab-br"></div><input type="hidden" class="tabstoggle" name="attr_sheetTab" value="sheet">
+</div></div><div class="flexcol header__controls"><label class="kmodal kmodal--settings kmodal__button kmodal--settings__button" for="kmodal-settings"><span class="material-icons">settings</span></label><span class="material-icons">help</span><span class="material-icons">forum</span></div></div><input class="kmodal kmodal--settings kmodal__checkbox kmodal--settings__checkbox" type="checkbox" id="kmodal-settings"/><div class="kmodal kmodal__outer kmodal--settings kmodal--settings__outer"><label class="kmodal kmodal__background kmodal--settings kmodal--settings__background" for="kmodal-settings"></label><div class="kmodal kmodal__inner kmodal--settings kmodal--settings__inner"><label class="kmodal kmodal__close kmodal--settings kmodal--settings__close" for="kmodal-settings"></label><div class="kmodal kmodal__content kmodal--settings kmodal--settings__content"><span>dummmy content</span></div></div></div><input type="hidden" class="tabstoggle" name="attr_sheetTab" value="sheet">
 <input type="hidden" name="attr_simple-die" value="(1d10cs0cf0) [@{simple-die_i18n}]">
 <input type="hidden" name="attr_stress-die" value="ceil(((((1d10cs1cf10 %9) -1)+9) %9) *1.1) [@{stress-die_i18n}]">
 <input type="hidden" class="dtype-selector" name="attr_die-type-selection-proxy" value="toggle">

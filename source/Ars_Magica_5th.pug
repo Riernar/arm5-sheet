@@ -6,12 +6,13 @@ include k-scaffold/_kpug.pug
 - const arm5 = {pug: {}};
 
 include helpers/helpers.pug
-include mixins/elements.pug
+include elements/elements.pug
 
 - arm5.pug.updater.version = "2.0";
 
 //- We are now ready to create the sheet
 include updates/updates.pug
+include legacy/alerts.pug
 
 +alert({name: "test-info"})
     | This is a test alert with level info
@@ -19,8 +20,12 @@ include updates/updates.pug
 +alert({name: "test-warning", level: "warning"})
     | This is a test alert with level warning
 
+include header.pug
 
 //- include tabs/tabs.pug
+
++modalWindow("settings")
+    span dummmy content
 
 include legacy/_legacy.pug
 

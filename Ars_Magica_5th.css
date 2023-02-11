@@ -492,9 +492,10 @@
 }
 .charsheet .banner {
   background: url("http://www.atlas-games.com/images/ArM5LogoColor.jpg");
-  background-size: 100%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: center center;
+  background-origin: border-box;
 }
 .charsheet .banner-content {
   margin: 0;
@@ -4160,4 +4161,127 @@ End of the python integration block
   padding-left: 2px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ui-dialog .tab-content .charsheet {
+  --arm5-color-accent-brown: #53332a;
+}
+
+.ui-dialog .tab-content .charsheet {
+  --color-kmodal-background: var(--arm5-color-accent-brown);
+}
+.ui-dialog .tab-content .charsheet .flexrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .tab-content .charsheet .flexcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .tab-content .charsheet .kmodal__button {
+  all: initial;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .kmodal__checkbox {
+  display: none;
+}
+.ui-dialog .tab-content .charsheet .kmodal__outer {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.9);
+  transition: opacity 0.25s ease;
+}
+.ui-dialog .tab-content .charsheet .kmodal__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .kmodal__inner {
+  transition: top 0.25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+}
+.ui-dialog .tab-content .charsheet .kmodal__close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .kmodal__close:after,
+.ui-dialog .tab-content .charsheet .kmodal__close:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+.ui-dialog .tab-content .charsheet .kmodal__close:hover:after,
+.ui-dialog .tab-content .charsheet .kmodal__close:hover:before {
+  background: #aaa;
+}
+.ui-dialog .tab-content .charsheet .kmodal__close:before {
+  transform: rotate(-45deg);
+}
+.ui-dialog .tab-content .charsheet .kmodal__checkbox:checked + .kmodal__outer {
+  opacity: 1;
+  visibility: visible;
+}
+.ui-dialog .tab-content .charsheet .kmodal__checkbox:checked + .kmodal__outer .kmodal__inner {
+  top: 0;
+}
+
+.ui-dialog .tab-content .charsheet .header {
+  justify-content: flex-end;
+}
+.ui-dialog .tab-content .charsheet .header > .header__main {
+  flex-grow: 1;
+}
+.ui-dialog .tab-content .charsheet .header > .header__controls {
+  flex-grow: 0;
+  gap: 2px;
+  align-self: stretch;
+  justify-content: flex-end;
+  margin-left: 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.ui-dialog .tab-content .charsheet .header > .header__controls .material-icons {
+  color: var(--arm5-color-accent-brown);
 }

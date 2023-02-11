@@ -1,0 +1,10 @@
+include legacy/topbar.pug
+
+
+.flexrow.top_bar.header
+    +legacy_header().flexrow.header__main
+    .flexcol.header__controls
+        +modalButton("settings")
+            span.material-icons settings
+        span.material-icons help
+        span.material-icons forum

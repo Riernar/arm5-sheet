@@ -1,0 +1,120 @@
+@forward 'colors.scss';
+@use 'colors.scss';
+
+.ui-dialog .tab-content .charsheet {
+
+    .flexrow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    .flexcol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    // modal window and button styling
+
+    --color-kmodal-background: var(--arm5-color-accent-brown);
+
+    .kmodal__button {
+        all: initial;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .kmodal__checkbox {
+        display: none;
+    }
+
+    .kmodal__outer {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+        background: rgba(0, 0, 0, .9);
+        // --hack: 10000%;
+        // background: linear-gradient( to bottom, var(--color-kmodal-background) calc((.9 - 1) * var(--hack)), transparent calc(.9 * var(--hack)));
+        transition: opacity .25s ease;
+    }
+
+    .kmodal__background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .kmodal__inner {
+        transition: top .25s ease;
+        position: absolute;
+        top: -20%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        margin: auto;
+        overflow: auto;
+        background: #fff;
+        border-radius: 5px;
+        padding: 1em 2em;
+        height: 50%;
+    }
+
+
+    .kmodal__close {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        width: 1.1em;
+        height: 1.1em;
+        cursor: pointer;
+    }
+
+    .kmodal__close:after,
+    .kmodal__close:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 1.5em;
+        background: #ccc;
+        display: block;
+        transform: rotate(45deg);
+        left: 50%;
+        margin: -3px 0 0 -1px;
+        top: 0;
+    }
+    .kmodal__close:hover:after,
+    .kmodal__close:hover:before {
+        background: #aaa;
+    }
+
+    .kmodal__close:before {
+        transform: rotate(-45deg);
+    }
+
+    .kmodal__checkbox:checked + .kmodal__outer {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .kmodal__checkbox:checked + .kmodal__outer .kmodal__inner {
+        top: 0;
+    }
+}
