@@ -20,11 +20,13 @@ include legacy/alerts.pug
 +alert({name: "test-warning", level: "warning"})
     | This is a test alert with level warning
 
+
+
 include header.pug
 
 //- include tabs/tabs.pug
 
-+modalWindow("settings")
++modalWindow({name: "settings"})
     span dummmy content
 
 include legacy/_legacy.pug

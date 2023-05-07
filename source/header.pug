@@ -4,7 +4,10 @@ include legacy/topbar.pug
 .flexrow.top_bar.header
     +legacy_header().flexrow.header__main
     .flexcol.header__controls
-        +modalButton("settings")
+        +modalButton({name: "settings"})
             span.material-icons settings
-        span.material-icons help
+        +modalButton({name: "help"})
+            span.material-icons help
+        +modalButton({name: "history"})
+            span.material-icons history
         span.material-icons forum
