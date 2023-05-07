@@ -1,18 +1,19 @@
-include k-scaffold/_kpug.pug
+include k-scaffold
 //- Object used to store the whole system, must be defined first
 //- To clarify difference between sheet code and pug code, we use the
 //- arm5.pug namespace for code that runs during sheet generation, and
 //- arm5.sheet namespace for code that runs during sheet loading in the VTT
-- const arm5 = {pug: {}};
+- const arm5 = {};
 
-include helpers/helpers.pug
-include elements/elements.pug
 
-- arm5.pug.updater.version = "2.0";
+include helpers/_helpers.pug
+include elements/_elements.pug
+
+- arm5.helpers.updater.version = "2.0";
 
 //- We are now ready to create the sheet
-include updates/updates.pug
-include legacy/alerts.pug
+include updates/_updates.pug
+include legacy/_alerts.pug
 
 +alert({name: "test-info"})
     | This is a test alert with level info
@@ -22,7 +23,7 @@ include legacy/alerts.pug
 
 
 
-include header.pug
+include _header.pug
 
 //- include tabs/tabs.pug
 
@@ -44,17 +45,8 @@ include legacy/_legacy.pug
     | // Top-level object for the sheetworkers
     | const arm5 = {sheet: {}};
     |
-    //- Load all the sheet workers from helpers
-    +sheetworker_helpers
     //- Legacy sheetworkers
     | // Legacy sheetworkers
     | 
     include legacy/legacy.js
-    | 
-    | 
-    +sheetworker_updates
-    |
-    | // Finalize our sheetworker setup
-    | 
-    +post_sheetworker_helpers
     |

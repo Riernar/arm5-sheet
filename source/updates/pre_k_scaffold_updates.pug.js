@@ -20,12 +20,4 @@ const preKScaffoldData = {
     ]
 };
 
-preKScaffoldData.attributes.forEach(obj => {
-    varObjects.cascades[`attr_${obj.name}`] =
-    {
-        ...obj,
-        affects: [],
-        triggeredFuncs: []
-    };
-});
-preKScaffoldData.sections.forEach(obj => { varObjects.repeatingSectionDetails.push(obj); })
+module.exports.preKScaffoldData = preKScaffoldData;

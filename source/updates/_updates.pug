@@ -1,0 +1,22 @@
+
+//- Load the data about attributes that existed before the k-scaffold transition
+- arm5.updates = {preKScaffoldData: require("./source/updates/pre_k_scaffold_updates.pug.js").preKScaffoldData};
+//- Forcefully register those attributes into k-scaffold internals, so that k-scaffold
+//- exposes them in the `attributes` object it passes to update functions
+-
+    arm5.updates.preKScaffoldData.attributes.forEach(obj => {
+        varObjects.cascades[`attr_${obj.name}`] =
+        {
+            ...obj,
+            affects: [],
+            triggeredFuncs: []
+        };
+    });
+    arm5.updates.preKScaffoldData.sections.forEach(obj => { varObjects.repeatingSectionDetails.push(obj); })
+    
+
+//- Schedule our update file to be added in th <script> tag of the sheet
++module()
+    | 
+    include pre_k_scaffold_updates.sheetworker.js
+    | 

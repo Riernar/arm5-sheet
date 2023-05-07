@@ -1,0 +1,83 @@
+//- Helpers
+
+//- Load the PUG-side code of the helpers
+//- The require() node.js function needs to be passed into the PUG when calling the PUG compiler
+//- This is done in generate.js, called by `npm run start|build` (see package.json)
+- arm5.helpers = require("./source/helpers/helpers.pug.js").helpers;
+
+
+
+
+//- Allows to transfer data from PUG runtime to sheet runtime
+mixin transfer_data_to_sheet(destination, data)
+    | // Data that was created during sheet building and persisted
+    | !{destination} = !{JSON.stringify(data, null, 2)};
+
+
+
+//- Alerts are pop-ups that appear on the top of the sheet to notify the player
+// Attribute used to store the display state of alerts
+// Stored as a JSON string
++hidden({name:"arm5_sheet_alerts_states", value: "{}"})
+- arm5.helpers.alerter.attributeName = "arm5_sheet_alerts_states";
+
+
+mixin alert({name, level="info", container="div", closeTrigger="helpers.alerter.close"})
+    //- Check and sanitize arguments using k-scaffold functions
+    //- We use action button sanitization, because the name is later used as CSS classes
+    - name = actionButtonName(replaceProblems(name));
+    -
+        const levels = ["info", "warning"];
+        if (levels.indexOf(level) === -1 ) {
+            throw new Error(`Invalid alert level '${level}', expected one of ${levels}.`);
+        }
+        if (arm5.helpers.alerter.alerts.indexOf(id) > -1 ) {
+            throw new Error(`Alert '${id}' is already registered.`);
+        }
+    
+    div(class=`alert alert--${name} alert__${level}  hidden`)
+        +action({name: `alert-close-${name}`, trigger:{triggeredFuncs:[closeTrigger]}})(data-alert-name=name, class=`alert--${name} alert__close alert--${name}__close`)
+        //- Inject the default classes into container
+        - attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+        - attributes.class = `alert__content alert--${name}${attributes.class}__content `;
+        #{container}&attributes(attributes)
+            block
+    
+    - arm5.helpers.alerter.alerts.push(name);
+
+
+
+mixin markdown({file, string})
+    - const renderer = require("markdown-it")({"html": true});
+    if file
+        -
+            const fs = require("fs");
+            if (! fs.existsSync(file)) { throw new Error(`${file} doesn't exists`); }
+            const markdown = renderer.render(fs.readFileSync(file, "utf8"));
+    if string
+        - const markdown = renderer.render(string);
+    if markdown
+        div.markdown
+            != markdown
+
+
+
+//- The +module() mixin comes from k-scaffold: https://kurohyou-studios.github.io/k-scaffold/pug#module
+//- It let us schedule PUG code to be run when injecting sheetworker source code into the sheet
++module
+    //- Include the sheet-side source code of our helpers
+    include helpers.sheet.js
+    
+    //- Helper: updater
+    | 
+    | 
+    != arm5.helpers.updater.generateVersion()
+    | 
+    | 
+    != arm5.helpers.updater.generateSheetCode()
+
+    //- Helper: alerter
+    +transfer_data_to_sheet("helpers.alerter.alerts", arm5.helpers.alerter.alerts)
+    +transfer_data_to_sheet("helpers.alerter.attributeName", arm5.helpers.alerter.attributeName)
+
+
