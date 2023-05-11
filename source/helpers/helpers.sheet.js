@@ -1,22 +1,4 @@
 const helpers = {
-    updater: {
-        //- The PUG-side of the code will generate a call to this function, passing
-        //- the appropriate data
-
-        registerUpdatersToKScaffold(update_funcs) {
-            const updates = {};
-
-            for (const [version, calls] of Object.entries(update_funcs)) {
-                updates[version] = (kScaffoldObject) => {
-                    // Inject the additional arguments if any
-                    calls.forEach(call => call.func({ ...kScaffoldObject, ...(call.args || {}) }));
-                }
-            }
-
-            kScaffold.registerFuncs(updates, { types: ["updater"] });
-
-        }
-    },
 
     // The alert system is a way to display pop-up on top of the sheet to notify players
     alerter: {
