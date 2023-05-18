@@ -20,4 +20,4 @@ const preKScaffoldUpdates = {
 
 };
 
-k.registerFuncs({ "preKScaffoldUpdates.handler": preKScaffoldUpdates.handler }, { type: ["new"] });
+// k.registerFuncs({ "preKScaffoldUpdates.handler": preKScaffoldUpdates.handler }, { type: ["new"] });
