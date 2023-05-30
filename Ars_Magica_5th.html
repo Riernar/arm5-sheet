@@ -1,11 +1,14 @@
 
+<input name="attr_update_error_rowid" type="hidden" title="@{update_error_rowid}"/>
 <div class="kscaffold-compatible">
   <div class="global-alerts">
     <div class="kalerts kalerts--global-alerts kalerts__container kalerts--global-alerts__container">
       <fieldset class="repeating_alerts--global-alerts">
         <input class="kalerts kalerts--global-alerts kalerts__level kalerts--global-alerts__level" name="attr_level" value="info" type="hidden" title="@{repeating_alerts--global-alerts_$X_level}"/>
         <div class="kalerts kalerts--global-alerts kalerts__content kalerts--global-alerts__content"><span class="kalerts kalerts--global-alerts kalerts__title kalerts--global-alerts__title">
-            <input name="attr_title" readonly="readonly" value="title" type="text" title="@{repeating_alerts--global-alerts_$X_title}"/></span>
+            <div class="adaptive adaptive--input"><span class="adaptive--input__span" name="attr_title" title="@{repeating_alerts--global-alerts_$X_title}"></span>
+              <input class="adaptive--input__input" type="text" name="attr_title" readonly="readonly" value="title" title="@{repeating_alerts--global-alerts_$X_title}"/>
+            </div></span>
           <div class="adaptive adaptive--text"><span class="adaptive--text__span" name="attr_text" title="@{repeating_alerts--global-alerts_$X_text}"></span>
             <textarea class="kalerts kalerts--global-alerts kalerts__text kalerts--global-alerts__text adaptive--text__textarea" name="attr_text" readonly="readonly" title="@{repeating_alerts--global-alerts_$X_text}"></textarea>
           </div>
@@ -2627,11 +2630,11 @@
   <script type="text/worker">const k = (function(){
     const kFuncs = {};
     
-    const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_notNew":{"name":"notNew","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Load":{"name":"repeating_weapons_$X_Wounds_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Range":{"name":"repeating_weapons_$X_Wounds_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Load":{"name":"repeating_weapons_$X_Weapon_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Range":{"name":"repeating_weapons_$X_Weapon_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Technique_select":{"name":"repeating_spell_$X_Technique_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Form_select":{"name":"repeating_spell_$X_Form_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_tech_name":{"name":"repeating_spell_$X_spell_tech_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_form_name":{"name":"repeating_spell_$X_spell_form_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_alerts--global-alerts_$X_level":{"name":"repeating_alerts--global-alerts_$X_level","type":"hidden","defaultValue":"info","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_title":{"name":"repeating_alerts--global-alerts_$X_title","type":"text","defaultValue":"title","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_text":{"name":"repeating_alerts--global-alerts_$X_text","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_alerts--global-alerts_$X_close":{"triggeredFuncs":["helpers.alerts.close"],"name":"repeating_alerts--global-alerts_$X_close","listener":"clicked:repeating_alerts--global-alerts:close","listenerFunc":"accessSheet","type":"action"}};
+    const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_notNew":{"name":"notNew","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Technique_select":{"name":"repeating_spell_$X_Technique_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Form_select":{"name":"repeating_spell_$X_Form_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_tech_name":{"name":"repeating_spell_$X_spell_tech_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_form_name":{"name":"repeating_spell_$X_spell_form_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Load":{"name":"repeating_weapons_$X_Wounds_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Range":{"name":"repeating_weapons_$X_Wounds_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Load":{"name":"repeating_weapons_$X_Weapon_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Range":{"name":"repeating_weapons_$X_Weapon_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_update_error_rowid":{"name":"update_error_rowid","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_level":{"name":"repeating_alerts--global-alerts_$X_level","type":"hidden","defaultValue":"info","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_title":{"name":"repeating_alerts--global-alerts_$X_title","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_text":{"name":"repeating_alerts--global-alerts_$X_text","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_alerts--global-alerts_$X_close":{"triggeredFuncs":["onAlertRemoved"],"name":"repeating_alerts--global-alerts_$X_close","listener":"clicked:repeating_alerts--global-alerts:close","listenerFunc":"accessSheet","type":"action"}};
     
     kFuncs.cascades = cascades;
     
-    const repeatingSectionDetails = [{"section":"repeating_weapons","fields":["Wounds_Load","Wounds_Range","Weapon_Load","Weapon_Range"]},{"section":"repeating_spell","fields":["Technique_select","Form_select","spell_tech_name","spell_form_name"]},{"section":"repeating_alerts--global-alerts","fields":["level","title","text"]}];
+    const repeatingSectionDetails = [{"section":"repeating_spell","fields":["Technique_select","Form_select","spell_tech_name","spell_form_name"]},{"section":"repeating_weapons","fields":["Wounds_Load","Wounds_Range","Weapon_Load","Weapon_Range"]},{"section":"repeating_alerts--global-alerts","fields":["level","title","text"]}];
     
     kFuncs.repeatingSectionDetails = repeatingSectionDetails;
     
@@ -3690,6 +3693,9 @@ registerFuncs({ kTabOnOpen },{type:['opener']});
     return kFuncs;
     }());
     const actionAttributes = [];
+    k.debugMode = true;
+    k.sheetName = "ArM5";
+    k.version = "2.0";
      
     // k-scaffold fix ?
     const persistentTabs = [];
@@ -3842,34 +3848,34 @@ function register_repeated_section_totals(section, properties) {
 register_repeated_section_totals("armors", ["prot", "load"]);
 register_repeated_section_totals("combat-mods", ["init", "atk", "dfn", "dam", "soak"]);
 
+// Weapon update has been ported to kScaffold, this isn't needed anymore
 // Fix weapon attributes
+// on("sheet:opened", function() {
+//     const fixes = {
+//         "_Wounds_Load": "_Weapon_Load",
+//         "_Wounds_Range": "_Weapon_Range",
+//     };
+//     const keys = Object.keys(fixes);
+//     getSectionIDs("repeating_weapons", function(id_array) {
+//         var attr_names = [];
+//         id_array.forEach( (id_) => (keys.forEach((key) => attr_names.push("repeating_weapons_" + id_ + key))));
 
-on("sheet:opened", function() {
-    const fixes = {
-        "_Wounds_Load": "_Weapon_Load",
-        "_Wounds_Range": "_Weapon_Range",
-    };
-    const keys = Object.keys(fixes);
-    getSectionIDs("repeating_weapons", function(id_array) {
-        var attr_names = [];
-        id_array.forEach( (id_) => (keys.forEach((key) => attr_names.push("repeating_weapons_" + id_ + key))));
-
-        getAttrs(attr_names, function(attrs) {
-            var value = 0;
-            var updates = {};
-            id_array.forEach( (id_) => (keys.forEach(function(key) {
-                if (attrs["repeating_weapons_" + id_ + key]) {
-                    console.log(attrs["repeating_weapons_" + id_ + key]);
-                    console.log("Fixing " + "repeating_weapons_" + id_ + key + " to " + "repeating_weapons_" + id_ + fixes[key]);
-                    updates["repeating_weapons_" + id_ + fixes[key]] = parseInt(attrs["repeating_weapons_" + id_ + key]) || 0;
-                    updates["repeating_weapons_" + id_ + key] = "";
-                }
-            })));
-            console.log("All fixes :" + JSON.stringify(updates, null, 1));
-            setAttrs(updates);
-        });
-    });
-});
+//         getAttrs(attr_names, function(attrs) {
+//             var value = 0;
+//             var updates = {};
+//             id_array.forEach( (id_) => (keys.forEach(function(key) {
+//                 if (attrs["repeating_weapons_" + id_ + key]) {
+//                     console.log(attrs["repeating_weapons_" + id_ + key]);
+//                     console.log("Fixing " + "repeating_weapons_" + id_ + key + " to " + "repeating_weapons_" + id_ + fixes[key]);
+//                     updates["repeating_weapons_" + id_ + fixes[key]] = parseInt(attrs["repeating_weapons_" + id_ + key]) || 0;
+//                     updates["repeating_weapons_" + id_ + key] = "";
+//                 }
+//             })));
+//             console.log("All fixes :" + JSON.stringify(updates, null, 1));
+//             setAttrs(updates);
+//         });
+//     });
+// });
 
 // Duplicate the global bonuses inside the weapons repeating section for display
 // From https://app.roll20.net/forum/post/10297616/how-do-i-reference-a-global-attribute-in-a-span-in-a-repeating-section
@@ -3972,134 +3978,329 @@ on("sheet:opened", function(eventInfo){
         "vim_i18n": getTranslationByKey("vim")
     });
 
-    getAttrs(["notNew"], function (values) {
-        if (values.notNew == 0) {
-            setAttrs({
-                "notNew": 1,
-                "alert-alert-update-v1-7-1": 1,
-                "alert-alert-update-v1-7": 1,
-                "alert-alert-update-v1-6-5": 1,
-                "alert-alert-update-v1-6-4": 1,
-                "alert-alert-update-v1-6-3": 1,
-                "alert-alert-update-v1-6-2": 1,
-                "alert-alert-update-v1-6-1": 1,
-                "alert-alert-update-v1-6": 1,
-                "alert-alert-update-v1-51": 1,
-                "alert-alert-update-v1-5": 1,
-                "alert-alert-update-v1-4": 1,
-                "alert-161-spell-update": 1,
-                "alert-alert-update-v1_6-dataloss": 1,
-                "alert-alert-update-v1-7-armorylegacy": 1
-            }); 
-        }
-    });
+    // Alert system has been replaced, this serves no purposes
+    // getAttrs(["notNew"], function (values) {
+    //     if (values.notNew == 0) {
+    //         setAttrs({
+    //             "notNew": 1,
+    //             "alert-alert-update-v1-7-1": 1,
+    //             "alert-alert-update-v1-7": 1,
+    //             "alert-alert-update-v1-6-5": 1,
+    //             "alert-alert-update-v1-6-4": 1,
+    //             "alert-alert-update-v1-6-3": 1,
+    //             "alert-alert-update-v1-6-2": 1,
+    //             "alert-alert-update-v1-6-1": 1,
+    //             "alert-alert-update-v1-6": 1,
+    //             "alert-alert-update-v1-51": 1,
+    //             "alert-alert-update-v1-5": 1,
+    //             "alert-alert-update-v1-4": 1,
+    //             "alert-161-spell-update": 1,
+    //             "alert-alert-update-v1_6-dataloss": 1,
+    //             "alert-alert-update-v1-7-armorylegacy": 1
+    //         }); 
+    //     }
+    // });
 
+    // The spell update has been ported to k-Scaffold, this is unneeded
     // Update old spell art selection to new format
     // Skip it if the Warning banner for that update is closed
-    getAttrs(["alert-161-spell-update"], function(values) {
-        if (values["alert-161-spell-update"] == 0) {
-            getSectionIDs("spell", function(idarray) {
-                const tech_translation = {
-                    0: "unselected",
-                    1: "Creo",
-                    2: "Intellego",
-                    3: "Muto",
-                    4: "Perdo",
-                    5: "Rego"
-                };
-                const form_translation = {
-                    0: "unselected",
-                    1: "Animal",
-                    2: "Aquam",
-                    3: "Auram",
-                    4: "Corpus",
-                    5: "Herbam",
-                    6: "Ignem",
-                    7: "Imaginem",
-                    8: "Mentem",
-                    9: "Terram",
-                    10: "Vim"
-                };
-                for (var i=0; i < idarray.length; i++) {
-                    const spellid = idarray[i];
-                    console.log("Update 1.6.1 - Spell arts updater script - scheduling update for spell ID:" + spellid);
-                    getAttrs(
-                        [   
-                            "repeating_spell_" + spellid + "_spell_name",
-                            "repeating_spell_" + spellid + "_Technique_select",
-                            "repeating_spell_" + spellid + "_Form_select"
-                        ],
-                        function (values) {
-                            attr_updates = {
-                                ["repeating_spell_" + spellid + "_spell_tech_name"]: tech_translation[values["repeating_spell_" + spellid + "_Technique_select"]] || "unselected",
-                                ["repeating_spell_" + spellid + "_spell_form_name"]: form_translation[values["repeating_spell_" + spellid + "_Form_select"]] || "unselected"
-                            };
-                            console.log("Update 1.6.1 - Spell arts updater script - " + values["repeating_spell_" + spellid + "_spell_name"] + " (ID " + spellid + ")");
-                            console.log(attr_updates);
-                            console.log("Update 1.6.1 - Spell arts updater script - spell " + spellid + " END");
-                            setAttrs(attr_updates);
-                        }
-                    );
-                }
-                console.log("Update 1.6.1 - Spell arts updater script - all spell scheduled for update");
-                setAttrs({"alert-161-spell-update": 1});
-            });
-        }
-    });
+    // getAttrs(["alert-161-spell-update"], function(values) {
+    //     if (values["alert-161-spell-update"] == 0) {
+    //         getSectionIDs("spell", function(idarray) {
+    //             const tech_translation = {
+    //                 0: "unselected",
+    //                 1: "Creo",
+    //                 2: "Intellego",
+    //                 3: "Muto",
+    //                 4: "Perdo",
+    //                 5: "Rego"
+    //             };
+    //             const form_translation = {
+    //                 0: "unselected",
+    //                 1: "Animal",
+    //                 2: "Aquam",
+    //                 3: "Auram",
+    //                 4: "Corpus",
+    //                 5: "Herbam",
+    //                 6: "Ignem",
+    //                 7: "Imaginem",
+    //                 8: "Mentem",
+    //                 9: "Terram",
+    //                 10: "Vim"
+    //             };
+    //             for (var i=0; i < idarray.length; i++) {
+    //                 const spellid = idarray[i];
+    //                 console.log("Update 1.6.1 - Spell arts updater script - scheduling update for spell ID:" + spellid);
+    //                 getAttrs(
+    //                     [   
+    //                         "repeating_spell_" + spellid + "_spell_name",
+    //                         "repeating_spell_" + spellid + "_Technique_select",
+    //                         "repeating_spell_" + spellid + "_Form_select"
+    //                     ],
+    //                     function (values) {
+    //                         attr_updates = {
+    //                             ["repeating_spell_" + spellid + "_spell_tech_name"]: tech_translation[values["repeating_spell_" + spellid + "_Technique_select"]] || "unselected",
+    //                             ["repeating_spell_" + spellid + "_spell_form_name"]: form_translation[values["repeating_spell_" + spellid + "_Form_select"]] || "unselected"
+    //                         };
+    //                         console.log("Update 1.6.1 - Spell arts updater script - " + values["repeating_spell_" + spellid + "_spell_name"] + " (ID " + spellid + ")");
+    //                         console.log(attr_updates);
+    //                         console.log("Update 1.6.1 - Spell arts updater script - spell " + spellid + " END");
+    //                         setAttrs(attr_updates);
+    //                     }
+    //                 );
+    //             }
+    //             console.log("Update 1.6.1 - Spell arts updater script - all spell scheduled for update");
+    //             setAttrs({"alert-161-spell-update": 1});
+    //         });
+    //     }
+    // });
     
 });
     
     
     const helpers = {
+};
 
-    // The alert system is a way to display pop-up on top of the sheet to notify players
-    alerts: {
-        add: function ({ where, title, text, attributes, sections, level = "info" }) {
-            if (["info", "warning", "error", "success"].indexOf(level) === -1) {
-                throw new Error(`Invalid alert level "${level}"`);
-            }
-            // Warning: the name isn't sanitized like it is in the PUG, might create discrepancies
-            const section = `repeating_alerts--${where}`;
-            // Contrary to doc, k.generateRowID also includes the section name in the returned value
-            const rowID = k.generateRowID(section, sections);
-            console.log(`Created new rowID: ${rowID}`);
-            attributes[`${rowID}_level`] = level;
-            attributes[`${rowID}_title`] = title;
-            attributes[`${rowID}_text`] = text;
-        },
+/**
+ * The function to create a new alert in an `+alert` mixin. Retruns the RowID (including the repeating secgion namt) of the created alert.
+ * @memberof Sheetworkers
+ * @param {string} name - The name of the alert. It will be prepended by `repeating_alerts--`. Note that contrary to the PUG mixin, this doesn't sanitize the name, so you'll need to spell out the sanitized version.
+ * @param {string} title - The text to put in the title of the alert, after the level icon.
+ * @param {string} text - The text to write as the content of the alert. Can contain newlines, as it is written to a textarea.
+ * @param {Object} attributes - The `attributes` object given by k-Scaffold that contains the attributes of the sheet
+ * @param {Object} sections - The `sections` object given by k-Scaffold that contains the sections of the sheet
+ * @param {level} string - The level of the alert. One of "info", "warning", "error", "success". Changes the default styling of the alert.
+ */
+const kCreateAlert = function ({ name, title, text, attributes, sections, level = "info" }) {
+    if (["info", "warning", "error", "success"].indexOf(level) === -1) {
+        throw new Error(`Invalid alert level "${level}"`);
+    }
+    // Warning: the name isn't sanitized like it is in the PUG, might create discrepancies
+    const section = `repeating_alerts--${name}`;
+    // Contrary to doc, k.generateRowID also includes the section name in the returned value
+    const rowID = k.generateRowID(section, sections);
+    attributes[`${rowID}_level`] = level;
+    attributes[`${rowID}_title`] = title;
+    attributes[`${rowID}_text`] = text;
+    return rowID;
+};
 
-        close: function ({ trigger, attributes, sections }) {
-            const [section, rowID, _] = k.parseTriggerName(trigger.name);
-            k.removeRepeatingRow(`${section}_${rowID}`, attributes, sections);
-        },
+/**
+ * The default trigger called when one clicks the close button on an alert. Deletes the triggering alert from the repeating section.
+ * @memberof Sheetworkers
+ * @param {string} trigger - The trigger object passed by kScaffold
+ * @param {Object} attributes - The `attributes` object given by k-Scaffold that contains the attributes of the sheet
+ * @param {Object} sections - The `sections` object given by k-Scaffold that contains the sections of the sheet
+ */
+const kDeleteAlert = function ({ trigger, attributes, sections }) {
+    const [section, rowID, _] = k.parseTriggerName(trigger.name);
+    k.removeRepeatingRow(`${section}_${rowID}`, attributes, sections);
+};
+
+k.registerFuncs({ "kDeleteAlert": kDeleteAlert });
+    
+    
+     
+
+// Clear the scheduled updates on a kScaffold `attributes` object
+const clearAttributesUpdates = function (attributes) {
+    const updates = attributes.updates;
+    // From https://stackoverflow.com/questions/684575/how-to-quickly-clear-a-javascript-object
+    // NOTE: we don't really now what the `updates` object is, so use the safer deletion code
+    for (const prop of Object.getOwnPropertyNames(updates)) {
+        delete updates[prop];
     }
 };
-k.registerFuncs({ "helpers.alerts.close": helpers.alerts.close });
-    
-    
-     const preKScaffoldUpdates = {
-    updateWeaponAttributeNames: function ({ attributes, sections }) {
-        console.log("sections:");
-        console.log(sections);
-    },
 
-    updateSpellTechniquesAndForms: function ({ attributes, sections }) {
+// Function to help building update function that are properly hooked up in our system
+// It wraps a function such that:
+//  - If the wrapped function fails and raises an exception:
+//    - All pending update on the `attributes` object are cleared
+//    - An error alert is created with the error details to notify the player
+//    - The `update_error_rowid` hidden attribute is set to the RowID of the created alert
+//    - Forces an update of the sheet's attribute, to effectively create said alert and store the RowID
+//    - Forwards the caugh error to the caller to interrupt kScaffold update mecanism
+//  - If the `update_error_rowid` hidden attribute is set at the start of the function, it immediatly
+//    error outs, preventing kScaffold update from running to completion. This is because there is still
+//    an error on the sheet that prevents the update from working, so we cannot continue.
+const wrapUpdateFunction = function (func) {
+    const wrapper = function ({ trigger, attributes, sections, casc }) {
+        // If the update system is currently on hold due to an error, exit early
+        if (attributes["update_error_rowid"]) {
+            k.debug(`The update system is locked by alert row ${attributes["update_error_rowid"]}, exiting update stack...`);
+            throw new Error(`Interrupted updates: previous error at row ${attributes["update_error_rowid"]} is locking updates`);
+        }
+        // Try to execute the wrapped function
+        try {
+            func({ trigger, attributes, sections, casc });
+        } catch (error) {
+            // Update function failed, notify the user and exit
+            // First, cancel pending updates: update function may have scheduled partial updates
+            clearAttributesUpdates(attributes);
+            // Then, generate a new alert for the user
+            const text = `An update of the sheet failed. Please contact the sheet developpers for help (see the Help menu). Please provide the full stacktrace below when reporting errors.
 
-    },
+The update system has been locked so that you can fix the problem. Closing this alert will unlock the update system and trigger a new update attempt the next time the sheet is opened.
 
-
-    handler: function (obj) {
-        console.log(`attributes.notNew = ${obj.attributes.notNew}`);
-        if (typeof obj.attributes.notNew !== "undefined") {
-            updateWeaponAttributeNames(obj);
-            updateSpellTechniquesAndForms(obj);
+Stacktrace for function '${func.name || '<anonymous>'}'
+──────────
+${error.stack}
+${error}
+`;
+            const row_name = kCreateAlert({
+                name: "global-alerts",
+                title: "!! Update error !! Your sheet is likely broken, please read on",
+                text,
+                level: "error",
+                attributes,
+                sections,
+            });
+            // Register the error to lock the update system
+            const [section, rowID, attrName] = k.parseRepeatName(row_name);
+            attributes["update_error_rowid"] = rowID;
+            // Forcefully update the attributes of the sheet, because we'll throw an Error so kScaffold won't do it
+            attributes.set({ attributes });
+            k.debug(`Locked update execution on alert row ${rowID}`);
+            // Finally, forward our error to the caller
+            throw error;
         }
 
-    }
-
+    };
+    return wrapper;
 };
 
-// k.registerFuncs({ "preKScaffoldUpdates.handler": preKScaffoldUpdates.handler }, { type: ["new"] });
+const onAlertRemoved = function ({ trigger, attributes, sections, casc }) {
+    if (attributes["update_error_rowid"]) {
+        const [section, rowID, attrName] = k.parseTriggerName(trigger.name);
+        // Roll20 event contain a lowercase rowID. There *is* a risk of clash, but we can't do better
+        // We also lowercase the event in case this changes in the future, so that the sheet doesn't break
+        if (rowID.toLowerCase() === attributes["update_error_rowid"].toLowerCase()) {
+            k.debug(`Cleared attribute 'update_error_rowid' because row ${rowID} was deleted`);
+            attributes["update_error_rowid"] = "";
+            // TODO: trigger an update by calling a k.updateSheet when this is possible
+        }
+    }
+    kDeleteAlert({ trigger, attributes, sections, casc });
+};
+k.registerFuncs({ onAlertRemoved });
+
+
+const updateSpellArts = wrapUpdateFunction(
+    function updateSpellArts() {
+        // Only update if the update was not previously applied
+        // In the old sheet system, we had an explicit attribute to hide/display
+        // each alert, and updating spells was conditionned on this alert being shown
+        // We re-use that legacy attribute to detect if the alert is needed. It
+        // Is forcefully registered into k-scaffold in _updates.pug, so k-Scaffold
+        // loads it if available
+        if (attributes["alert-161-spell-update"] === 0) {
+            const techRename = {
+                0: "unselected",
+                1: "Creo",
+                2: "Intellego",
+                3: "Muto",
+                4: "Perdo",
+                5: "Rego"
+            };
+            const formRename = {
+                0: "unselected",
+                1: "Animal",
+                2: "Aquam",
+                3: "Auram",
+                4: "Corpus",
+                5: "Herbam",
+                6: "Ignem",
+                7: "Imaginem",
+                8: "Mentem",
+                9: "Terram",
+                10: "Vim"
+            };
+            const ids = sections.repeating_weapons || [];
+            const details = [];
+            for (const rowID of ids) {
+                const row = `repeating_spell_${rowID}`;
+                attributes[`${row}_spell_tech_name`] = techRename[attributes[`${row}_Technique_select`]] || "unselected";
+                attributes[`${row}_spell_form_name`] = formRename[attributes[`${row}_Form_select`]] || "unselected";
+                details.push(attributes[`${row}_spell_name`]);
+            }
+            if (details.length) {
+                message = [
+                    "Spells technique & form selection have been converted to the new format",
+                    ""
+                ];
+                details.forEach(name => message.push(`  - Updated spell '${name}'`));
+                helpers.alerts.add({
+                    title: "Update v1.6.1 - Spell update",
+                    text: message.join("\n"),
+                    level: "success",
+                    attributes: attributes,
+                    sections: sections,
+                });
+            }
+        }
+    }
+);
+
+
+const renameWeaponAttributes = wrapUpdateFunction(
+    function renameWeaponAttributes({ attributes, sections }) {
+        const fixes = {
+            "_Wounds_Load": "_Weapon_Load",
+            "_Wounds_Range": "_Weapon_Range",
+        };
+        const ids = sections.repeating_weapons || [];
+        const details = [];
+        for (const id of ids) {
+            // Sometimes the array of ids contains an empty string
+            if (id) {
+                for (const [old, updated] of Object.entries(fixes)) {
+                    const old_name = `repeating_weapons_${id}${old}`;
+                    const new_name = `repeating_weapons_${id}${updated}`;
+                    if (attributes[old_name]) {
+                        attributes[new_name] = attributes[old_name];
+                        attributes[old_name] = "";
+                        details.push(attributes[`repeating_weapons_${id}_Weapon_name`]);
+                    }
+                }
+            }
+        }
+        if (details.length) {
+            message = [
+                "Weapons internal attributes have been corrected.",
+                ""
+            ];
+            details.forEach(name => message.push(`  - Updated weapon '${name}'`));
+            helpers.alerts.add({
+                title: "Update v1.7 - Magic & Armory",
+                text: message.join("\n"),
+                level: "success",
+                attributes: attributes,
+                sections: sections,
+            });
+        }
+    }
+);
+
+const updateToKScaffold = wrapUpdateFunction(
+    function updateToKScaffold({ trigger, attributes, sections, casc }) {
+        // This attribute is only defined on old sheets
+        if (typeof attributes["notNew"] !== "undefined") {
+            updateSpellArts({ trigger, attributes, sections, casc });
+            renameWeaponAttributes({ trigger, attributes, sections, casc });
+        }
+    }
+);
+k.registerFuncs({updateToKScaffold}, {type: ["new"]});
+
+// const displayKScaffoldArgs = function ({ trigger, attributes, sections, casc }) {
+//     console.log("Displaying kScaffold arguments");
+//     console.log(trigger);
+//     console.log(attributes);
+//     console.log(sections);
+//     console.log(casc);
+// };
+
+// k.registerFuncs({ displayKScaffoldArgs }, { type: ["opener"] });
      
   </script>
 </div>

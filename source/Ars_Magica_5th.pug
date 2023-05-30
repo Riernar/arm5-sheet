@@ -26,7 +26,7 @@ include updates/_updates.pug
 
 .kscaffold-compatible
     .global-alerts
-        +alerts({name:"global-alerts"})
+        +alerts({name:"global-alerts", closeTrigger: {triggeredFuncs: ["onAlertRemoved"]}})
 
     +modalWindow({name: "settings"})
         span dummmy content
@@ -37,6 +37,9 @@ div(class="arm5-sheet")
 
     <!-- Sheet Worker Scripts -->
     +kscript
+        | k.debugMode = true;
+        | k.sheetName = "ArM5";
+        | k.version = "2.0";
         | 
         | // k-scaffold fix ?
         | const persistentTabs = [];

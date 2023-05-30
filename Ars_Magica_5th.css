@@ -4208,6 +4208,10 @@ End of the python integration block
   margin-bottom: 0px;
   display: flex;
   align-items: center;
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet .kalerts__container .kalerts__content .kalerts__title .adaptive {
+  flex-grow: 1;
 }
 .ui-dialog .tab-content .charsheet .kalerts__container .kalerts__content .kalerts__title::before {
   font-family: "Material Icons";
@@ -4221,6 +4225,7 @@ End of the python integration block
 .ui-dialog .tab-content .charsheet .kalerts__container .kalerts__content .kalerts__title input {
   font-size: 16px;
   font-weight: 600;
+  flex-grow: 1;
 }
 .ui-dialog .tab-content .charsheet .kalerts__container .kalerts__content .kalerts__text {
   display: block;

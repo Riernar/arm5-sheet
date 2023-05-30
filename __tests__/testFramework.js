@@ -12,7 +12,7 @@ import { _ } from 'underscore';
  * @property {object} queryResponses - Pre defined results you want the roll parser to use for a given roll query. Keys in the objects are roll query prompts. Values are what the user input should be for that query.
  */
 const environment = {
-  attributes:{"character_name":"","player_name":"","unspent_xp":"","saga":"","year":"","Confidence":"","ConfidencePoints":"","sheetTab":"sheet","simple-die":"(1d10cs0cf0) [@{simple-die_i18n}]","stress-die":"ceil(((((1d10cs1cf10 %9) -1)+9) %9) *1.1) [@{stress-die_i18n}]","die-type-selection-proxy":"toggle","selected-die":"simple","isMagi":"yes","Age":"","MightType":"NoMight","MightScore":"","Warping":"","ApparentAge":"","CurrentMagicMight":"","WarpPoints":"","Warping_effects":"","Birth_Name":"","Year_Born":"","Gender":"","Race_Nationality":"","Place_of_Origin":"","Religion":"","Title_Profession":"","Height":"","Weight":"","Size":"","Handedness":"","Hair":"","Eyes":"","House":"","Covenant":"","sigil":"","DomusMagna":"","Primus":"","Parens":"","CovenantofApprenticeship":"","Personality_Trait1":"","Personality_Trait1_score":"","Personality_Trait2":"","Personality_Trait2_score":"","Personality_Trait3":"","Personality_Trait3_score":"","Personality_Trait4":"","Personality_Trait4_score":"","Personality_Trait5":"","Personality_Trait5_score":"","Personality_Trait6":"","Personality_Trait6_score":"","Reputations1":"","Reputations1_type":"","Reputations1_score":"","Reputations2":"","Reputations2_type":"","Reputations2_score":"","Reputations3":"","Reputations3_type":"","Reputations3_score":"","Reputations4":"","Reputations4_type":"","Reputations4_score":"","Reputations5":"","Reputations5_type":"","Reputations5_score":"","Reputations6":"","Reputations6_type":"","Reputations6_score":"","Intelligence_Description":"","Intelligence_Score":"0","Intelligence_Aging":"0","Perception_Description":"","Perception_Score":"0","Perception_Aging":"0","Presence_Description":"","Presence_Score":"0","Presence_Aging":"0","Communication_Description":"","Communication_Score":"0","Communication_Aging":"0","Strength_Description":"","Strength_Score":"0","Strength_Aging":"0","Stamina_Description":"","Stamina_Score":"0","Stamina_Aging":"0","Dexterity_Description":"","Dexterity_Score":"0","Dexterity_Aging":"0","Quickness_Description":"","Quickness_Score":"0","Quickness_Aging":"0","Decrepitude":"0","Decrepitude_effects":"","Longevity_Scars":"","global_Ability_CharacName":"Intelligence","Creo_Score":"0","Creo_exp":"0","Creo_advancementExp":"1 * ((@{Creo_Score}) + 1)","Creo_totalExp":"1 * (((@{Creo_Score}) + 1) * ((@{Creo_Score}) + 2) / 2)","Creo_Puissant":"0","Intellego_Score":"0","Intellego_exp":"0","Intellego_advancementExp":"1 * ((@{Intellego_Score}) + 1)","Intellego_totalExp":"1 * (((@{Intellego_Score}) + 1) * ((@{Intellego_Score}) + 2) / 2)","Intellego_Puissant":"0","Muto_Score":"0","Muto_exp":"0","Muto_advancementExp":"1 * ((@{Muto_Score}) + 1)","Muto_totalExp":"1 * (((@{Muto_Score}) + 1) * ((@{Muto_Score}) + 2) / 2)","Muto_Puissant":"0","Perdo_Score":"0","Perdo_exp":"0","Perdo_advancementExp":"1 * ((@{Perdo_Score}) + 1)","Perdo_totalExp":"1 * (((@{Perdo_Score}) + 1) * ((@{Perdo_Score}) + 2) / 2)","Perdo_Puissant":"0","Rego_Score":"0","Rego_exp":"0","Rego_advancementExp":"1 * ((@{Rego_Score}) + 1)","Rego_totalExp":"1 * (((@{Rego_Score}) + 1) * ((@{Rego_Score}) + 2) / 2)","Rego_Puissant":"0","Animal_Score":"0","Animal_exp":"0","Animal_advancementExp":"1 * ((@{Animal_Score}) + 1)","Animal_totalExp":"1 * (((@{Animal_Score}) + 1) * ((@{Animal_Score}) + 2) / 2)","Animal_Puissant":"0","Aquam_Score":"0","Aquam_exp":"0","Aquam_advancementExp":"1 * ((@{Aquam_Score}) + 1)","Aquam_totalExp":"1 * (((@{Aquam_Score}) + 1) * ((@{Aquam_Score}) + 2) / 2)","Aquam_Puissant":"0","Auram_Score":"0","Auram_exp":"0","Auram_advancementExp":"1 * ((@{Auram_Score}) + 1)","Auram_totalExp":"1 * (((@{Auram_Score}) + 1) * ((@{Auram_Score}) + 2) / 2)","Auram_Puissant":"0","Corpus_Score":"0","Corpus_exp":"0","Corpus_advancementExp":"1 * ((@{Corpus_Score}) + 1)","Corpus_totalExp":"1 * (((@{Corpus_Score}) + 1) * ((@{Corpus_Score}) + 2) / 2)","Corpus_Puissant":"0","Herbam_Score":"0","Herbam_exp":"0","Herbam_advancementExp":"1 * ((@{Herbam_Score}) + 1)","Herbam_totalExp":"1 * (((@{Herbam_Score}) + 1) * ((@{Herbam_Score}) + 2) / 2)","Herbam_Puissant":"0","Ignem_Score":"0","Ignem_exp":"0","Ignem_advancementExp":"1 * ((@{Ignem_Score}) + 1)","Ignem_totalExp":"1 * (((@{Ignem_Score}) + 1) * ((@{Ignem_Score}) + 2) / 2)","Ignem_Puissant":"0","Imaginem_Score":"0","Imaginem_exp":"0","Imaginem_advancementExp":"1 * ((@{Imaginem_Score}) + 1)","Imaginem_totalExp":"1 * (((@{Imaginem_Score}) + 1) * ((@{Imaginem_Score}) + 2) / 2)","Imaginem_Puissant":"0","Mentem_Score":"0","Mentem_exp":"0","Mentem_advancementExp":"1 * ((@{Mentem_Score}) + 1)","Mentem_totalExp":"1 * (((@{Mentem_Score}) + 1) * ((@{Mentem_Score}) + 2) / 2)","Mentem_Puissant":"0","Terram_Score":"0","Terram_exp":"0","Terram_advancementExp":"1 * ((@{Terram_Score}) + 1)","Terram_totalExp":"1 * (((@{Terram_Score}) + 1) * ((@{Terram_Score}) + 2) / 2)","Terram_Puissant":"0","Vim_Score":"0","Vim_exp":"0","Vim_advancementExp":"1 * ((@{Vim_Score}) + 1)","Vim_totalExp":"1 * (((@{Vim_Score}) + 1) * ((@{Vim_Score}) + 2) / 2)","Vim_Puissant":"0","Spontaneous1":"((@{Spontaneous1_Technique} + @{Spontaneous1_Form} + (@{Spontaneous1_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura})/2) / (1 + (@{Spontaneous1_Deficiency}))","Spontaneous1_Technique":"0 [@{technique_i18n}]","Spontaneous1_Form":"0 [@{form_i18n}]","Spontaneous1_Focus":0,"Spontaneous1_Deficiency":0,"Spontaneous1_Sta":"@{Stamina_Score}","Spontaneous1_aura":"@{aura}","Ceremonial":"((@{Ceremonial_Technique} + @{Ceremonial_Form} + (@{Ceremonial_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura} + @{Ceremonial_Artes_Lib} + @{Ceremonial_Philos})/2 ) / (1 + (@{Ceremonial_Deficiency}))","Ceremonial_Technique":"0 [@{technique_i18n}]","Ceremonial_Form":"0 [@{form_i18n}]","Ceremonial_Focus":0,"Ceremonial_Deficiency":0,"Ceremonial_Sta":"@{Stamina_Score}","Ceremonial_aura":"@{aura}","Ceremonial_Artes_Lib":"0","Ceremonial_Philos":"0","Spontaneous2":"((@{Spontaneous2_Technique} + @{Spontaneous2_Form} + (@{Spontaneous2_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura})/5) / (1 + (@{Spontaneous2_Deficiency}))","Spontaneous2_Technique":"0","Spontaneous2_Form":"0","Spontaneous2_Focus":0,"Spontaneous2_Deficiency":0,"Spontaneous2_Sta":"@{Stamina_Score}","Spontaneous2_aura":"@{aura}","Formulaic":"(@{Formulaic_Technique} + @{Formulaic_Form} + (@{Formulaic_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura}) / (1 + (@{Formulaic_Deficiency}))","Formulaic_Technique":"0 [@{technique_i18n}]","Formulaic_Form":"0 [@{form_i18n}]","Formulaic_Focus":0,"Formulaic_Deficiency":0,"Formulaic_Sta":"@{Stamina_Score}","Formulaic_aura":"@{aura}","Ritual":"(@{Ritual_Technique} + @{Ritual_Form} + (@{Ritual_Focus}) + @{Stamina_Score} + @{aura} + @{Ritual_Artes_Lib} + @{Ritual_Philos}) / (1 + (@{Ritual_Deficiency}))","Ritual_Technique":"0 [@{technique_i18n}]","Ritual_Form":"0 [@{form_i18n}]","Ritual_Focus":0,"Ritual_Deficiency":0,"Ritual_Sta":"@{Stamina_Score}","Ritual_aura":"@{aura}","Ritual_Artes_Lib":"0","Ritual_Philos":"0","aura":"3","gestures":"0 [@{gestures_i18n}: @{bold_i18n}]","words":"0 [@{words_i18n}: @{firm_i18n}]","LabSize_Score":"0","LabRefinement_Score":"0","LabGeneralQuality_Score":"0","LabUpkeep_Score":"0","LabSafety_Score":"0","LabWarping_Score":"0","LabHealth_Score":"0","LabAesthetics_Score":"0","SanctumMarker":"","LabDescription":"","Lab":"@{Intelligence_Score} + @{Lab_Theory} + @{aura} + @{lab_Technique} + @{lab_Form} + (@{Lab_Focus}) + @{LabModifiers} + @{labbonus_total} + @{LabGeneralQuality_Score}","Lab_Focus":0,"LabModifiers":"0","Lab_Int":"@{Intelligence_Score}","Lab_Theory":"0","Lab_Aura":"@{aura}","lab_Technique":"0","lab_Form":"0","labbonus_total":"0","Fatigue_total":"@{Fatigue}","additionalFatigue":"0","additionalFatigueProxy":"0","Fatigue":"0","wound_total":"0","Wounds_Light_range":"","Wounds_Light1":0,"Wounds_Light2":0,"Wounds_Light3":0,"Wounds_Light4":0,"Wounds_Light5":0,"Wounds_Medium_range":"","Wounds_Medium1":0,"Wounds_Medium2":0,"Wounds_Medium3":0,"Wounds_Medium4":0,"Wounds_Medium5":0,"Wounds_Heavy_range":"","Wounds_Heavy1":0,"Wounds_Heavy2":0,"Wounds_Heavy3":0,"Wounds_Heavy4":0,"Wounds_Heavy5":0,"Wounds_Incapacitated_range":"","Wounds_Incapacitated":0,"Wounds_Dead_range":"","Wounds_Dead":0,"armors_total_prot":"0","armors_total_prot_detailed":" ","armors_total_load":"0","armors_total_load_detailed":" ","combat-mods_total_init":"0","combat-mods_total_init_detailed":" ","combat-mods_total_atk":"0","combat-mods_total_atk_detailed":" ","combat-mods_total_dfn":"0","combat-mods_total_dfn_detailed":" ","combat-mods_total_dam":"0","combat-mods_total_dam_detailed":" ","combat-mods_total_soak":"0","combat-mods_total_soak_detailed":" ","Soak":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}))","soak_stamina":"(@{Stamina_Score})","soak_bonus":"0","Soak_Animal":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Animal_Score}) + (@{Animal_Puissant})) / 5))","Soak_Aquam":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Aquam_Score}) + (@{Aquam_Puissant})) / 5))","Soak_Auram":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Auram_Score}) + (@{Auram_Puissant})) / 5))","Soak_Corpus":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Corpus_Score}) + (@{Corpus_Puissant})) / 5))","Soak_Herbam":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Herbam_Score}) + (@{Herbam_Puissant})) / 5))","Soak_Ignem":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Ignem_Score}) + (@{Ignem_Puissant})) / 5))","Soak_Imaginem":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Imaginem_Score}) + (@{Imaginem_Puissant})) / 5))","Soak_Mentem":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Mentem_Score}) + (@{Mentem_Puissant})) / 5))","Soak_Terram":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Terram_Score}) + (@{Terram_Puissant})) / 5))","Soak_Vim":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Vim_Score}) + (@{Vim_Puissant})) / 5))","botch_formula":"&{template:botch} {{roll= [[{[[?{@{botch_num_i18n}|1}]]d10cs0cf10}=10]] }} {{type=Grouped}}","die-type-selection":"toggle","ArmorWorn":"","ArmorModifiers":"","ability_i18n":"Abiliy","armor_i18n":"Armor","artes_i18n":"Artes Lib.","attack_i18n":"Attack","aura_i18n":"Aura","bold_i18n":"Bold","bonus_i18n":"Bonus","botch_i18n":"Botch","characteristic_i18n":"Characteristic","botch_num_i18n":"Number of botch dice","circumstances_i18n":"Circumstances","circumstantial_i18n":"Circumstancial","critical_i18n":"Critical","damage_i18n":"Damage","defense_i18n":"Defense","deficiency_i18n":"Deficiency","encumbrance_i18n":"Encumbrance","exaggerated_i18n":"Exaggerated","fatigue_i18n":"Fatigue","firm_i18n":"Firm","focus_i18n":"Focus","form_i18n":"Form","gestures_i18n":"Gestures","gest-none_i18n":"None","initiative_i18n":"Initiative","loud_i18n":"Loud","modifiers_i18n":"Modifiers","philos_i18n":"Philos.","quiet_i18n":"Quiet","simple-die_i18n":"Simple","soakbns_i18n":"Soak Bonus","spontaneous_i18n":"Spontaneous","stress-die_i18n":"Stress","subtle_i18n":"Subtle","technique_i18n":"Technique","total_i18n":"Total","unselected_i18n":"Unselected","words_i18n":"Words","words-none_i18n":"None","wounds_i18n":"Wounds","intelligence_i18n":"Intelligence","perception_i18n":"Perception","presence_i18n":"Presence","communication_i18n":"Communication","strength_i18n":"Strength","stamina_i18n":"Stamina","dexterity_i18n":"Dexterity","quickness_i18n":"Quickness","ask_short_i18n":"Ask","global_char_short_i18n":"Gbl","intelligence_short_i18n":"Int","perception_short_i18n":"Per","presence_short_i18n":"Prs","communication_short_i18n":"Com","strength_short_i18n":"Str","stamina_short_i18n":"Sta","dexterity_short_i18n":"Dex","quickness_short_i18n":"Qik","creo_i18n":"Creo","intellego_i18n":"Intellego","muto_i18n":"Muto","perdo_i18n":"Perdo","rego_i18n":"Rego","animal_i18n":"Animal","aquam_i18n":"Aquam","auram_i18n":"Auram","corpus_i18n":"Corpus","herbam_i18n":"Herbam","ignem_i18n":"Ignem","imaginem_i18n":"Imaginem","mentem_i18n":"Mentem","terram_i18n":"Terram","vim_i18n":"Vim","Unselected_Score":"0","Unselected_Puissant":"0","ask_Score":"?{@{characteristic_i18n}|@{intelligence_i18n},@{intelligence_Score} [@{intelligence_i18n}]| @{perception_i18n},@{perception_Score} [@{perception_i18n}]| @{presence_i18n},@{presence_Score} [@{presence_i18n}]| @{communication_i18n},@{communication_Score} [@{communication_i18n}]| @{strength_i18n},@{strength_Score} [@{strength_i18n}]| @{stamina_i18n},@{stamina_Score} [@{stamina_i18n}]| @{dexterity_i18n},@{dexterity_Score} [@{dexterity_i18n}]| @{quickness_i18n},@{quickness_Score} [@{quickness_i18n}]}","global_char_Score":"@{sys_at}@{character_name}@{sys_pipe}@{global_Ability_CharacName}_Score@{sys_rbk}","global_char_i18n":"@{sys_at}@{character_name}@{sys_pipe}@{global_Ability_CharacName}_i18n@{sys_rbk}","sys_at":"@{","sys_pipe":"|","sys_rbk":"}"},
+  attributes:{"update_error_rowid":"","character_name":"","player_name":"","unspent_xp":"","saga":"","year":"","Confidence":"","ConfidencePoints":"","sheetTab":"sheet","simple-die":"(1d10cs0cf0) [@{simple-die_i18n}]","stress-die":"ceil(((((1d10cs1cf10 %9) -1)+9) %9) *1.1) [@{stress-die_i18n}]","die-type-selection-proxy":"toggle","selected-die":"simple","isMagi":"yes","Age":"","MightType":"NoMight","MightScore":"","Warping":"","ApparentAge":"","CurrentMagicMight":"","WarpPoints":"","Warping_effects":"","Birth_Name":"","Year_Born":"","Gender":"","Race_Nationality":"","Place_of_Origin":"","Religion":"","Title_Profession":"","Height":"","Weight":"","Size":"","Handedness":"","Hair":"","Eyes":"","House":"","Covenant":"","sigil":"","DomusMagna":"","Primus":"","Parens":"","CovenantofApprenticeship":"","Personality_Trait1":"","Personality_Trait1_score":"","Personality_Trait2":"","Personality_Trait2_score":"","Personality_Trait3":"","Personality_Trait3_score":"","Personality_Trait4":"","Personality_Trait4_score":"","Personality_Trait5":"","Personality_Trait5_score":"","Personality_Trait6":"","Personality_Trait6_score":"","Reputations1":"","Reputations1_type":"","Reputations1_score":"","Reputations2":"","Reputations2_type":"","Reputations2_score":"","Reputations3":"","Reputations3_type":"","Reputations3_score":"","Reputations4":"","Reputations4_type":"","Reputations4_score":"","Reputations5":"","Reputations5_type":"","Reputations5_score":"","Reputations6":"","Reputations6_type":"","Reputations6_score":"","Intelligence_Description":"","Intelligence_Score":"0","Intelligence_Aging":"0","Perception_Description":"","Perception_Score":"0","Perception_Aging":"0","Presence_Description":"","Presence_Score":"0","Presence_Aging":"0","Communication_Description":"","Communication_Score":"0","Communication_Aging":"0","Strength_Description":"","Strength_Score":"0","Strength_Aging":"0","Stamina_Description":"","Stamina_Score":"0","Stamina_Aging":"0","Dexterity_Description":"","Dexterity_Score":"0","Dexterity_Aging":"0","Quickness_Description":"","Quickness_Score":"0","Quickness_Aging":"0","Decrepitude":"0","Decrepitude_effects":"","Longevity_Scars":"","global_Ability_CharacName":"Intelligence","Creo_Score":"0","Creo_exp":"0","Creo_advancementExp":"1 * ((@{Creo_Score}) + 1)","Creo_totalExp":"1 * (((@{Creo_Score}) + 1) * ((@{Creo_Score}) + 2) / 2)","Creo_Puissant":"0","Intellego_Score":"0","Intellego_exp":"0","Intellego_advancementExp":"1 * ((@{Intellego_Score}) + 1)","Intellego_totalExp":"1 * (((@{Intellego_Score}) + 1) * ((@{Intellego_Score}) + 2) / 2)","Intellego_Puissant":"0","Muto_Score":"0","Muto_exp":"0","Muto_advancementExp":"1 * ((@{Muto_Score}) + 1)","Muto_totalExp":"1 * (((@{Muto_Score}) + 1) * ((@{Muto_Score}) + 2) / 2)","Muto_Puissant":"0","Perdo_Score":"0","Perdo_exp":"0","Perdo_advancementExp":"1 * ((@{Perdo_Score}) + 1)","Perdo_totalExp":"1 * (((@{Perdo_Score}) + 1) * ((@{Perdo_Score}) + 2) / 2)","Perdo_Puissant":"0","Rego_Score":"0","Rego_exp":"0","Rego_advancementExp":"1 * ((@{Rego_Score}) + 1)","Rego_totalExp":"1 * (((@{Rego_Score}) + 1) * ((@{Rego_Score}) + 2) / 2)","Rego_Puissant":"0","Animal_Score":"0","Animal_exp":"0","Animal_advancementExp":"1 * ((@{Animal_Score}) + 1)","Animal_totalExp":"1 * (((@{Animal_Score}) + 1) * ((@{Animal_Score}) + 2) / 2)","Animal_Puissant":"0","Aquam_Score":"0","Aquam_exp":"0","Aquam_advancementExp":"1 * ((@{Aquam_Score}) + 1)","Aquam_totalExp":"1 * (((@{Aquam_Score}) + 1) * ((@{Aquam_Score}) + 2) / 2)","Aquam_Puissant":"0","Auram_Score":"0","Auram_exp":"0","Auram_advancementExp":"1 * ((@{Auram_Score}) + 1)","Auram_totalExp":"1 * (((@{Auram_Score}) + 1) * ((@{Auram_Score}) + 2) / 2)","Auram_Puissant":"0","Corpus_Score":"0","Corpus_exp":"0","Corpus_advancementExp":"1 * ((@{Corpus_Score}) + 1)","Corpus_totalExp":"1 * (((@{Corpus_Score}) + 1) * ((@{Corpus_Score}) + 2) / 2)","Corpus_Puissant":"0","Herbam_Score":"0","Herbam_exp":"0","Herbam_advancementExp":"1 * ((@{Herbam_Score}) + 1)","Herbam_totalExp":"1 * (((@{Herbam_Score}) + 1) * ((@{Herbam_Score}) + 2) / 2)","Herbam_Puissant":"0","Ignem_Score":"0","Ignem_exp":"0","Ignem_advancementExp":"1 * ((@{Ignem_Score}) + 1)","Ignem_totalExp":"1 * (((@{Ignem_Score}) + 1) * ((@{Ignem_Score}) + 2) / 2)","Ignem_Puissant":"0","Imaginem_Score":"0","Imaginem_exp":"0","Imaginem_advancementExp":"1 * ((@{Imaginem_Score}) + 1)","Imaginem_totalExp":"1 * (((@{Imaginem_Score}) + 1) * ((@{Imaginem_Score}) + 2) / 2)","Imaginem_Puissant":"0","Mentem_Score":"0","Mentem_exp":"0","Mentem_advancementExp":"1 * ((@{Mentem_Score}) + 1)","Mentem_totalExp":"1 * (((@{Mentem_Score}) + 1) * ((@{Mentem_Score}) + 2) / 2)","Mentem_Puissant":"0","Terram_Score":"0","Terram_exp":"0","Terram_advancementExp":"1 * ((@{Terram_Score}) + 1)","Terram_totalExp":"1 * (((@{Terram_Score}) + 1) * ((@{Terram_Score}) + 2) / 2)","Terram_Puissant":"0","Vim_Score":"0","Vim_exp":"0","Vim_advancementExp":"1 * ((@{Vim_Score}) + 1)","Vim_totalExp":"1 * (((@{Vim_Score}) + 1) * ((@{Vim_Score}) + 2) / 2)","Vim_Puissant":"0","Spontaneous1":"((@{Spontaneous1_Technique} + @{Spontaneous1_Form} + (@{Spontaneous1_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura})/2) / (1 + (@{Spontaneous1_Deficiency}))","Spontaneous1_Technique":"0 [@{technique_i18n}]","Spontaneous1_Form":"0 [@{form_i18n}]","Spontaneous1_Focus":0,"Spontaneous1_Deficiency":0,"Spontaneous1_Sta":"@{Stamina_Score}","Spontaneous1_aura":"@{aura}","Ceremonial":"((@{Ceremonial_Technique} + @{Ceremonial_Form} + (@{Ceremonial_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura} + @{Ceremonial_Artes_Lib} + @{Ceremonial_Philos})/2 ) / (1 + (@{Ceremonial_Deficiency}))","Ceremonial_Technique":"0 [@{technique_i18n}]","Ceremonial_Form":"0 [@{form_i18n}]","Ceremonial_Focus":0,"Ceremonial_Deficiency":0,"Ceremonial_Sta":"@{Stamina_Score}","Ceremonial_aura":"@{aura}","Ceremonial_Artes_Lib":"0","Ceremonial_Philos":"0","Spontaneous2":"((@{Spontaneous2_Technique} + @{Spontaneous2_Form} + (@{Spontaneous2_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura})/5) / (1 + (@{Spontaneous2_Deficiency}))","Spontaneous2_Technique":"0","Spontaneous2_Form":"0","Spontaneous2_Focus":0,"Spontaneous2_Deficiency":0,"Spontaneous2_Sta":"@{Stamina_Score}","Spontaneous2_aura":"@{aura}","Formulaic":"(@{Formulaic_Technique} + @{Formulaic_Form} + (@{Formulaic_Focus}) + @{gestures} + @{words} + @{Stamina_Score} + @{aura}) / (1 + (@{Formulaic_Deficiency}))","Formulaic_Technique":"0 [@{technique_i18n}]","Formulaic_Form":"0 [@{form_i18n}]","Formulaic_Focus":0,"Formulaic_Deficiency":0,"Formulaic_Sta":"@{Stamina_Score}","Formulaic_aura":"@{aura}","Ritual":"(@{Ritual_Technique} + @{Ritual_Form} + (@{Ritual_Focus}) + @{Stamina_Score} + @{aura} + @{Ritual_Artes_Lib} + @{Ritual_Philos}) / (1 + (@{Ritual_Deficiency}))","Ritual_Technique":"0 [@{technique_i18n}]","Ritual_Form":"0 [@{form_i18n}]","Ritual_Focus":0,"Ritual_Deficiency":0,"Ritual_Sta":"@{Stamina_Score}","Ritual_aura":"@{aura}","Ritual_Artes_Lib":"0","Ritual_Philos":"0","aura":"3","gestures":"0 [@{gestures_i18n}: @{bold_i18n}]","words":"0 [@{words_i18n}: @{firm_i18n}]","LabSize_Score":"0","LabRefinement_Score":"0","LabGeneralQuality_Score":"0","LabUpkeep_Score":"0","LabSafety_Score":"0","LabWarping_Score":"0","LabHealth_Score":"0","LabAesthetics_Score":"0","SanctumMarker":"","LabDescription":"","Lab":"@{Intelligence_Score} + @{Lab_Theory} + @{aura} + @{lab_Technique} + @{lab_Form} + (@{Lab_Focus}) + @{LabModifiers} + @{labbonus_total} + @{LabGeneralQuality_Score}","Lab_Focus":0,"LabModifiers":"0","Lab_Int":"@{Intelligence_Score}","Lab_Theory":"0","Lab_Aura":"@{aura}","lab_Technique":"0","lab_Form":"0","labbonus_total":"0","Fatigue_total":"@{Fatigue}","additionalFatigue":"0","additionalFatigueProxy":"0","Fatigue":"0","wound_total":"0","Wounds_Light_range":"","Wounds_Light1":0,"Wounds_Light2":0,"Wounds_Light3":0,"Wounds_Light4":0,"Wounds_Light5":0,"Wounds_Medium_range":"","Wounds_Medium1":0,"Wounds_Medium2":0,"Wounds_Medium3":0,"Wounds_Medium4":0,"Wounds_Medium5":0,"Wounds_Heavy_range":"","Wounds_Heavy1":0,"Wounds_Heavy2":0,"Wounds_Heavy3":0,"Wounds_Heavy4":0,"Wounds_Heavy5":0,"Wounds_Incapacitated_range":"","Wounds_Incapacitated":0,"Wounds_Dead_range":"","Wounds_Dead":0,"armors_total_prot":"0","armors_total_prot_detailed":" ","armors_total_load":"0","armors_total_load_detailed":" ","combat-mods_total_init":"0","combat-mods_total_init_detailed":" ","combat-mods_total_atk":"0","combat-mods_total_atk_detailed":" ","combat-mods_total_dfn":"0","combat-mods_total_dfn_detailed":" ","combat-mods_total_dam":"0","combat-mods_total_dam_detailed":" ","combat-mods_total_soak":"0","combat-mods_total_soak_detailed":" ","Soak":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}))","soak_stamina":"(@{Stamina_Score})","soak_bonus":"0","Soak_Animal":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Animal_Score}) + (@{Animal_Puissant})) / 5))","Soak_Aquam":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Aquam_Score}) + (@{Aquam_Puissant})) / 5))","Soak_Auram":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Auram_Score}) + (@{Auram_Puissant})) / 5))","Soak_Corpus":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Corpus_Score}) + (@{Corpus_Puissant})) / 5))","Soak_Herbam":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Herbam_Score}) + (@{Herbam_Puissant})) / 5))","Soak_Ignem":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Ignem_Score}) + (@{Ignem_Puissant})) / 5))","Soak_Imaginem":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Imaginem_Score}) + (@{Imaginem_Puissant})) / 5))","Soak_Mentem":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Mentem_Score}) + (@{Mentem_Puissant})) / 5))","Soak_Terram":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Terram_Score}) + (@{Terram_Puissant})) / 5))","Soak_Vim":"((@{Stamina_Score}) + (@{armors_total_prot}) + (@{soak_bonus}) + (@{combat-mods_total_soak}) + ceil(((@{Vim_Score}) + (@{Vim_Puissant})) / 5))","botch_formula":"&{template:botch} {{roll= [[{[[?{@{botch_num_i18n}|1}]]d10cs0cf10}=10]] }} {{type=Grouped}}","die-type-selection":"toggle","ArmorWorn":"","ArmorModifiers":"","ability_i18n":"Abiliy","armor_i18n":"Armor","artes_i18n":"Artes Lib.","attack_i18n":"Attack","aura_i18n":"Aura","bold_i18n":"Bold","bonus_i18n":"Bonus","botch_i18n":"Botch","characteristic_i18n":"Characteristic","botch_num_i18n":"Number of botch dice","circumstances_i18n":"Circumstances","circumstantial_i18n":"Circumstancial","critical_i18n":"Critical","damage_i18n":"Damage","defense_i18n":"Defense","deficiency_i18n":"Deficiency","encumbrance_i18n":"Encumbrance","exaggerated_i18n":"Exaggerated","fatigue_i18n":"Fatigue","firm_i18n":"Firm","focus_i18n":"Focus","form_i18n":"Form","gestures_i18n":"Gestures","gest-none_i18n":"None","initiative_i18n":"Initiative","loud_i18n":"Loud","modifiers_i18n":"Modifiers","philos_i18n":"Philos.","quiet_i18n":"Quiet","simple-die_i18n":"Simple","soakbns_i18n":"Soak Bonus","spontaneous_i18n":"Spontaneous","stress-die_i18n":"Stress","subtle_i18n":"Subtle","technique_i18n":"Technique","total_i18n":"Total","unselected_i18n":"Unselected","words_i18n":"Words","words-none_i18n":"None","wounds_i18n":"Wounds","intelligence_i18n":"Intelligence","perception_i18n":"Perception","presence_i18n":"Presence","communication_i18n":"Communication","strength_i18n":"Strength","stamina_i18n":"Stamina","dexterity_i18n":"Dexterity","quickness_i18n":"Quickness","ask_short_i18n":"Ask","global_char_short_i18n":"Gbl","intelligence_short_i18n":"Int","perception_short_i18n":"Per","presence_short_i18n":"Prs","communication_short_i18n":"Com","strength_short_i18n":"Str","stamina_short_i18n":"Sta","dexterity_short_i18n":"Dex","quickness_short_i18n":"Qik","creo_i18n":"Creo","intellego_i18n":"Intellego","muto_i18n":"Muto","perdo_i18n":"Perdo","rego_i18n":"Rego","animal_i18n":"Animal","aquam_i18n":"Aquam","auram_i18n":"Auram","corpus_i18n":"Corpus","herbam_i18n":"Herbam","ignem_i18n":"Ignem","imaginem_i18n":"Imaginem","mentem_i18n":"Mentem","terram_i18n":"Terram","vim_i18n":"Vim","Unselected_Score":"0","Unselected_Puissant":"0","ask_Score":"?{@{characteristic_i18n}|@{intelligence_i18n},@{intelligence_Score} [@{intelligence_i18n}]| @{perception_i18n},@{perception_Score} [@{perception_i18n}]| @{presence_i18n},@{presence_Score} [@{presence_i18n}]| @{communication_i18n},@{communication_Score} [@{communication_i18n}]| @{strength_i18n},@{strength_Score} [@{strength_i18n}]| @{stamina_i18n},@{stamina_Score} [@{stamina_i18n}]| @{dexterity_i18n},@{dexterity_Score} [@{dexterity_i18n}]| @{quickness_i18n},@{quickness_Score} [@{quickness_i18n}]}","global_char_Score":"@{sys_at}@{character_name}@{sys_pipe}@{global_Ability_CharacName}_Score@{sys_rbk}","global_char_i18n":"@{sys_at}@{character_name}@{sys_pipe}@{global_Ability_CharacName}_i18n@{sys_rbk}","sys_at":"@{","sys_pipe":"|","sys_rbk":"}"},
   triggers: [],
   otherCharacters: {
     // Attribute information of other test characters indexed by character name
@@ -259,11 +259,11 @@ global.finishRoll = finishRoll;
 const k = (function(){
     const kFuncs = {};
     
-    const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_notNew":{"name":"notNew","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Load":{"name":"repeating_weapons_$X_Wounds_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Range":{"name":"repeating_weapons_$X_Wounds_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Load":{"name":"repeating_weapons_$X_Weapon_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Range":{"name":"repeating_weapons_$X_Weapon_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Technique_select":{"name":"repeating_spell_$X_Technique_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Form_select":{"name":"repeating_spell_$X_Form_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_tech_name":{"name":"repeating_spell_$X_spell_tech_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_form_name":{"name":"repeating_spell_$X_spell_form_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_alerts--global-alerts_$X_level":{"name":"repeating_alerts--global-alerts_$X_level","type":"hidden","defaultValue":"info","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_title":{"name":"repeating_alerts--global-alerts_$X_title","type":"text","defaultValue":"title","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_text":{"name":"repeating_alerts--global-alerts_$X_text","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_alerts--global-alerts_$X_close":{"triggeredFuncs":["helpers.alerts.close"],"name":"repeating_alerts--global-alerts_$X_close","listener":"clicked:repeating_alerts--global-alerts:close","listenerFunc":"accessSheet","type":"action"}};
+    const cascades = {"attr_character_name":{"name":"character_name","type":"text","defaultValue":"","affects":[],"triggeredFuncs":["setActionCalls"],"listenerFunc":"accessSheet","listener":"change:character_name"},"attr_notNew":{"name":"notNew","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Technique_select":{"name":"repeating_spell_$X_Technique_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_Form_select":{"name":"repeating_spell_$X_Form_select","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_tech_name":{"name":"repeating_spell_$X_spell_tech_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_spell_$X_spell_form_name":{"name":"repeating_spell_$X_spell_form_name","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Load":{"name":"repeating_weapons_$X_Wounds_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Wounds_Range":{"name":"repeating_weapons_$X_Wounds_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Load":{"name":"repeating_weapons_$X_Weapon_Load","type":"number","affects":[],"triggeredFuncs":[]},"attr_repeating_weapons_$X_Weapon_Range":{"name":"repeating_weapons_$X_Weapon_Range","type":"string","affects":[],"triggeredFuncs":[]},"attr_update_error_rowid":{"name":"update_error_rowid","type":"hidden","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_level":{"name":"repeating_alerts--global-alerts_$X_level","type":"hidden","defaultValue":"info","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_title":{"name":"repeating_alerts--global-alerts_$X_title","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"attr_repeating_alerts--global-alerts_$X_text":{"name":"repeating_alerts--global-alerts_$X_text","type":"span","defaultValue":"","triggeredFuncs":[],"affects":[]},"act_repeating_alerts--global-alerts_$X_close":{"triggeredFuncs":["onAlertRemoved"],"name":"repeating_alerts--global-alerts_$X_close","listener":"clicked:repeating_alerts--global-alerts:close","listenerFunc":"accessSheet","type":"action"}};
     
     kFuncs.cascades = cascades;
     
-    const repeatingSectionDetails = [{"section":"repeating_weapons","fields":["Wounds_Load","Wounds_Range","Weapon_Load","Weapon_Range"]},{"section":"repeating_spell","fields":["Technique_select","Form_select","spell_tech_name","spell_form_name"]},{"section":"repeating_alerts--global-alerts","fields":["level","title","text"]}];
+    const repeatingSectionDetails = [{"section":"repeating_spell","fields":["Technique_select","Form_select","spell_tech_name","spell_form_name"]},{"section":"repeating_weapons","fields":["Wounds_Load","Wounds_Range","Weapon_Load","Weapon_Range"]},{"section":"repeating_alerts--global-alerts","fields":["level","title","text"]}];
     
     kFuncs.repeatingSectionDetails = repeatingSectionDetails;
     
@@ -1322,6 +1322,9 @@ registerFuncs({ kTabOnOpen },{type:['opener']});
     return kFuncs;
     }());
     const actionAttributes = [];
+    k.debugMode = true;
+    k.sheetName = "ArM5";
+    k.version = "2.0";
      
     // k-scaffold fix ?
     const persistentTabs = [];
@@ -1474,34 +1477,34 @@ function register_repeated_section_totals(section, properties) {
 register_repeated_section_totals("armors", ["prot", "load"]);
 register_repeated_section_totals("combat-mods", ["init", "atk", "dfn", "dam", "soak"]);
 
+// Weapon update has been ported to kScaffold, this isn't needed anymore
 // Fix weapon attributes
+// on("sheet:opened", function() {
+//     const fixes = {
+//         "_Wounds_Load": "_Weapon_Load",
+//         "_Wounds_Range": "_Weapon_Range",
+//     };
+//     const keys = Object.keys(fixes);
+//     getSectionIDs("repeating_weapons", function(id_array) {
+//         var attr_names = [];
+//         id_array.forEach( (id_) => (keys.forEach((key) => attr_names.push("repeating_weapons_" + id_ + key))));
 
-on("sheet:opened", function() {
-    const fixes = {
-        "_Wounds_Load": "_Weapon_Load",
-        "_Wounds_Range": "_Weapon_Range",
-    };
-    const keys = Object.keys(fixes);
-    getSectionIDs("repeating_weapons", function(id_array) {
-        var attr_names = [];
-        id_array.forEach( (id_) => (keys.forEach((key) => attr_names.push("repeating_weapons_" + id_ + key))));
-
-        getAttrs(attr_names, function(attrs) {
-            var value = 0;
-            var updates = {};
-            id_array.forEach( (id_) => (keys.forEach(function(key) {
-                if (attrs["repeating_weapons_" + id_ + key]) {
-                    console.log(attrs["repeating_weapons_" + id_ + key]);
-                    console.log("Fixing " + "repeating_weapons_" + id_ + key + " to " + "repeating_weapons_" + id_ + fixes[key]);
-                    updates["repeating_weapons_" + id_ + fixes[key]] = parseInt(attrs["repeating_weapons_" + id_ + key]) || 0;
-                    updates["repeating_weapons_" + id_ + key] = "";
-                }
-            })));
-            console.log("All fixes :" + JSON.stringify(updates, null, 1));
-            setAttrs(updates);
-        });
-    });
-});
+//         getAttrs(attr_names, function(attrs) {
+//             var value = 0;
+//             var updates = {};
+//             id_array.forEach( (id_) => (keys.forEach(function(key) {
+//                 if (attrs["repeating_weapons_" + id_ + key]) {
+//                     console.log(attrs["repeating_weapons_" + id_ + key]);
+//                     console.log("Fixing " + "repeating_weapons_" + id_ + key + " to " + "repeating_weapons_" + id_ + fixes[key]);
+//                     updates["repeating_weapons_" + id_ + fixes[key]] = parseInt(attrs["repeating_weapons_" + id_ + key]) || 0;
+//                     updates["repeating_weapons_" + id_ + key] = "";
+//                 }
+//             })));
+//             console.log("All fixes :" + JSON.stringify(updates, null, 1));
+//             setAttrs(updates);
+//         });
+//     });
+// });
 
 // Duplicate the global bonuses inside the weapons repeating section for display
 // From https://app.roll20.net/forum/post/10297616/how-do-i-reference-a-global-attribute-in-a-span-in-a-repeating-section
@@ -1604,134 +1607,329 @@ on("sheet:opened", function(eventInfo){
         "vim_i18n": getTranslationByKey("vim")
     });
 
-    getAttrs(["notNew"], function (values) {
-        if (values.notNew == 0) {
-            setAttrs({
-                "notNew": 1,
-                "alert-alert-update-v1-7-1": 1,
-                "alert-alert-update-v1-7": 1,
-                "alert-alert-update-v1-6-5": 1,
-                "alert-alert-update-v1-6-4": 1,
-                "alert-alert-update-v1-6-3": 1,
-                "alert-alert-update-v1-6-2": 1,
-                "alert-alert-update-v1-6-1": 1,
-                "alert-alert-update-v1-6": 1,
-                "alert-alert-update-v1-51": 1,
-                "alert-alert-update-v1-5": 1,
-                "alert-alert-update-v1-4": 1,
-                "alert-161-spell-update": 1,
-                "alert-alert-update-v1_6-dataloss": 1,
-                "alert-alert-update-v1-7-armorylegacy": 1
-            }); 
-        }
-    });
+    // Alert system has been replaced, this serves no purposes
+    // getAttrs(["notNew"], function (values) {
+    //     if (values.notNew == 0) {
+    //         setAttrs({
+    //             "notNew": 1,
+    //             "alert-alert-update-v1-7-1": 1,
+    //             "alert-alert-update-v1-7": 1,
+    //             "alert-alert-update-v1-6-5": 1,
+    //             "alert-alert-update-v1-6-4": 1,
+    //             "alert-alert-update-v1-6-3": 1,
+    //             "alert-alert-update-v1-6-2": 1,
+    //             "alert-alert-update-v1-6-1": 1,
+    //             "alert-alert-update-v1-6": 1,
+    //             "alert-alert-update-v1-51": 1,
+    //             "alert-alert-update-v1-5": 1,
+    //             "alert-alert-update-v1-4": 1,
+    //             "alert-161-spell-update": 1,
+    //             "alert-alert-update-v1_6-dataloss": 1,
+    //             "alert-alert-update-v1-7-armorylegacy": 1
+    //         }); 
+    //     }
+    // });
 
+    // The spell update has been ported to k-Scaffold, this is unneeded
     // Update old spell art selection to new format
     // Skip it if the Warning banner for that update is closed
-    getAttrs(["alert-161-spell-update"], function(values) {
-        if (values["alert-161-spell-update"] == 0) {
-            getSectionIDs("spell", function(idarray) {
-                const tech_translation = {
-                    0: "unselected",
-                    1: "Creo",
-                    2: "Intellego",
-                    3: "Muto",
-                    4: "Perdo",
-                    5: "Rego"
-                };
-                const form_translation = {
-                    0: "unselected",
-                    1: "Animal",
-                    2: "Aquam",
-                    3: "Auram",
-                    4: "Corpus",
-                    5: "Herbam",
-                    6: "Ignem",
-                    7: "Imaginem",
-                    8: "Mentem",
-                    9: "Terram",
-                    10: "Vim"
-                };
-                for (var i=0; i < idarray.length; i++) {
-                    const spellid = idarray[i];
-                    console.log("Update 1.6.1 - Spell arts updater script - scheduling update for spell ID:" + spellid);
-                    getAttrs(
-                        [   
-                            "repeating_spell_" + spellid + "_spell_name",
-                            "repeating_spell_" + spellid + "_Technique_select",
-                            "repeating_spell_" + spellid + "_Form_select"
-                        ],
-                        function (values) {
-                            attr_updates = {
-                                ["repeating_spell_" + spellid + "_spell_tech_name"]: tech_translation[values["repeating_spell_" + spellid + "_Technique_select"]] || "unselected",
-                                ["repeating_spell_" + spellid + "_spell_form_name"]: form_translation[values["repeating_spell_" + spellid + "_Form_select"]] || "unselected"
-                            };
-                            console.log("Update 1.6.1 - Spell arts updater script - " + values["repeating_spell_" + spellid + "_spell_name"] + " (ID " + spellid + ")");
-                            console.log(attr_updates);
-                            console.log("Update 1.6.1 - Spell arts updater script - spell " + spellid + " END");
-                            setAttrs(attr_updates);
-                        }
-                    );
-                }
-                console.log("Update 1.6.1 - Spell arts updater script - all spell scheduled for update");
-                setAttrs({"alert-161-spell-update": 1});
-            });
-        }
-    });
+    // getAttrs(["alert-161-spell-update"], function(values) {
+    //     if (values["alert-161-spell-update"] == 0) {
+    //         getSectionIDs("spell", function(idarray) {
+    //             const tech_translation = {
+    //                 0: "unselected",
+    //                 1: "Creo",
+    //                 2: "Intellego",
+    //                 3: "Muto",
+    //                 4: "Perdo",
+    //                 5: "Rego"
+    //             };
+    //             const form_translation = {
+    //                 0: "unselected",
+    //                 1: "Animal",
+    //                 2: "Aquam",
+    //                 3: "Auram",
+    //                 4: "Corpus",
+    //                 5: "Herbam",
+    //                 6: "Ignem",
+    //                 7: "Imaginem",
+    //                 8: "Mentem",
+    //                 9: "Terram",
+    //                 10: "Vim"
+    //             };
+    //             for (var i=0; i < idarray.length; i++) {
+    //                 const spellid = idarray[i];
+    //                 console.log("Update 1.6.1 - Spell arts updater script - scheduling update for spell ID:" + spellid);
+    //                 getAttrs(
+    //                     [   
+    //                         "repeating_spell_" + spellid + "_spell_name",
+    //                         "repeating_spell_" + spellid + "_Technique_select",
+    //                         "repeating_spell_" + spellid + "_Form_select"
+    //                     ],
+    //                     function (values) {
+    //                         attr_updates = {
+    //                             ["repeating_spell_" + spellid + "_spell_tech_name"]: tech_translation[values["repeating_spell_" + spellid + "_Technique_select"]] || "unselected",
+    //                             ["repeating_spell_" + spellid + "_spell_form_name"]: form_translation[values["repeating_spell_" + spellid + "_Form_select"]] || "unselected"
+    //                         };
+    //                         console.log("Update 1.6.1 - Spell arts updater script - " + values["repeating_spell_" + spellid + "_spell_name"] + " (ID " + spellid + ")");
+    //                         console.log(attr_updates);
+    //                         console.log("Update 1.6.1 - Spell arts updater script - spell " + spellid + " END");
+    //                         setAttrs(attr_updates);
+    //                     }
+    //                 );
+    //             }
+    //             console.log("Update 1.6.1 - Spell arts updater script - all spell scheduled for update");
+    //             setAttrs({"alert-161-spell-update": 1});
+    //         });
+    //     }
+    // });
     
 });
     
     
     const helpers = {
+};
 
-    // The alert system is a way to display pop-up on top of the sheet to notify players
-    alerts: {
-        add: function ({ where, title, text, attributes, sections, level = "info" }) {
-            if (["info", "warning", "error", "success"].indexOf(level) === -1) {
-                throw new Error(`Invalid alert level "${level}"`);
-            }
-            // Warning: the name isn't sanitized like it is in the PUG, might create discrepancies
-            const section = `repeating_alerts--${where}`;
-            // Contrary to doc, k.generateRowID also includes the section name in the returned value
-            const rowID = k.generateRowID(section, sections);
-            console.log(`Created new rowID: ${rowID}`);
-            attributes[`${rowID}_level`] = level;
-            attributes[`${rowID}_title`] = title;
-            attributes[`${rowID}_text`] = text;
-        },
+/**
+ * The function to create a new alert in an `+alert` mixin. Retruns the RowID (including the repeating secgion namt) of the created alert.
+ * @memberof Sheetworkers
+ * @param {string} name - The name of the alert. It will be prepended by `repeating_alerts--`. Note that contrary to the PUG mixin, this doesn't sanitize the name, so you'll need to spell out the sanitized version.
+ * @param {string} title - The text to put in the title of the alert, after the level icon.
+ * @param {string} text - The text to write as the content of the alert. Can contain newlines, as it is written to a textarea.
+ * @param {Object} attributes - The `attributes` object given by k-Scaffold that contains the attributes of the sheet
+ * @param {Object} sections - The `sections` object given by k-Scaffold that contains the sections of the sheet
+ * @param {level} string - The level of the alert. One of "info", "warning", "error", "success". Changes the default styling of the alert.
+ */
+const kCreateAlert = function ({ name, title, text, attributes, sections, level = "info" }) {
+    if (["info", "warning", "error", "success"].indexOf(level) === -1) {
+        throw new Error(`Invalid alert level "${level}"`);
+    }
+    // Warning: the name isn't sanitized like it is in the PUG, might create discrepancies
+    const section = `repeating_alerts--${name}`;
+    // Contrary to doc, k.generateRowID also includes the section name in the returned value
+    const rowID = k.generateRowID(section, sections);
+    attributes[`${rowID}_level`] = level;
+    attributes[`${rowID}_title`] = title;
+    attributes[`${rowID}_text`] = text;
+    return rowID;
+};
 
-        close: function ({ trigger, attributes, sections }) {
-            const [section, rowID, _] = k.parseTriggerName(trigger.name);
-            k.removeRepeatingRow(`${section}_${rowID}`, attributes, sections);
-        },
+/**
+ * The default trigger called when one clicks the close button on an alert. Deletes the triggering alert from the repeating section.
+ * @memberof Sheetworkers
+ * @param {string} trigger - The trigger object passed by kScaffold
+ * @param {Object} attributes - The `attributes` object given by k-Scaffold that contains the attributes of the sheet
+ * @param {Object} sections - The `sections` object given by k-Scaffold that contains the sections of the sheet
+ */
+const kDeleteAlert = function ({ trigger, attributes, sections }) {
+    const [section, rowID, _] = k.parseTriggerName(trigger.name);
+    k.removeRepeatingRow(`${section}_${rowID}`, attributes, sections);
+};
+
+k.registerFuncs({ "kDeleteAlert": kDeleteAlert });
+    
+    
+     
+
+// Clear the scheduled updates on a kScaffold `attributes` object
+const clearAttributesUpdates = function (attributes) {
+    const updates = attributes.updates;
+    // From https://stackoverflow.com/questions/684575/how-to-quickly-clear-a-javascript-object
+    // NOTE: we don't really now what the `updates` object is, so use the safer deletion code
+    for (const prop of Object.getOwnPropertyNames(updates)) {
+        delete updates[prop];
     }
 };
-k.registerFuncs({ "helpers.alerts.close": helpers.alerts.close });
-    
-    
-     const preKScaffoldUpdates = {
-    updateWeaponAttributeNames: function ({ attributes, sections }) {
-        console.log("sections:");
-        console.log(sections);
-    },
 
-    updateSpellTechniquesAndForms: function ({ attributes, sections }) {
+// Function to help building update function that are properly hooked up in our system
+// It wraps a function such that:
+//  - If the wrapped function fails and raises an exception:
+//    - All pending update on the `attributes` object are cleared
+//    - An error alert is created with the error details to notify the player
+//    - The `update_error_rowid` hidden attribute is set to the RowID of the created alert
+//    - Forces an update of the sheet's attribute, to effectively create said alert and store the RowID
+//    - Forwards the caugh error to the caller to interrupt kScaffold update mecanism
+//  - If the `update_error_rowid` hidden attribute is set at the start of the function, it immediatly
+//    error outs, preventing kScaffold update from running to completion. This is because there is still
+//    an error on the sheet that prevents the update from working, so we cannot continue.
+const wrapUpdateFunction = function (func) {
+    const wrapper = function ({ trigger, attributes, sections, casc }) {
+        // If the update system is currently on hold due to an error, exit early
+        if (attributes["update_error_rowid"]) {
+            k.debug(`The update system is locked by alert row ${attributes["update_error_rowid"]}, exiting update stack...`);
+            throw new Error(`Interrupted updates: previous error at row ${attributes["update_error_rowid"]} is locking updates`);
+        }
+        // Try to execute the wrapped function
+        try {
+            func({ trigger, attributes, sections, casc });
+        } catch (error) {
+            // Update function failed, notify the user and exit
+            // First, cancel pending updates: update function may have scheduled partial updates
+            clearAttributesUpdates(attributes);
+            // Then, generate a new alert for the user
+            const text = `An update of the sheet failed. Please contact the sheet developpers for help (see the Help menu). Please provide the full stacktrace below when reporting errors.
 
-    },
+The update system has been locked so that you can fix the problem. Closing this alert will unlock the update system and trigger a new update attempt the next time the sheet is opened.
 
-
-    handler: function (obj) {
-        console.log(`attributes.notNew = ${obj.attributes.notNew}`);
-        if (typeof obj.attributes.notNew !== "undefined") {
-            updateWeaponAttributeNames(obj);
-            updateSpellTechniquesAndForms(obj);
+Stacktrace for function '${func.name || '<anonymous>'}'
+──────────
+${error.stack}
+${error}
+`;
+            const row_name = kCreateAlert({
+                name: "global-alerts",
+                title: "!! Update error !! Your sheet is likely broken, please read on",
+                text,
+                level: "error",
+                attributes,
+                sections,
+            });
+            // Register the error to lock the update system
+            const [section, rowID, attrName] = k.parseRepeatName(row_name);
+            attributes["update_error_rowid"] = rowID;
+            // Forcefully update the attributes of the sheet, because we'll throw an Error so kScaffold won't do it
+            attributes.set({ attributes });
+            k.debug(`Locked update execution on alert row ${rowID}`);
+            // Finally, forward our error to the caller
+            throw error;
         }
 
-    }
-
+    };
+    return wrapper;
 };
 
-// k.registerFuncs({ "preKScaffoldUpdates.handler": preKScaffoldUpdates.handler }, { type: ["new"] });
+const onAlertRemoved = function ({ trigger, attributes, sections, casc }) {
+    if (attributes["update_error_rowid"]) {
+        const [section, rowID, attrName] = k.parseTriggerName(trigger.name);
+        // Roll20 event contain a lowercase rowID. There *is* a risk of clash, but we can't do better
+        // We also lowercase the event in case this changes in the future, so that the sheet doesn't break
+        if (rowID.toLowerCase() === attributes["update_error_rowid"].toLowerCase()) {
+            k.debug(`Cleared attribute 'update_error_rowid' because row ${rowID} was deleted`);
+            attributes["update_error_rowid"] = "";
+            // TODO: trigger an update by calling a k.updateSheet when this is possible
+        }
+    }
+    kDeleteAlert({ trigger, attributes, sections, casc });
+};
+k.registerFuncs({ onAlertRemoved });
+
+
+const updateSpellArts = wrapUpdateFunction(
+    function updateSpellArts() {
+        // Only update if the update was not previously applied
+        // In the old sheet system, we had an explicit attribute to hide/display
+        // each alert, and updating spells was conditionned on this alert being shown
+        // We re-use that legacy attribute to detect if the alert is needed. It
+        // Is forcefully registered into k-scaffold in _updates.pug, so k-Scaffold
+        // loads it if available
+        if (attributes["alert-161-spell-update"] === 0) {
+            const techRename = {
+                0: "unselected",
+                1: "Creo",
+                2: "Intellego",
+                3: "Muto",
+                4: "Perdo",
+                5: "Rego"
+            };
+            const formRename = {
+                0: "unselected",
+                1: "Animal",
+                2: "Aquam",
+                3: "Auram",
+                4: "Corpus",
+                5: "Herbam",
+                6: "Ignem",
+                7: "Imaginem",
+                8: "Mentem",
+                9: "Terram",
+                10: "Vim"
+            };
+            const ids = sections.repeating_weapons || [];
+            const details = [];
+            for (const rowID of ids) {
+                const row = `repeating_spell_${rowID}`;
+                attributes[`${row}_spell_tech_name`] = techRename[attributes[`${row}_Technique_select`]] || "unselected";
+                attributes[`${row}_spell_form_name`] = formRename[attributes[`${row}_Form_select`]] || "unselected";
+                details.push(attributes[`${row}_spell_name`]);
+            }
+            if (details.length) {
+                message = [
+                    "Spells technique & form selection have been converted to the new format",
+                    ""
+                ];
+                details.forEach(name => message.push(`  - Updated spell '${name}'`));
+                helpers.alerts.add({
+                    title: "Update v1.6.1 - Spell update",
+                    text: message.join("\n"),
+                    level: "success",
+                    attributes: attributes,
+                    sections: sections,
+                });
+            }
+        }
+    }
+);
+
+
+const renameWeaponAttributes = wrapUpdateFunction(
+    function renameWeaponAttributes({ attributes, sections }) {
+        const fixes = {
+            "_Wounds_Load": "_Weapon_Load",
+            "_Wounds_Range": "_Weapon_Range",
+        };
+        const ids = sections.repeating_weapons || [];
+        const details = [];
+        for (const id of ids) {
+            // Sometimes the array of ids contains an empty string
+            if (id) {
+                for (const [old, updated] of Object.entries(fixes)) {
+                    const old_name = `repeating_weapons_${id}${old}`;
+                    const new_name = `repeating_weapons_${id}${updated}`;
+                    if (attributes[old_name]) {
+                        attributes[new_name] = attributes[old_name];
+                        attributes[old_name] = "";
+                        details.push(attributes[`repeating_weapons_${id}_Weapon_name`]);
+                    }
+                }
+            }
+        }
+        if (details.length) {
+            message = [
+                "Weapons internal attributes have been corrected.",
+                ""
+            ];
+            details.forEach(name => message.push(`  - Updated weapon '${name}'`));
+            helpers.alerts.add({
+                title: "Update v1.7 - Magic & Armory",
+                text: message.join("\n"),
+                level: "success",
+                attributes: attributes,
+                sections: sections,
+            });
+        }
+    }
+);
+
+const updateToKScaffold = wrapUpdateFunction(
+    function updateToKScaffold({ trigger, attributes, sections, casc }) {
+        // This attribute is only defined on old sheets
+        if (typeof attributes["notNew"] !== "undefined") {
+            updateSpellArts({ trigger, attributes, sections, casc });
+            renameWeaponAttributes({ trigger, attributes, sections, casc });
+        }
+    }
+);
+k.registerFuncs({updateToKScaffold}, {type: ["new"]});
+
+// const displayKScaffoldArgs = function ({ trigger, attributes, sections, casc }) {
+//     console.log("Displaying kScaffold arguments");
+//     console.log(trigger);
+//     console.log(attributes);
+//     console.log(sections);
+//     console.log(casc);
+// };
+
+// k.registerFuncs({ displayKScaffoldArgs }, { type: ["opener"] });
      
   
 console.debug = vi.fn(a => null);
