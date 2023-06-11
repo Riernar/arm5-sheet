@@ -84,7 +84,7 @@ k.registerFuncs({ onAlertRemoved });
 
 
 const updateSpellArts = wrapUpdateFunction(
-    function updateSpellArts() {
+    function updateSpellArts({attributes, sections}) {
         // Only update if the update was not previously applied
         // In the old sheet system, we had an explicit attribute to hide/display
         // each alert, and updating spells was conditionned on this alert being shown
