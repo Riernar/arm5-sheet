@@ -51,13 +51,14 @@ mixin alerts({name, fieldsetTrigger, closeTrigger})
 
 mixin markdown({file, string})
     - const renderer = require("markdown-it")({"html": true});
+    - let markdown = "";
     if file
         -
             const fs = require("fs");
             if (! fs.existsSync(file)) { throw new Error(`${file} doesn't exists`); }
-            const markdown = renderer.render(fs.readFileSync(file, "utf8"));
+            markdown = renderer.render(fs.readFileSync(file, "utf8"));
     if string
-        - const markdown = renderer.render(string);
+        - markdown = renderer.render(string);
     if markdown
         div.markdown
             != markdown
