@@ -110,7 +110,7 @@ mixin arm5_legacy()
 
     .flexcol.header__controls
         +modalButton({name: "settings"})
-            span.material-icons settings
+            span.material-icons(disabled=true) settings
 
         +modalButton({name: "help"})
             span.material-icons help
@@ -118,4 +118,5 @@ mixin arm5_legacy()
         +modalButton({name: "history"})
             span.material-icons history
 
-        a.material-icons(href="https://discord.gg/9M9fhwr6T9") forum
+        +link({name:"Discord", href:"https://discord.gg/9M9fhwr6T9", color:"cornflowerblue"})
+            span.material-icons(disabled=true) forum

@@ -460,12 +460,16 @@ created by Jakob. All CSS v3 colors are supported by the <code>color</code> key 
 </div>
       </div>
     <div class="flexcol header__controls">
-      <label class="kmodal kmodal--settings kmodal__button kmodal--settings__button" for="kmodal-settings"><span class="material-icons">settings</span>
+      <label class="kmodal kmodal--settings kmodal__button kmodal--settings__button" for="kmodal-settings"><span class="material-icons" disabled="disabled">settings</span>
       </label>
       <label class="kmodal kmodal--help kmodal__button kmodal--help__button" for="kmodal-help"><span class="material-icons">help</span>
       </label>
       <label class="kmodal kmodal--history kmodal__button kmodal--history__button" for="kmodal-history"><span class="material-icons">history</span>
-      </label><a class="material-icons" href="https://discord.gg/9M9fhwr6T9">forum</a>
+      </label>
+      <div class="link">
+        <button type="roll" value="/w @{character_name} &amp;{template:custom} {{title=Discord}} {{desc=[Discord](https://discord.gg/9M9fhwr6T9)}} {{color=cornflowerblue}} {{button-color=cornflowerblue}}"><span class="material-icons" disabled="disabled">forum</span>
+        </button>
+      </div>
     </div>
   </div><input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character">
 <input type="hidden" name="attr_simple-die" value="(1d10cs0cf0) [@{simple-die_i18n}]">
@@ -4423,6 +4427,8 @@ const kDeleteAlert = function ({ trigger, attributes, sections }) {
 };
 
 k.registerFuncs({ "kDeleteAlert": kDeleteAlert });
+
+
   
   
    

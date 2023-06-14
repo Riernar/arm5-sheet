@@ -4311,6 +4311,23 @@ End of the python integration block
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.05);
 }
+.ui-dialog .tab-content .charsheet .link {
+  display: inline;
+}
+.ui-dialog .tab-content .charsheet .link select,
+.ui-dialog .tab-content .charsheet .link textarea,
+.ui-dialog .tab-content .charsheet .link input,
+.ui-dialog .tab-content .charsheet .link .uneditable-input,
+.ui-dialog .tab-content .charsheet .link label,
+.ui-dialog .tab-content .charsheet .link button {
+  all: initial;
+}
+.ui-dialog .tab-content .charsheet .link button {
+  cursor: pointer;
+}
+.ui-dialog .tab-content .charsheet .link button::before {
+  content: "";
+}
 
 .ui-dialog .tab-content .charsheet {
   --arm5-color-accent-brown: #53332a;

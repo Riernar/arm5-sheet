@@ -1727,6 +1727,8 @@ const kDeleteAlert = function ({ trigger, attributes, sections }) {
 };
 
 k.registerFuncs({ "kDeleteAlert": kDeleteAlert });
+
+
   
   
    
