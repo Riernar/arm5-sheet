@@ -118,6 +118,8 @@
 .ui-dialog .tab-content .charsheet .markdown h2,
 .ui-dialog .tab-content .charsheet .markdown h3,
 .ui-dialog .tab-content .charsheet .markdown h4,
+.ui-dialog .tab-content .charsheet .markdown h5,
+.ui-dialog .tab-content .charsheet .markdown h6,
 .ui-dialog .tab-content .charsheet .markdown .kscaffold-compatible .input-label:not(.stacked).large > [name],
 .ui-dialog .tab-content .charsheet .kscaffold-compatible .markdown .input-label:not(.stacked).large > [name], .ui-dialog .tab-content .charsheet .arm5-sheet .heading_label {
   margin-left: 0px;
@@ -4285,35 +4287,6 @@ End of the python integration block
 .ui-dialog .tab-content .charsheet .kalerts__container .kalerts__level[value=error] + .kalerts__content .kalerts__title::before {
   content: "error";
 }
-.ui-dialog .tab-content .charsheet .documentation .markdown p,
-.ui-dialog .tab-content .charsheet .documentation .markdown li {
-  font-family: "Macondo";
-  color: #663333;
-  font-size: 14px;
-}
-.ui-dialog .tab-content .charsheet .documentation .markdown li li {
-  font-size: 1em;
-}
-.ui-dialog .tab-content .charsheet .documentation .markdown h1,
-.ui-dialog .tab-content .charsheet .documentation .markdown h2,
-.ui-dialog .tab-content .charsheet .documentation .markdown .kscaffold-compatible .input-label:not(.stacked).large > [name],
-.ui-dialog .tab-content .charsheet .kscaffold-compatible .documentation .markdown .input-label:not(.stacked).large > [name],
-.ui-dialog .tab-content .charsheet .documentation .markdown h3,
-.ui-dialog .tab-content .charsheet .documentation .markdown h4,
-.ui-dialog .tab-content .charsheet .documentation .markdown h5,
-.ui-dialog .tab-content .charsheet .documentation .markdown h6 {
-  margin-bottom: 5px;
-  margin-top: 15px;
-}
-.ui-dialog .tab-content .charsheet .documentation .markdown .codespan {
-  font-family: "Delius";
-  padding-left: 2px;
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.ui-dialog .tab-content .charsheet .link {
-  display: inline;
-}
 .ui-dialog .tab-content .charsheet .link select,
 .ui-dialog .tab-content .charsheet .link textarea,
 .ui-dialog .tab-content .charsheet .link input,
@@ -4327,6 +4300,51 @@ End of the python integration block
 }
 .ui-dialog .tab-content .charsheet .link button::before {
   content: "";
+}
+.ui-dialog .tab-content .charsheet .markdown h1,
+.ui-dialog .tab-content .charsheet .markdown h2,
+.ui-dialog .tab-content .charsheet .markdown .kscaffold-compatible .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet .kscaffold-compatible .markdown .input-label:not(.stacked).large > [name],
+.ui-dialog .tab-content .charsheet .markdown h3,
+.ui-dialog .tab-content .charsheet .markdown h4,
+.ui-dialog .tab-content .charsheet .markdown h5,
+.ui-dialog .tab-content .charsheet .markdown h6 {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.ui-dialog .tab-content .charsheet .markdown p,
+.ui-dialog .tab-content .charsheet .markdown li {
+  font-family: "Macondo";
+  color: #663333;
+  font-size: 14px;
+}
+.ui-dialog .tab-content .charsheet .markdown li li {
+  font-size: 1em;
+}
+.ui-dialog .tab-content .charsheet .markdown .codespan {
+  font-family: "Delius";
+  padding-left: 2px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.ui-dialog .tab-content .charsheet .markdown .link button[type=roll] {
+  font-family: "Macondo";
+  font-size: 14px;
+  text-decoration-line: underline;
+  color: royalblue;
+}
+.ui-dialog .tab-content .charsheet .markdown .link button[type=roll]:hover {
+  color: blue;
+}
+.ui-dialog .tab-content .charsheet .markdown .link button[type=roll]::after {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--icon-size); /* Preferred icon size */
+  font-family: "Material Symbols Outlined";
+  font-size: 16px;
+  content: "arrow_outward";
+  margin-left: 1px;
 }
 
 .ui-dialog .tab-content .charsheet {
@@ -4469,6 +4487,11 @@ End of the python integration block
 }
 .ui-dialog .tab-content .charsheet .header > .header__controls .material-icons {
   color: var(--arm5-color-accent-brown);
+  opacity: 0.85;
+  user-select: none;
+}
+.ui-dialog .tab-content .charsheet .header > .header__controls .material-icons:hover {
+  opacity: 1;
 }
 
 .ui-dialog .charsheet .kscaffold-compatible select,

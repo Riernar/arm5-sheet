@@ -1,14 +1,20 @@
 include ../legacy/topbar.pug
 
-mixin arm5_welcome()
+mixin arm5_help()
     .welcome
-        h3.heading_label Ars Magica 5th Edition Sheet - v2.0
-        
+        h1.heading_label Ars Magica 5th Edition Sheet (version 2.0)
+
         br
 
         div(data-i18n="welcome-title")
             | Welcome to the Ars Magica 5th Edition Sheet !
-            
+        
+    
+    +markdown({file: "./help_feedback.md"})
+    
+    .welcome
+        h3.heading_label Forenote
+
         br
 
         div(data-i18n="welcome-0")
@@ -33,6 +39,8 @@ mixin arm5_welcome()
                 span(data-i18n="tooltip-welcome").sheet-tooltip Underlined texts feature a tooltip with additional informations
             | :
             span(data-i18n="welcome-3c") this means they have a tooltip that shows additional info about them.
+    
+    +markdown({file: "./documentation.md"})
 
 
 mixin arm5_settings()
@@ -93,16 +101,11 @@ mixin arm5_legacy()
         +arm5_settings
     
     +modalWindow({name: "help"})
-        +arm5_welcome
-
-        .documentation
-            +markdown({file: "./documentation.md"})
-    
+        +arm5_help
+        
     +modalWindow({name: "history"})
         +arm5_legacy()
-
-        .documentation
-            +markdown({file: "./changelog.md"})
+        +markdown({file: "./changelog.md"})
 
 
 .flexrow.top_bar.header
@@ -110,7 +113,7 @@ mixin arm5_legacy()
 
     .flexcol.header__controls
         +modalButton({name: "settings"})
-            span.material-icons(disabled=true) settings
+            span.material-icons(disabled) settings
 
         +modalButton({name: "help"})
             span.material-icons help

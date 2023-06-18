@@ -2,10 +2,7 @@
 
 Welcome the Ars Magica 5th Edition character sheet. This page contains the documentation for the sheet.
 
-### Getting help & providing feedback
 
-If you need help, or would like a feature to be developped, feel free to ask on the [Ars Magica 5th unofficial Discord](https://discord.gg/9M9fhwr6T9).
-Use the `#roll20-vtt` channel, and tag `@Riernar`.
 
 ### Experience
 

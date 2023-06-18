@@ -54,19 +54,37 @@
         <label class="kmodal kmodal__close kmodal--help kmodal--help__close" for="kmodal-help"></label>
         <div class="kmodal kmodal__content kmodal--help kmodal--help__content">
             <div class="welcome">
-              <h3 class="heading_label">Ars Magica 5th Edition Sheet - v2.0</h3><br/>
-              <div data-i18n="welcome-title">Welcome to the Ars Magica 5th Edition Sheet !</div><br/>
+              <h1 class="heading_label">Ars Magica 5th Edition Sheet (version 2.0)</h1><br/>
+              <div data-i18n="welcome-title">Welcome to the Ars Magica 5th Edition Sheet !</div>
+            </div>
+            <div class="markdown"><h2>Getting help &amp; providing feedback</h2>
+<p>If you have question, need help or would like to provide feedback, you can:</p>
+<ul>
+<li>
+<p>Ask on the <span class="link"><button type="roll" value="/w @{character_name} &{template:custom} {{title=Link}} {{desc=[https://discord.gg/9M9fhwr6T9](https://discord.gg/9M9fhwr6T9)}} {{color=mediumblue}} {{button-color=mediumblue}}" title="https://discord.gg/9M9fhwr6T9">unofficial Ars Magica 5th  Discord</button></span>
+in the <code>#roll20-vtt</code> channel. Tag <code>@Riernar</code>. This is ideal for quick questions.</p>
+</li>
+<li>
+<p>Open an issue in <span class="link"><button type="roll" value="/w @{character_name} &{template:custom} {{title=Link}} {{desc=[https://github.com/Roll20/roll20-character-sheets/issues](https://github.com/Roll20/roll20-character-sheets/issues)}} {{color=mediumblue}} {{button-color=mediumblue}}" title="https://github.com/Roll20/roll20-character-sheets/issues">Roll20's sheet repository</button></span>.
+Include <code>[Ars Magica 5th]</code> in your title and tag <code>@Riernar</code>.</p>
+</li>
+<li>
+<p>Open an issue in <span class="link"><button type="roll" value="/w @{character_name} &{template:custom} {{title=Link}} {{desc=[https://github.com/Riernar/arm5-sheet](https://github.com/Riernar/arm5-sheet)}} {{color=mediumblue}} {{button-color=mediumblue}}" title="https://github.com/Riernar/arm5-sheet">Riernar's own repository</button></span>
+were I develop the sheet. This is where I schedule up-coming features, so be sure
+to check here if you have a feature request: maybe it's already in the work !</p>
+</li>
+</ul>
+
+            </div>
+            <div class="welcome">
+              <h3 class="heading_label">Forenote</h3><br/>
               <div data-i18n="welcome-0">Here are a few important notes you'll need to read before using the sheet. A more complete documentation can be found below.</div><br/>
               <div data-i18n="welcome-1">First, this sheet features some configuration options, found below. Be sure to review those. Configure is your character is a Magi, how you want botches to be rolled and display in chat, and how you want to chose between simple and stress rolls (when applicable).</div><br/>
               <div data-i18n="welcome-2">Second, you might want to read a bit the section on the documentation on how rolls works. The stress dice of Ars Magica 5th edition are quite complicated, and this sheet isn't <i>quite</i> able to handle them completely automatically. You'll need to copy the result before the critical roll, for instance.</div><br/>
               <div><span data-i18n="welcome-3a">Third, some element of the sheet are</span><span class="has_tooltip"><span data-i18n="welcome-3b">underlined</span><span class="sheet-tooltip" data-i18n="tooltip-welcome">Underlined texts feature a tooltip with additional informations</span></span>:<span data-i18n="welcome-3c">this means they have a tooltip that shows additional info about them.</span></div>
             </div>
-          <div class="documentation">
             <div class="markdown"><h2>Sheet Documentation</h2>
 <p>Welcome the Ars Magica 5th Edition character sheet. This page contains the documentation for the sheet.</p>
-<h3>Getting help &amp; providing feedback</h3>
-<p>If you need help, or would like a feature to be developped, feel free to ask on the <a href="https://discord.gg/9M9fhwr6T9">Ars Magica 5th unofficial Discord</a>.
-Use the <code>#roll20-vtt</code> channel, and tag <code>@Riernar</code>.</p>
 <h3>Experience</h3>
 <p>The fields for experience work as follows:</p>
 <ul>
@@ -179,7 +197,7 @@ Use the <code>#roll20-vtt</code> channel, and tag <code>@Riernar</code>.</p>
 <ul>
 <li><strong><code>custom</code></strong>:
 <ul>
-<li>This is the <a href="https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Jakob.27s_Better_Default_Rolltemplate">improved default template</a>
+<li>This is the <span class="link"><button type="roll" value="/w @{character_name} &{template:custom} {{title=Link}} {{desc=[https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Jakob.27s_Better_Default_Rolltemplate](https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Jakob.27s_Better_Default_Rolltemplate)}} {{color=mediumblue}} {{button-color=mediumblue}}" title="https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates#Jakob.27s_Better_Default_Rolltemplate">improved default template</button></span>
 created by Jakob. All CSS v3 colors are supported by the <code>color</code> key (names must be all lowercase)</li>
 <li>In addition, the rolltemplate supports the <code>roll-color</code> and <code>button-color</code> to change the background color of inline rolls and ability buttons, respectively, within the template. Both values support all CSS v3 colors, as <code>color</code> does. Those also support the <code>transparent</code> color.</li>
 <li>The keys <code>left-align</code> and <code>right-align</code> can be used to control the text alignement of the left and right column, respectively. Values can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</li>
@@ -275,7 +293,6 @@ created by Jakob. All CSS v3 colors are supported by the <code>color</code> key 
 </ul>
 
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -300,8 +317,7 @@ created by Jakob. All CSS v3 colors are supported by the <code>color</code> key 
 </tr>
 </table>
 </div>
-          <div class="documentation">
-            <div class="markdown"><h2>Changelog</h2>
+          <div class="markdown"><h2>Changelog</h2>
 <ul>
 <li><strong>June 2023 - v2.0 - kScaffold update</strong>
 <ul>
@@ -412,7 +428,6 @@ created by Jakob. All CSS v3 colors are supported by the <code>color</code> key 
 </li>
 </ul>
 
-            </div>
           </div>
         </div>
       </div>
@@ -465,11 +480,9 @@ created by Jakob. All CSS v3 colors are supported by the <code>color</code> key 
       <label class="kmodal kmodal--help kmodal__button kmodal--help__button" for="kmodal-help"><span class="material-icons">help</span>
       </label>
       <label class="kmodal kmodal--history kmodal__button kmodal--history__button" for="kmodal-history"><span class="material-icons">history</span>
-      </label>
-      <div class="link">
-        <button type="roll" value="/w @{character_name} &amp;{template:custom} {{title=Discord}} {{desc=[Discord](https://discord.gg/9M9fhwr6T9)}} {{color=cornflowerblue}} {{button-color=cornflowerblue}}"><span class="material-icons" disabled="disabled">forum</span>
-        </button>
-      </div>
+      </label><span class="link">
+        <button type="roll" value="/w @{character_name} &amp;{template:custom} {{title=Discord}} {{desc=[https://discord.gg/9M9fhwr6T9](https://discord.gg/9M9fhwr6T9)}} {{color=cornflowerblue}} {{button-color=cornflowerblue}}" title="https://discord.gg/9M9fhwr6T9"><span class="material-icons" disabled="disabled">forum</span>
+        </button></span>
     </div>
   </div><input type="hidden" class="tabstoggle" name="attr_sheetTab" value="character">
 <input type="hidden" name="attr_simple-die" value="(1d10cs0cf0) [@{simple-die_i18n}]">

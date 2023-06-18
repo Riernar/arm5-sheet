@@ -49,25 +49,40 @@ mixin alerts({name, fieldsetTrigger, closeTrigger})
 
 
 mixin link({name, href, color})
-    - let value = `/w @{character_name} &{template:custom} {{title=${name}}} {{desc=[${name}](${href})}}`;
+    - let value = `/w @{character_name} &{template:custom} {{title=${name}}} {{desc=[${href}](${href})}}`;
     -
         if (color)
             value = `${value} {{color=${color}}} {{button-color=${color}}}`;
     //- .kscaffold-compatible
-    .link
-        button(type="roll" value=value)
+    span.link
+        button(type="roll" value=value title=href)
             block
 
+//- In Roll20 sheet, <a href> tag can only link to the sheet itself
+//- We replace <a href> tags in markdown rendering by a roll button similar to the
+//- +link() mixin above
+-
+    const md = require("markdown-it")({"html": true});
+    md.renderer.rules["link_open"] = function link_open(tokens, idx, options, env, self) {
+        const token = tokens[idx];
+        const href = Object.fromEntries(token.attrs)["href"];
+        if (href === undefined) { throw new Error(`No href found on token\n${token}`); }
+        const value = `/w @{character_name} &{template:custom} {{title=Link}} {{desc=[${href}](${href})}} {{color=mediumblue}} {{button-color=mediumblue}}`;
+        return `<span class="link"><button type="roll" value="${value}" title="${href}">`;
+    }
+    md.renderer.rules["link_close"] = function link_close(tokens, idx, options, env, self) {
+        return "</button></span>";
+    }
+
 mixin markdown({file, string})
-    - const renderer = require("markdown-it")({"html": true});
     - let markdown = "";
     if file
         -
             const fs = require("fs");
             if (! fs.existsSync(file)) { throw new Error(`${file} doesn't exists`); }
-            markdown = renderer.render(fs.readFileSync(file, "utf8"));
+            markdown = md.render(fs.readFileSync(file, "utf8"));
     if string
-        - markdown = renderer.render(string);
+        - markdown = md.render(string);
     if markdown
         div.markdown
             != markdown
