@@ -1,0 +1,60 @@
+name: Commit messages
+on:
+  pull_request:
+    branches: [main]
+
+env:
+  PY_CHECK_RE: |
+    import re
+    import sys
+
+    pattern = sys.argv[1]
+    string = sys.argv[2]
+
+    match = re.search(pattern, string)
+    if match is None:
+        sys.exit(1)
+    else:
+        sys.exit(0)
+  # Pattern for the angular commit format at
+  # https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format
+  COMMIT_REGEX: '^(build|ci|docs|feat|fix|perf|refactor|test)(\([^():]+\))?:.*$'
+  # Pattern for github issue/pull-request references (#123 or gh-123 or GH-123)
+  # We ensure all such github reference are prefixed by an explicit Owner/Repo
+  # because we develop across repositories, and implicit reference will refer
+  # to different PR/issues depending on the current repo (this repo of the roll20 one)
+  GITHUB_REF_REGEX: '((?<!\w)|^)(#|gh-|GH-)\d+'
+
+jobs:
+  checks:
+    name: Check format
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Fecth all commits to be able to verify them
+          fetch-depth: 0
+          fetch-tags: true
+          # Do a tree-less clone, because we don't need the content of the files here
+          # See https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/
+          filter: "tree:0"
+      - name: Check all commits messages
+        run: |
+          set -Eeuo pipefail
+          HAS_ERROR=0
+          while read line ; do
+              if ! python3 -c "$PY_CHECK_RE" "$COMMIT_REGEX" "$line"; then
+                  printf "ERR: '$line' doesn't match angular commit format '$COMMIT_REGEX'.\n"
+                  HAS_ERROR=1
+              elif python3 -c "$PY_CHECK_RE" "$GITHUB_REF_REGEX" "$line"; then
+                  printf "ERR: '$line' contains references to github PR/issue without an Owner/Repo prefix.\n"
+                  HAS_ERROR=1
+              else
+                  printf "OK : $line\n"
+              fi
+          done <<< "$(echo "${{ github.event.pull_request.title }}" && git log --format="%s" origin/${{ github.base_ref }}..origin/${{ github.head_ref }} )"
+          exit $HAS_ERROR
