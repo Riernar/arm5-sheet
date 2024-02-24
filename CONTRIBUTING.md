@@ -114,7 +114,19 @@ repository][sheet-repository]. When making git commits and PR, please follow the
 rules:
 
 - Commit message must conform to the
-  [Angular header format](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit-message-header)
+  [Angular header format](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit-message-header)  
+  We support the following types:
+  - **chores**: Change that do not affect the sheet per se, like updating repository
+    settings or .gitignore
+  - **build**: Changes that affect the build system or external dependencies (k-scaffold,
+    ...)
+  - **ci**: Changes to our CI configuration files and scripts
+  - **docs**: Documentation only changes
+  - **feat**: A new feature
+  - **fix**: A bug fix
+  - **perf**: A code change that improves performance
+  - **refactor**: A code change that neither fixes a bug nor adds a feature
+  - **test**: Adding missing tests or correcting existing tests
 - [github issue/PR reference](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)
   must explicitly reference the Org/Repo to avoid broken references when merging back to
   the Roll20 repository.
@@ -133,9 +145,6 @@ The contribution process is as follows:
 - Open a Pull Request (PR) in [Riernar/arm5-sheet][sheet-repository]
   - Be careful that the _title_ of the PR must follow angular's format, as it will become
     a commit in the main branch
-
-
-
 
 ## File organization and naming scheme
 

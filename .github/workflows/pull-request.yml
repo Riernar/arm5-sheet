@@ -18,7 +18,7 @@ env:
         sys.exit(0)
   # Pattern for the angular commit format at
   # https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format
-  COMMIT_REGEX: '^(build|ci|docs|feat|fix|perf|refactor|test)(\([^():]+\))?:.*$'
+  COMMIT_REGEX: '^(chores|build|ci|docs|feat|fix|perf|refactor|test)(\([^():]+\))?:.*$'
   # Pattern for github issue/pull-request references (#123 or gh-123 or GH-123)
   # We ensure all such github reference are prefixed by an explicit Owner/Repo
   # because we develop across repositories, and implicit reference will refer
