@@ -7,6 +7,7 @@
 }
 @mixin generic{
   // Put generic styling that will be used in both the sheet and the roll template here
+  background-image: asset("paintbar_v2.jpg");
 }
 @mixin sheet{
   @include generic;
