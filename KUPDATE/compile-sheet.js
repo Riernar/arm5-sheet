@@ -1,7 +1,9 @@
 const k = require('@kurohyou/k-scaffold');
+const path = require('path');
 const sass = require('sass-embedded');
 const url = require('node:url');
 const util = require('node:util');
+
 
 const config = {
     options: {
@@ -28,7 +30,7 @@ if (args.assets == null) {
     throw new Error("Missing argument --assets.");
 }
 const assetPrefix = new url.URL(args.assets);
-
+const sourceRequire = require(path.resolve(args.source, "index.js")).require;
 
 const kOptions = {
     "source": args.source,
@@ -40,7 +42,12 @@ const kOptions = {
     "pugOptions": {
         "suppressStack": true,
         "modules": {
-            "fs": require('fs'),
+            // This extract the require from source/index.js,
+            // to be able to import relative to sources
+            "require": sourceRequire,
+            "fs": sourceRequire('fs'),
+            "path": sourceRequire('path'),
+            "markdown-it": sourceRequire('markdown-it'),
         }
     },
     "scssOptions": {

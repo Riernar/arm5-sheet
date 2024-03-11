@@ -14,6 +14,7 @@
   "devDependencies": {
     "@kurohyou/k-scaffold": "^2.5.5",
     "@vitest/ui": "*",
-    "vitest": "*"
+    "vitest": "*",
+    "markdown-it": "^13.0.1"
   }
 }
