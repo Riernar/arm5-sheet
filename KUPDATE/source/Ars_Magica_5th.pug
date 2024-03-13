@@ -1,0 +1,54 @@
+include k-scaffold
+include ./components/_index.pug
+include ./sections/_index.pug
+
+- const templateName = 'Ars_Magica_5th';
+- const arm5 = {};
+
+//- Stores the sheet version number for use with version control functions
++hidden({name:'sheet version',value:0})
+
+//- Now, for our actual sheet. We'll wrap this in a main element and give it an ID of main.
+main#main
+
+  //- Test callouts
+  +callout({name: "test"})
+  +action({name: "fillcallout", trigger:{triggeredFuncs:['fillCallout']}})
+    | Set Callout
+
+  +calloutFieldset({name: "test"})
+  +action({name: "addcallout", trigger:{triggeredFuncs:['addCallout']}})
+    | Add callout
+
+  +module.
+    const fillCallout = async function({attributes}) {
+      const level = await k.extractQueryResult('Callout level,level|success,success|info,info|warning,warning|error,error|EMPTY,-');
+      const title = await k.extractQueryResult('Callout title');
+      const text = await k.extractQueryResult('Callout text');
+      setCallout({name: "test", level, title, text, attributes});
+      attributes.set();
+    };
+    k.registerFuncs({fillCallout});
+
+    const addCallout = async function({attributes, sections}) {
+      const level = await k.extractQueryResult('Callout level,level|success,success|info,info|warning,warning|error,error|EMPTY,-');
+      const title = await k.extractQueryResult('Callout title');
+      const text = await k.extractQueryResult('Callout text');
+      addCalloutEntry({name: "test", level, title, text, attributes, sections});
+      attributes.set();
+    };
+    k.registerFuncs({addCallout});
+
+  +tabs({name:'Ars_Magica_5th',defaultActiveTab:'settings'}).flex-box.tiny-gap
+    +tab({name:'settings',container:'article'})
+      include ./views/_index.pug
+    //- Add additional tabs as needed
+  
+//- An input to contain template fields that should always be output with a roll.
++hidden({name:'template start',value:`@{whisper}&{template:${templateName}} {{character_name=@{character_name}}} {{character_id=@{character_id}}}`})
+
+
+include rolltemplate/_index.pug
++kscript('Ars_Magica_5th')
+  //- All additional javascript files should be included in the index file
+  include ./javascript/_index.pug

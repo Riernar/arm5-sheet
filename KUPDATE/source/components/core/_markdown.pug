@@ -1,0 +1,35 @@
+//- MARKDOWN
+//-
+//- Component to inject external markdown files into the sheet
+//- Replaces link by the same construct as the +link() mixin
+
+-
+    const md = modules['markdown-it']({"html": true})
+    md.renderer.rules['link_open'] = function link_open(tokens, idx, options, env, self) {
+        const token = tokens[idx];
+        const href = Object.fromEntries(token.attrs)["href"];
+        if (href == null) {
+            throw new Error(`No href found on token\n${token}`);
+        }
+        return `<span class="link"><button type="roll" value="${hrefToRoll(href)}" title="${href}">`;
+    }
+    md.renderer.rules["link_close"] = function link_close(tokens, idx, options, env, self) {
+        return "</button></span>";
+    }
+
+mixin markdown({filepath})
+    -
+        const fs = modules['fs'];
+        const path = modules['path'];
+        filepath = path.resolve(filepath);
+        if (! fs.existsSync(filepath)) {
+            throw new Error(`${filepath} doesn't exists`);
+        }
+        const markdown = md.render(fs.readFileSync(filepath, "utf8"));
+    div.markdown
+        != markdown
+
++scss.
+    .markdown .codespan {
+        font-family: 'monospace';
+    }

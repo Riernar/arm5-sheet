@@ -1,0 +1,158 @@
+// By default, callouts are hidden
+.callout__container {
+    display: none;
+}
+
+// Unless they have a valid level
+.callout__container:has(.callout__level[value="info"],
+    .callout__level[value="success"],
+    .callout__level[value="warning"],
+    .callout__level[value="error"]) {
+    display: block;
+}
+
+// Colors  and symbol for each level
+.callout__container {
+    // NOTE: since the colors are injected in rgba() calls, they MUST be in rgb
+
+    // Default, for unknown settings
+    --color-callout: 255, 0, 255;
+
+    .callout__title::before {
+        content: "bug_report";
+    }
+
+    .callout__level[value="info"]+.callout__content {
+        --color-callout: 100, 149, 237;
+
+        & .callout__title::before {
+            content: "info";
+        }
+    }
+
+    .callout__level[value="success"]+.callout__content {
+        --color-callout: 0, 128, 0;
+
+        & .callout__title::before {
+            content: "check_circle";
+        }
+    }
+
+    .callout__level[value="warning"]+.callout__content {
+        --color-callout: 255, 140, 0;
+
+        & .callout__title::before {
+            content: "warning";
+        }
+    }
+
+    .callout__level[value="error"]+.callout__content {
+        --color-callout: 139, 0, 0;
+
+        & .callout__title::before {
+            content: "error";
+        }
+    }
+}
+
+// General styling of the callouts
+.callout__container {
+
+    .callout__content {
+        // Having a position property here breaks the close action button in calloutFieldset
+        // Do not set !
+        // position: relative;
+        top: 0;
+        left: 0;
+        margin: 1.5px;
+        padding: 3px;
+        background-color: rgba(var(--color-callout), 0.1);
+        border: 1px solid rgba(var(--color-callout), .8);
+        border-radius: 0.75em;
+
+
+        .callout__title {
+            color: rgb(var(--color-callout));
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            .adaptive {
+                flex-grow: 1;
+            }
+
+            &::before {
+                @include k.materialStyle;
+                font-family: "Material Symbols Outlined";
+                font-size: 16px;
+                content: "report";
+            }
+
+            & input {
+                font-size: 16px;
+                font-weight: 600;
+                flex-grow: 1;
+            }
+        }
+
+        .callout__text {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+// Specifics for calloutFieldsets
+.calloutFieldset {
+
+
+    .callout__container {
+
+        // Make invalid level visibles, callouts in a calloutFieldset are not intended to be hidden
+        display: block;
+
+
+        // Make the close action button appear like a cross button in the top-right corner
+        .callout__close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            width: 1.1em;
+            height: 1.1em;
+            cursor: pointer;
+        }
+
+        .callout__close:after,
+        .callout__close:before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 1.5em;
+            display: block;
+            transform: rotate(45deg);
+            left: 50%;
+            margin: -3px 0 0 -1px;
+            top: 0;
+            background: rgba(var(--color-callout), .5);
+        }
+
+        .callout__close:before {
+            transform: rotate(-45deg);
+        }
+
+        .callout__close:hover:before,
+        .callout__close:hover:after {
+            background: rgba(var(--color-callout), 1);
+            ;
+        }
+    }
+
+    // Hide Roll20 fieldset (aka repeating section) control button like add/re-order
+    // Callouts are primarily intended for sheetworker communicating back to the user
+    div.repcontrol {
+        display: none;
+    }
+}

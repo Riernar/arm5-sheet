@@ -1,0 +1,21 @@
+//- UTILS
+//- Various shared utility function & helpers that don't fit in any
+//- specific component.
+
+//- Load the PUG runtime utilities and shared utilities
+//- This way most JS code is in .js files with proper linting
+//- The `modules` toplevel utility is defined in the compilte-sheet.js script
+
+-
+    const utils = {
+        ...modules.require('./components/core/utils/utils.pug.js'),
+        ...modules.require('./components/core/utils/utils.js')
+    };
+
++module
+    |
+    include ./utils.js
+    |
+    |
+    include ./utils.sheet.js
+    |

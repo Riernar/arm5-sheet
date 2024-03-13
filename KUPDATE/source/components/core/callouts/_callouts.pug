@@ -1,0 +1,49 @@
+//- CALLOUT
+//- Callout (aka like admonitions, alerts) styled like GitHib/Obsidian
+//- callouts by default
+
+//- @pugdoc
+  name: callout
+  description: Creates a callout (aka admonition, alert) whose content and level can be varied
+  arguments:
+    - {string} name - The name for the callout construct. All part of the callout are named like `callout_${name}_${part}`
+mixin callout({name})
+    -
+        name = utils.toSnakeCase(name);
+        attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+        attributes.class = `callout callout--${name} callout__container callout--${name}__container${attributes.class}`;
+    
+    div&attributes(attributes)
+        +hidden({name: utils.toSnakeCase(`callout_${name}_level`), class:`callout callout--${name} callout__level callout--${name}__level`})
+        div(class=`callout callout--${name} callout__content callout--${name}__content`)
+            span(class=`callout callout--${name} callout__title callout--${name}__title`)
+                +adaptiveInput({name: utils.toSnakeCase(`callout_${name}_title`), type: "text", readonly: true, value: "title"})
+            +adaptiveTextarea({name: utils.toSnakeCase(`callout_${name}_text`), readonly: true, class:`callout callout--${name} callout__text callout--${name}__text`})
+            block
+
+//- @pugdoc
+  name: calloutFieldset
+  description: Creates a list of callout (aka admonition, alert) using a fieldset (aka repeating section).
+  arguments:
+    - {string} name - The name for the fieldset containing the callouts. All part of the callout are named like `repeating-${name}_${rowid}_callout_${part}`
+    - {object} fieldsetTrigger - The object to pass as the `trigger` argument to K-Scaffold +fieldset() mixin.
+    - {object} closeTrigger - The object to pass as the `trigger` argument to the K-Scaffold +action() mixin used for the closing button.
+mixin calloutFieldset({name, fieldsetTrigger, closeTrigger})
+    -
+        name = utils.toKebabCase(name);
+        attributes.class = attributes.class ? ` ${replaceProblems(attributes.class)}` : '';
+        attributes.class = `calloutFieldset calloutFieldset--${name}${attributes.class}`;
+        closeTrigger = closeTrigger || {triggeredFuncs: ["deleteCalloutEntry"]};
+    div&attributes(attributes)
+        +fieldset({name: utils.toKebabCase(`callout-${name}`), trigger: fieldsetTrigger})
+            //- Empty name, so that the attribute in the fieldset are just named e.g. callout_title
+            +callout({name: ""})
+                //- Additional block to put inside the callout content, used to delete the entry
+                +action({name: "callout_close", class:`callout callout--${name} callout__close callout--${name}__close`, trigger: closeTrigger})
+                block
+
++scss
+    include _callouts.scss
+
++module
+    include callouts.sheet.js

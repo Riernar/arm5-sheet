@@ -1,0 +1,36 @@
+//- LINKS - Component to have links in the sheet
+//-
+//- We need a dedicated components because in Roll20 sheets, <a> tag
+//- with external href are blocked. Only anchor href work.
+//- We work around this by sending the link to the chat when clicked
+
+- const hrefToRoll = (href => `/w @{character_name} &{template:default} {{name=[${href}](${href})}}`);
+
+mixin link(href)
+    - if (href == null) { throw new Error('Mixin +link() expected `href` parameter');}
+    span.link
+        button(type="roll" value=hrefToRoll(href) title=href)
+            block
+
++scss.
+    .link {
+        button {
+            color: royalblue;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+            }
+
+            &:hover {
+                color: blue;
+            }
+
+            &::after {
+                font-family: "Material Symbols Outlined";
+                content: "arrow_outward";
+                margin-left: 1px;
+            }
+        }
+    }
